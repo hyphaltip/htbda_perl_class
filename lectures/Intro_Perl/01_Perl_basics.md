@@ -84,15 +84,6 @@ Strings can also be converted to numbers.
     $sum /= 5; # or divide by
     print "sum = $sum\n";
 
-
----
-#Playing it Safe
-
----
-#Other numeric operators
-
-
-
 ---
 #String operators
 
@@ -103,10 +94,155 @@ Strings can be manipulated and compared in several ways
     print substr($str,3), "\n";   # --> TTTGGA
     print substr($str,6,3), "\n"; # --> GGA
 
+    $rev = reverse $str; # reverse the order
+    print $str,"\n",$rev,"\n";
+
+    $len = length $str; # get the sequence length
+    print "DNA is $len bp long.\n";
+
+    $index = index($str,"TTG"); # find substring inside a string
+    print "first TTG is at $index ", substr($str,$index,3),"\n";
+
+---
+#Interpolation
 
 [Interpolation](http://en.wikipedia.org/wiki/Variable_interpolation) is when a variable's value is evaluated and
 substituted, for example when you want to insert a value into a string.
 
-    !
+    !perl
     $fruit = 'apple';
+    print "my favorite fruit is $fruit.\n";
+    $fruit = 'grape';
+    print "my favorite fruit is $fruit.\n";
+
+This will produce
+
+    my favorite fruit is apple.
+    my favorite fruit is grape.
+
+---
+#Naming variables
+
+Variable names must contain alphanumeric characters. You can name variables how you like, note that variables cannot start with a number, but can contain numbers. 
+
+    !perl
+    $xyz = "ATGCAGTGA"; # not very descriptive
+    $protein = "ATGCAGTGA"; # misleading
+    $dna_sequence_variable = "ATGCAGTGA"; # needlessly long
+    $sequence = "ATGCAGTGA"; # better
+    $dna = "ATGCAGTAGA"; # even better
+
+Often we name variables by their use or to describe their use. 
+Other convention $i,$j,$k are often counters.
+$a and $b are special variable names in some contexts in Perl so try to avoid using these.
+---
+#Assignment of values
+
+Values from one variable can be copied to another. 
+
+    !perl
+    $dollars = 50;
+    $cents   = $dollars;
+    $cents   *= 100;
+    print "$dollars dollars = $cents cents\n";
     
+    $x = 100;
+    $y = $x;
+    print "x=$x y=$y\n"; 
+    $x = 50;
+    print "x=$x y=$y\n"; # won't change the value of y to update x
+
+---
+#Playing it Safe
+
+So far have shown very basic code. Without any warnings turned
+out. Only syntax or system errors will cause the program to stop
+*without* extra options turned on.  By default Perl will not warn you
+about empty or undeclared variables.  To be a **better** programmer
+you want to use the following best practices to write better Perl code.
+
+1. use strict
+2. use warnings
+3. use 'my' to declare variables. This declares them in a particular scope.
+
+   !perl
+   $x = 7;
+   print "$x and $y\n"
+
+   !perl
+   use warnings;
+   $x = 7;
+   print "$x and $y\n"
+
+   !perl
+   use strict;
+   use warnings;
+   $x = 7;
+   print "$x and $y\n";
+
+   use strict;
+   use warnings;
+   my $x = 7;
+   my $y;
+   print "$x and $y\n";
+
+   use strict;
+   use warnings;
+   my $x = 7;
+   my $y = 'PRP8';
+   print "$x and $y\n";
+
+---
+#At the top
+
+Typical boilerplate for your Perl scripts then should usually look like this:
+
+    !perl
+    #!/usr/bin/perl
+    use strict;
+    use warnings;
+
+
+---
+#Some typical errors
+
+Uninitialize variable
+
+    !perl
+    use warnings;
+    use strict;
+    my ($x,$y);
+    $x = $y+10;
+
+
+---
+#Scope 
+
+---
+#Other numeric operators
+
+
+---
+#Printing
+
+
+---
+#Danger Will Robinson!
+
+Warnings can be useful to print when something is unexpected. One can use the `print STDERR` to print to the error stream.
+
+I also find that using the `warn` command is much more useful.
+
+    !perl
+    if( $error_condition == 1 ) {
+    	warn("There was a problem sir!\n");
+    }
+
+---
+#Kill them all
+
+Sometimes you want to exit your program. There may be an unresolvable error, or you want to just finish right there. Two commands are useful for this. 
+* One is `exit` which will exit the program. 
+* The second is `die` which will print a warning message and exit, or if you fail to include a warning message it will report the line of the error, which can be helpful in debugging if you have lots of code.
+
+
