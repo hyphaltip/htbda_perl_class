@@ -1,10 +1,17 @@
-#Practice Problems for in-class activities
+#Practice Problems for in-class activities 
 
 1. Write a script to print out your name, age, and your zip code.
 
-2. Calculate the length of 
+2. Print out the forward and reverse of the string "DAMMIT I'M MAD"
 
-3. 
+3. Convert the string "1.6.7.9.90.6.14" into an array. Sort the array numerically and print it back out with tabs separating the numbers.
+
+4. Build a hash that stores the names of some species of animals. The
+keys will be the common name and the values are the latin name. For
+example you would store "human" matched to "Homo sapiens".  Print out
+all the common names in your hash in alphabetical order separted by a newline. Print out the total
+number of species you have stored in the hash. How would you instead print out all the latin names?
+
 
 Problem set for Week 2
 =======================
@@ -15,6 +22,7 @@ The following sequence will be used to address the next 4 problems. You will wri
 [http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&log$=seqview&format=text](http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&log$=seqview&format=text). 
 
 (Hint, you can download this to your computer on the command line via a single UNIX command, it requires using a slightly different URL so I am pasting this in here:  
+
     curl 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=163644330&retmode=text&rettype=fasta' > NM_001112733.1.fasta
 
 You do not need to make your program automatically download this link,
@@ -33,16 +41,14 @@ This is an mRNA sequence so it is already spliced, you don't have to worry about
 
 4. Print out the correct CDS length for this gene. Print out the length of the predicted protein (don't forget to remove the stop codon from that calculation). Print out the length of the 3' UTR.
 
-Your final script should provide an informative summary of these steps and report should look something like this
-
+>Your final script should provide an informative summary of these steps and report should look something like this
 
     The sequence is of length X bp and there are X codons.  
     The first start codon begins at basepair X, and the in-frame stop codon is at basepair X.  
     The 5' UTR is X bp long and the 3' UTR is X bp long.  
     The CDS length is X bp and the predicted protein length is X.  
 
-
-The following 5 sequences are aligned. Define each as a variable.
+>The following 5 sequences are aligned. Define each as a variable.
 
     AAC35278   LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE
     AnCSMA     AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK
@@ -50,29 +56,28 @@ The following 5 sequences are aligned. Define each as a variable.
     AAF19527   AILLVTAYSEGELGIRTTLDSIATTPN-SHKTILVICDGIIKVLGMMKD-RGSKRHNMAK
     P30573-1   TINLVTCYSEDEEGIRITLDSIATTPN-SHKLILVICDGIIKVLDMMSDAQGSKRHNMAK
 
-For example in a hash (but copy in all 5 sequences)
-
-    ```perl
+>For example in a hash (but copy in all 5 sequences)
+    
     my %sequences;
 
     $sequence{AAC35278} = "LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE";
-    $sequnece{AnCSMA} = "AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK";
-    
+    $sequence{AnCSMA} = "AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK";    
 
-Alternatively you can also store this in two sets of arrays (but copy in all 5 sequences)
+>Alternatively you can also store this in two sets of arrays (but copy in all 5 sequences)
 
-    ```perl
+
     my @seqnames = ("AAC35278", "AnCSMA");
     my @seqs     = ("LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE","AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK");
-    
 
 5. Process each sequence and print out for each sequence **the sequence name and number of residues in the sequence** excluding the gaps.
 
 6. Process the whole alignment by processing each sequence and count the number of columns in the alignment which have a gap in ANY sequence. So your script should print out  
-    The number of gapped columns in this alignment is N
+
+    `The number of gapped columns in this alignment is N`
 
 7. Calculate the number of residues that are identical between sequence 'AfCHSF' and 'AAF19527'.  A more advanced solution would be to calculate the number of identical bases between all pairs of sequences so the report will read.
-    Identical residues between AfCHSF and AAF19527 is N
+
+    `Identical residues between AfCHSF and AAF19527 is N`
 
 
 
