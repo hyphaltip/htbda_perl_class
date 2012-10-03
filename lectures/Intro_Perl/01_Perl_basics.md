@@ -319,8 +319,9 @@ Sending information back out from the program is important. For all the computat
 * [`printf`](http://perldoc.perl.org/functions/printf.html) will allow for formatted printing using a variety of options, it requires multiple arguments, one is a formatting string, the rest are the specific data to be interpolated into the formatting string.
 * [`sprintf`](http://perldoc.perl.org/functions/sprintf.html) is like printf except it returns a formated string rather than printing it to a stream. 
 >* %d - for integers
->* %f - for floating point, %.2f - to specify number of significant figures, %5.2f to format the width of the string (
-
+>* %f - for floating point, %.2f - to specify number of significant figures, %5.2f to format the width of the string (padding with spaces).
+>* %s - for strings
+>* %g - for scientific notation
 
 ---
 #printf examples
@@ -338,15 +339,15 @@ Sending information back out from the program is important. For all the computat
 
 Produces these results
 
-   !bash
-   This 'MAYWRCILR' string is 9 letter long
-   This is number 17
-   This is a floating point number 4.250000
-   This is a floating point number as an integer 4
-   This is a floating point number with three signif digits 1.091
-   This is scientific notation 2.12133e+07
-   This is scientific notation with 2 signif fig 2.1e+07
-   Formatted length '  21' and '   0.29'
+    !bash
+    This 'MAYWRCILR' string is 9 letter long
+    This is number 17
+    This is a floating point number 4.250000
+    This is a floating point number as an integer 4
+    This is a floating point number with three signif digits 1.091
+    This is scientific notation 2.12133e+07
+    This is scientific notation with 2 signif fig 2.1e+07
+    Formatted length '  21' and '   0.29'
 
 ---
 #Danger Will Robinson!

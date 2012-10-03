@@ -2007,7 +2007,9 @@ you want to use the following best practices to write better Perl code.</p>
 <li><a href="http://perldoc.perl.org/functions/sprintf.html"><code>sprintf</code></a> is like printf except it returns a formated string rather than printing it to a stream. <blockquote>
 <ul>
 <li>%d - for integers</li>
-<li>%f - for floating point, %.2f - to specify number of significant figures, %5.2f to format the width of the string (</li>
+<li>%f - for floating point, %.2f - to specify number of significant figures, %5.2f to format the width of the string (padding with spaces).</li>
+<li>%s - for strings</li>
+<li>%g - for scientific notation</li>
 </ul>
 </blockquote>
 </li>
@@ -2053,15 +2055,16 @@ you want to use the following best practices to write better Perl code.</p>
 </pre></div>
 
 <p>Produces these results</p>
-<p>!bash
-   This 'MAYWRCILR' string is 9 letter long
-   This is number 17
-   This is a floating point number 4.250000
-   This is a floating point number as an integer 4
-   This is a floating point number with three signif digits 1.091
-   This is scientific notation 2.12133e+07
-   This is scientific notation with 2 signif fig 2.1e+07
-   Formatted length '  21' and '   0.29'</p></section>
+<div class="highlight"><pre><span class="lineno">1</span> This <span class="s1">&#39;MAYWRCILR&#39;</span> string is 9 letter long
+<span class="lineno">2</span> This is number 17
+<span class="lineno">3</span> This is a floating point number 4.250000
+<span class="lineno">4</span> This is a floating point number as an integer 4
+<span class="lineno">5</span> This is a floating point number with three signif digits 1.091
+<span class="lineno">6</span> This is scientific notation 2.12133e+07
+<span class="lineno">7</span> This is scientific notation with 2 signif fig 2.1e+07
+<span class="lineno">8</span> Formatted length <span class="s1">&#39;  21&#39;</span> and <span class="s1">&#39;   0.29&#39;</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
