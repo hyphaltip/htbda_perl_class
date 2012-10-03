@@ -1,6 +1,6 @@
 
 LANDSLIDE=landslide
-FLAGS=-t ../themes/luckywhite -r 
+FLAGS=-t ../themes/luckywhite -r -i
 
 all: $(patsubst %.md,%.html,$(wildcard *.md)) Makefile
 

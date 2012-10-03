@@ -306,7 +306,7 @@ Undeclared variable, forgo to declare $y before we used it.
 
 * `+,-,*,/` for add, subtract, multiply, and divide 
 * `=` is the assignment variable to assign a value, not be confused with `==` which is for testing if two values are equivalent 
-* Assignment and an arthimetic for updating a variable, so `$val += 10` adds 10 to the current value
+* Assignment and an arithmetic operation for updating a variable, so `$val += 10` adds 10 to the current value
 * The modulus operator `%` does a division and returns the remainder. So `9 % 2` is 1 because 2 will divide into 9, 4 times, leaving a remainder of 1.
 * Exponent with \*\*, so 2^5 is `2**5`
 
@@ -448,12 +448,35 @@ the one at position `1`. So `substr($string,1,1)` will return the
 >* `$first = shift @array` - remove the first item from the array
 >* `push @array, $enditem` - add an item to the end of the list
 >* `unshift @array, $firstitem` - add an item to the beginning of the list
+* `splice` - a cool operator to get out something from the middle
 
 ---
 #Array operations: Code
 
     !perl
     my @array = ();
+    push @array, 'yellow';
+    unshift @array, 'red';
+    print join(" ", @array),"\n";
+    push @array, 'green', 'purple','blue';
+    print join(" ", @array),"\n";
+    print $array[2], "\n"; # what do you think will be printed here?
+
+    my $str = "AACA-AG-TTTG-TACA";
+    my @bases = split('-',$str); 
+    print "bases are @bases\n";
+    $str = "AACA--AG-TTTG-TACA";
+    my @bases = split('-',$str); # this doesn't quite work if there are adjacent gaps
+    print "bases are @bases\n";
+
+    $str = "AACA--AG-TTTG-TACA";
+    my @bases = split(/\-+/,$str); # this way will work using patterns
+    print "bases are @bases\n";
+
+    @array = (1..10);
+    print "3 elements starting with 6th one are ", join(" ",splice(@array, 5,3)),"\n";
+    splice(@array,2,2,'100');
+    print join(" ", @array), "\n";
 
 ---
 #Sorting
@@ -497,7 +520,9 @@ simplifying the code.
 Hashes are like arrays, but they are indexed by strings instead of numbers. Hashes use '{}' to index instead of '[]' in arrays. Variables
 start with `%`.
 
+They are like dictionaries which means that when you want to lookup something, you look it by the word, not the order.
 
+Arrays are ordered lists -- you can get the 5-th item of the list. However, for a hash, there is no order, so you want to lookup an item by the key.
 
 ---
 #Hash operations
@@ -521,4 +546,5 @@ start with `%`.
 
     print join(",",sort keys %bball_teams), "\n";
     print join(",", values %bball_teams), "\n";
----
+
+

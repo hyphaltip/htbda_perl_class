@@ -1967,7 +1967,7 @@ you want to use the following best practices to write better Perl code.</p>
             <section><ul>
 <li><code>+,-,*,/</code> for add, subtract, multiply, and divide </li>
 <li><code>=</code> is the assignment variable to assign a value, not be confused with <code>==</code> which is for testing if two values are equivalent </li>
-<li>Assignment and an arthimetic for updating a variable, so <code>$val += 10</code> adds 10 to the current value</li>
+<li>Assignment and an arithmetic operation for updating a variable, so <code>$val += 10</code> adds 10 to the current value</li>
 <li>The modulus operator <code>%</code> does a division and returns the remainder. So <code>9 % 2</code> is 1 because 2 will divide into 9, 4 times, leaving a remainder of 1.</li>
 <li>Exponent with **, so 2^5 is <code>2**5</code></li>
 </ul></section>
@@ -2337,6 +2337,7 @@ the one at position <code>1</code>. So <code>substr($string,1,1)</code> will ret
 </ul>
 </blockquote>
 </li>
+<li><code>splice</code> - a cool operator to get out something from the middle</li>
 </ul></section>
             
           </div>
@@ -2367,7 +2368,29 @@ the one at position <code>1</code>. So <code>substr($string,1,1)</code> will ret
             <header><h1>Array operations: Code</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array</span> <span class="o">=</span> <span class="p">();</span>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">@array</span> <span class="o">=</span> <span class="p">();</span>
+<span class="lineno"> 2</span> <span class="nb">push</span> <span class="nv">@array</span><span class="p">,</span> <span class="s">&#39;yellow&#39;</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="nb">unshift</span> <span class="nv">@array</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nv">@array</span><span class="p">),</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="nb">push</span> <span class="nv">@array</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="s">&#39;purple&#39;</span><span class="p">,</span><span class="s">&#39;blue&#39;</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nv">@array</span><span class="p">),</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 7</span> <span class="k">print</span> <span class="nv">$array</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span> <span class="c1"># what do you think will be printed here?</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="k">my</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;AACA-AG-TTTG-TACA&quot;</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="k">my</span> <span class="nv">@bases</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,</span><span class="nv">$str</span><span class="p">);</span> 
+<span class="lineno">11</span> <span class="k">print</span> <span class="s">&quot;bases are @bases\n&quot;</span><span class="p">;</span>
+<span class="lineno">12</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;AACA--AG-TTTG-TACA&quot;</span><span class="p">;</span>
+<span class="lineno">13</span> <span class="k">my</span> <span class="nv">@bases</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,</span><span class="nv">$str</span><span class="p">);</span> <span class="c1"># this doesn&#39;t quite work if there are adjacent gaps</span>
+<span class="lineno">14</span> <span class="k">print</span> <span class="s">&quot;bases are @bases\n&quot;</span><span class="p">;</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;AACA--AG-TTTG-TACA&quot;</span><span class="p">;</span>
+<span class="lineno">17</span> <span class="k">my</span> <span class="nv">@bases</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="sr">/\-+/</span><span class="p">,</span><span class="nv">$str</span><span class="p">);</span> <span class="c1"># this way will work using patterns</span>
+<span class="lineno">18</span> <span class="k">print</span> <span class="s">&quot;bases are @bases\n&quot;</span><span class="p">;</span>
+<span class="lineno">19</span> 
+<span class="lineno">20</span> <span class="nv">@array</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">);</span>
+<span class="lineno">21</span> <span class="k">print</span> <span class="s">&quot;3 elements starting with 6th one are &quot;</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="nb">splice</span><span class="p">(</span><span class="nv">@array</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">22</span> <span class="nb">splice</span><span class="p">(</span><span class="nv">@array</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&#39;100&#39;</span><span class="p">);</span>
+<span class="lineno">23</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="nv">@array</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
 </pre></div>
 </section>
             
@@ -2579,28 +2602,6 @@ start with <code>%</code>.</p>
             
             <aside class="page_number">
               32/32
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source:  -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="page_number">
-              /32
             </aside>
           </footer>
         </div>
