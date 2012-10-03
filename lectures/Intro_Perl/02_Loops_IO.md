@@ -22,10 +22,12 @@ if( *CONDITIONAL* )
 ---
 #The Truth is out there
 
-Operators equals ==, less than <, greater than >, <=, >=   
-! means take opposite of
-
-Numbers, except for 0 are always true
+* Operators equals `==`, less than <, greater than >, less than or equal to <=, greater than or equal to >=   
+* ! means take opposite of
+* For strings equals is with the `eq`, less than is `lt`, and greater than `gt` 
+* Numbers, except for 0 are always true, undefined is always false
+* ? :, is a special operator for combing, you can use it to combine a test and performing an operation depending on if the test is true or false. Here we test if a value is bigger than 10, if so set it to 'yes' otherwise set it to 'no'
+** `my $is_large = ($val > 10 ? 'yes' : 'no');`
 
 ---
 #Loop-de-Loop
@@ -64,4 +66,35 @@ Can also continue a loop with next, skipping back to the top with `last`
        }
     }
   
+
+---
+#Scope 
+
+Scope defines the area in a program that variable is valid for. Inside
+the brackets ({}) any variable declared with them is valid for that
+scope.
+
+    !perl
+    my $toy = "Truck";
+    my $n = 0;
+    print "Toy is $toy before the if\n";
+    if( $n < 1 ) {
+        my $toy = "Transformer";
+        print "Toy is $toy inside the if\n";
+    }
+    print "Toy is $toy outside the if\n";
+
+
+If you do not declare the variable inside the loop, you can end up updating the value. Notice the missing 'my' inside the if block.
+
+    !perl
+    my $toy = "Truck";
+    my $n = 0;
+    print "Toy is $toy before the if\n";
+    if( $n < 1 ) {
+        $toy = "Transformer";
+        print "Toy is $toy inside the if\n";
+    }
+    print "Toy is $toy outside the if\n";
+
 
