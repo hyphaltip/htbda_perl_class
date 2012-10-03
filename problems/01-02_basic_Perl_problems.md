@@ -19,7 +19,7 @@ Problem set for Week 2
 The following sequence will be used to address the next 4 problems. You will write one script which will solve these 4 questions.  
 
  The accession number of the sequence we will use is 
-[http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&log$=seqview&format=text](http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&log$=seqview&format=text). 
+[NM_001112733.1](http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1).
 
 (Hint, you can download this to your computer on the command line via a single UNIX command, it requires using a slightly different URL so I am pasting this in here:  
 
