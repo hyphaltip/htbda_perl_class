@@ -4,7 +4,7 @@
 
 2. Print out the forward and reverse of the string "DAMMIT I'M MAD"
 
-3. Convert the string "1.6.7.9.90.6.14" into an array. Sort the array numerically and print it back out with tabs separating the numbers.
+3. Convert the string "1,6,7,9,90,6,14" into an array. Sort the array numerically and print it back out with tabs separating the numbers.
 
 4. Build a hash that stores the names of some species of animals. The
 keys will be the common name and the values are the latin name. For
