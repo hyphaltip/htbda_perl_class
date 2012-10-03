@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<h1 id="practice-problems-for-in-class-activities">Practice Problems for in-class activities</h1>
+<ol type="1">
+<li><p>Write a script to print out your name, age, and your zip code.</p></li>
+<li><p>Print out the forward and reverse of the string &quot;DAMMIT I'M MAD&quot;</p></li>
+<li><p>Convert the string &quot;1.6.7.9.90.6.14&quot; into an array. Sort the array numerically and print it back out with tabs separating the numbers.</p></li>
+<li><p>Build a hash that stores the names of some species of animals. The keys will be the common name and the values are the latin name. For example you would store &quot;human&quot; matched to &quot;Homo sapiens&quot;. Print out all the common names in your hash in alphabetical order separted by a newline. Print out the total number of species you have stored in the hash. How would you instead print out all the latin names?</p></li>
+</ol>
+<h1 id="problem-set-for-week-2">Problem set for Week 2</h1>
+<p>The following sequence will be used to address the next 4 problems. You will write one script which will solve these 4 questions.</p>
+<p>The accession number of the sequence we will use is [http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&amp;log<span class="math">$=seqview&amp;format=text](http://www.ncbi.nlm.nih.gov/nuccore/NM_001112733.1?report=fasta&amp;log$</span>=seqview&amp;format=text).</p>
+<p>(Hint, you can download this to your computer on the command line via a single UNIX command, it requires using a slightly different URL so I am pasting this in here:</p>
+<pre class="sourceCode perl"><code class="sourceCode perl">curl <span class="kw">&#39;</span><span class="st">http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=163644330&amp;retmode=text&amp;rettype=fasta</span><span class="kw">&#39;</span> &gt; NM_001112733<span class="fl">.1</span>.fasta</code></pre>
+<p>You do not need to make your program automatically download this link, you can download and save it in your folder and cut and paste the sequence into your script. For the purposes of the first few problems you won't need to read any data in from the file.</p>
+<p>This is an mRNA sequence so it is already spliced, you don't have to worry about introns.</p>
+<ol type="1">
+<li><p>Write a script to process the calculate the total length of this sequence and number of codons in the mRNA sequence.</p></li>
+<li><p>Actually the sequence is not just the coding sequence, it has <a href="http://en.wikipedia.org/wiki/Untranslated_region">UTRs</a> (untranslated regions) at the 5' and 3' end of the sequence. To find the start of translation we can search for the first <a href="http://en.wikipedia.org/wiki/Start_codon">start codon</a> in the sequence. Print out the location of the first potential start codon. Use this to determine the length of the 5' UTR&quot;</p></li>
+<li><p>Assume that start codon is the right one, find the end of the CDS by looking for the stop codon. Do this by scanning for the first in-frame stop codon. To insure you are inframe you will want to extract the sequence starting with your st codon and find the first stop codon. You will probably need to us a loop to do this.</p></li>
+<li><p>Print out the correct CDS length for this gene. Print out the length of the predicted protein (don't forget to remove the stop codon from that calculation). Print out the length of the 3' UTR.</p></li>
+</ol>
+<blockquote>
+<p>Your final script should provide an informative summary of these steps and report should look something like this</p>
+</blockquote>
+<pre class="sourceCode perl"><code class="sourceCode perl">The sequence is of <span class="fu">length</span> X bp <span class="kw">and</span> there are X codons.  
+The first start codon begins at basepair X, <span class="kw">and</span> the in<span class="kw">-f</span>rame stop codon is at basepair X.  
+The <span class="dv">5</span><span class="kw">&#39;</span><span class="st"> UTR is X bp long and the 3</span><span class="kw">&#39;</span> UTR is X bp long.  
+The CDS <span class="fu">length</span> is X bp <span class="kw">and</span> the predicted protein <span class="fu">length</span> is X.  </code></pre>
+<blockquote>
+<p>The following 5 sequences are aligned. Define each as a variable.</p>
+</blockquote>
+<pre class="sourceCode perl"><code class="sourceCode perl">AAC35278   LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE
+AnCSMA     AMCLVTCYSEGEEGIRTTLDSIALTPN<span class="kw">-S</span>HKSIVVICDGIIKVLRMMRD<span class="kw">-T</span>GSKRHNMAK
+AfCHSF     ALCLVTCYSEGEEGIRTTLDSIAMTPN<span class="kw">-S</span>HKTIIVICDGIIKVLRMMRD<span class="kw">-T</span>GSKRHNMAK
+AAF19527   AILLVTAYSEGELGIRTTLDSIATTPN<span class="kw">-S</span>HKTILVICDGIIKVLGMMKD<span class="kw">-R</span>GSKRHNMAK
+P30573<span class="dv">-1</span>   TINLVTCYSEDEEGIRITLDSIATTPN<span class="kw">-S</span>HKLILVICDGIIKVLDMMSDAQGSKRHNMAK</code></pre>
+<blockquote>
+<p>For example in a hash (but copy in all 5 sequences)</p>
+</blockquote>
+<pre class="sourceCode perl"><code class="sourceCode perl"><span class="kw">my</span> <span class="dt">%sequences;</span>
+
+<span class="dt">$sequence</span>{AAC35278} = <span class="kw">&quot;</span><span class="st">LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE</span><span class="kw">&quot;</span>;
+<span class="dt">$sequence</span>{AnCSMA} = <span class="kw">&quot;</span><span class="st">AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK</span><span class="kw">&quot;</span>;    </code></pre>
+<blockquote>
+<p>Alternatively you can also store this in two sets of arrays (but copy in all 5 sequences)</p>
+</blockquote>
+<pre class="sourceCode perl"><code class="sourceCode perl"><span class="kw">my</span> <span class="dt">@seqnames</span> = (<span class="kw">&quot;</span><span class="st">AAC35278</span><span class="kw">&quot;</span>, <span class="kw">&quot;</span><span class="st">AnCSMA</span><span class="kw">&quot;</span>);
+<span class="kw">my</span> <span class="dt">@seqs</span>     = (<span class="kw">&quot;</span><span class="st">LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE</span><span class="kw">&quot;</span>,<span class="kw">&quot;</span><span class="st">AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK</span><span class="kw">&quot;</span>);</code></pre>
+<ol start="5" type="1">
+<li><p>Process each sequence and print out for each sequence <strong>the sequence name and number of residues in the sequence</strong> excluding the gaps.</p></li>
+<li><p>Process the whole alignment by processing each sequence and count the number of columns in the alignment which have a gap in ANY sequence. So your script should print out</p>
+<p><code>The number of gapped columns in this alignment is N</code></p></li>
+<li><p>Calculate the number of residues that are identical between sequence 'AfCHSF' and 'AAF19527'. A more advanced solution would be to calculate the number of identical bases between all pairs of sequences so the report will read.</p>
+<p><code>Identical residues between AfCHSF and AAF19527 is N</code></p></li>
+</ol>
+</body>
+</html>
