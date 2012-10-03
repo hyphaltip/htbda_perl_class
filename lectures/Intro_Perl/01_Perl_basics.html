@@ -28,1223 +28,14 @@
     <title>An Introduction to Perl</title>
     <!-- Styles -->
     
-    <style type="text/css" media="print">
-      * {
-    margin: 0;
-    padding: 0;
-}
-
-@page {
-    size: landscape;
-}
-
-body {
-    font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-    padding: 0;
-    margin: 0;
-}
-
-div.slide {
-    min-width: 800px;
-    min-height: 600px;
-    padding: 1em;
-    overflow: hidden;
-    page-break-after: always;
-    border: 1px solid black;
-    border-radius: 20px;
-}
-
-div.slide div.inner {
-    width: 800px;
-    height: 600px;
-    margin: auto;
-    display: table-cell;
-}
-
-h1 {
-    font-size: 2.4em;
-}
-
-h2 {
-    font-size: 1.4em;
-}
-
-h3 {
-    margin: 1em 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-p, li, pre {
-    margin: 1em 0;
-}
-
-li {
-    margin-left: 2em;
-}
-
-a {
-    color: #000000;
-}
-
-pre, code {
-    max-width: 800px;
-    background: #eee;
-    font-family: Monaco, monospace;
-    font-size: 90%;
-}
-
-pre {
-    padding: .2em .5em;
-    overflow: hidden;
-    border-radius: .8em;
-}
-
-code {
-    padding: 0 .2em;
-}
-
-.slide header:only-child h1 {
-  line-height: 180%;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  height: 600px;
-  width: 800px;
-  font-size: 48px;
-  margin-top:100px;
-  margin-bottom:100px;
-}
-
-#toc, #help, .slide aside, .slide footer, .slide .notes,
-.presenter_notes, #current_presenter_notes, #presenter_note {
-  display: none;
-}
-
-    </style>
-    <style type="text/css" media="screen, projection">
-      body {
-  font: 18px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  background: #fff;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-div.presentation {
-  position: absolute;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
-  background: inherit;
-}
-
-div.slides, body.expose div.slides.nocontext {
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  display: block;
-  background-color: #fff;
-}
-
-
-div.slides.nocontext {
-  width: 900px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  left: auto;
-  top: auto;
-}
-
-div.slide {
-  display: none;
-  position: absolute;
-  overflow: hidden;
-  width: 900px;
-  height: 700px;
-  left: 50%;
-  top: 50%;
-  margin-top: -350px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(#eeeeec));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #fff, #eeeeec);
-  -webkit-transition: margin 0.25s ease-in-out;
-  -moz-transition: margin 0.25s ease-in-out;
-  -o-transition: margin 0.25s ease-in-out;
-  border-top-right-radius: 20px;
-  -moz-border-radius-topright: 20px;
-  -webkit-border-top-right-radius: 20px;
-  border-bottom-left-radius: 0px;
-  -moz-border-radius-bottomleft: 0px;
-  -webkit-border-bottom-left-radius: 0px;
-  border-top-left-radius: 20px;
-  -moz-border-radius-topleft: 20px;
-  -webkit-border-top-left-radius: 20px;
-  border-bottom-right-radius: 0px;
-  -moz-border-radius-bottomright: 0px;
-  -webkit-border-bottom-right-radius: 0px;
-
-}
-
-div.slide p {
-  font-size: 20px;
-}
-
-.slide.far-past {
-  display: block;
-  margin-left: -2400px;
-}
-
-.slide.past {
-  display: block;
-  margin-left: -1400px;
-}
-
-.slide.current {
-  display: block;
-  margin-left: -450px;
-}
-
-.slide.future {
-  display: block;
-  margin-left: 500px;
-}
-
-.slide.far-future {
-  display: block;
-  margin-left: 1500px;
-}
-
-body.three-d div.slides {
-  -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
-}
-
-
-/* Content */
-
-header:not(:only-child) {
-  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  font-weight: normal;
-  font-size: 50px;
-  letter-spacing: -.05em;
-  color: white;
-  color: black;
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  position: absolute;
-  left: 30px;
-  top: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-header h1, header h2, header h3, header h4, header h5, header h6 {
-  display: inline;
-  font-size: 100%;
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
-}
-
-header h2:first-child {
-  margin-top: 0;
-}
-
-section, .slide header:only-child h1 {
-  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: #3f3f3f;
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 100px;
-  display: block;
-  overflow: hidden;
-}
-
-section img.align-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section img.align-right {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-section img.align-left {
-  display: block;
-  margin-right: auto;
-  margin-left: 0;
-}
-
-a {
-  color: inherit;
-  display: inline-block;
-  text-decoration: none;
-  line-height: 110%;
-  border-bottom: 2px solid #3f3f3f;
-}
-
-pre {
-  font-size: 16px;
-  font-family: Monaco, Courier, monospace;
-  text-shadow: none;
-  background-color: white;
-}
-
-li {
-  padding: 10px 0;
-  font-size: 20px;
-}
-
-.slide header:only-child h1 {
-  line-height: 180%;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  height: 700px;
-  width: 900px;
-  font-size: 50px;
-  margin-top:100px;
-  margin-bottom:100px;
-}
-
-.sidebar {
-  background: -webkit-gradient(linear, top right, bottom right, from(#dde), to(#fff));
-  -webkit-transition: margin 0.25s ease-in-out;
-  background-color: #eee;
-  background: -moz-linear-gradient(right, #dde, #fff);
-  border-right: 5px solid #ccd;
-  z-index: 9999999;
-  height: 100%;
-  overflow: hidden;
-  top: 0;
-  position: absolute;
-  display: block;
-  margin: 0;
-  margin-left: -400px;
-  padding: 10px 16px;
-  overflow: auto;
-  -webkit-transition: margin 0.2s ease-in-out;
-  -moz-transition: margin 0.2s ease-in-out;
-  -o-transition: margin 0.2s ease-in-out;
-}
-
-.sidebar h2 {
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  margin: 0 0 16px;
-  padding: 0;
-}
-
-.sidebar table {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-collapse: collapse;
-}
-
-.sidebar table caption {
-  display: none;
-}
-
-.sidebar tr {
-  margin: 2px 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.sidebar th {
-  text-align: left;
-  font-weight: normal;
-  max-width: 300px;
-  overflow: hidden;
-}
-
-.sidebar tr.sub th {
-  text-indent: 20px;
-}
-
-.sidebar td {
-  text-align: right;
-  min-width: 20px;
-}
-
-.sidebar a {
-  display: block;
-  text-decoration: none;
-  border-bottom: none;
-  padding: 4px 0;
-}
-
-.sidebar tr.active {
-  background: #ff0;
-}
-
-aside {
-  display: none;
-}
-  aside.source {
-    position: absolute;
-    bottom: 6px;
-    left: 10px;
-    text-indent: 10px;
-  }
-  aside.page_number {
-    position: absolute;
-    bottom: 6px;
-    right: 10px;
-    text-indent: 10px;
-  }
-
-.notes {
-  display: none;
-  padding: 10px;
-  background: #ccc;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-  div.slide p.notes {
-    font-size: 90%;
-}
-
-img { display: block; margin: auto; }
-
-/* Expose */
-
-body.expose div.slides {
-  float: left;
-  position: relative;
-  overflow: auto;
-  margin-bottom: 10px;
-}
-
-body.expose div.slide {
-  display: block;
-  float: left;
-  position: relative;
-  left: auto !important;
-  top: auto !important;
-  margin: 10px !important;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;  
-  -moz-transform: scale(.33, .33);
-  -moz-transform-origin: 0 0;
-  -webkit-transform: scale(.33, .33);
-  -webkit-transform-origin: 0 0;
-  -o-transform: scale(.33, .33);
-  -o-transform-origin: 0 0;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  cursor: pointer;
-}
-
-body.expose div.slide:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(#bdd), to(#fff));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #bdd, #fff);
-}
-
-body.expose .slide-wrapper {
-  float: left;
-  position: relative;
-  margin: .5%;
-  width: 300px;
-  height: 233px;
-}
-
-body.expose .slide footer {
-}
-
-body.expose .slide .inner {
-}
-
-body.expose .slide.far-past,
-body.expose .slide.past,
-body.expose .slide.future,
-body.expose .slide.far-future {
-  margin-left: 0;
-}
-
-body.expose .slide.current {
-  background: -webkit-gradient(linear, left bottom, left top, from(#ddb), to(#fff));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #ddb, #fff);
-  border: 16px solid #fff;
-  -moz-transform: scale(.315, .315);
-  -moz-transform-origin: 0 0;
-  -webkit-transform: scale(.315, .315);
-  -webkit-transform-origin: 0 0;
-  -o-transform: scale(.315, .315);
-  -o-transform-origin: 0 0;
-}
-
-/* Pygments default theme */
-.hll { background-color: #ffffcc }
-.c { color: #408080; font-style: italic } /* Comment */
-.err { border: 1px solid #FF0000 } /* Error */
-.k { color: #008000; font-weight: bold } /* Keyword */
-.o { color: #666666 } /* Operator */
-.cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.cp { color: #BC7A00 } /* Comment.Preproc */
-.c1 { color: #408080; font-style: italic } /* Comment.Single */
-.cs { color: #408080; font-style: italic } /* Comment.Special */
-.gd { color: #A00000 } /* Generic.Deleted */
-.ge { font-style: italic } /* Generic.Emph */
-.gr { color: #FF0000 } /* Generic.Error */
-.gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.gi { color: #00A000 } /* Generic.Inserted */
-.go { color: #808080 } /* Generic.Output */
-.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.gs { font-weight: bold } /* Generic.Strong */
-.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.gt { color: #0040D0 } /* Generic.Traceback */
-.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.kp { color: #008000 } /* Keyword.Pseudo */
-.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.kt { color: #B00040 } /* Keyword.Type */
-.m { color: #666666 } /* Literal.Number */
-.s { color: #BA2121 } /* Literal.String */
-.na { color: #7D9029 } /* Name.Attribute */
-.nb { color: #008000 } /* Name.Builtin */
-.nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.no { color: #880000 } /* Name.Constant */
-.nd { color: #AA22FF } /* Name.Decorator */
-.ni { color: #999999; font-weight: bold } /* Name.Entity */
-.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.nf { color: #0000FF } /* Name.Function */
-.nl { color: #A0A000 } /* Name.Label */
-.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.nt { color: #008000; font-weight: bold } /* Name.Tag */
-.nv { color: #19177C } /* Name.Variable */
-.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.w { color: #bbbbbb } /* Text.Whitespace */
-.mf { color: #666666 } /* Literal.Number.Float */
-.mh { color: #666666 } /* Literal.Number.Hex */
-.mi { color: #666666 } /* Literal.Number.Integer */
-.mo { color: #666666 } /* Literal.Number.Oct */
-.sb { color: #BA2121 } /* Literal.String.Backtick */
-.sc { color: #BA2121 } /* Literal.String.Char */
-.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.s2 { color: #BA2121 } /* Literal.String.Double */
-.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.sh { color: #BA2121 } /* Literal.String.Heredoc */
-.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.sx { color: #008000 } /* Literal.String.Other */
-.sr { color: #BB6688 } /* Literal.String.Regex */
-.s1 { color: #BA2121 } /* Literal.String.Single */
-.ss { color: #19177C } /* Literal.String.Symbol */
-.bp { color: #008000 } /* Name.Builtin.Pseudo */
-.vc { color: #19177C } /* Name.Variable.Class */
-.vg { color: #19177C } /* Name.Variable.Global */
-.vi { color: #19177C } /* Name.Variable.Instance */
-.il { color: #666666 } /* Literal.Number.Integer.Long */
-
-/* Presenter Mode */
-
-body.presenter_view div.slide {
-  display: inline;
-  position: absolute;
-  overflow: hidden;
-  -moz-transform: scale(.5, .5);
-  -moz-transform-origin: 0 0;
-  -webkit-transform: scale(.5, .5);
-  -webkit-transform-origin: 0 0;
-  -o-transform: scale(.5, .5);
-  -o-transform-origin: 0 0;
-  margin-top: -300px;
-}
-
-body.presenter_view .slide.far-past {
-  display: block;
-  margin-left: -1500px;
-}
-
-body.presenter_view .slide.past {
-  display: block;
-  margin-left: -975px;
-}
-
-body.presenter_view .slide.current {
-  display: block;
-  margin-left: -475px;
-  border: 8px solid maroon;
-  z-index: 2;
-}
-
-body.presenter_view .slide.future {
-  display: block;
-  margin-left: 25px;
-  z-index: 1;
-}
-
-body.presenter_view .slide.far-future {
-  display: block;
-  margin-left: 525px;
-}
-
-body.presenter_view div#current_presenter_notes {
-  visibility: visible;
-  display: block;
-  position: absolute;
-  overflow: auto;
-  vertical-align: middle;
-  left: 50%;
-  top: 50%;
-  margin-left: -475px;
-  margin-top: 100px;
-  z-index: 2;
-  width: 950px;
-  border-style: solid;
-  height: 30%;
-  background-color: silver;
-}
-
-body.presenter_view div#current_presenter_notes section {
-  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: black;
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-  display: block;
-  overflow: visible;
-  position: relative;
-  background-color: #fffeff;
-  height: 120px;
-  margin-right: 30px;
-  margin-top: 60px;
-  margin-left: 30px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-body.presenter_view div#current_presenter_notes section p {
-  margin: 0;
-}
-
-body.presenter_view div#current_presenter_notes h1 {
-  font-size: 50%;
-  display: block;
-}
-
-div#current_presenter_notes {
-  display: none;
-}
-
-div.slide div.presenter_notes {
-  display: none;
-}
-
-#blank {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  z-index: 64;
-  display: none;
-}
-
-    </style>
+    <link rel="stylesheet" media="print" href="/Library/Python/2.7/site-packages/landslide-1.0.1-py2.7.egg/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="../themes/luckywhite/css/screen.css">
     
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script>
-      function main() {
-    // Since we don't have the fallback of attachEvent and
-    // other IE only stuff we won't try to run JS for IE.
-    // It will run though when using Google Chrome Frame
-    if (document.all) { return; }
-
-    var currentSlideNo;
-    var notesOn = false;
-    var expanded = false;
-    var hiddenContext = false;
-    var blanked = false;
-    var slides = document.getElementsByClassName('slide');
-    var touchStartX = 0;
-    var spaces = /\s+/, a1 = [''];
-    var tocOpened = false;
-    var helpOpened = false;
-    var overviewActive = false;
-    var modifierKeyDown = false;
-    var scale = 1;
-    var showingPresenterView = false;
-    var presenterViewWin = null;
-    var isPresenterView = false;
-
-    var str2array = function(s) {
-        if (typeof s == 'string' || s instanceof String) {
-            if (s.indexOf(' ') < 0) {
-                a1[0] = s;
-                return a1;
-            } else {
-                return s.split(spaces);
-            }
-        }
-        return s;
-    };
-
-    var trim = function(str) {
-        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    };
-
-    var addClass = function(node, classStr) {
-        classStr = str2array(classStr);
-        var cls = ' ' + node.className + ' ';
-        for (var i = 0, len = classStr.length, c; i < len; ++i) {
-            c = classStr[i];
-            if (c && cls.indexOf(' ' + c + ' ') < 0) {
-                cls += c + ' ';
-            }
-        }
-        node.className = trim(cls);
-    };
-
-    var removeClass = function(node, classStr) {
-        var cls;
-        if (!node) {
-            throw 'no node provided';
-        }
-        if (classStr !== undefined) {
-            classStr = str2array(classStr);
-            cls = ' ' + node.className + ' ';
-            for (var i = 0, len = classStr.length; i < len; ++i) {
-                cls = cls.replace(' ' + classStr[i] + ' ', ' ');
-            }
-            cls = trim(cls);
-        } else {
-            cls = '';
-        }
-        if (node.className != cls) {
-            node.className = cls;
-        }
-    };
-
-    var getSlideEl = function(slideNo) {
-        if (slideNo > 0) {
-            return slides[slideNo - 1];
-        } else {
-            return null;
-        }
-    };
-
-    var getSlideTitle = function(slideNo) {
-        var el = getSlideEl(slideNo);
-        if (el) {
-            var headers = el.getElementsByTagName('header');
-            if (headers.length > 0) {
-                return el.getElementsByTagName('header')[0].innerText;
-            }
-        }
-        return null;
-    };
-
-    var getSlidePresenterNote = function(slideNo) {
-        var el = getSlideEl(slideNo);
-        if (el) {
-            var n = el.getElementsByClassName('presenter_notes');
-            if (n.length > 0) {
-                return n[0];
-            }
-        }
-        return null;
-    };
-
-    var changeSlideElClass = function(slideNo, className) {
-        var el = getSlideEl(slideNo);
-        if (el) {
-            removeClass(el, 'far-past past current future far-future');
-            addClass(el, className);
-        }
-    };
-
-    var updateSlideClasses = function(updateOther) {
-        window.location.hash = (isPresenterView ? "presenter" : "slide") + currentSlideNo;
-
-        for (var i=1; i<currentSlideNo-1; i++) {
-            changeSlideElClass(i, 'far-past');
-        }
-
-        changeSlideElClass(currentSlideNo - 1, 'past');
-        changeSlideElClass(currentSlideNo, 'current');
-        changeSlideElClass(currentSlideNo + 1, 'future');
-
-        for (i=currentSlideNo+2; i<slides.length+1; i++) {
-            changeSlideElClass(i, 'far-future');
-        }
-
-        highlightCurrentTocLink();
-
-        processContext();
-
-        document.getElementsByTagName('title')[0].innerText = getSlideTitle(currentSlideNo);
-
-        updatePresenterNotes();
-
-        if (updateOther) { updateOtherPage(); }
-    };
-
-    var updatePresenterNotes = function() {
-        if (!isPresenterView) { return; }
-
-        var existingNote = document.getElementById('current_presenter_notes');
-        var currentNote = getSlidePresenterNote(currentSlideNo).cloneNode(true);
-        currentNote.setAttribute('id', 'presenter_note');
-
-        existingNote.replaceChild(currentNote, document.getElementById('presenter_note'));
-    };
-
-    var highlightCurrentTocLink = function() {
-        var toc = document.getElementById('toc');
-
-        if (toc) {
-            var tocRows = toc.getElementsByTagName('tr');
-            for (var i=0; i<tocRows.length; i++) {
-                removeClass(tocRows.item(i), 'active');
-            }
-
-            var currentTocRow = document.getElementById('toc-row-' + currentSlideNo);
-            if (currentTocRow) {
-                addClass(currentTocRow, 'active');
-            }
-        }
-    };
-
-    var updateOtherPage = function() {
-        if (!showingPresenterView) { return; }
-
-        var w = isPresenterView ? window.opener : presenterViewWin;
-        w.postMessage('slide#' + currentSlideNo, '*');
-    };
-
-    var nextSlide = function() {
-        if (currentSlideNo < slides.length) {
-            currentSlideNo++;
-        }
-        updateSlideClasses(true);
-    };
-
-    var prevSlide = function() {
-        if (currentSlideNo > 1) {
-            currentSlideNo--;
-        }
-        updateSlideClasses(true);
-    };
-
-    var showNotes = function() {
-        var notes = getSlideEl(currentSlideNo).getElementsByClassName('notes');
-        for (var i = 0, len = notes.length; i < len; i++) {
-            notes.item(i).style.display = (notesOn) ? 'none':'block';
-        }
-        notesOn = !notesOn;
-    };
-
-    var showSlideNumbers = function() {
-        var asides = document.getElementsByClassName('page_number');
-        var hidden = asides[0].style.display != 'block';
-        for (var i = 0; i < asides.length; i++) {
-            asides.item(i).style.display = hidden ? 'block' : 'none';
-        }
-    };
-
-    var showSlideSources = function() {
-        var asides = document.getElementsByClassName('source');
-        var hidden = asides[0].style.display != 'block';
-        for (var i = 0; i < asides.length; i++) {
-            asides.item(i).style.display = hidden ? 'block' : 'none';
-        }
-    };
-
-    var showToc = function() {
-        if (helpOpened) {
-                showHelp();
-        }
-        var toc = document.getElementById('toc');
-        if (toc) {
-            toc.style.marginLeft = tocOpened ? '-' + (toc.clientWidth + 20) + 'px' : '0px';
-            tocOpened = !tocOpened;
-        }
-        updateOverview();
-    };
-
-    var showHelp = function() {
-        if (tocOpened) {
-                showToc();
-        }
-
-        var help = document.getElementById('help');
-
-        if (help) {
-            help.style.marginLeft = helpOpened ? '-' + (help.clientWidth + 20) + 'px' : '0px';
-            helpOpened = !helpOpened;
-        }
-    };
-
-    var showPresenterView = function() {
-        if (isPresenterView) { return; }
-
-        if (showingPresenterView) {
-            presenterViewWin.close();
-            presenterViewWin = null;
-            showingPresenterView = false;
-        } else {
-            presenterViewWin = open(window.location.pathname + "#presenter" + currentSlideNo, 'presenter_notes',
-                                                                    'directories=no,location=no,toolbar=no,menubar=no,copyhistory=no');
-            showingPresenterView = true;
-        }
-    };
-
-    var switch3D = function() {
-        if (document.body.className.indexOf('three-d') == -1) {
-            document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
-            document.body.className += ' three-d';
-        } else {
-            window.setTimeout('document.getElementsByClassName(\'presentation\')[0].style.webkitPerspective = \'0\';', 2000);
-            document.body.className = document.body.className.replace(/three-d/, '');
-        }
-    };
-
-    var toggleOverview = function() {
-        if (!overviewActive) {
-            addClass(document.body, 'expose');
-            overviewActive = true;
-            setScale(1);
-        } else {
-            removeClass(document.body, 'expose');
-            overviewActive = false;
-            if (expanded) {
-                setScale(scale);    // restore scale
-            }
-        }
-        processContext();
-        updateOverview();
-    };
-
-    var updateOverview = function() {
-        try {
-            var presentation = document.getElementsByClassName('presentation')[0];
-        } catch (e) {
-            return;
-        }
-
-        if (isPresenterView) {
-            var action = overviewActive ? removeClass : addClass;
-            action(document.body, 'presenter_view');
-        }
-
-        var toc = document.getElementById('toc');
-
-        if (!toc) {
-            return;
-        }
-
-        if (!tocOpened || !overviewActive) {
-            presentation.style.marginLeft = '0px';
-            presentation.style.width = '100%';
-        } else {
-            presentation.style.marginLeft = toc.clientWidth + 'px';
-            presentation.style.width = (presentation.clientWidth - toc.clientWidth) + 'px';
-        }
-    };
-
-    var computeScale = function() {
-        var cSlide = document.getElementsByClassName('current')[0];
-        var sx = cSlide.clientWidth / window.innerWidth;
-        var sy = cSlide.clientHeight / window.innerHeight;
-        return 1 / Math.max(sx, sy);
-    };
-
-    var setScale = function(scale) {
-        var presentation = document.getElementsByClassName('slides')[0];
-        var transform = 'scale(' + scale + ')';
-        presentation.style.MozTransform = transform;
-        presentation.style.WebkitTransform = transform;
-        presentation.style.OTransform = transform;
-        presentation.style.msTransform = transform;
-        presentation.style.transform = transform;
-    };
-
-    var expandSlides = function() {
-        if (overviewActive) {
-            return;
-        }
-        if (expanded) {
-            setScale(1);
-            expanded = false;
-        } else {
-            scale = computeScale();
-            setScale(scale);
-            expanded = true;
-        }
-    };
-
-    var showContext = function() {
-        try {
-            var presentation = document.getElementsByClassName('slides')[0];
-            removeClass(presentation, 'nocontext');
-        } catch (e) {}
-    };
-
-    var hideContext = function() {
-        try {
-            var presentation = document.getElementsByClassName('slides')[0];
-            addClass(presentation, 'nocontext');
-        } catch (e) {}
-    };
-
-    var processContext = function() {
-        if (hiddenContext) {
-            hideContext();
-        } else {
-            showContext();
-        }
-    };
-
-    var toggleContext = function() {
-        hiddenContext = !hiddenContext;
-        processContext();
-    };
-
-    var toggleBlank = function() {
-        blank_elem = document.getElementById('blank');
-
-        blank_elem.style.display = blanked ? 'none' : 'block';
-
-        blanked = !blanked;
-    };
-
-    var isModifierKey = function(keyCode) {
-        switch (keyCode) {
-            case 16: // shift
-            case 17: // ctrl
-            case 18: // alt
-            case 91: // command
-                return true;
-                break;
-            default:
-                return false;
-                break;
-        }
-    };
-
-    var checkModifierKeyUp = function(event) {
-        if (isModifierKey(event.keyCode)) {
-            modifierKeyDown = false;
-        }
-    };
-
-    var checkModifierKeyDown = function(event) {
-        if (isModifierKey(event.keyCode)) {
-            modifierKeyDown = true;
-        }
-    };
-
-    var handleBodyKeyDown = function(event) {
-        switch (event.keyCode) {
-            case 13: // Enter
-                if (overviewActive) {
-                    toggleOverview();
-                }
-                break;
-            case 27: // ESC
-                toggleOverview();
-                break;
-            case 37: // left arrow
-            case 33: // page up
-                prevSlide();
-                break;
-            case 39: // right arrow
-            case 32: // space
-            case 34: // page down
-                nextSlide();
-                break;
-            case 50: // 2
-                if (!modifierKeyDown) {
-                        showNotes();
-                }
-                break;
-            case 51: // 3
-                if (!modifierKeyDown && !overviewActive) {
-                    switch3D();
-                }
-                break;
-            case 190: // .
-            case 48: // 0
-            case 66: // b
-                if (!modifierKeyDown && !overviewActive) {
-                    toggleBlank();
-                }
-                break;
-            case 67: // c
-                if (!modifierKeyDown && !overviewActive) {
-                    toggleContext();
-                }
-                break;
-            case 69: // e
-                if (!modifierKeyDown && !overviewActive) {
-                    expandSlides();
-                }
-                break;
-            case 72: // h
-                showHelp();
-                break;
-            case 78: // n
-                if (!modifierKeyDown && !overviewActive) {
-                    showSlideNumbers();
-                }
-                break;
-            case 80: // p
-                if (!modifierKeyDown && !overviewActive) {
-                    showPresenterView();
-                }
-                break;
-            case 83: // s
-                if (!modifierKeyDown && !overviewActive) {
-                    showSlideSources();
-                }
-                break;
-            case 84: // t
-                showToc();
-                break;
-        }
-    };
-
-    var handleWheel = function(event) {
-        if (tocOpened || helpOpened || overviewActive) {
-            return;
-        }
-
-        var delta = 0;
-
-        if (!event) {
-            event = window.event;
-        }
-
-        if (event.wheelDelta) {
-            delta = event.wheelDelta/120;
-            if (window.opera) delta = -delta;
-        } else if (event.detail) {
-            delta = -event.detail/3;
-        }
-
-        if (delta && delta <0) {
-            nextSlide();
-        } else if (delta) {
-            prevSlide();
-        }
-    };
-
-    var addSlideClickListeners = function() {
-        for (var i=0; i < slides.length; i++) {
-            var slide = slides.item(i);
-            slide.num = i + 1;
-            slide.addEventListener('click', function(e) {
-                if (overviewActive) {
-                    currentSlideNo = this.num;
-                    toggleOverview();
-                    updateSlideClasses(true);
-                    e.preventDefault();
-                }
-                return false;
-            }, true);
-        }
-    };
-
-    var addRemoteWindowControls = function() {
-        window.addEventListener("message", function(e) {
-            if (e.data.indexOf("slide#") != -1) {
-                    currentSlideNo = Number(e.data.replace('slide#', ''));
-                    updateSlideClasses(false);
-            }
-        }, false);
-    };
-
-    var addTouchListeners = function() {
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.touches[0].pageX;
-        }, false);
-        document.addEventListener('touchend', function(e) {
-            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
-            var SWIPE_SIZE = 150;
-            if (pixelsMoved > SWIPE_SIZE) {
-                nextSlide();
-            }
-            else if (pixelsMoved < -SWIPE_SIZE) {
-             prevSlide();
-            }
-        }, false);
-    };
-
-    var addTocLinksListeners = function() {
-        var toc = document.getElementById('toc');
-        if (toc) {
-            var tocLinks = toc.getElementsByTagName('a');
-            for (var i=0; i < tocLinks.length; i++) {
-                tocLinks.item(i).addEventListener('click', function(e) {
-                    currentSlideNo = Number(this.attributes['href'].value.replace('#slide', ''));
-                    updateSlideClasses(true);
-                    e.preventDefault();
-                }, true);
-            }
-        }
-    };
-
-    // initialize
-
-    (function() {
-        if (window.location.hash == "") {
-            currentSlideNo = 1;
-        } else if (window.location.hash.indexOf("#presenter") != -1) {
-            currentSlideNo = Number(window.location.hash.replace('#presenter', ''));
-            isPresenterView = true;
-            showingPresenterView = true;
-            presenterViewWin = window;
-            addClass(document.body, 'presenter_view');
-        } else {
-            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
-        }
-
-        document.addEventListener('keyup', checkModifierKeyUp, false);
-        document.addEventListener('keydown', handleBodyKeyDown, false);
-        document.addEventListener('keydown', checkModifierKeyDown, false);
-        document.addEventListener('DOMMouseScroll', handleWheel, false);
-
-        window.onmousewheel = document.onmousewheel = handleWheel;
-        window.onresize = expandSlides;
-
-        for (var i = 0, el; el = slides[i]; i++) {
-            addClass(el, 'slide far-future');
-        }
-        updateSlideClasses(false);
-
-        // add support for finger events (filter it by property detection?)
-        addTouchListeners();
-
-        addTocLinksListeners();
-
-        addSlideClickListeners();
-
-        addRemoteWindowControls();
-    })();
-}
-
-    </script>
+    <script type="text/javascript" src="/Library/Python/2.7/site-packages/landslide-1.0.1-py2.7.egg/landslide/themes/default/js/slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -1283,7 +74,7 @@ UC Riverside<br />
             </aside>
             
             <aside class="page_number">
-              1/17
+              1/32
             </aside>
           </footer>
         </div>
@@ -1328,7 +119,7 @@ $ ./hello.pl
             </aside>
             
             <aside class="page_number">
-              2/17
+              2/32
             </aside>
           </footer>
         </div>
@@ -1373,7 +164,7 @@ Variables are used to store and access data. Scalar variables start with a â€˜$â
             </aside>
             
             <aside class="page_number">
-              3/17
+              3/32
             </aside>
           </footer>
         </div>
@@ -1390,7 +181,7 @@ Variables are used to store and access data. Scalar variables start with a â€˜$â
             <section><p>Strings are collections of characters. They can be enclosed in single or double quotes. In Perl, many things can be converted to strings too.</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">print</span> <span class="s">&quot;You&#39;re turning into penguin.\n&quot;</span><span class="p">;</span>
 <span class="lineno">2</span> <span class="k">print</span> <span class="s">&#39;You&#39;</span><span class="n">re</span> <span class="n">turning</span> <span class="n">into</span> <span class="n">penguin</span><span class="o">.\</span><span class="n">n</span><span class="s">&#39;; # this will have an error</span>
-<span class="lineno">3</span> <span class="s">print &#39;</span><span class="n">You</span><span class="o">\</span><span class="s">&#39;re turning into penguin.\n&#39;</span><span class="p">;</span> <span class="c1"># this will not have an error, but won&#39;t turn off</span>
+<span class="lineno">3</span> <span class="s">print &#39;</span><span class="n">You</span><span class="o">\</span><span class="s">&#39;re turning into penguin.\n&#39;</span><span class="p">;</span> <span class="c1"># this will not have an error, but won&#39;t have a newline at the end</span>
 </pre></div>
 
 <ul>
@@ -1414,7 +205,7 @@ Variables are used to store and access data. Scalar variables start with a â€˜$â
             </aside>
             
             <aside class="page_number">
-              4/17
+              4/32
             </aside>
           </footer>
         </div>
@@ -1422,70 +213,68 @@ Variables are used to store and access data. Scalar variables start with a â€˜$â
       
       <!-- slide source: 01_Perl_basics.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Numerics</h1></header>
-            
-            
-            <section><p>Numbers can be integers, floating point, scientific notation. They can be initialized and computed. 
-Strings can also be converted to numbers.</p>
-<div class="highlight"><pre><span class="lineno"> 1</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="lineno"> 2</span> <span class="nv">$y</span> <span class="o">=</span> <span class="mf">2.2</span><span class="p">;</span>
-<span class="lineno"> 3</span> <span class="nv">$z</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
-<span class="lineno"> 4</span> <span class="k">print</span> <span class="s">&quot;$x is x, z is $z\n&quot;</span><span class="p">;</span>
-<span class="lineno"> 5</span> <span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-<span class="lineno"> 6</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
-<span class="lineno"> 7</span> <span class="nv">$string</span> <span class="o">=</span> <span class="s">&quot;12&quot;</span><span class="p">;</span>
-<span class="lineno"> 8</span> <span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$string</span> <span class="o">+</span> <span class="nv">$x</span><span class="p">;</span>
-<span class="lineno"> 9</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
-<span class="lineno">10</span> <span class="nv">$sum</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1"># can add to an existing in one line</span>
-<span class="lineno">11</span> <span class="nv">$sum</span> <span class="o">/=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1"># or divide by</span>
-<span class="lineno">12</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/17
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: 01_Perl_basics.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h1>String operators</h1></header>
             
             
-            <section><p>Strings can be manipulated and compared in several ways</p>
-<div class="highlight"><pre><span class="lineno"> 1</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;AACTTTGGA&quot;</span><span class="p">;</span>
-<span class="lineno"> 2</span> <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>   <span class="c1"># --&gt; TTTGGA</span>
-<span class="lineno"> 3</span> <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span> <span class="c1"># --&gt; GGA</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> <span class="nv">$rev</span> <span class="o">=</span> <span class="nb">reverse</span> <span class="nv">$str</span><span class="p">;</span> <span class="c1"># reverse the order</span>
-<span class="lineno"> 6</span> <span class="k">print</span> <span class="nv">$str</span><span class="p">,</span><span class="s">&quot;\n&quot;</span><span class="p">,</span><span class="nv">$rev</span><span class="p">,</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="lineno"> 7</span> 
-<span class="lineno"> 8</span> <span class="nv">$len</span> <span class="o">=</span> <span class="nb">length</span> <span class="nv">$str</span><span class="p">;</span> <span class="c1"># get the sequence length</span>
-<span class="lineno"> 9</span> <span class="k">print</span> <span class="s">&quot;DNA is $len bp long.\n&quot;</span><span class="p">;</span>
-<span class="lineno">10</span> 
-<span class="lineno">11</span> <span class="nv">$index</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;TTG&quot;</span><span class="p">);</span> <span class="c1"># find substring inside a string</span>
-<span class="lineno">12</span> <span class="k">print</span> <span class="s">&quot;first TTG is at $index &quot;</span><span class="p">,</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="nv">$index</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
+            <section><p>Strings can be manipulated and compared in several ways.</p>
+<ul>
+<li>The <code>.</code> operator concatenates two strings</li>
+<li><code>substr</code> to get a substring , the arguments are the starting string, the offset, the length of the subsequence (if omitted will go to the end), and (optional) the sequence to replace this substring with.</li>
+<li><code>reverse</code> to reverse the order of a string</li>
+<li><code>length</code> returns the length of a string</li>
+<li><code>index</code> searching from left to right, find the first position of a substring in a longer string. <code>rindex</code> does the same searching right to left. An optional 3rd argument tells where to start searching from (instead of default of 0) letting you skip ahead. </li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>String operator: Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="nv">$left</span> <span class="o">=</span> <span class="s">&quot;ABCD&quot;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nv">$right</span> <span class="o">=</span> <span class="s">&quot;XYZ&quot;</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="nv">$complete</span> <span class="o">=</span> <span class="nv">$left</span><span class="o">.</span><span class="nv">$right</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">print</span> <span class="s">&quot;$left $right =&gt; $complete\n&quot;</span><span class="p">;</span> <span class="c1"># --&gt; &quot;ABCD XYZ =&gt; ABCDXYZ&quot;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;AACTTTGGA&quot;</span><span class="p">;</span>
+<span class="lineno"> 7</span> <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>   <span class="c1"># --&gt; TTTGGA</span>
+<span class="lineno"> 8</span> <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span> <span class="c1"># --&gt; GGA</span>
+<span class="lineno"> 9</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s">&#39;NNN&#39;</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span> <span class="c1"># --&gt; replace GGA with &#39;NNN&#39;</span>
+<span class="lineno">10</span> <span class="k">print</span> <span class="s">&quot;updated string is $str\n&quot;</span><span class="p">;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="nv">$rev</span> <span class="o">=</span> <span class="nb">reverse</span> <span class="nv">$str</span><span class="p">;</span> <span class="c1"># reverse the order</span>
+<span class="lineno">13</span> <span class="k">print</span> <span class="nv">$str</span><span class="p">,</span><span class="s">&quot;\n&quot;</span><span class="p">,</span><span class="nv">$rev</span><span class="p">,</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">14</span> 
+<span class="lineno">15</span> <span class="nv">$len</span> <span class="o">=</span> <span class="nb">length</span> <span class="nv">$str</span><span class="p">;</span> <span class="c1"># get the sequence length</span>
+<span class="lineno">16</span> <span class="k">print</span> <span class="s">&quot;DNA is $len bp long.\n&quot;</span><span class="p">;</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="nv">$index</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;TTG&quot;</span><span class="p">);</span> <span class="c1"># find substring inside a string</span>
+<span class="lineno">19</span> <span class="k">print</span> <span class="s">&quot;first TTG is at $index &quot;</span><span class="p">,</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="nv">$index</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s">&quot;\n&quot;</span><span class="p">;</span>
 </pre></div>
 </section>
             
@@ -1503,7 +292,85 @@ Strings can also be converted to numbers.</p>
             </aside>
             
             <aside class="page_number">
-              6/17
+              6/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Other string operations</h1></header>
+            
+            
+            <section><ul>
+<li><code>lc</code> and <code>uc</code> to upper case and lower case a string</li>
+<li><code>chop</code> will remove the last character from a string</li>
+<li><code>chomp</code> will remove the last character from a string IF it is a whitespace</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>WHOA! Too many new things!</h1></header>
+            
+            
+            <section><p>How can I get help about these functions? Perldoc is your guide. You can find perldoc in your terminal with the following commands</p>
+<div class="highlight"><pre><span class="lineno">1</span> perldoc -f substr
+<span class="lineno">2</span> perldoc -f length
+<span class="lineno">3</span> perldoc -f reverse
+<span class="lineno">4</span> perldoc -f index
+</pre></div>
+
+<p>Here are the links to online [Perldoc](](http://perldoc.perl.org).</p>
+<ul>
+<li><a href="http://perldoc.perl.org/functions/substr.html">substr</a></li>
+<li><a href="http://perldoc.perl.org/functions/length.html">length</a></li>
+<li><a href="http://perldoc.perl.org/functions/reverse.html">reverse</a></li>
+<li><a href="http://perldoc.perl.org/functions/index.html">index</a></li>
+<li><a href="http://perldoc.perl.org/functions/rindex.html">rindex</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/32
             </aside>
           </footer>
         </div>
@@ -1523,11 +390,15 @@ substituted, for example when you want to insert a value into a string.</p>
 <span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;my favorite fruit is $fruit.\n&quot;</span><span class="p">;</span>
 <span class="lineno">3</span> <span class="nv">$fruit</span> <span class="o">=</span> <span class="s">&#39;grape&#39;</span><span class="p">;</span>
 <span class="lineno">4</span> <span class="k">print</span> <span class="s">&quot;my favorite fruit is $fruit.\n&quot;</span><span class="p">;</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> <span class="nv">$fruit</span> <span class="o">=</span> <span class="s">&quot;$fruit-$fruit&quot;</span><span class="p">;</span>
+<span class="lineno">7</span> <span class="k">print</span> <span class="s">&quot;my favorite fruit is $fruit.\n&quot;</span><span class="p">;</span>
 </pre></div>
 
 <p>This will produce</p>
 <pre><code>my favorite fruit is apple.
 my favorite fruit is grape.
+my favorite fruit is grape-grape.
 </code></pre></section>
             
           </div>
@@ -1544,7 +415,7 @@ my favorite fruit is grape.
             </aside>
             
             <aside class="page_number">
-              7/17
+              9/32
             </aside>
           </footer>
         </div>
@@ -1566,9 +437,15 @@ my favorite fruit is grape.
 <span class="lineno">5</span> <span class="nv">$dna</span> <span class="o">=</span> <span class="s">&quot;ATGCAGTAGA&quot;</span><span class="p">;</span> <span class="c1"># even better</span>
 </pre></div>
 
-<p>Often we name variables by their use or to describe their use. 
-Other convention $i,$j,$k are often counters.
-$a and $b are special variable names in some contexts in Perl so try to avoid using these.</p></section>
+<ul>
+<li>Often we name variables by their use or to describe their use.<br />
+</li>
+<li>Other convention $i,$j,$k are often counters.<br />
+</li>
+<li>$a and $b are special variable names in some contexts in Perl so try to avoid using these.<br />
+</li>
+<li>Some conventions are to use underscores_to_separate_spaces or <a href="http://en.wikipedia.org/wiki/CamelCase">CamelCase</a></li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1584,7 +461,61 @@ $a and $b are special variable names in some contexts in Perl so try to avoid us
             </aside>
             
             <aside class="page_number">
-              8/17
+              10/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Numerics</h1></header>
+            
+            
+            <section><p>Numbers can be integers, floating point, scientific notation. They can be initialized and computed. 
+Strings can also be converted to numbers.</p>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nv">$y</span> <span class="o">=</span> <span class="mf">2.2</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="nv">$z</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">print</span> <span class="s">&quot;$x is x, z is $z\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="nv">$string</span> <span class="o">=</span> <span class="s">&quot;12&quot;</span><span class="p">;</span>
+<span class="lineno"> 9</span> <span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$string</span> <span class="o">+</span> <span class="nv">$x</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="nv">$sum</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1"># can add to an existing in one line</span>
+<span class="lineno">13</span> <span class="nv">$sum</span> <span class="o">/=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1"># or divide by</span>
+<span class="lineno">14</span> <span class="k">print</span> <span class="s">&quot;sum = $sum\n&quot;</span><span class="p">;</span>
+</pre></div>
+
+<p>This will produce</p>
+<div class="highlight"><pre><span class="lineno">1</span> 10 is x, z is 0.333333333333333
+<span class="lineno">2</span> <span class="nv">sum</span> <span class="o">=</span> 12.2
+<span class="lineno">3</span> <span class="nv">sum</span> <span class="o">=</span> 22
+<span class="lineno">4</span> sum is 5.4
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/32
             </aside>
           </footer>
         </div>
@@ -1610,6 +541,12 @@ $a and $b are special variable names in some contexts in Perl so try to avoid us
 <span class="lineno"> 9</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
 <span class="lineno">10</span> <span class="k">print</span> <span class="s">&quot;x=$x y=$y\n&quot;</span><span class="p">;</span> <span class="c1"># won&#39;t change the value of y to update x</span>
 </pre></div>
+
+<p>Will produce</p>
+<div class="highlight"><pre><span class="lineno">1</span> 50 <span class="nv">dollars</span> <span class="o">=</span> 5000 cents
+<span class="lineno">2</span> <span class="nv">x</span><span class="o">=</span>100 <span class="nv">y</span><span class="o">=</span>100
+<span class="lineno">3</span> <span class="nv">x</span><span class="o">=</span>50 <span class="nv">y</span><span class="o">=</span>100
+</pre></div>
 </section>
             
           </div>
@@ -1626,7 +563,7 @@ $a and $b are special variable names in some contexts in Perl so try to avoid us
             </aside>
             
             <aside class="page_number">
-              9/17
+              12/32
             </aside>
           </footer>
         </div>
@@ -1649,29 +586,7 @@ you want to use the following best practices to write better Perl code.</p>
 <li>use strict</li>
 <li>use warnings</li>
 <li>use 'my' to declare variables. This declares them in a particular scope.</li>
-</ol>
-<p>!perl
-   $x = 7;
-   print "$x and $y\n"</p>
-<p>!perl
-   use warnings;
-   $x = 7;
-   print "$x and $y\n"</p>
-<p>!perl
-   use strict;
-   use warnings;
-   $x = 7;
-   print "$x and $y\n";</p>
-<p>use strict;
-   use warnings;
-   my $x = 7;
-   my $y;
-   print "$x and $y\n";</p>
-<p>use strict;
-   use warnings;
-   my $x = 7;
-   my $y = 'PRP8';
-   print "$x and $y\n";</p></section>
+</ol></section>
             
           </div>
           <div class="presenter_notes">
@@ -1687,7 +602,61 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              10/17
+              13/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Some examples of errors</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">print</span> <span class="s">&quot;$x and $y\n&quot;</span>
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="k">print</span> <span class="s">&quot;$x and $y\n&quot;</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno"> 9</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno">11</span> <span class="k">print</span> <span class="s">&quot;$x and $y\n&quot;</span><span class="p">;</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno">14</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno">15</span> <span class="k">my</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno">16</span> <span class="k">my</span> <span class="nv">$y</span><span class="p">;</span>
+<span class="lineno">17</span> <span class="k">print</span> <span class="s">&quot;$x and $y\n&quot;</span><span class="p">;</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno">20</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno">21</span> <span class="k">my</span> <span class="nv">$x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno">22</span> <span class="k">my</span> <span class="nv">$y</span> <span class="o">=</span> <span class="s">&#39;PRP8&#39;</span><span class="p">;</span>
+<span class="lineno">23</span> <span class="k">print</span> <span class="s">&quot;$x and $y\n&quot;</span><span class="p">;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/32
             </aside>
           </footer>
         </div>
@@ -1722,7 +691,7 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              11/17
+              15/32
             </aside>
           </footer>
         </div>
@@ -1736,10 +705,24 @@ you want to use the following best practices to write better Perl code.</p>
             <header><h1>Some typical errors</h1></header>
             
             
-            <section><p>Uninitialize variable</p>
+            <section><p>Uninitialized variable, $y had no value.</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
 <span class="lineno">2</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
 <span class="lineno">3</span> <span class="k">my</span> <span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+<span class="lineno">4</span> <span class="nv">$x</span> <span class="o">=</span> <span class="nv">$y</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+<p>Syntax error - missing semicolon on line 3.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="nv">$x</span> <span class="o">=</span> <span class="nv">$y</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+<p>Undeclared variable, forgo to declare $y before we used it.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
 <span class="lineno">4</span> <span class="nv">$x</span> <span class="o">=</span> <span class="nv">$y</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </section>
@@ -1758,35 +741,7 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              12/17
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: 01_Perl_basics.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Scope</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              13/17
+              16/32
             </aside>
           </footer>
         </div>
@@ -1800,6 +755,14 @@ you want to use the following best practices to write better Perl code.</p>
             <header><h1>Other numeric operators</h1></header>
             
             
+            <section><ul>
+<li><code>+,-,*,/</code> for add, subtract, multiply, and divide </li>
+<li><code>=</code> is the assignment variable to assign a value, not be confused with <code>==</code> which is for testing if two values are equivalent </li>
+<li>Assignment and an arthimetic for updating a variable, so <code>$val += 10</code> adds 10 to the current value</li>
+<li>The modulus operator <code>%</code> does a division and returns the remainder. So <code>9 % 2</code> is 1 because 2 will divide into 9, 4 times, leaving a remainder of 1.</li>
+<li>Exponent with **, so 2^5 is <code>2**5</code></li>
+</ul></section>
+            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
@@ -1814,7 +777,7 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              14/17
+              17/32
             </aside>
           </footer>
         </div>
@@ -1825,8 +788,21 @@ you want to use the following best practices to write better Perl code.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Printing</h1></header>
+            <header><h1>Printing Output</h1></header>
             
+            
+            <section><p>Sending information back out from the program is important. For all the computational you will be doing, you want to know <a href="http://www.flickr.com/photos/zooboing/3283840334/">the answer</a>.</p>
+<ul>
+<li><code>print</code> will send output to <a href="http://en.wikipedia.org/wiki/Standard_streams">STDOUT</a> by default. You can explictly choose the stream by providing it as in <code>print STDOUT "hello world\n";</code> or `print STDERR "hello world\n"; Other streams can be defined such as an output file, we'll cover that in lecture 2.</li>
+<li><a href="http://perldoc.perl.org/functions/printf.html"><code>printf</code></a> will allow for formatted printing using a variety of options, it requires multiple arguments, one is a formatting string, the rest are the specific data to be interpolated into the formatting string.</li>
+<li><a href="http://perldoc.perl.org/functions/sprintf.html"><code>sprintf</code></a> is like printf except it returns a formated string rather than printing it to a stream. <blockquote>
+<ul>
+<li>%d - for integers</li>
+<li>%f - for floating point, %.2f - to specify number of significant figures, %5.2f to format the width of the string (</li>
+</ul>
+</blockquote>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1842,7 +818,57 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              15/17
+              18/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>printf examples</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;MAYWRCILR&quot;</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="nb">printf</span> <span class="s">&quot;This &#39;%s&#39; string is %d letter long\n&quot;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">,</span> <span class="nb">length</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+<span class="lineno">3</span> <span class="nb">printf</span> <span class="s">&quot;This is number %d\n&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="nb">printf</span> <span class="s">&quot;This is a floating point number %f\n&quot;</span><span class="p">,</span> <span class="mf">4.25</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="nb">printf</span> <span class="s">&quot;This is a floating point number as an integer %d\n&quot;</span><span class="p">,</span> <span class="mf">4.25</span><span class="p">;</span>
+<span class="lineno">6</span> <span class="nb">printf</span> <span class="s">&quot;This is a floating point number with three signif digits %.3f\n&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="o">/</span><span class="mi">11</span><span class="p">;</span>
+<span class="lineno">7</span> <span class="nb">printf</span> <span class="s">&quot;This is scientific notation %g\n&quot;</span><span class="p">,</span> <span class="mi">21213333</span><span class="p">;</span>
+<span class="lineno">8</span> <span class="nb">printf</span> <span class="s">&quot;This is scientific notation with 2 signif figs %.2g\n&quot;</span><span class="p">,</span> <span class="mi">21213333</span><span class="p">;</span> 
+<span class="lineno">9</span> <span class="nb">printf</span> <span class="s">&quot;Formatted length &#39;%4d&#39; and &#39;%7.2f&#39;\n&quot;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">7</span><span class="p">;</span>
+</pre></div>
+
+<p>Produces these results</p>
+<p>!bash
+   This 'MAYWRCILR' string is 9 letter long
+   This is number 17
+   This is a floating point number 4.250000
+   This is a floating point number as an integer 4
+   This is a floating point number with three signif digits 1.091
+   This is scientific notation 2.12133e+07
+   This is scientific notation with 2 signif fig 2.1e+07
+   Formatted length '  21' and '   0.29'</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/32
             </aside>
           </footer>
         </div>
@@ -1857,6 +883,9 @@ you want to use the following best practices to write better Perl code.</p>
             
             
             <section><p>Warnings can be useful to print when something is unexpected. One can use the <code>print STDERR</code> to print to the error stream.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">print</span> <span class="bp">STDERR</span> <span class="s">&quot;There was a problem in this program&quot;</span>
+</pre></div>
+
 <p>I also find that using the <code>warn</code> command is much more useful.</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$error_condition</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
 <span class="lineno">2</span>     <span class="nb">warn</span><span class="p">(</span><span class="s">&quot;There was a problem sir!\n&quot;</span><span class="p">);</span>
@@ -1878,7 +907,7 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              16/17
+              20/32
             </aside>
           </footer>
         </div>
@@ -1892,9 +921,11 @@ you want to use the following best practices to write better Perl code.</p>
             <header><h1>Kill them all</h1></header>
             
             
-            <section><p>Sometimes you want to exit your program. There may be an unresolvable error, or you want to just finish right there. Two commands are useful for this. 
-<em> One is <code>exit</code> which will exit the program. 
-</em> The second is <code>die</code> which will print a warning message and exit, or if you fail to include a warning message it will report the line of the error, which can be helpful in debugging if you have lots of code.</p></section>
+            <section><p>Sometimes you want to exit your program. There may be an unresolvable error, or you want to just finish right there. Two commands are useful for this. </p>
+<ul>
+<li><code>exit</code> which will exit the program. It takes an optional numeric to return to the operating system, but usually you just use it alone.</li>
+<li><code>die</code> which will print a warning message and exit, or if you fail to include a warning message it will report the line of the error, which can be helpful in debugging if you have lots of code.</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1910,7 +941,455 @@ you want to use the following best practices to write better Perl code.</p>
             </aside>
             
             <aside class="page_number">
-              17/17
+              21/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Using die</h1></header>
+            
+            
+            <section><p>Here is a script snippet from the Unix &amp; Perl book to demonstrate testing if a sequence could encode a protein (by being divizable perfectly by 3).</p>
+<pre><code>use strict; 
+use warnings;
+my $dna = "ATGCACGTAGGTAACACTGACTGAA";
+my $length = length($dna);
+die "$length is not a valid length\n" if (($length % 3) != 0);
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Other special characters</h1></header>
+            
+            
+            <section><p>Some special string characters</p>
+<ul>
+<li><code>\t</code> for tab</li>
+<li><code>\n</code> for newlines, on windows this is <code>\r</code> and on mac this is <code>\r\n</code>. But please just use <code>\n</code></li>
+<li><code>chr</code> will convert an <a href="http://en.wikipedia.org/wiki/ASCII">ASCII number</a>, e.g. <code>print chr(97),"\n"</code> will print <code>a</code>.</li>
+</ul>
+<p>Perl has several special variables
+<em> $_ - the implicit variable, default variable for matching
+</em> $</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Arrays and Lists</h1></header>
+            
+            
+            <section><p>In addition to the scalar variables (<code>$var</code>) that can store numbers or strings, there are also variables for multiple items in lists.
+The array variables start with <code>@</code> and represent multiple items.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nv">@gems</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;diamond&#39;</span><span class="p">,</span><span class="s">&#39;ruby&#39;</span><span class="p">,</span> <span class="s">&#39;quartz&#39;</span><span class="p">);</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;@gems\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="nv">$one</span> <span class="o">=</span> <span class="s">&#39;apple&#39;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="nv">$two</span> <span class="o">=</span> <span class="s">&#39;pear&#39;</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="nv">@fruit</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$one</span><span class="p">,</span><span class="nv">$two</span><span class="p">);</span>
+<span class="lineno">6</span> <span class="k">print</span> <span class="s">&quot;@fruit\n&quot;</span><span class="p">;</span>
+</pre></div>
+
+<p>Arrays can be indexed by a number, so the 1st item in the array can be obtained with <code>$array[0]</code>, the second with <code>$array[1]</code> and so on. 
+You can ask for the last item in an array with <code>$array[-1]</code>, the second to last with <code>$array[-2]</code> and so on.</p>
+<p>Perl will allocate new memory for you on the fly as your array gets bigger - so if you ask for <code>$array[100]</code> it will create 0-99.</p>
+<p>If you want to crash perl you can do something as simple as (depending on how much memory your machine has) </p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nv">$x</span><span class="p">[</span><span class="mi">10000000000000</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>My hero, Zero</h1></header>
+            
+            
+            <section><p>In computer science, when starting to count, the first value is always
+0 not 1. So lists and strings are indexed starting with 0. So if you
+want the 1st item in a list, you need to ask for the <code>[0]</code>
+one. Similarly, to get the second character in a string you ask for
+the one at position <code>1</code>. So <code>substr($string,1,1)</code> will return the
+2nd character in a string.</p>
+<pre><code>['a','b','c','d']
+  0   1   2   3
+</code></pre>
+<p><img alt="MyHero" src="images/MyHeroZero.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Array operations</h1></header>
+            
+            
+            <section><ul>
+<li>Length of an array is obtained by treating it like a scalar variable, either <code>$len = @gems;</code> or more typically <code>$len = scalar @gems;</code></li>
+<li><code>sort @array</code> will order a list alphanumerically.  It can be ordered numerically with some additional code, we'll discuss later</li>
+<li><code>join($joincharacter,@array)</code> transform an array into a string, joining together with the intervening character</li>
+<li><code>@array = split("\t",$string)</code> transform a string into an array, splitting on a particular character</li>
+<li>Modify and array adding or removing items<blockquote>
+<ul>
+<li><code>$last = pop @array</code> - remove the last item from the array and return it</li>
+<li><code>$first = shift @array</code> - remove the first item from the array</li>
+<li><code>push @array, $enditem</code> - add an item to the end of the list</li>
+<li><code>unshift @array, $firstitem</code> - add an item to the beginning of the list</li>
+</ul>
+</blockquote>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Array operations: Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array</span> <span class="o">=</span> <span class="p">();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Sorting</h1></header>
+            
+            
+            <section><p>A useful operation on a list is the ability to sort the data. The default sort mechanisms.</p>
+<p>This is the place where some special variables <code>$a</code> and <code>$b</code> are
+used. They have special meaning as a sort is done by comparing pairs
+of numbers. So you just have to define an operation which can
+determine for two values which is larger or smaller (or if they are
+equal).</p>
+<p>The <code>&lt;=&gt;</code> operator is great for this and operates on numbers. It
+returns -1 if the left is smaller, 1 if the left is larger, and 0 if
+the two values are equal. The equivalent operator for alphanumeric is
+called <code>cmp</code>. You can see more on operators at <a href="http://perldoc.perl.org/perlop.html"><code>perldoc
+perlop</code></a>.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nv">@nums</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mf">3.2</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">53</span><span class="p">);</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="nb">sort</span> <span class="nv">@nums</span><span class="p">;</span> <span class="c1"># print alphanumerically</span>
+<span class="lineno">3</span> <span class="k">print</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nv">$a</span> <span class="sr">&lt;=&gt;</span> <span class="nv">$b</span> <span class="p">}</span> <span class="nv">@nums</span><span class="p">;</span> <span class="c1">#print smallest to largest</span>
+<span class="lineno">4</span> <span class="k">print</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nv">$b</span> <span class="sr">&lt;=&gt;</span> <span class="nv">$a</span> <span class="p">}</span> <span class="nv">@nums</span><span class="p">;</span> <span class="c1">#print largets to smallest</span>
+<span class="lineno">5</span> <span class="k">print</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nb">length</span><span class="p">(</span><span class="nv">$a</span><span class="p">)</span> <span class="sr">&lt;=&gt;</span> <span class="nb">length</span><span class="p">(</span><span class="nv">$b</span><span class="p">)</span> <span class="p">};</span> <span class="c1">#print by num of digits</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Convience method for array init</h1></header>
+            
+            
+            <section><p>The <code>qw</code> (quote words) operator is useful for initializing a list, it
+separates items by white space from a list and converts into an array
+simplifying the code.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nv">@wintermonths</span> <span class="o">=</span> <span class="sx">qw(Dec Jan Feb)</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="c1"># instead of</span>
+<span class="lineno">3</span> <span class="nv">@summermonths</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Jun&#39;</span><span class="p">,</span><span class="s">&#39;Jul&#39;</span><span class="p">,</span><span class="s">&#39;Aug&#39;</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Hashes or Associative Arrays</h1></header>
+            
+            
+            <section><p>Hashes are like arrays, but they are indexed by strings instead of numbers. Hashes use '{}' to index instead of '[]' in arrays. Variables
+start with <code>%</code>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Hash operations</h1></header>
+            
+            
+            <section><ul>
+<li><code>keys %hash</code> will return a list of all the keys in the hash</li>
+<li><code>values %hash</code> will return a list of all the values in the hash</li>
+<li><code>each %hash</code> is used to return all the key/value pairs, however this really only useful when we get to loops (next lecture)</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01_Perl_basics.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Hash operations: Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">%months2season</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nv">$months2season</span><span class="p">{</span><span class="s">&#39;Jan&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="s">&#39;Winter&#39;</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="nv">$months2season</span><span class="p">{</span><span class="s">&#39;Aug&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="s">&#39;Summer&#39;</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="nv">$months2season</span><span class="p">{</span><span class="s">&#39;Sep&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="s">&#39;Fall&#39;</span><span class="p">;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="k">my</span> <span class="nv">%bball_teams</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Los Angeles&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Lakers&#39;</span><span class="p">,</span> 
+<span class="lineno"> 7</span>                    <span class="s">&#39;Phoenix&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Suns&#39;</span><span class="p">,</span> 
+<span class="lineno"> 8</span>                    <span class="s">&#39;Charlotte&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Bobcats&#39;</span><span class="p">);</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="nb">sort</span> <span class="nb">keys</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">11</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nb">values</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01_Perl_basics.md">01_Perl_basics.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source:  -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="page_number">
+              /32
             </aside>
           </footer>
         </div>
@@ -1949,80 +1428,170 @@ you want to use the following best practices to write better Perl code.</p>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Numerics</a></th>
+        <th><a href="#slide5">String operators</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">String operators</a></th>
+        <th><a href="#slide6">String operator: Code</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">Interpolation</a></th>
+        <th><a href="#slide7">Other string operations</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Naming variables</a></th>
+        <th><a href="#slide8">WHOA! Too many new things!</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Assignment of values</a></th>
+        <th><a href="#slide9">Interpolation</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Playing it Safe</a></th>
+        <th><a href="#slide10">Naming variables</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">At the top</a></th>
+        <th><a href="#slide11">Numerics</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Some typical errors</a></th>
+        <th><a href="#slide12">Assignment of values</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Scope</a></th>
+        <th><a href="#slide13">Playing it Safe</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Other numeric operators</a></th>
+        <th><a href="#slide14">Some examples of errors</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Printing</a></th>
+        <th><a href="#slide15">At the top</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Danger Will Robinson!</a></th>
+        <th><a href="#slide16">Some typical errors</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Kill them all</a></th>
+        <th><a href="#slide17">Other numeric operators</a></th>
         <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Printing Output</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">printf examples</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Danger Will Robinson!</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Kill them all</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Using die</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Other special characters</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Arrays and Lists</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">My hero, Zero</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Array operations</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Array operations: Code</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Sorting</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Convience method for array init</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Hashes or Associative Arrays</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Hash operations</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Hash operations: Code</a></th>
+        <td><a href="#slide32">32</a></td>
       </tr>
       
       
