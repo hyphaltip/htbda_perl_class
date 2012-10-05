@@ -34,9 +34,10 @@ my @keys = keys %months;
 
 print "Months names are @keys\n";
 
-my $month;
-foreach $month ( @keys ) {
- print "Month is $month; Season is $months{$month}\n";
+my $m;
+foreach $m ( @keys ) {
+ print "Month is $m; Season is $months{$m}\n";
+ print "The season is ", length $months{$m}, " letters long\n";
 }
 
 my @values = values %months;
