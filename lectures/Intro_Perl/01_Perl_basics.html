@@ -127,7 +127,7 @@ code {
     </style>
     <style type="text/css" media="screen, projection">
       body {
-  font: 18px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 18px "Gentium Basic", serif, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   background: #fff;
   padding: 0;
   margin: 0;
@@ -1067,11 +1067,13 @@ div.slide div.presenter_notes {
                 break;
             case 37: // left arrow
             case 33: // page up
+                event.preventDefault();
                 prevSlide();
                 break;
             case 39: // right arrow
             case 32: // space
             case 34: // page down
+                event.preventDefault();
                 nextSlide();
                 break;
             case 50: // 2
@@ -2581,12 +2583,15 @@ start with <code>%</code>.</p>
 <span class="lineno"> 3</span> <span class="nv">$months2season</span><span class="p">{</span><span class="s">&#39;Aug&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="s">&#39;Summer&#39;</span><span class="p">;</span>
 <span class="lineno"> 4</span> <span class="nv">$months2season</span><span class="p">{</span><span class="s">&#39;Sep&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="s">&#39;Fall&#39;</span><span class="p">;</span>
 <span class="lineno"> 5</span> 
-<span class="lineno"> 6</span> <span class="k">my</span> <span class="nv">%bball_teams</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Los Angeles&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Lakers&#39;</span><span class="p">,</span> 
-<span class="lineno"> 7</span>                    <span class="s">&#39;Phoenix&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Suns&#39;</span><span class="p">,</span> 
-<span class="lineno"> 8</span>                    <span class="s">&#39;Charlotte&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Bobcats&#39;</span><span class="p">);</span>
-<span class="lineno"> 9</span> 
-<span class="lineno">10</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="nb">sort</span> <span class="nb">keys</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="lineno">11</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nb">values</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="k">my</span> <span class="nv">$month</span> <span class="o">=</span> <span class="s">&#39;Aug&#39;</span><span class="p">;</span>
+<span class="lineno"> 7</span> <span class="k">print</span> <span class="s">&quot;$month is in $months2season{$month}\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="k">my</span> <span class="nv">%bball_teams</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Los Angeles&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Lakers&#39;</span><span class="p">,</span> 
+<span class="lineno">10</span>                    <span class="s">&#39;Phoenix&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Suns&#39;</span><span class="p">,</span> 
+<span class="lineno">11</span>                    <span class="s">&#39;Charlotte&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;Bobcats&#39;</span><span class="p">);</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="nb">sort</span> <span class="nb">keys</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">14</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nb">values</span> <span class="nv">%bball_teams</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
 </pre></div>
 </section>
             
