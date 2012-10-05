@@ -540,6 +540,9 @@ Arrays are ordered lists -- you can get the 5-th item of the list. However, for 
     $months2season{'Jan'} = 'Winter';
     $months2season{'Aug'} = 'Summer';
     $months2season{'Sep'} = 'Fall';
+    
+    my $month = 'Aug';
+    print "$month is in $months2season{$month}\n";
 
     my %bball_teams = ('Los Angeles' => 'Lakers', 
                        'Phoenix' => 'Suns', 
