@@ -43,6 +43,38 @@ If statements can be combined onto a single line and can include or not include 
     print "$i is even\n" if($i % 2 == 0);
 
 ---
+#Logically speaking
+
+* True && True = True
+* True && False = False
+* True || True = True
+* True || False = True
+* ! ( True ) = False
+* ! ( False) = True
+* ! ( $x && $y ) = !$x || ! $y
+* ! ( $x || $y ) = !$x && ! $y
+
+---
+#if and unless
+
+`if` will test if something is true and execute the code block. `unless` will test if something is false and then execute the code block.
+
+    !perl
+    if( $color eq 'red' || $color eq 'yellow' || $color eq 'orange' ) {
+     print "The color is warm\n";
+    } elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
+     print "The color is cool\n";
+    }
+
+Can also be written as 
+
+    unless( $color eq 'red' && $color eq 'yellow' || $color eq 'orange' ) {
+     print "The color is warm\n";
+    } elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
+     print "The color is cool\n";
+    }
+
+---
 #Some logic
 
 Test if one number is larger than another
@@ -86,6 +118,18 @@ For loops, much like while loops. There are 3 components. The initialization, th
     !perl
     for( my $i = 0; $i < 10; $i++) {
       print "i is $i\n";
+    }
+
+The initialization is `my $i = 0`  
+The test is `$i < 10`  
+The iterator is `$i++`
+
+This could also be written as a while loop.
+
+    !perl
+    my $i = 0;
+    while($i < 10) {
+      $i++:
     }
 
 ---
@@ -189,5 +233,5 @@ You could just use index to find it all the occurances.
     }
 
 Note - this is not exactly how you would find specific codons in a DNA
-string because `index` is not going to respect the reading frame.  in.
+string because `index` is not going to respect the reading frame.
 

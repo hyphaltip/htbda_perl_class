@@ -127,7 +127,7 @@ code {
     </style>
     <style type="text/css" media="screen, projection">
       body {
-  font: 18px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 18px "Gentium Basic", serif, "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   background: #fff;
   padding: 0;
   margin: 0;
@@ -1067,11 +1067,13 @@ div.slide div.presenter_notes {
                 break;
             case 37: // left arrow
             case 33: // page up
+                event.preventDefault();
                 prevSlide();
                 break;
             case 39: // right arrow
             case 32: // space
             case 34: // page down
+                event.preventDefault();
                 nextSlide();
                 break;
             case 50: // 2
@@ -1257,7 +1259,7 @@ div.slide div.presenter_notes {
     </div>
     <div class="slides">
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -1278,17 +1280,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              1/12
+              1/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1319,17 +1321,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              2/12
+              2/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -1357,17 +1359,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              3/12
+              3/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1394,17 +1396,100 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              4/12
+              4/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Logically speaking</h1></header>
+            
+            
+            <section><ul>
+<li>True &amp;&amp; True = True</li>
+<li>True &amp;&amp; False = False</li>
+<li>True || True = True</li>
+<li>True || False = True</li>
+<li>! ( True ) = False</li>
+<li>! ( False) = True</li>
+<li>! ( $x &amp;&amp; $y ) = !$x || ! $y</li>
+<li>! ( $x || $y ) = !$x &amp;&amp; ! $y</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops.md">02_Loops.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>if and unless</h1></header>
+            
+            
+            <section><p><code>if</code> will test if something is true and execute the code block. <code>unless</code> will test if something is false and then execute the code block.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;red&#39;</span> <span class="o">||</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;yellow&#39;</span> <span class="o">||</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;orange&#39;</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>  <span class="k">print</span> <span class="s">&quot;The color is warm\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="p">}</span> <span class="k">elsif</span><span class="p">(</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;blue&#39;</span> <span class="o">||</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;green&#39;</span> <span class="o">||</span> <span class="nv">$color</span> <span class="ow">eq</span> <span class="s">&#39;purple&#39;</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">4</span>  <span class="k">print</span> <span class="s">&quot;The color is cool\n&quot;</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="p">}</span>
+</pre></div>
+
+<p>Can also be written as </p>
+<pre><code>unless( $color eq 'red' &amp;&amp; $color eq 'yellow' || $color eq 'orange' ) {
+ print "The color is warm\n";
+} elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
+ print "The color is cool\n";
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops.md">02_Loops.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1435,17 +1520,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              5/12
+              7/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1478,17 +1563,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              6/12
+              8/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1500,6 +1585,16 @@ Loops let us repeat steps.</p></section>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">for</span><span class="p">(</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno">2</span>   <span class="k">print</span> <span class="s">&quot;i is $i\n&quot;</span><span class="p">;</span>
 <span class="lineno">3</span> <span class="p">}</span>
+</pre></div>
+
+<p>The initialization is <code>my $i = 0</code><br />
+The test is <code>$i &lt; 10</code><br />
+The iterator is <code>$i++</code></p>
+<p>This could also be written as a while loop.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">while</span><span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>   <span class="nv">$i</span><span class="o">++</span><span class="p">:</span>
+<span class="lineno">4</span> <span class="p">}</span>
 </pre></div>
 </section>
             
@@ -1513,17 +1608,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              7/12
+              9/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1557,17 +1652,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              8/12
+              10/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1597,17 +1692,17 @@ Loops let us repeat steps.</p></section>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              9/12
+              11/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1650,17 +1745,17 @@ scope.</p>
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              10/12
+              12/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1694,17 +1789,17 @@ print join(",",split( "-", $str)), "\n";
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              11/12
+              13/14
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: 02_Loops_IO.md -->
+      <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
         <div class="slide has_code">
           <div class="inner">
@@ -1724,7 +1819,7 @@ You could just use index to find it all the occurances.</p>
 </pre></div>
 
 <p>Note - this is not exactly how you would find specific codons in a DNA
-string because <code>index</code> is not going to respect the reading frame.  in.</p></section>
+string because <code>index</code> is not going to respect the reading frame.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1736,11 +1831,11 @@ string because <code>index</code> is not going to respect the reading frame.  in
           <footer>
             
             <aside class="source">
-              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+              Source: <a href="02_Loops.md">02_Loops.md</a>
             </aside>
             
             <aside class="page_number">
-              12/12
+              14/14
             </aside>
           </footer>
         </div>
@@ -1779,50 +1874,62 @@ string because <code>index</code> is not going to respect the reading frame.  in
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Some logic</a></th>
+        <th><a href="#slide5">Logically speaking</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Loop-de-Loop</a></th>
+        <th><a href="#slide6">if and unless</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">For looping</a></th>
+        <th><a href="#slide7">Some logic</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Loop control</a></th>
+        <th><a href="#slide8">Loop-de-Loop</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Continuation</a></th>
+        <th><a href="#slide9">For looping</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Scope</a></th>
+        <th><a href="#slide10">Loop control</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Parenthetically</a></th>
+        <th><a href="#slide11">Continuation</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Combining concepts</a></th>
+        <th><a href="#slide12">Scope</a></th>
         <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Parenthetically</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Combining concepts</a></th>
+        <td><a href="#slide14">14</a></td>
       </tr>
       
       
