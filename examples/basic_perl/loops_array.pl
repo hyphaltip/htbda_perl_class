@@ -8,6 +8,7 @@ my @nums = (5,20,1,17,3,41);
 my $sum = 0;
 
 print "The list is @nums\n";
+print @nums, "\n";
 my $n;
 foreach $n ( @nums ) {
  print "n is $n\n";
@@ -33,6 +34,7 @@ my %months = ('Jan' => 'Winter',
 my @keys = keys %months;
 
 print "Months names are @keys\n";
+print "Months names are ",join("\t",@keys),"\n";
 
 my $m;
 foreach $m ( @keys ) {
