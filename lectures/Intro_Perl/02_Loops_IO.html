@@ -1265,7 +1265,8 @@ div.slide div.presenter_notes {
             <header><h1>Loops and Conditionals</h1></header>
             
             
-            <section><p>Logic and control are the next steps in learning a programming language</p></section>
+            <section><p>Logic and control are the next steps in learning a programming language
+Loops let us repeat steps.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1281,7 +1282,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              1/7
+              1/12
             </aside>
           </footer>
         </div>
@@ -1295,7 +1296,8 @@ div.slide div.presenter_notes {
             <header><h1>If, else, elsif</h1></header>
             
             
-            <section><p>if( <em>CONDITIONAL</em> ) </p>
+            <section><p>if( <em>CONDITIONAL</em> ) {
+}</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$var</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1"># a RANDOM number generator</span>
 <span class="lineno">2</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$var</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span> <span class="p">{</span>
 <span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;Variable ($var) is less than 3\n&quot;</span><span class="p">;</span>
@@ -1321,7 +1323,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              2/7
+              2/12
             </aside>
           </footer>
         </div>
@@ -1359,7 +1361,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              3/7
+              3/12
             </aside>
           </footer>
         </div>
@@ -1367,14 +1369,104 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 02_Loops_IO.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>One liners</h1></header>
+            
+            
+            <section><p>If statements can be combined onto a single line and can include or not include parentheses.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;$i is even\n&quot;</span> <span class="k">if</span> <span class="nv">$i</span> <span class="nv">%</span> <span class="nv">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="k">print</span> <span class="s">&quot;$i is even\n&quot;</span> <span class="k">if</span><span class="p">(</span><span class="nv">$i</span> <span class="nv">%</span> <span class="nv">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops_IO.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Some logic</h1></header>
+            
+            
+            <section><p>Test if one number is larger than another</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$num1</span> <span class="o">&gt;</span> <span class="nv">$num3</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="k">print</span> <span class="s">&quot;$num1 is larger\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</pre></div>
+
+<p>Test if two strings are equal</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$str</span> <span class="ow">eq</span> <span class="s">&#39;yellow&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="k">print</span> <span class="s">&quot;found a yellow one!\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops_IO.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Loop-de-Loop</h1></header>
             
             
             <section><p><code>while</code> loops will execute a block of code as long as the conditional is true</p>
-<p><code>until</code> is also a way to loop, but will continue as long as the </p></section>
+<p><code>until</code> is also a way to loop, but will continue as long as the </p>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">while</span><span class="p">(</span><span class="nv">$n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 3</span>  <span class="k">print</span> <span class="s">&quot;n is $n\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 4</span>  <span class="nv">$n</span><span class="o">++</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="p">}</span>
+<span class="lineno"> 6</span> <span class="nv">$n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 7</span> <span class="k">until</span><span class="p">(</span><span class="nv">$n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 8</span>  <span class="k">print</span> <span class="s">&quot;n is $n\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 9</span>  <span class="nv">$n</span><span class="o">++</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1390,7 +1482,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              4/7
+              6/12
             </aside>
           </footer>
         </div>
@@ -1398,13 +1490,18 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 02_Loops_IO.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>For looping</h1></header>
             
             
-            <section><p>For loops, like </p></section>
+            <section><p>For loops, much like while loops. There are 3 components. The initialization, the test, and the iteration.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">for</span><span class="p">(</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="k">print</span> <span class="s">&quot;i is $i\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1420,7 +1517,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              5/7
+              7/12
             </aside>
           </footer>
         </div>
@@ -1436,15 +1533,49 @@ div.slide div.presenter_notes {
             
             <section><p>Can Short-circuit a loop with <code>last</code><br />
 </p>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="k">while</span><span class="p">(</span> <span class="nv">$johnny_five</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="p">)</span> <span class="p">{</span>
-<span class="lineno">2</span>        <span class="k">if</span><span class="p">(</span> <span class="nv">$lightning</span> <span class="p">)</span> <span class="p">{</span>
-<span class="lineno">3</span>            <span class="nb">warn</span><span class="p">(</span><span class="s">&quot;I&#39;m fried!\n&quot;</span><span class="p">);</span>
-<span class="lineno">4</span>            <span class="k">last</span><span class="p">;</span>
-<span class="lineno">5</span>        <span class="p">}</span>
-<span class="lineno">6</span> <span class="p">}</span>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$lightning</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">my</span> <span class="nv">$johnny_five</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">while</span><span class="p">(</span> <span class="nv">$johnny_five</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 4</span>  <span class="k">if</span><span class="p">(</span> <span class="nv">$lightning</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>   <span class="k">print</span> <span class="s">&quot;I&#39;m fried!\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 6</span>   <span class="k">last</span><span class="p">;</span>
+<span class="lineno"> 7</span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="lineno"> 8</span>   <span class="k">print</span> <span class="s">&quot;I&#39;m alive\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 9</span>  <span class="p">}</span>
+<span class="lineno">10</span>  <span class="nv">$lightning</span> <span class="o">=</span> <span class="nb">int</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="lineno">11</span> <span class="p">}</span>
 </pre></div>
-
-<p>Can also continue a loop with next, skipping back to the top with <code>last</code></p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops_IO.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Continuation</h1></header>
+            
+            
+            <section><p>Can also continue a loop with <code>next</code>, by stopping and going back to the top of the loop.</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">while</span><span class="p">(</span> <span class="sr">&lt;DATA&gt;</span> <span class="p">)</span> <span class="p">{</span>
 <span class="lineno">2</span>    <span class="k">my</span> <span class="nv">$row</span> <span class="o">=</span> <span class="nv">$_</span><span class="p">;</span>
 <span class="lineno">3</span>    <span class="nb">chomp</span><span class="p">;</span>
@@ -1470,7 +1601,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              6/7
+              9/12
             </aside>
           </footer>
         </div>
@@ -1523,7 +1654,93 @@ scope.</p>
             </aside>
             
             <aside class="page_number">
-              7/7
+              10/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops_IO.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Parenthetically</h1></header>
+            
+            
+            <section><p>In some cases you may have seen </p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">print</span> <span class="s">&quot;hello\n&quot;</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;hello\n&quot;</span><span class="p">);</span>
+</pre></div>
+
+<p>Both are valid, Perl will let you get away without parenthesees in many cases. However if it is ambiguous it can cause problems. For example</p>
+<pre><code>use strict;
+use warnings;
+my $str = 'AB-CD';
+print join ",", split "-", $str, "\n";
+
+print "\n--\n";
+
+print join(",",split( "-", $str)), "\n";
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 02_Loops_IO.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Combining concepts</h1></header>
+            
+            
+            <section><p>Suppose you wanted to process a stream of digits and find where the '01' were.
+You could just use index to find it all the occurances.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;110101210201010011110&quot;</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">my</span> <span class="nv">$ind</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;01&quot;</span><span class="p">);</span>
+<span class="lineno">3</span> <span class="k">while</span><span class="p">(</span> <span class="nv">$ind</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">4</span>   <span class="c1"># when ind is -1 it means it got to the end of the string</span>
+<span class="lineno">5</span>   <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="nv">$ind</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># print 2 digits</span>
+<span class="lineno">6</span>   <span class="nv">$ind</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;01&quot;</span><span class="p">,</span><span class="nv">$ind</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="lineno">7</span> <span class="p">}</span>
+</pre></div>
+
+<p>Note - this is not exactly how you would find specific codons in a DNA
+string because <code>index</code> is not going to respect the reading frame.  in.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="02_Loops_IO.md">02_Loops_IO.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/12
             </aside>
           </footer>
         </div>
@@ -1556,26 +1773,56 @@ scope.</p>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Loop-de-Loop</a></th>
+        <th><a href="#slide4">One liners</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">For looping</a></th>
+        <th><a href="#slide5">Some logic</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Loop control</a></th>
+        <th><a href="#slide6">Loop-de-Loop</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">Scope</a></th>
+        <th><a href="#slide7">For looping</a></th>
         <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Loop control</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Continuation</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Scope</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Parenthetically</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Combining concepts</a></th>
+        <td><a href="#slide12">12</a></td>
       </tr>
       
       
