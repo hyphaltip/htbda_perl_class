@@ -66,11 +66,9 @@ If statements can be combined onto a single line and can include or not include 
      print "The color is cool\n";
     }
 
-Can also be written as 
+Can also be written (partially) as
 
     unless( $color eq 'red' && $color eq 'yellow' || $color eq 'orange' ) {
-     print "The color is warm\n";
-    } elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
      print "The color is cool\n";
     }
 
@@ -179,7 +177,9 @@ scope.
     if( $n < 1 ) {
         my $toy = "Transformer";
         print "Toy is $toy inside the if\n";
+	my $toy2 = 'Train";
     }
+    # $toy2 would not be available here
     print "Toy is $toy outside the if\n";
 
 
@@ -226,12 +226,13 @@ You could just use index to find it all the occurances.
     !perl
     my $str = "110101210201010011110";
     my $ind = index($str,"01");
-    while( $ind > 0 ) {
+    while( $ind >= 0 ) {
       # when ind is -1 it means it got to the end of the string
       print substr($str,$ind,2); # print 2 digits
-      $ind = index($str,"01",$ind+1);
+      $ind = index($str,"01",$ind+2);
     }
 
 Note - this is not exactly how you would find specific codons in a DNA
 string because `index` is not going to respect the reading frame.
+You may need to do this with substr instead, inspecting a codon at a time.
 
