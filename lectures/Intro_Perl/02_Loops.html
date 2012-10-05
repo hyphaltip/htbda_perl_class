@@ -1067,13 +1067,11 @@ div.slide div.presenter_notes {
                 break;
             case 37: // left arrow
             case 33: // page up
-                event.preventDefault();
                 prevSlide();
                 break;
             case 39: // right arrow
             case 32: // space
             case 34: // page down
-                event.preventDefault();
                 nextSlide();
                 break;
             case 50: // 2
@@ -1461,10 +1459,8 @@ Loops let us repeat steps.</p></section>
 <span class="lineno">5</span> <span class="p">}</span>
 </pre></div>
 
-<p>Can also be written as </p>
+<p>Can also be written (partially) as</p>
 <pre><code>unless( $color eq 'red' &amp;&amp; $color eq 'yellow' || $color eq 'orange' ) {
- print "The color is warm\n";
-} elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
  print "The color is cool\n";
 }
 </code></pre></section>
@@ -1713,14 +1709,16 @@ The iterator is <code>$i++</code></p>
             <section><p>Scope defines the area in a program that variable is valid for. Inside
 the brackets ({}) any variable declared with them is valid for that
 scope.</p>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$toy</span> <span class="o">=</span> <span class="s">&quot;Truck&quot;</span><span class="p">;</span>
-<span class="lineno">2</span> <span class="k">my</span> <span class="nv">$n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="lineno">3</span> <span class="k">print</span> <span class="s">&quot;Toy is $toy before the if\n&quot;</span><span class="p">;</span>
-<span class="lineno">4</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$n</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
-<span class="lineno">5</span>     <span class="k">my</span> <span class="nv">$toy</span> <span class="o">=</span> <span class="s">&quot;Transformer&quot;</span><span class="p">;</span>
-<span class="lineno">6</span>     <span class="k">print</span> <span class="s">&quot;Toy is $toy inside the if\n&quot;</span><span class="p">;</span>
-<span class="lineno">7</span> <span class="p">}</span>
-<span class="lineno">8</span> <span class="k">print</span> <span class="s">&quot;Toy is $toy outside the if\n&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$toy</span> <span class="o">=</span> <span class="s">&quot;Truck&quot;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">my</span> <span class="nv">$n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">print</span> <span class="s">&quot;Toy is $toy before the if\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$n</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>     <span class="k">my</span> <span class="nv">$toy</span> <span class="o">=</span> <span class="s">&quot;Transformer&quot;</span><span class="p">;</span>
+<span class="lineno"> 6</span>     <span class="k">print</span> <span class="s">&quot;Toy is $toy inside the if\n&quot;</span><span class="p">;</span>
+<span class="lineno"> 7</span> <span class="k">my</span> <span class="nv">$toy2</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Train</span><span class="s">&quot;;</span>
+<span class="lineno"> 8</span> <span class="s">}</span>
+<span class="lineno"> 9</span> <span class="s"># $toy2 would not be available here</span>
+<span class="lineno">10</span> <span class="s">print &quot;</span><span class="n">Toy</span> <span class="n">is</span> <span class="nv">$toy</span> <span class="n">outside</span> <span class="n">the</span> <span class="k">if</span><span class="o">\</span><span class="n">n</span><span class="err">&quot;</span><span class="p">;</span>
 </pre></div>
 
 <p>If you do not declare the variable inside the loop, you can end up updating the value. Notice the missing 'my' inside the if block.</p>
@@ -1811,15 +1809,16 @@ print join(",",split( "-", $str)), "\n";
 You could just use index to find it all the occurances.</p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">$str</span> <span class="o">=</span> <span class="s">&quot;110101210201010011110&quot;</span><span class="p">;</span>
 <span class="lineno">2</span> <span class="k">my</span> <span class="nv">$ind</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;01&quot;</span><span class="p">);</span>
-<span class="lineno">3</span> <span class="k">while</span><span class="p">(</span> <span class="nv">$ind</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span> <span class="k">while</span><span class="p">(</span> <span class="nv">$ind</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
 <span class="lineno">4</span>   <span class="c1"># when ind is -1 it means it got to the end of the string</span>
 <span class="lineno">5</span>   <span class="k">print</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="nv">$ind</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="c1"># print 2 digits</span>
-<span class="lineno">6</span>   <span class="nv">$ind</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;01&quot;</span><span class="p">,</span><span class="nv">$ind</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="lineno">6</span>   <span class="nv">$ind</span> <span class="o">=</span> <span class="nb">index</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="s">&quot;01&quot;</span><span class="p">,</span><span class="nv">$ind</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
 <span class="lineno">7</span> <span class="p">}</span>
 </pre></div>
 
 <p>Note - this is not exactly how you would find specific codons in a DNA
-string because <code>index</code> is not going to respect the reading frame.</p></section>
+string because <code>index</code> is not going to respect the reading frame.
+You may need to do this with substr instead, inspecting a codon at a time.</p></section>
             
           </div>
           <div class="presenter_notes">
