@@ -58,7 +58,7 @@ This is an mRNA sequence so it is already spliced, you don't have to worry about
 
 >For example in a hash (but copy in all 5 sequences)
     
-    my %sequences;
+    my %sequence;
 
     $sequence{AAC35278} = "LLIAITYYNEDKVLTARTLHGVMQNPAWQKIVVCLVFDGIDPVLATIGV-VMKKDVDGKE";
     $sequence{AnCSMA} = "AMCLVTCYSEGEEGIRTTLDSIALTPN-SHKSIVVICDGIIKVLRMMRD-TGSKRHNMAK";    
