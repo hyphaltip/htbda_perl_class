@@ -166,21 +166,19 @@ Can also continue a loop with `next`, by stopping and going back to the top of t
 ---
 #Iterate through items in a list
 
-Can do this with a foreach loop
+Iterate through items in a list with either `foreach` or `for`
 
-    !perl  
+    !perl
     my @array = qw(A B X Y Z);
     foreach my $item ( @array ) {
      print "$item\n";
     }
-
-Or do this by using a counter
-
-    !perl
-    my @array = qw(A B X Y Z);
+    # Or do this by iterating with a counter
     for(my $i = 0; $i < scalar @array; $i++ ) {
      print "$array[$i]\n";
     }
+
+Could also be done with a while loop, just increment counter as seen in the Loop-de-loop slide
 
 ---
 #Scope 

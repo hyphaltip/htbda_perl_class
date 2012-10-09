@@ -1706,13 +1706,18 @@ The iterator is <code>$i++</code></p>
             <header><h1>Iterate through items in a list</h1></header>
             
             
-            <section><p>Can do this with a foreach loop</p>
+            <section><p>Iterate through items in a list with either <code>foreach</code> or <code>for</code></p>
 <div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array</span> <span class="o">=</span> <span class="sx">qw(A B X Y Z)</span><span class="p">;</span>
-<span class="lineno">2</span> <span class="k">for</span><span class="p">(</span><span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">scalar</span> <span class="nv">@array</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;$array[$i]\n&quot;</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">foreach</span> <span class="k">my</span> <span class="nv">$item</span> <span class="p">(</span> <span class="nv">@array</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;$item\n&quot;</span><span class="p">;</span>
 <span class="lineno">4</span> <span class="p">}</span>
+<span class="lineno">5</span> <span class="c1"># Or do this by iterating with a counter</span>
+<span class="lineno">6</span> <span class="k">for</span><span class="p">(</span><span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">scalar</span> <span class="nv">@array</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">7</span>  <span class="k">print</span> <span class="s">&quot;$array[$i]\n&quot;</span><span class="p">;</span>
+<span class="lineno">8</span> <span class="p">}</span>
 </pre></div>
-</section>
+
+<p>Could also be done with a while loop, just increment counter as seen in the Loop-de-loop slide</p></section>
             
           </div>
           <div class="presenter_notes">
