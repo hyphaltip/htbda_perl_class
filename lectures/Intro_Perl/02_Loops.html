@@ -1700,24 +1700,19 @@ The iterator is <code>$i++</code></p>
       
       <!-- slide source: 02_Loops.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Iterate through items in a list</h1></header>
             
             
             <section><p>Can do this with a foreach loop</p>
-<p>!perl<br />
-   my @array = qw(A B X Y Z);
-   foreach my $item ( @array ) {
-    print "$item\n";
-   }</p>
-<p>Or do this by using a counter</p>
-<p>!perl
-   my @array = qw(A B X Y Z);
-   for(my $i = 0; $i &lt; scalar @array; $i++ ) {
-    print "$array[$i]\n";
-   }</p></section>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array</span> <span class="o">=</span> <span class="sx">qw(A B X Y Z)</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">for</span><span class="p">(</span><span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">scalar</span> <span class="nv">@array</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;$array[$i]\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
