@@ -168,19 +168,19 @@ Can also continue a loop with `next`, by stopping and going back to the top of t
 
 Can do this with a foreach loop
 
-   !perl  
-   my @array = qw(A B X Y Z);
-   foreach my $item ( @array ) {
-    print "$item\n";
-   }
+    !perl  
+    my @array = qw(A B X Y Z);
+    foreach my $item ( @array ) {
+     print "$item\n";
+    }
 
 Or do this by using a counter
 
-   !perl
-   my @array = qw(A B X Y Z);
-   for(my $i = 0; $i < scalar @array; $i++ ) {
-    print "$array[$i]\n";
-   }
+    !perl
+    my @array = qw(A B X Y Z);
+    for(my $i = 0; $i < scalar @array; $i++ ) {
+     print "$array[$i]\n";
+    }
 
 ---
 #Scope 
