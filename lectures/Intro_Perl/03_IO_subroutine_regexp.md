@@ -50,16 +50,16 @@ One can also write data out to a file
 ---
 #Data embedded in a script
 
-   !perl
-   while(<DATA>) {
-    my ($col1,$col2) = split(/\s+/,$_);
-   }
+    !perl
+    while(<DATA>) {
+     my ($col1,$col2) = split(/\s+/,$_);
+    }
    
-   __DATA__
-   Color  Size Model
-   red    10   Jumbo
-   yellow 8    Large
-   pink   2    Mini
+    __DATA__
+    Color  Size Model
+    red    10   Jumbo
+    yellow 8    Large
+    pink   2    Mini
 
 ---
 #Pipes for processes

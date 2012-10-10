@@ -1411,21 +1411,23 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Data embedded in a script</h1></header>
             
             
-            <section><p>!perl
-   while(<DATA>) {
-    my ($col1,$col2) = split(/\s+/,$_);
-   }</p>
-<p><strong>DATA</strong>
-   Color  Size Model
-   red    10   Jumbo
-   yellow 8    Large
-   pink   2    Mini</p></section>
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;DATA&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>  <span class="k">my</span> <span class="p">(</span><span class="nv">$col1</span><span class="p">,</span><span class="nv">$col2</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno">3</span> <span class="p">}</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="bp">__DATA__</span>
+<span class="lineno">6</span> <span class="n">Color</span>  <span class="n">Size</span> <span class="n">Model</span>
+<span class="lineno">7</span> <span class="n">red</span>    <span class="mi">10</span>   <span class="n">Jumbo</span>
+<span class="lineno">8</span> <span class="n">yellow</span> <span class="mi">8</span>    <span class="n">Large</span>
+<span class="lineno">9</span> <span class="n">pink</span>   <span class="mi">2</span>    <span class="n">Mini</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
