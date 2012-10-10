@@ -161,7 +161,8 @@ column) and the FPKM data. Each gene will appear once in each file.
     }
     
     open(my $outfh => ">Combined.tab") || die $!;
-    for my $gene ( keys %expr3H) {
+    my $gene;
+    for $gene ( keys %expr3H) {
      print $outfh join("\t", $gene, $expr3H{$gene}, $expr20H{$gene}), "\n";
     }
     
