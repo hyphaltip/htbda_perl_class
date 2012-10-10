@@ -1267,7 +1267,8 @@ div.slide div.presenter_notes {
             
             <section><ul>
 <li>Input data from files</li>
-<li></li>
+<li>Read data from a program</li>
+<li>Print data into a file or print data out to a program</li>
 </ul></section>
             
           </div>
@@ -1284,7 +1285,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              1/14
+              1/15
             </aside>
           </footer>
         </div>
@@ -1322,7 +1323,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              2/14
+              2/15
             </aside>
           </footer>
         </div>
@@ -1363,7 +1364,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              3/14
+              3/15
             </aside>
           </footer>
         </div>
@@ -1400,7 +1401,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              4/14
+              4/15
             </aside>
           </footer>
         </div>
@@ -1438,7 +1439,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              5/14
+              5/15
             </aside>
           </footer>
         </div>
@@ -1492,7 +1493,7 @@ with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></
             </aside>
             
             <aside class="page_number">
-              6/14
+              6/15
             </aside>
           </footer>
         </div>
@@ -1527,7 +1528,47 @@ with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></
             </aside>
             
             <aside class="page_number">
-              7/14
+              7/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Read data from the web with cmdline</h1></header>
+            
+            
+            <section><p>!perl
+   my $url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=163644330&amp;retmode=text&amp;rettype=fasta';
+   # -S option will not print any statistics
+   open(my $fh =&gt; "curl -S '$url' |") || die $!;
+   while(&lt;$fh&gt;) {
+     print $_;
+   }</p>
+<p>open($fh =&gt; "GET '$url' |") || die $!;
+   while(&lt;$fh&gt;) {
+     print $_;
+   }</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/15
             </aside>
           </footer>
         </div>
@@ -1543,8 +1584,8 @@ with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></
             
             <section><p>Login to biocluster, Download data files. Data are in this <a href="directory">http://courses.stajich.org/public/gen220/data/</a> which represent some time points in growth for a fungus.</p>
 <blockquote>
-<p>http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab
-http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</p>
+<p><a href="http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab</a>
+<a href="http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</a></p>
 </blockquote>
 <p>Write a script to read in the Nc20H and Nc3H data into a hash (one
 hash for each datafile). Store in the hash the gene name (the 1st
@@ -1568,7 +1609,7 @@ column) and the FPKM data. Each gene will appear once in each file.</p>
             </aside>
             
             <aside class="page_number">
-              8/14
+              9/15
             </aside>
           </footer>
         </div>
@@ -1576,36 +1617,40 @@ column) and the FPKM data. Each gene will appear once in each file.</p>
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>A solution</h1></header>
             
             
-            <section><p>!perl
-   use strict;
-   use warnings;
-   my (%expr3H,%expr20H);
-   open(my $fh =&gt; 'Nc3H.expr.tab') || die $!;
-   while(&lt;$fh&gt;) {
-    my @row = split("\t",$_);
-    next if $row[0] eq 'gene_id'; # skip when it is the header line
-    $expr3H{$row[0]} = $row[5];
-   }</p>
-<p>open($fh =&gt; 'Nc20H.expr.tab') || die $!;
-   while(&lt;$fh&gt;) {
-    my @row = split("\t",$_);
-    next if $row[0] eq 'gene_id'; # skip when it is the header line
-    $expr20H{$row[0]} = $row[5];
-   }</p>
-<p>open(my $outfh =&gt; "&gt;Combined.tab") || die $!;
-   for my $gene ( keys %expr3H) {
-    print $outfh join("\t", $gene, $expr3H{$gene}, $expr20H{$gene}), "\n";
-   }</p>
-<p>open($outfh =&gt; "&gt;Combined_sorted.tab") || die $!;
-   for my $gene ( sort { $expr3H{$b} &lt;=&gt; $expr3H{$a} } keys %expr3H) {
-    print $outfh join("\t", $gene, $expr3H{$gene}, $expr20H{$gene}), "\n";
-   }</p></section>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">my</span> <span class="p">(</span><span class="nv">%expr3H</span><span class="p">,</span><span class="nv">%expr20H</span><span class="p">);</span>
+<span class="lineno"> 4</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&#39;Nc3H.expr.tab&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 6</span>  <span class="k">my</span> <span class="nv">@row</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno"> 7</span>  <span class="k">next</span> <span class="k">if</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">eq</span> <span class="s">&#39;gene_id&#39;</span><span class="p">;</span> <span class="c1"># skip when it is the header line</span>
+<span class="lineno"> 8</span>  <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="lineno"> 9</span> <span class="p">}</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&#39;Nc20H.expr.tab&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">12</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">13</span>  <span class="k">my</span> <span class="nv">@row</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno">14</span>  <span class="k">next</span> <span class="k">if</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">eq</span> <span class="s">&#39;gene_id&#39;</span><span class="p">;</span> <span class="c1"># skip when it is the header line</span>
+<span class="lineno">15</span>  <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="lineno">16</span> <span class="p">}</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$outfh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;Combined.tab&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">19</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%expr3H</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">20</span>  <span class="k">print</span> <span class="nv">$outfh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">},</span> <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">21</span> <span class="p">}</span>
+<span class="lineno">22</span> 
+<span class="lineno">23</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$outfh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;Combined_sorted.tab&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">24</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$b</span><span class="p">}</span> <span class="sr">&lt;=&gt;</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$a</span><span class="p">}</span> <span class="p">}</span> <span class="nb">keys</span> <span class="nv">%expr3H</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">25</span>  <span class="k">print</span> <span class="nv">$outfh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">},</span> <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">26</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1621,7 +1666,7 @@ column) and the FPKM data. Each gene will appear once in each file.</p>
             </aside>
             
             <aside class="page_number">
-              9/14
+              10/15
             </aside>
           </footer>
         </div>
@@ -1629,14 +1674,30 @@ column) and the FPKM data. Each gene will appear once in each file.</p>
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>References</h1></header>
             
             
             <section><p>Reference are ways to refer to a complicated data structures as a
-single, scalar value. This lets one pass around multiple arrays and they stay </p></section>
+single, scalar value. This lets one pass around multiple arrays and
+they stay separate. We also primarily use reference to store multiple
+things in a slot in an array.<br />
+</p>
+<ul>
+<li>Reference to an array is done with <code>\</code> or <code>[]</code></li>
+<li>Reference to a hash is done with <code>\</code> or <code>{}</code></li>
+</ul>
+<p>For example this lets one pass around multiple
+arrays and they aren't flattened into one. Consider this code.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array1</span> <span class="o">=</span> <span class="sx">qw(A B C D)</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">my</span> <span class="nv">@array2</span> <span class="o">=</span> <span class="sx">qw(W X Y Z)</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="nv">@array3</span> <span class="o">=</span> <span class="p">(</span><span class="nv">@array1</span><span class="p">,</span> <span class="nv">@array2</span><span class="p">);</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@array3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1652,7 +1713,7 @@ single, scalar value. This lets one pass around multiple arrays and they stay </
             </aside>
             
             <aside class="page_number">
-              10/14
+              11/15
             </aside>
           </footer>
         </div>
@@ -1660,17 +1721,27 @@ single, scalar value. This lets one pass around multiple arrays and they stay </
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Subroutines</h1></header>
+            <header><h1>Storing multiple items in an Array</h1></header>
             
             
-            <section><p>!perl
-   sub a_routine {
-    my @args = @<em>; # the arguments passed in are avaialable as @</em>;
-    print "the arguments are ", join(",", @args), "\n";
-   }</p></section>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://courses.stajich.org/public/gen220/data/Ncrassa_OR74A_InterproDomains.tab&#39;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;GET $url |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">my</span> <span class="nv">%genes</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>     <span class="k">my</span> <span class="p">(</span><span class="nv">$gene</span><span class="p">,</span><span class="nv">$domain</span><span class="p">,</span> <span class="nv">$domain_name</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span><span class="nv">$end</span><span class="p">,</span><span class="nv">$score</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="c1"># store an array in for each of the </span>
+<span class="lineno"> 7</span> <span class="nb">push</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}},</span> <span class="nv">$domain_name</span><span class="p">;</span>
+<span class="lineno"> 8</span> <span class="p">}</span>    
+<span class="lineno"> 9</span> <span class="c1"># now unpack to print this out</span>
+<span class="lineno">10</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%genes</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">11</span>     <span class="k">my</span> <span class="nv">@domains</span> <span class="o">=</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}};</span>
+<span class="lineno">12</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@domains</span><span class="p">)),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">13</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1686,7 +1757,43 @@ single, scalar value. This lets one pass around multiple arrays and they stay </
             </aside>
             
             <aside class="page_number">
-              11/14
+              12/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Subroutines</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">sub </span><span class="nf">a_routine</span> <span class="p">{</span>
+<span class="lineno">2</span>  <span class="k">my</span> <span class="nv">@args</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span> <span class="c1"># the arguments passed in are avaialable as @_;</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;the arguments are &quot;</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@args</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+<span class="lineno">5</span> <span class="o">&amp;</span><span class="n">a_routine</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/15
             </aside>
           </footer>
         </div>
@@ -1700,11 +1807,14 @@ single, scalar value. This lets one pass around multiple arrays and they stay </
             <header><h1>Command line arguments</h1></header>
             
             
-            <section><p>$ perl myscript.pl A B C</p>
-<p>!perl
-   print join(",", @ARGS), "\n";
-   print "the first argument is ", $ARGS[0], "\n";</p>
-<p>A,B,C</p>
+            <section><pre><code>$ perl myscript.pl A B C
+
+!perl
+print join(",", @ARGS), "\n";
+print "the first argument is ", $ARGS[0], "\n";
+
+A,B,C
+</code></pre>
 <p>Use this to specify a data file to read in, or specific options you want to run.</p></section>
             
           </div>
@@ -1721,7 +1831,7 @@ single, scalar value. This lets one pass around multiple arrays and they stay </
             </aside>
             
             <aside class="page_number">
-              12/14
+              14/15
             </aside>
           </footer>
         </div>
@@ -1753,35 +1863,7 @@ the first argument.</p></section>
             </aside>
             
             <aside class="page_number">
-              13/14
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: 03_IO_subroutine_regexp.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Regular expressions</h1></header>
-            
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              14/14
+              15/15
             </aside>
           </footer>
         </div>
@@ -1838,44 +1920,50 @@ the first argument.</p></section>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Let's try this together</a></th>
+        <th><a href="#slide8">Read data from the web with cmdline</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">A solution</a></th>
+        <th><a href="#slide9">Let's try this together</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">References</a></th>
+        <th><a href="#slide10">A solution</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Subroutines</a></th>
+        <th><a href="#slide11">References</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Command line arguments</a></th>
+        <th><a href="#slide12">Storing multiple items in an Array</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Practice</a></th>
+        <th><a href="#slide13">Subroutines</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Regular expressions</a></th>
+        <th><a href="#slide14">Command line arguments</a></th>
         <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Practice</a></th>
+        <td><a href="#slide15">15</a></td>
       </tr>
       
       
