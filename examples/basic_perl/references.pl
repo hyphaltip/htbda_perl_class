@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -35,6 +36,33 @@ $hash_ref2->{grape} = 'purple';
 print "Hash: ",join(",",keys %ha)," Ref: $hash_ref\n";
 print "Deref Ref: ",join(",",keys %$hash_ref),"\n";
 print "Deref Ref2: ",join(",",keys %$hash_ref2),"\n";
+
+print "\n==\n";
+
+
+my @array1 = qw(A B C D);
+my @array2 = qw(W X Y Z);
+my @array3 = (@array1, @array2);
+
+print join(",", @array3), "\n";
+
+@array3 = (\@array1, \@array2);
+
+print join(",", @array3), "\n";
+
+# get them back off the array
+my $array1ref = $array3[0];
+my $array2ref = $array3[1];
+
+# de-reference the arrays to print them
+
+print join(",", @{$array1ref}), "\n";
+print join(",", @{$array2ref}), "\n";
+
+# can also do this all in one 
+
+print join(",", @{$array3[0]}), "\n";
+print join(",", @{$array3[1]}), "\n";
 
 print "\n==\n";
 
@@ -89,7 +117,5 @@ for my $gene ( keys %genes ) {
   }
   print $ofh join("\t", $gene, join(",", @domain_info)), "\n";
 }
-
-
 
 

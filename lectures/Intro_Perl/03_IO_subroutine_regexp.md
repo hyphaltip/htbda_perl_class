@@ -155,7 +155,27 @@ column) and the FPKM data. Each gene will appear once in each file.
 #References
 
 Reference are ways to refer to a complicated data structures as a
-single, scalar value. This lets one pass around multiple arrays and they stay 
+single, scalar value. We use the `\` as well as 
+
+* Reference to an array is done with `\` or `[]`
+* Reference to a hash is done with `\` or `{}`
+* 
+For example this lets one pass around multiple
+arrays and they aren't flattened into one. Consider this code.
+
+    !perl
+    my @array1 = qw(A B C D);
+    my @array2 = qw(W X Y Z);
+    my @array3 = (@array1, @array2);
+
+    print join(",", @array3), "\n";
+
+
+
+
+
+---
+#
 
 ---
 #Subroutines
