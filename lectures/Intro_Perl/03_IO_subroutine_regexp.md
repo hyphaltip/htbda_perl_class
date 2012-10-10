@@ -7,16 +7,15 @@
 ---
 #Input/Ouput
 
-   !perl
-   open(IN, "input.txt") || die $!;
-   # read a line in
-   my $line = <IN>;
-   # read the whole file
-   while(<IN>) {
-    my ($col1, $col2) = split;    
-   }
-      
-   close(IN);
+    !perl
+    open(IN, "input.txt") || die $!;
+    # read a line in
+    my $line = <IN>;
+    # read the whole file
+    while(<IN>) {
+     my ($col1, $col2) = split;    
+    }      
+    close(IN);
 
 
 ---
@@ -24,17 +23,17 @@
 
 Filehandles can also be stored in variables
 
-   !perl
-   my $fh;
-   open($fh => "gene.dat") || die $!;
-   while(<$fh>) {
-    print $_;
-   }
-   #I like to use this in one line
-   open(my $fh2 => "gene2.dat") || die $!;
-   while(<$fh2>) {
-    print $_;
-   }
+    !perl
+    my $fh;
+    open($fh => "gene.dat") || die $!;
+    while(<$fh>) {
+     print $_;
+    }
+    #I like to use this in one line
+    open(my $fh2 => "gene2.dat") || die $!;
+    while(<$fh2>) {
+     print $_;
+    }
 
 ---
 #Writing to a file

@@ -1293,21 +1293,22 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Input/Ouput</h1></header>
             
             
-            <section><p>!perl
-   open(IN, "input.txt") || die $!;
-   # read a line in
-   my $line = <IN>;
-   # read the whole file
-   while(<IN>) {
-    my ($col1, $col2) = split;  <br />
-   }</p>
-<p>close(IN);</p></section>
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="s">&quot;input.txt&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="c1"># read a line in</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;IN&gt;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="c1"># read the whole file</span>
+<span class="lineno">5</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;IN&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">6</span>  <span class="k">my</span> <span class="p">(</span><span class="nv">$col1</span><span class="p">,</span> <span class="nv">$col2</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">;</span>    
+<span class="lineno">7</span> <span class="p">}</span>      
+<span class="lineno">8</span> <span class="nb">close</span><span class="p">(</span><span class="n">IN</span><span class="p">);</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1331,24 +1332,25 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Filehandles</h1></header>
             
             
             <section><p>Filehandles can also be stored in variables</p>
-<p>!perl
-   my $fh;
-   open($fh =&gt; "gene.dat") || die $!;
-   while(&lt;$fh&gt;) {
-    print $<em>;
-   }
-   #I like to use this in one line
-   open(my $fh2 =&gt; "gene2.dat") || die $!;
-   while(&lt;$fh2&gt;) {
-    print $</em>;
-   }</p></section>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$fh</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;gene.dat&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 4</span>  <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="p">}</span>
+<span class="lineno"> 6</span> <span class="c1">#I like to use this in one line</span>
+<span class="lineno"> 7</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh2</span> <span class="o">=&gt;</span> <span class="s">&quot;gene2.dat&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 8</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh2&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 9</span>  <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
