@@ -98,29 +98,28 @@ with `zmore` or you can uncompress it with `gunzip`.
 
 Can use it to open a compressed file on the fly.
 
-   !perl
-   open(my $fh => "zcat file.gz |") || die $!;
-   while(<$fh>) {
-    # process data in a file that was compressed, without making a new copy of the file as uncompressed
-   }
-
+    !perl
+    open(my $fh => "zcat file.gz |") || die $!;
+    while(<$fh>) {
+     # process data in a file that was compressed, without making a new copy of the file as uncompressed
+    }
 
 ---
 #Read data from the web with cmdline
 
 
-   !perl
-   my $url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=163644330&retmode=text&rettype=fasta';
-   # -S option will not print any statistics
-   open(my $fh => "curl -S '$url' |") || die $!;
-   while(<$fh>) {
-     print $_;
-   }
+    !perl
+    my $url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=163644330&retmode=text&rettype=fasta';
+    # -S option will not print any statistics
+    open(my $fh => "curl -S '$url' |") || die $!;
+    while(<$fh>) {
+      print $_;
+    }
 
-   open($fh => "GET '$url' |") || die $!;
-   while(<$fh>) {
-     print $_;
-   }
+    open($fh => "GET '$url' |") || die $!;
+    while(<$fh>) {
+      print $_;
+    }
 
 ---
 #Let's try this together

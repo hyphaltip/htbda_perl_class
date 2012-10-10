@@ -1505,18 +1505,19 @@ with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Pipe trick</h1></header>
             
             
             <section><p>Can use it to open a compressed file on the fly.</p>
-<p>!perl
-   open(my $fh =&gt; "zcat file.gz |") || die $!;
-   while(&lt;$fh&gt;) {
-    # process data in a file that was compressed, without making a new copy of the file as uncompressed
-   }</p></section>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;zcat file.gz |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="c1"># process data in a file that was compressed, without making a new copy of the file as uncompressed</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1540,23 +1541,25 @@ with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Read data from the web with cmdline</h1></header>
             
             
-            <section><p>!perl
-   my $url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=163644330&amp;retmode=text&amp;rettype=fasta';
-   # -S option will not print any statistics
-   open(my $fh =&gt; "curl -S '$url' |") || die $!;
-   while(&lt;$fh&gt;) {
-     print $_;
-   }</p>
-<p>open($fh =&gt; "GET '$url' |") || die $!;
-   while(&lt;$fh&gt;) {
-     print $_;
-   }</p></section>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=163644330&amp;retmode=text&amp;rettype=fasta&#39;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="c1"># -S option will not print any statistics</span>
+<span class="lineno"> 3</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;curl -S &#39;$url&#39; |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>   <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="p">}</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;GET &#39;$url&#39; |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 9</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">10</span>   <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno">11</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
