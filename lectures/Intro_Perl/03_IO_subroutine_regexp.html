@@ -1284,7 +1284,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/14
             </aside>
           </footer>
         </div>
@@ -1305,7 +1305,8 @@ div.slide div.presenter_notes {
    # read the whole file
    while(<IN>) {
     my ($col1, $col2) = split;  <br />
-   }</p></section>
+   }</p>
+<p>close(IN);</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1321,7 +1322,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              2/6
+              2/14
             </aside>
           </footer>
         </div>
@@ -1362,7 +1363,44 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              3/6
+              3/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Writing to a file</h1></header>
+            
+            
+            <section><p>One can also write data out to a file</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;outputfile.txt&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(NAME RANK TOWN)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(GRIFFITH SHERIFF MAYBERRY)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(RAWLS DEPUTY BALTIMORE)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="nb">close</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/14
             </aside>
           </footer>
         </div>
@@ -1400,7 +1438,61 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              4/6
+              5/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Pipes for processes</h1></header>
+            
+            
+            <section><p>You can combine operations that are on the command line with the <code>|</code>
+operator in UNIX. This can also be used in Perl when specifying an
+<code>open</code> command to actually run a program and have the output sent back
+to the Perl program.  This can be used to obtain data from a
+program. For example here we run the grep cmmand to find lines in a
+file that have the string 'gene'. Only those lines will be returned
+and thus be seen by the Perl program. </p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span><span class="s">&quot;grep &#39;gene&#39; gene.dat | &quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">while</span><span class="p">(</span><span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;IN&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;line is $line\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</pre></div>
+
+<p>Or it can be used to send data to a program. For example this script
+will print out data to a program which will then compress the
+data. Notice how the pipe comes at the beginning because we plan to
+send data into the program.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;| gzip -c &gt; file.gz&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;hello there\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">print</span> <span class="s">&quot;can you see this?\n&quot;</span><span class="p">;</span>
+</pre></div>
+
+<p>Now look at the file in your directory. It is compressed - you can
+read it with <code>more</code> and see it is binary file. However you can read it
+with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/14
             </aside>
           </footer>
         </div>
@@ -1411,13 +1503,14 @@ div.slide div.presenter_notes {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Pipes for processes</h1></header>
+            <header><h1>Pipe trick</h1></header>
             
             
-            <section><p>!perl
-   open(IN,"grep 'gene' gene.dat | ") || die $!;
-   while(my $line = <IN>) {
-    print "line is $line\n";
+            <section><p>Can use it to open a compressed file on the fly.</p>
+<p>!perl
+   open(my $fh =&gt; "zcat file.gz |") || die $!;
+   while(&lt;$fh&gt;) {
+    # process data in a file that was compressed, without making a new copy of the file as uncompressed
    }</p></section>
             
           </div>
@@ -1434,7 +1527,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              5/6
+              7/14
             </aside>
           </footer>
         </div>
@@ -1445,8 +1538,21 @@ div.slide div.presenter_notes {
         <div class="slide">
           <div class="inner">
             
+            <header><h1>Let's try this together</h1></header>
             
-            <section><h1></h1></section>
+            
+            <section><p>Login to biocluster, Download data files. Data are in this <a href="directory">http://courses.stajich.org/public/gen220/data/</a> which represent some time points in growth for a fungus.</p>
+<blockquote>
+<p>http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab
+http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</p>
+</blockquote>
+<p>Write a script to read in the Nc20H and Nc3H data into a hash (one
+hash for each datafile). Store in the hash the gene name (the 1st
+column) and the FPKM data. Each gene will appear once in each file.</p>
+<ul>
+<li>Print out a new file which has the gene name, the expression in 3H and the expression in 20H.</li>
+<li>Extra - print it out so that it is sorted by the 3HR timepoint</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1462,7 +1568,220 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              6/6
+              8/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>A solution</h1></header>
+            
+            
+            <section><p>!perl
+   use strict;
+   use warnings;
+   my (%expr3H,%expr20H);
+   open(my $fh =&gt; 'Nc3H.expr.tab') || die $!;
+   while(&lt;$fh&gt;) {
+    my @row = split("\t",$_);
+    next if $row[0] eq 'gene_id'; # skip when it is the header line
+    $expr3H{$row[0]} = $row[5];
+   }</p>
+<p>open($fh =&gt; 'Nc20H.expr.tab') || die $!;
+   while(&lt;$fh&gt;) {
+    my @row = split("\t",$_);
+    next if $row[0] eq 'gene_id'; # skip when it is the header line
+    $expr20H{$row[0]} = $row[5];
+   }</p>
+<p>open(my $outfh =&gt; "&gt;Combined.tab") || die $!;
+   for my $gene ( keys %expr3H) {
+    print $outfh join("\t", $gene, $expr3H{$gene}, $expr20H{$gene}), "\n";
+   }</p>
+<p>open($outfh =&gt; "&gt;Combined_sorted.tab") || die $!;
+   for my $gene ( sort { $expr3H{$b} &lt;=&gt; $expr3H{$a} } keys %expr3H) {
+    print $outfh join("\t", $gene, $expr3H{$gene}, $expr20H{$gene}), "\n";
+   }</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>References</h1></header>
+            
+            
+            <section><p>Reference are ways to refer to a complicated data structures as a
+single, scalar value. This lets one pass around multiple arrays and they stay </p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Subroutines</h1></header>
+            
+            
+            <section><p>!perl
+   sub a_routine {
+    my @args = @<em>; # the arguments passed in are avaialable as @</em>;
+    print "the arguments are ", join(",", @args), "\n";
+   }</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Command line arguments</h1></header>
+            
+            
+            <section><p>$ perl myscript.pl A B C</p>
+<p>!perl
+   print join(",", @ARGS), "\n";
+   print "the first argument is ", $ARGS[0], "\n";</p>
+<p>A,B,C</p>
+<p>Use this to specify a data file to read in, or specific options you want to run.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Practice</h1></header>
+            
+            
+            <section><p>Write a script that will open and print out the first 5 lines of a
+file. The name of the file to open should be passed in on the command line as
+the first argument.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Regular expressions</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/14
             </aside>
           </footer>
         </div>
@@ -1495,20 +1814,68 @@ div.slide div.presenter_notes {
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Data embedded in a script</a></th>
+        <th><a href="#slide4">Writing to a file</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Pipes for processes</a></th>
+        <th><a href="#slide5">Data embedded in a script</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">-</a></th>
+        <th><a href="#slide6">Pipes for processes</a></th>
         <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Pipe trick</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Let's try this together</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">A solution</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">References</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Subroutines</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Command line arguments</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Practice</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Regular expressions</a></th>
+        <td><a href="#slide14">14</a></td>
       </tr>
       
       
