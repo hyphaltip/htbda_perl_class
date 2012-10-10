@@ -129,6 +129,9 @@ Login to biocluster, Download data files. Data are in this [http://courses.staji
 > [http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab)
 > [http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab)
 
+    (on biocluster)
+    wget //courses.stajich.org/public/gen220/data/Nc3H.expr.tab
+
 Write a script to read in the Nc20H and Nc3H data into a hash (one
 hash for each datafile). Store in the hash the gene name (the 1st
 column) and the FPKM data. Each gene will appear once in each file.
