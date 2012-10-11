@@ -1267,7 +1267,8 @@ div.slide div.presenter_notes {
             
             <section><ul>
 <li>Input data from files</li>
-<li></li>
+<li>Read data from a program</li>
+<li>Print data into a file or print data out to a program</li>
 </ul></section>
             
           </div>
@@ -1284,7 +1285,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/15
             </aside>
           </footer>
         </div>
@@ -1292,20 +1293,22 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Input/Ouput</h1></header>
             
             
-            <section><p>!perl
-   open(IN, "input.txt") || die $!;
-   # read a line in
-   my $line = <IN>;
-   # read the whole file
-   while(<IN>) {
-    my ($col1, $col2) = split;  <br />
-   }</p></section>
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="s">&quot;input.txt&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="c1"># read a line in</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;IN&gt;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="c1"># read the whole file</span>
+<span class="lineno">5</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;IN&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">6</span>  <span class="k">my</span> <span class="p">(</span><span class="nv">$col1</span><span class="p">,</span> <span class="nv">$col2</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">;</span>    
+<span class="lineno">7</span> <span class="p">}</span>      
+<span class="lineno">8</span> <span class="nb">close</span><span class="p">(</span><span class="n">IN</span><span class="p">);</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1321,7 +1324,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              2/6
+              2/15
             </aside>
           </footer>
         </div>
@@ -1329,24 +1332,25 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Filehandles</h1></header>
             
             
             <section><p>Filehandles can also be stored in variables</p>
-<p>!perl
-   my $fh;
-   open($fh =&gt; "gene.dat") || die $!;
-   while(&lt;$fh&gt;) {
-    print $<em>;
-   }
-   #I like to use this in one line
-   open(my $fh2 =&gt; "gene2.dat") || die $!;
-   while(&lt;$fh2&gt;) {
-    print $</em>;
-   }</p></section>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$fh</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;gene.dat&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 4</span>  <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="p">}</span>
+<span class="lineno"> 6</span> <span class="c1">#I like to use this in one line</span>
+<span class="lineno"> 7</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh2</span> <span class="o">=&gt;</span> <span class="s">&quot;gene2.dat&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 8</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh2&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 9</span>  <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno">10</span> <span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1362,7 +1366,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              3/6
+              3/15
             </aside>
           </footer>
         </div>
@@ -1370,21 +1374,60 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Writing to a file</h1></header>
+            
+            
+            <section><p>One can also write data out to a file</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;outputfile.txt&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(NAME RANK TOWN)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(GRIFFITH SHERIFF MAYBERRY)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="k">print</span> <span class="nv">$fh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="sx">qw(RAWLS DEPUTY BALTIMORE)</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">5</span> <span class="nb">close</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Data embedded in a script</h1></header>
             
             
-            <section><p>!perl
-   while(<DATA>) {
-    my ($col1,$col2) = split(/\s+/,$_);
-   }</p>
-<p><strong>DATA</strong>
-   Color  Size Model
-   red    10   Jumbo
-   yellow 8    Large
-   pink   2    Mini</p></section>
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;DATA&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>  <span class="k">my</span> <span class="p">(</span><span class="nv">$col1</span><span class="p">,</span><span class="nv">$col2</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno">3</span> <span class="p">}</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="bp">__DATA__</span>
+<span class="lineno">6</span> <span class="n">Color</span>  <span class="n">Size</span> <span class="n">Model</span>
+<span class="lineno">7</span> <span class="n">red</span>    <span class="mi">10</span>   <span class="n">Jumbo</span>
+<span class="lineno">8</span> <span class="n">yellow</span> <span class="mi">8</span>    <span class="n">Large</span>
+<span class="lineno">9</span> <span class="n">pink</span>   <span class="mi">2</span>    <span class="n">Mini</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1400,7 +1443,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              4/6
+              5/15
             </aside>
           </footer>
         </div>
@@ -1408,17 +1451,37 @@ div.slide div.presenter_notes {
       
       <!-- slide source: 03_IO_subroutine_regexp.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Pipes for processes</h1></header>
             
             
-            <section><p>!perl
-   open(IN,"grep 'gene' gene.dat | ") || die $!;
-   while(my $line = <IN>) {
-    print "line is $line\n";
-   }</p></section>
+            <section><p>You can combine operations that are on the command line with the <code>|</code>
+operator in UNIX. This can also be used in Perl when specifying an
+<code>open</code> command to actually run a program and have the output sent back
+to the Perl program.  This can be used to obtain data from a
+program. For example here we run the grep cmmand to find lines in a
+file that have the string 'gene'. Only those lines will be returned
+and thus be seen by the Perl program. </p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span><span class="s">&quot;grep &#39;gene&#39; gene.dat | &quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">while</span><span class="p">(</span><span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;IN&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;line is $line\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</pre></div>
+
+<p>Or it can be used to send data to a program. For example this script
+will print out data to a program which will then compress the
+data. Notice how the pipe comes at the beginning because we plan to
+send data into the program.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;| gzip -c &gt; file.gz&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;hello there\n&quot;</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">print</span> <span class="s">&quot;can you see this?\n&quot;</span><span class="p">;</span>
+</pre></div>
+
+<p>Now look at the file in your directory. It is compressed - you can
+read it with <code>more</code> and see it is binary file. However you can read it
+with <code>zmore</code> or you can uncompress it with <code>gunzip</code>.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1434,7 +1497,85 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              5/6
+              6/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Pipe trick</h1></header>
+            
+            
+            <section><p>Can use it to open a compressed file on the fly.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;zcat file.gz |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>  <span class="c1"># process data in a file that was compressed, without making a new copy of the file as uncompressed</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Read data from the web with cmdline</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=163644330&amp;retmode=text&amp;rettype=fasta&#39;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="c1"># -S option will not print any statistics</span>
+<span class="lineno"> 3</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;curl -S &#39;$url&#39; |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>   <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="p">}</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;GET &#39;$url&#39; |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 9</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">10</span>   <span class="k">print</span> <span class="nv">$_</span><span class="p">;</span>
+<span class="lineno">11</span> <span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/15
             </aside>
           </footer>
         </div>
@@ -1445,8 +1586,24 @@ div.slide div.presenter_notes {
         <div class="slide">
           <div class="inner">
             
+            <header><h1>Let's try this together</h1></header>
             
-            <section><h1></h1></section>
+            
+            <section><p>Login to biocluster, Download data files. Data are in this <a href="directory">http://courses.stajich.org/public/gen220/data/</a> which represent some time points in growth for a fungus.</p>
+<blockquote>
+<p><a href="http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab</a>
+<a href="http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</a></p>
+</blockquote>
+<pre><code>(on biocluster)
+wget http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab
+</code></pre>
+<p>Write a script to read in the Nc20H and Nc3H data into a hash (one
+hash for each datafile). Store in the hash the gene name (the 1st
+column) and the FPKM data. Each gene will appear once in each file.</p>
+<ul>
+<li>Print out a new file which has the gene name, the expression in 3H and the expression in 20H.</li>
+<li>Extra - print it out so that it is sorted by the 3HR timepoint</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1462,7 +1619,262 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              6/6
+              9/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>A solution</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">my</span> <span class="p">(</span><span class="nv">%expr3H</span><span class="p">,</span><span class="nv">%expr20H</span><span class="p">);</span>
+<span class="lineno"> 4</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&#39;Nc3H.expr.tab&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 5</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 6</span>  <span class="k">my</span> <span class="nv">@row</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno"> 7</span>  <span class="k">next</span> <span class="k">if</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">eq</span> <span class="s">&#39;gene_id&#39;</span><span class="p">;</span> <span class="c1"># skip when it is the header line</span>
+<span class="lineno"> 8</span>  <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="lineno"> 9</span> <span class="p">}</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&#39;Nc20H.expr.tab&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">12</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">13</span>  <span class="k">my</span> <span class="nv">@row</span> <span class="o">=</span> <span class="nb">split</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span><span class="nv">$_</span><span class="p">);</span>
+<span class="lineno">14</span>  <span class="k">next</span> <span class="k">if</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">eq</span> <span class="s">&#39;gene_id&#39;</span><span class="p">;</span> <span class="c1"># skip when it is the header line</span>
+<span class="lineno">15</span>  <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$row</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="lineno">16</span> <span class="p">}</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$outfh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;Combined.tab&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">19</span> <span class="k">my</span> <span class="nv">$gene</span><span class="p">;</span>
+<span class="lineno">20</span> <span class="k">for</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%expr3H</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">21</span>  <span class="k">print</span> <span class="nv">$outfh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">},</span> <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">22</span> <span class="p">}</span>
+<span class="lineno">23</span> 
+<span class="lineno">24</span> <span class="nb">open</span><span class="p">(</span><span class="nv">$outfh</span> <span class="o">=&gt;</span> <span class="s">&quot;&gt;Combined_sorted.tab&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno">25</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$b</span><span class="p">}</span> <span class="sr">&lt;=&gt;</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$a</span><span class="p">}</span> <span class="p">}</span> <span class="nb">keys</span> <span class="nv">%expr3H</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">26</span>  <span class="k">print</span> <span class="nv">$outfh</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nv">$expr3H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">},</span> <span class="nv">$expr20H</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">27</span> <span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>References</h1></header>
+            
+            
+            <section><p>Reference are ways to refer to a complicated data structures as a
+single, scalar value. This lets one pass around multiple arrays and
+they stay separate. We also primarily use reference to store multiple
+things in a slot in an array.<br />
+</p>
+<ul>
+<li>Reference to an array is done with <code>\</code> or <code>[]</code></li>
+<li>Reference to a hash is done with <code>\</code> or <code>{}</code></li>
+</ul>
+<p>For example this lets one pass around multiple
+arrays and they aren't flattened into one. Consider this code.</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="k">my</span> <span class="nv">@array1</span> <span class="o">=</span> <span class="sx">qw(A B C D)</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="k">my</span> <span class="nv">@array2</span> <span class="o">=</span> <span class="sx">qw(W X Y Z)</span><span class="p">;</span>
+<span class="lineno">3</span> <span class="k">my</span> <span class="nv">@array3</span> <span class="o">=</span> <span class="p">(</span><span class="nv">@array1</span><span class="p">,</span> <span class="nv">@array2</span><span class="p">);</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@array3</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Storing multiple items in an Array</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="s">&#39;http://courses.stajich.org/public/gen220/data/Ncrassa_OR74A_InterproDomains.tab&#39;</span><span class="p">;</span>
+<span class="lineno"> 2</span> <span class="nb">open</span><span class="p">(</span><span class="k">my</span> <span class="nv">$fh</span> <span class="o">=&gt;</span> <span class="s">&quot;GET $url |&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+<span class="lineno"> 3</span> <span class="k">my</span> <span class="nv">%genes</span><span class="p">;</span>
+<span class="lineno"> 4</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>     <span class="k">my</span> <span class="p">(</span><span class="nv">$gene</span><span class="p">,</span><span class="nv">$domain</span><span class="p">,</span> <span class="nv">$domain_name</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span><span class="nv">$end</span><span class="p">,</span><span class="nv">$score</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">;</span>
+<span class="lineno"> 6</span> <span class="c1"># store an array in for each of the </span>
+<span class="lineno"> 7</span> <span class="nb">push</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}},</span> <span class="nv">$domain_name</span><span class="p">;</span>
+<span class="lineno"> 8</span> <span class="p">}</span>    
+<span class="lineno"> 9</span> <span class="c1"># now unpack to print this out</span>
+<span class="lineno">10</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%genes</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">11</span>     <span class="k">my</span> <span class="nv">@domains</span> <span class="o">=</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}};</span>
+<span class="lineno">12</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@domains</span><span class="p">)),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">13</span> <span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Subroutines</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="k">sub </span><span class="nf">a_routine</span> <span class="p">{</span>
+<span class="lineno">2</span>  <span class="k">my</span> <span class="nv">@args</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span> <span class="c1"># the arguments passed in are avaialable as @_;</span>
+<span class="lineno">3</span>  <span class="k">print</span> <span class="s">&quot;the arguments are &quot;</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@args</span><span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+<span class="lineno">5</span> <span class="o">&amp;</span><span class="n">a_routine</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Command line arguments</h1></header>
+            
+            
+            <section><pre><code>$ perl myscript.pl A B C
+
+!perl
+print join(",", @ARGS), "\n";
+print "the first argument is ", $ARGS[0], "\n";
+
+A,B,C
+</code></pre>
+<p>Use this to specify a data file to read in, or specific options you want to run.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 03_IO_subroutine_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Practice</h1></header>
+            
+            
+            <section><p>Write a script that will open and print out the first 5 lines of a
+file. The name of the file to open should be passed in on the command line as
+the first argument.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="03_IO_subroutine_regexp.md">03_IO_subroutine_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/15
             </aside>
           </footer>
         </div>
@@ -1495,20 +1907,74 @@ div.slide div.presenter_notes {
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Data embedded in a script</a></th>
+        <th><a href="#slide4">Writing to a file</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Pipes for processes</a></th>
+        <th><a href="#slide5">Data embedded in a script</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">-</a></th>
+        <th><a href="#slide6">Pipes for processes</a></th>
         <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Pipe trick</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Read data from the web with cmdline</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Let's try this together</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">A solution</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">References</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Storing multiple items in an Array</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Subroutines</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Command line arguments</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Practice</a></th>
+        <td><a href="#slide15">15</a></td>
       </tr>
       
       
