@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="practice-problems-for-in-class-activities">Practice Problems for in-class activities</h1>
+<h1 id="problem-set-for-week-3">Problem set for Week 3</h1>
+<p>You will write one script for this Perl problem, please upload it as a gist to <a href="http://gist.github.com">http://gist.github.com</a> and provide it to us by email.</p>
+<p>(hint, you can use wget or curl to download these files onto your directory on biocluster)</p>
+<ul>
+<li>Download the file <a href="http://courses.stajich.org/public/gen220/data/Ncrassa_OR74A_InterproDomains.tab">InterproDomains.tab</a></li>
+<li>Download the file <a href="http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab">Nc20H.expr.tab</a></li>
+<li>Download the file <a href="http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab">Nc3H.expr.tab</a></li>
+</ul>
+<p>Generate a new file that has in it the following columns that are tab delimited <a href="http://en.wikipedia.org/wiki/Tab-separated_values">(tsv)</a></p>
+<ul>
+<li>The Gene name (NCUXXXX)</li>
+<li>The gene length (use the left and right information from either the Nc20H or Nc3H file)</li>
+<li>The chromosome name (supercontig)</li>
+<li>The start position of the gene</li>
+<li>The Nc3H FPKM (which is the average gene expression value)</li>
+<li>The Nc20H FPKM</li>
+<li>The list of domains found in the genes</li>
+</ul>
+<p>Print a header line first that lists the column names (e.g) NAME 3H 20H .... etc</p>
+<p>Print out several versions of this file (name them in some way to be distinguishable - e.g. &quot;genes_sorted_by_length.tab&quot;, &quot;genes_sorted_by_Nc3H.tab&quot;, etc.</p>
+<ul>
+<li>one where it is sorted by gene length</li>
+<li>one where it is sorted by Nc3H FPKM value (highest to lowest)</li>
+<li>one where it is sorted by Nc20H FPKM value</li>
+<li>for bonus points, sort the genes by chromosome name and start position. See [http://www.perlhowto.com/sort_ordering_by_multiple_columns][help] and there are many other examples of solutions out there on the web.</li>
+</ul>
+<h1 id="unix-problems">UNIX Problems</h1>
+<ol type="1">
+<li><p>Use the “top” command to find out how many processes are running by user “root”? Which user is using the most memory?</p></li>
+<li><p>Use /home/rliu/GEN220/example_map.txt as input, use unix commands to form a pipeline to output query sequences that contain motif “CTACA” and the chromosomes to which these sequences were mapped. (query sequences are in column 2 and mapped chromosomes are in column 8). Redirect output to a file.</p></li>
+<li><p>Practice the following unix commands: top, ps, kill, cat, tr, sort, cut, uniq, sed, awk. Practice the grep command with the following options -i, -v, -c, -n, -E (use man pages to study these options).</p></li>
+<li><p>Take /home/rliu/GEN220/ath_chr1.gff (or from the web here <a href="http://courses.stajich.org/public/gen220/data/ath_chr1.gff">ath1_chr.gff</a> as input (your may copy the file to your own directory), write a Perl script to generate three integers that represent:</p></li>
+</ol>
+<blockquote>
+<ol type="i">
+<li>number of annotated 3’ UTRs;</li>
+<li>number of introns that have length between 100 and 300nt (inclusive) (if one gene has several annotated mRNA sequences, only consider the first one, e.g. AT1G01020.1);</li>
+<li>average length of the genes (round to an integer) that are located on the positive strand of the chromosome and between coordinates 1001300 and 10000500.</li>
+</ol>
+</blockquote>
+<p>Your output should be a tab delimited text file named “ath_chr1_stats.txt” that contains one line. The line contains three integers in the order of the questions, separated by tab character.</p>
+</body>
+</html>

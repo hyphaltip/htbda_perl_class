@@ -4,4 +4,53 @@
 Problem set for Week 3
 ======================
 
-Download the file [http://courses.stajich.org/public/data]
+You will write one script for this Perl problem, please upload it as a
+gist to [http://gist.github.com](http://gist.github.com) and provide it to us by email.
+
+(hint, you can use wget or curl to download these files onto your directory on biocluster)
+
+* Download the file [InterproDomains.tab](http://courses.stajich.org/public/gen220/data/Ncrassa_OR74A_InterproDomains.tab)
+* Download the file [Nc20H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab)
+* Download the file [Nc3H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab)
+
+Generate a new file that has in it the following columns that are tab delimited [(tsv)](http://en.wikipedia.org/wiki/Tab-separated_values)
+
+* The Gene name (NCUXXXX)
+* The gene length (use the left and right information from either the Nc20H or Nc3H file)
+* The chromosome name (supercontig)
+* The start position of the gene
+* The Nc3H FPKM (which is the average gene expression value)
+* The Nc20H FPKM
+* The list of domains found in the genes
+
+Print a header line first that lists the column names (e.g)
+NAME 3H 20H .... etc
+
+Print out several versions of this file (name them in some way to be
+distinguishable - e.g. "genes_sorted_by_length.tab",
+"genes_sorted_by_Nc3H.tab", etc.
+
+* one where it is sorted by gene length
+* one where it is sorted by Nc3H FPKM value (highest to lowest)
+* one where it is sorted by Nc20H FPKM value
+* for bonus points, sort the genes by chromosome name and start position. See [http://www.perlhowto.com/sort_ordering_by_multiple_columns][help] and there are many other examples of solutions out there on the web.
+
+UNIX Problems
+=============
+
+1. Use the “top” command to find out how many processes are running by user “root”? Which user is using the most memory?
+
+2. Use /home/rliu/GEN220/example_map.txt as input, use unix commands to form a pipeline to output query sequences that contain motif “CTACA” and the chromosomes to which these sequences were mapped. (query sequences are in column 2 and mapped chromosomes are in column 8). Redirect output to a file.
+
+3. Practice the following unix commands: top, ps, kill, cat, tr, sort, cut, uniq, sed, awk. Practice the grep command with the following options -i, -v, -c, -n, -E (use man pages to study these options).
+
+4. Take /home/rliu/GEN220/ath_chr1.gff (or from the web here [ath1_chr.gff](http://courses.stajich.org/public/gen220/data/ath_chr1.gff) as input (your may copy the file to your own directory), write a Perl script to generate three integers that represent:
+
+>i. number of annotated 3’ UTRs;
+>ii. number of introns that have length between 100 and 300nt (inclusive) (if one gene has several annotated mRNA sequences, only consider the first one, e.g. AT1G01020.1);
+>iii. average length of the genes (round to an integer) that are located on the positive strand of the chromosome and between coordinates 1001300 and 10000500. 
+
+Your output should be a tab delimited text file named
+“ath_chr1_stats.txt” that contains one line. The line contains three
+integers in the order of the questions, separated by tab character.
+
