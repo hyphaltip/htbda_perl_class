@@ -216,7 +216,14 @@ other information you wanted to store for it?
     my %genes;
     while(<$fh>) {
     	my ($gene,$domain, $domain_name, $start,$end,$score) = split;
-	# store an array in for each of the 
+	# store an array as the value for each key by making it a reference to an array
+	# using the @{$genes{$gene}} which is forcing what is the value 
+	# to be an array reference. Then we use push to add something to
+	# this array
+	# Because perl will automatically initialize the value, based on the context
+	# we DON'T need to do this, but it is what is happening under the hood
+	# if this is the first time accessing this key
+	# $genes{$gene} = [];
 	push @{$genes{$gene}}, $domain_name;
     }    
     # now unpack to print this out

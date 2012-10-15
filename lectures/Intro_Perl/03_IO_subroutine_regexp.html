@@ -1743,14 +1743,21 @@ arrays and they aren't flattened into one. Consider this code.</p>
 <span class="lineno"> 3</span> <span class="k">my</span> <span class="nv">%genes</span><span class="p">;</span>
 <span class="lineno"> 4</span> <span class="k">while</span><span class="p">(</span><span class="sr">&lt;$fh&gt;</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno"> 5</span>     <span class="k">my</span> <span class="p">(</span><span class="nv">$gene</span><span class="p">,</span><span class="nv">$domain</span><span class="p">,</span> <span class="nv">$domain_name</span><span class="p">,</span> <span class="nv">$start</span><span class="p">,</span><span class="nv">$end</span><span class="p">,</span><span class="nv">$score</span><span class="p">)</span> <span class="o">=</span> <span class="nb">split</span><span class="p">;</span>
-<span class="lineno"> 6</span> <span class="c1"># store an array in for each of the </span>
-<span class="lineno"> 7</span> <span class="nb">push</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}},</span> <span class="nv">$domain_name</span><span class="p">;</span>
-<span class="lineno"> 8</span> <span class="p">}</span>    
-<span class="lineno"> 9</span> <span class="c1"># now unpack to print this out</span>
-<span class="lineno">10</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%genes</span> <span class="p">)</span> <span class="p">{</span>
-<span class="lineno">11</span>     <span class="k">my</span> <span class="nv">@domains</span> <span class="o">=</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}};</span>
-<span class="lineno">12</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@domains</span><span class="p">)),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
-<span class="lineno">13</span> <span class="p">}</span>
+<span class="lineno"> 6</span> <span class="c1"># store an array as the value for each key by making it a reference to an array</span>
+<span class="lineno"> 7</span> <span class="c1"># using the @{$genes{$gene}} which is forcing what is the value </span>
+<span class="lineno"> 8</span> <span class="c1"># to be an array reference. Then we use push to add something to</span>
+<span class="lineno"> 9</span> <span class="c1"># this array</span>
+<span class="lineno">10</span> <span class="c1"># Because perl will automatically initialize the value, based on the context</span>
+<span class="lineno">11</span> <span class="c1"># we DON&#39;T need to do this, but it is what is happening under the hood</span>
+<span class="lineno">12</span> <span class="c1"># if this is the first time accessing this key</span>
+<span class="lineno">13</span> <span class="c1"># $genes{$gene} = [];</span>
+<span class="lineno">14</span> <span class="nb">push</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}},</span> <span class="nv">$domain_name</span><span class="p">;</span>
+<span class="lineno">15</span> <span class="p">}</span>    
+<span class="lineno">16</span> <span class="c1"># now unpack to print this out</span>
+<span class="lineno">17</span> <span class="k">for</span> <span class="k">my</span> <span class="nv">$gene</span> <span class="p">(</span> <span class="nb">keys</span> <span class="nv">%genes</span> <span class="p">)</span> <span class="p">{</span>
+<span class="lineno">18</span>     <span class="k">my</span> <span class="nv">@domains</span> <span class="o">=</span> <span class="nv">@</span><span class="p">{</span><span class="nv">$genes</span><span class="p">{</span><span class="nv">$gene</span><span class="p">}};</span>
+<span class="lineno">19</span> <span class="k">print</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="nv">$gene</span><span class="p">,</span> <span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@domains</span><span class="p">)),</span> <span class="s">&quot;\n&quot;</span><span class="p">;</span>
+<span class="lineno">20</span> <span class="p">}</span>
 </pre></div>
 </section>
             
