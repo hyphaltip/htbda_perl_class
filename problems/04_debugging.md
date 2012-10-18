@@ -2,7 +2,7 @@ Practice problems week #4
 
 1. Fix syntax or run-time errors in the following scripts:
 
-* print_line_num.pl (use “print_line_input.txt” as input file)
+* [print_line_num.pl](week4/print_line_num.pl) (use “print_line_input.txt” as input file)
 * [sum.pl](week4/sum.pl)
 * [temp_convert.pl](week4/temp_convert.pl)
 * [unit.pl](week4/unit.pl)
