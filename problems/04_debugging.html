@@ -7,6 +7,25 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
 </head>
 <body>
 <p>Practice problems week #4</p>
@@ -26,5 +45,14 @@
 <ul>
 <li>script <a href="week4/propose.pl">propose.pl</a></li>
 </ul>
+<p>Additional Practice problems for week #4:</p>
+<ol start="3" type="1">
+<li><p>After you have fixed all syntax or run-time errors in “temp_convert.pl” (in problem (1)), create a package “Temperature.pm” and put the two sub routines in “temp_convert.pl” in this package. Then modify temp_convert.pl so it calls functions from Temperature.pm. Test your script using commands “perl temp_convert.pl –c30” and “perl temp_convert.pl –F60” and put your output in file “temp_out.txt” (two numbers, one number per line).</p></li>
+<li><p>Download module “Statistics::Descriptive” from <a href="http://search.cpan.org/~shlomif/Statistics-Descriptive-3.0604/lib/Statistics/Descriptive.pm">Statistics::Descriptive</a> and install it in your home directory under &quot;lib” in your home directory. For example, my home directory is /home/rliu, I would install it under /home/rliu/lib. You will need to use a command such as</p>
+<p>“perl Makefile.PL PREFIX=/home/rliu/lib”</p></li>
+</ol>
+<p>A shortcut is to use the UNIX environment variable $HOME and install it with</p>
+<pre class="sourceCode perl"><code class="sourceCode perl">“perl Makefile.PL PREFIX=<span class="dt">$HOME</span>/<span class="dt">lib”</span> </code></pre>
+<p>(and a few other commands. Find out these commands by a search engine) for installation. After installation, write a script named “average.pl” to call functions in this module to calculate the sum and average of integers from 1 to 100 (inclusive). You should output two numbers (separated by a space) to a file named “average.txt”.</p>
 </body>
 </html>
