@@ -24,9 +24,15 @@ Additional Practice problems for week #4:
 “temp_convert.pl” (in problem (1)), create a package “Temperature.pm”
 and put the two sub routines in “temp_convert.pl” in this
 package. Then modify temp_convert.pl so it calls functions from
-Temperature.pm. Test your script using commands “perl temp_convert.pl
-–c30” and “perl temp_convert.pl –F60” and put your output in file
-“temp_out.txt” (two numbers, one number per line).
+Temperature.pm. Test your script using commands 
+
+    “perl temp_convert.pl –c30” 
+and 
+
+   “perl temp_convert.pl –F60” 
+
+and put your output in file “temp_out.txt” (two numbers, one number
+per line).
 
 4. Download module “Statistics::Descriptive” from
 [Statistics::Descriptive](http://search.cpan.org/~shlomif/Statistics-Descriptive-3.0604/lib/Statistics/Descriptive.pm)
