@@ -13,11 +13,11 @@
 <p>You will find the <a href="http://www.bioperl.org/wiki/HOWTOs">HOWTOs</a> and <a href="http://doc.bioperl.org/bioperl-live/">Module documentation</a> useful for these problems. The <a href="http://search.cpan.org/~cjfields/BioPerl-1.6.901/">CPAN version</a> of the documentation is useful as well.</p>
 <ol type="1">
 <li><p>Write a script, using BioPerl's <a href="http://search.cpan.org/~cjfields/BioPerl-1.6.901/Bio/SeqIO.pm">Bio::SeqIO</a>, to count the number of sequences in the file and the total length of the sequences.</p></li>
-<li>Using SeqIO, parse all the sequences in this [genbank file](../data/, and generate a report which will print out
+<li>Using SeqIO, parse all the sequences in this <a href="../data/sample_seqs.gbk">genbank file</a>, and generate a report which will print out
 <ul>
-<li>A count of the number of sequences</li>
-<li>Total length of CDS features in the database</li>
-<li>A table which presents the name of the species and number of times they each appear</li>
+<li>A count of the number of sequences total</li>
+<li>Total number and length of CDS features in each sequence</li>
+<li>A table summarizing all the sequences in the file to present the name of the species and number of times they each appear</li>
 </ul></li>
 <li><p>Use Bio::DB::Fasta to retrieve sequences from a FASTA sequence database</p></li>
 </ol>

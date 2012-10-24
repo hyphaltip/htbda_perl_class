@@ -5,10 +5,10 @@ You will find the [HOWTOs](http://www.bioperl.org/wiki/HOWTOs) and [Module docum
 
 1. Write a script, using BioPerl's [Bio::SeqIO](http://search.cpan.org/~cjfields/BioPerl-1.6.901/Bio/SeqIO.pm), to count the number of sequences in the file and the total length of the sequences. 
 
-2. Using SeqIO, parse all the sequences in this [genbank file](../data/, and generate a report which will print out
-    * A count of the number of sequences
-    * Total length of CDS features in the database
-    * A table which presents the name of the species and number of times they each appear 
+2. Using SeqIO, parse all the sequences in this [genbank file](../data/sample_seqs.gbk), and generate a report which will print out
+    * A count of the number of sequences total
+    * Total number and length of CDS features in each sequence
+    * A table summarizing all the sequences in the file to present the name of the species and number of times they each appear 
 
 3. Use Bio::DB::Fasta to retrieve sequences from a FASTA sequence database
 
