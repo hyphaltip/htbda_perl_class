@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="problems-for-week-5-and-bioperl">Problems for Week 5 and BioPerl</h1>
+<p>You will find the <a href="http://www.bioperl.org/wiki/HOWTOs">HOWTOs</a> and <a href="http://doc.bioperl.org/bioperl-live/">Module documentation</a> useful for these problems. The <a href="http://search.cpan.org/~cjfields/BioPerl-1.6.901/">CPAN version</a> of the documentation is useful as well.</p>
+<ol type="1">
+<li><p>Write a script, using BioPerl's <a href="http://search.cpan.org/~cjfields/BioPerl-1.6.901/Bio/SeqIO.pm">Bio::SeqIO</a>, to count the number of sequences in the file and the total length of the sequences.</p></li>
+<li>Using SeqIO, parse all the sequences in this [genbank file](../data/, and generate a report which will print out
+<ul>
+<li>A count of the number of sequences</li>
+<li>Total length of CDS features in the database</li>
+<li>A table which presents the name of the species and number of times they each appear</li>
+</ul></li>
+<li><p>Use Bio::DB::Fasta to retrieve sequences from a FASTA sequence database</p></li>
+</ol>
+<ul>
+<li>Sequence from chrI position 54584..54913</li>
+<li>Translate this sequence into a protein</li>
+<li>print out a report with the DNA and protein sequence</li>
+</ul>
+<ol start="4" type="1">
+<li>Parse this <a href="../data/actin-vs-basidio.BLASTP">BLAST report</a> and print out the following summary</li>
+</ol>
+<ul>
+<li><p>For each alignment to the query, print out the E-value, alignment length, and % identity, start and stop position of the alignment in the query sequence and and the hit. Basically the columns of the output should be:</p>
+<p>QUERY HIT EVALUE LENGTH IDENTITY QSTART QEND HSTART HEND</p></li>
+</ul>
+</body>
+</html>
