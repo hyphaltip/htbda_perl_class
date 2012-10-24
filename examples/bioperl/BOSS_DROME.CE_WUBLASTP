@@ -1,0 +1,342 @@
+BLASTP 2.0MP-WashU [04-May-2006] [linux26-x64-I32LPF64 2006-05-10T17:22:28]
+
+Copyright (C) 1996-2006 Washington University, Saint Louis, Missouri USA.
+All Rights Reserved.
+
+Reference:  Gish, W. (1996-2006) http://blast.wustl.edu
+
+Query=  BOSS_DROME Protein bride of sevenless precursor.
+        (896 letters)
+
+Database:  wormpep190
+           23,771 sequences; 10,449,259 total letters.
+Searching....10....20....30....40....50....60....70....80....90....100% done
+
+                                                                     Smallest
+                                                                       Sum
+                                                              High  Probability
+Sequences producing High-scoring Segment Pairs:              Score  P(N)      N
+
+F35H10.10	CE24945	WBGene00018073	status:Confirmed	UniProt...   182  1.6e-09   2
+Y43F8C.16	CE34118	WBGene00012837	status:Partially_confirm...    88  0.12      1
+M02H5.2	CE25951	WBGene00019740	locus:srt-31	7TM chemorece...    86  0.16      1
+F56H9.6	CE38378	WBGene00044198	status:Predicted	UniProt:Q...    80  0.40      1
+C33B4.3b	CE36107	WBGene00006444	locus:shn-1	status:Partia...    83  0.50      2
+Y54G2A.13	CE32535	WBGene00021878	status:Partially_confirm...    84  0.50      1
+F58A4.1	CE20889	WBGene00010226	status:Partially_confirmed...    79  0.50      1
+C01B10.6b	CE31149	WBGene00015280	status:Confirmed	UniProt...    83  0.50      1
+C01B10.6a	CE29552	WBGene00015280	status:Confirmed	UniProt...    83  0.50      1
+Y18D10A.1	CE21397	WBGene00012474	status:Partially_confirm...    88  0.55      1
+T23D5.3	CE16445	WBGene00011942	status:Predicted	UniProt:O...    78  0.55      1
+C56E6.5	CE04277	WBGene00016973	locus:abch-1	ATP-binding	s...    87  0.57      2
+C33B4.3a	CE01508	WBGene00006444	locus:shn-1	ankyrin and p...    83  0.58      2
+
+
+>F35H10.10	CE24945	WBGene00018073	status:Confirmed	UniProt:Q20073_CAEEL
+           protein_id:AAA81683.2
+        Length = 1404
+
+ Score = 182 (69.1 bits), Expect = 1.6e-09, Sum P(2) = 1.6e-09
+ Identities = 75/315 (23%), Positives = 149/315 (47%)
+
+Query:   511 YPFLFDGESVMFWRIKMDTWVATGLTAAILGLIATLAILVFIVVRISLGDVFEGNPTTSI 570
+             Y  +F+  +   WR     +V   L   ++  +  +A+LV ++V++ L  V +GN +  I
+Sbjct:  1006 YQSVFEHITTGHWRDHPHNYVLLALITVLV--VVAIAVLVLVLVKLYLR-VVKGNQSLGI 1062
+
+Query:   571 LLLLSLILVFCSFVPYSIEYVGEQRNSHVTFEDAQTLNTLCAVRVFIMTLVYCFVFSLLL 630
+              LL+ +I++      YS  +          F+     +++C +RV +  L Y   F +++
+Sbjct:  1063 SLLIGIIIL------YSTAFF-------FVFDPT---DSVCRLRVILHGLGYTICFGVMI 1106
+
+Query:   631 CRAVMLASIGSEG-GFLSHVNGYIQAVICAFSVVAQVGMSVQLLVVMHVASETVSCENIY 689
+              +A  L +  + G G   H++ +   ++  F V  Q+ +S+   +   +++  V   N+ 
+Sbjct:  1107 AKATQLRNAETLGFGTAIHISFWNYWLLLFFIVGVQIALSISWFLEPFMSTIGVIDTNVQ 1166
+
+Query:   690 YGRWLWGLLAY---DF--ALLCCVGALIPSIYRS-QRNYREGILIVIGSVLIMVIWVAWI 743
+                   G + +   +F   +L  +   I  + R+ +RNY+E   ++  +VL    WVAWI
+Sbjct:  1167 RMMCTMGKVEFVVSNFYVMILIFMALFISMLNRNIKRNYKETKWLLYSTVLCFFTWVAWI 1226
+
+Query:   744 ALSLFGD-EWRDAAIPLGLQASGWAVLVGILI-PRTFLIVRGIERSDIA---QALPSLTS 798
+              L L  D E+RD  I + L A    +L+G L  P+ ++++   E   +A      P+ T 
+Sbjct:  1227 TLYLVLDHEFRDTVIVVELVACA-TILLGFLFGPKIYILL-SYEPVVVAFKRDPFPNHTD 1284
+
+Query:   799 LAFAQNNQYSSEQSV 813
+             L F +++   S+++V
+Sbjct:  1285 L-FEKDDDLPSQRAV 1298
+
+ Score = 39 (18.8 bits), Expect = 1.6e-09, Sum P(2) = 1.6e-09
+ Identities = 9/28 (32%), Positives = 17/28 (60%)
+
+Query:   508 NRRYPFLFDGESVMFWRIKMDTWVATGL 535
+             N++ P  F GE + F+R   +  +A+G+
+Sbjct:   427 NKQDPPEFAGERLQFYRGTENILLASGM 454
+
+
+>Y43F8C.16	CE34118	WBGene00012837	status:Partially_confirmed
+           UniProt:Q9XWN5_CAEEL	protein_id:CAA21616.2
+        Length = 370
+
+ Score = 88 (36.0 bits), Expect = 0.13, P = 0.12
+ Identities = 38/138 (27%), Positives = 58/138 (42%)
+
+Query:    30 LECHGADLTSPTKKSAPLRITKPQPTSQQ---AKPISITTRAPTTVASTTDDEVSSSVDG 86
+             LE  G+  TS +  S       P  T Q    AKP + +T  PTT A  T    +S+   
+Sbjct:   141 LEQDGS-ATSTSTTSITTSTLSPPSTVQSTTTAKPTTTSTITPTTSADPTSTITTSTTPN 199
+
+Query:    87 QLAP--LISSTTEGPSSGTTASLVPEICLNGLQLTVNSADEGTVIRKQ---EEFVKILEG 141
+               +P  + S+TT  P+S  T++ VPE     +  +  +A+  + I      E    +L  
+Sbjct:   200 PSSPSTVQSTTTAEPTSTITSTTVPESSTTSVVQSTTTAEPTSTITSTTVPESSTSLLTS 259
+
+Query:   142 DVVLSVLTKDPDSALFVI 159
+              +  S  T  P S +  I
+Sbjct:   260 TLA-STTTLIPTSTMSTI 276
+
+
+>M02H5.2	CE25951	WBGene00019740	locus:srt-31	7TM chemoreceptor, srt family
+         status:Predicted	UniProt:Q966H5_CAEEL	protein_id:AAK84552.1
+        Length = 326
+
+ Score = 86 (35.3 bits), Expect = 0.18, P = 0.16
+ Identities = 41/151 (27%), Positives = 70/151 (46%)
+
+Query:   525 IKMDTWVATGLTAAILGLIATLAILVFIVVRISLGDVFEGNPTTSILLLLSLI-LVFCSF 583
+             I +  W ++ L A +L    T  +L F   + +   +F+ N T  +L+L ++  L F  F
+Sbjct:   114 IGLGLWASSCLVAMLL---VTNRLLDF-TFKSAANFMFDKNRTFLVLILPTIYGLYFAIF 169
+
+Query:   584 VP---YSIEYVGEQRNSHV-TFEDAQTLNTLCAVRVFIMTLVYCFVFSLLLCR--AVML- 636
+              P   YS +Y+G   +  +   E A+  N        I+  V CF++ +  C   A M  
+Sbjct:   170 TPPLLYSSKYLGWFFDPFIFQGETAEYYNYPHLANNIIVVAVTCFLYIMFCCALGAEMKN 229
+
+Query:   637 ASIGSEGGFLSHVNGYIQAV-ICAFSVVAQV 666
+              + GSE  +      +IQ+V IC F++ A +
+Sbjct:   230 VNTGSES-YKRSKQIFIQSVLICGFNLTASL 259
+
+
+>F56H9.6	CE38378	WBGene00044198	status:Predicted	UniProt:Q564Z3_CAEEL
+         protein_id:CAI79195.1
+        Length = 245
+
+ Score = 80 (33.2 bits), Expect = 0.51, P = 0.40
+ Identities = 21/70 (30%), Positives = 31/70 (44%)
+
+Query:    38 TSPTKKSAPLRITKPQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDGQLAPLISSTTE 97
+             TS T  + P   T   PT+  +   + TT  PTT  STT    +++      P  ++TT 
+Sbjct:    71 TSTTTTTTPTTTTTTTPTTTTSTTSTTTTTTPTTTTSTTTTTTTTTTTA--TPTTTTTTM 128
+
+Query:    98 GPSSGTTASL 107
+              P +    SL
+Sbjct:   129 PPCNPNAVSL 138
+
+
+>C33B4.3b	CE36107	WBGene00006444	locus:shn-1	status:Partially_confirmed
+          UniProt:Q7JMK1_CAEEL	protein_id:CAE54886.1
+        Length = 993
+
+ Score = 83 (34.3 bits), Expect = 0.69, Sum P(2) = 0.50
+ Identities = 23/70 (32%), Positives = 33/70 (47%)
+
+Query:   819 PAMRHCSQDEVNHQSPSEIPTLPLRGGGPRRQQFFANLRQANANINPQRPPPRPQQ-SPS 877
+             P M+H  Q+  NHQ   + P+LP     P+       ++Q  ++I P  PPP P    P+
+Sbjct:   728 PPMQH--QNHQNHQYQQQHPSLPRSASTPQP------IQQQQSSIPPPPPPPPPPHCEPT 779
+
+Query:   878 RSSVSSLPPS 887
+                V   PPS
+Sbjct:   780 MVHVEFTPPS 789
+
+ Score = 52 (23.4 bits), Expect = 0.69, Sum P(2) = 0.50
+ Identities = 16/69 (23%), Positives = 33/69 (47%)
+
+Query:    42 KKSAPLRITKPQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDG-QLAPLISSTTEGPS 100
+             K S P R T PQ ++++    +IT R   + +S    +V  +    +  P+ ++ +  PS
+Sbjct:   338 KSSVPYRGT-PQYSTRRRLSSTITRRRSMSQSSICSQDVYRTPQSVRKGPMSAAPSPSPS 396
+
+Query:   101 SGTTASLVP 109
+               +  ++ P
+Sbjct:   397 RSSRTTITP 405
+
+
+>Y54G2A.13	CE32535	WBGene00021878	status:Partially_confirmed
+           UniProt:Q9N3C0_CAEEL	protein_id:AAF59585.2
+        Length = 610
+
+ Score = 84 (34.6 bits), Expect = 0.69, P = 0.50
+ Identities = 31/114 (27%), Positives = 47/114 (41%)
+
+Query:    38 TSPTKKSAPLRITKPQPTSQQAKPISITTRAPTTV--ASTTDDEVSSSVDGQLAPLISST 95
+             TSP K  +    T P     Q+    + T+ PTT    + T DE +SS      P+ + T
+Sbjct:   233 TSPQKPDSTEEATSPS----QSTTTPVATQNPTTSNQKNETTDEATSSPQSAKTPVTNPT 288
+
+Query:    96 TEGPSSGTTASLVPEICLNGLQLTVNSADEGTVIRKQEEFVKILEGDVVLSVLT 149
+             T      TT + +P       + T  S      I + E+ + I E   +LS +T
+Sbjct:   289 TSPQKPDTTEAALPLTTATTTKATQTSHRPAESIIQPEQELPITETSEMLSNMT 342
+
+
+>F58A4.1	CE20889	WBGene00010226	status:Partially_confirmed	UniProt:YMH1_CAEEL
+         protein_id:CAA80169.1
+        Length = 254
+
+ Score = 79 (32.9 bits), Expect = 0.70, P = 0.50
+ Identities = 30/106 (28%), Positives = 50/106 (47%)
+
+Query:    37 LTSPTKKSAPLRITKPQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDGQLAPLISSTT 96
+             +++ T  + P R+TKP   +    P   T  +P+T  ST+    +S+   +    ++ TT
+Sbjct:    68 ISTSTVSTTPERLTKPYEETDTPIP---THSSPSTSTSTSTSTSTSTSTSRSTSTVTPTT 124
+
+Query:    97 EGPSSGTTASLVP----EICLNGLQLT---VNSADEGTVIRKQEEF 135
+                S+ TTA+  P    +      Q+T   +  A  GTV+ K EEF
+Sbjct:   125 RS-STTTTATSTPTSSSKATTTSAQITQPEIPQAAPGTVL-KGEEF 168
+
+
+>C01B10.6b	CE31149	WBGene00015280	status:Confirmed	UniProt:Q8MQF7_CAEEL
+           protein_id:AAM75377.1
+        Length = 503
+
+ Score = 83 (34.3 bits), Expect = 0.70, P = 0.50
+ Identities = 28/83 (33%), Positives = 38/83 (45%)
+
+Query:    28 CVLECHGADLTSPTKKSAPLR-ITKPQPTSQQ-AKPISITTRA--PTTVASTTDDEVSSS 83
+             C  +C      SP  KS P +   KP PT      P++ T  +  PTTVA TT   + +S
+Sbjct:   379 CSDQCFSC-ACSPGAKSPPDQSCPKPSPTDPTPVPPVAPTPPSVCPTTVAPTTTPALLTS 437
+
+Query:    84 VDGQLAPLISSTTEGPSSGTTAS 106
+                  A + S+T    S+G T S
+Sbjct:   438 TIAPTADVTSATNAAGSTGATGS 460
+
+
+>C01B10.6a	CE29552	WBGene00015280	status:Confirmed	UniProt:Q17537_CAEEL
+           protein_id:AAC47918.3
+        Length = 506
+
+ Score = 83 (34.3 bits), Expect = 0.70, P = 0.50
+ Identities = 28/83 (33%), Positives = 38/83 (45%)
+
+Query:    28 CVLECHGADLTSPTKKSAPLR-ITKPQPTSQQ-AKPISITTRA--PTTVASTTDDEVSSS 83
+             C  +C      SP  KS P +   KP PT      P++ T  +  PTTVA TT   + +S
+Sbjct:   382 CSDQCFSC-ACSPGAKSPPDQSCPKPSPTDPTPVPPVAPTPPSVCPTTVAPTTTPALLTS 440
+
+Query:    84 VDGQLAPLISSTTEGPSSGTTAS 106
+                  A + S+T    S+G T S
+Sbjct:   441 TIAPTADVTSATNAAGSTGATGS 463
+
+
+>Y18D10A.1	CE21397	WBGene00012474	status:Partially_confirmed
+           UniProt:Q9XW25_CAEEL	protein_id:CAA22308.1
+        Length = 1634
+
+ Score = 88 (36.0 bits), Expect = 0.79, P = 0.55
+ Identities = 27/111 (24%), Positives = 49/111 (44%)
+
+Query:    34 GADLTSPTK-KSAPLRITKPQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDGQLAPLI 92
+             GA  T  TK K+ P R+ +   T   A+    +   P    +     +  S+D  L P  
+Sbjct:  1093 GAKTTKTTKPKAPPTRVAQTTRTKNLAQKRKASPPTPAGTTAPKRQYIKKSIDSVLPPSS 1152
+
+Query:    93 SSTTEGPSSGTTASLVPEICLNGLQLTVNSAD---EGTVIRKQEEFVKILE 140
+             SS+TE PS+  +AS    +   G  + + +      G  I+++++ + + E
+Sbjct:  1153 SSSTEPPSAPDSASTTSSMKKGGGAIMIEAVPCRPGGKAIKREQKPIGMKE 1203
+
+
+>T23D5.3	CE16445	WBGene00011942	status:Predicted	UniProt:O45804_CAEEL
+         protein_id:CAB04816.1
+        Length = 237
+
+ Score = 78 (32.5 bits), Expect = 0.80, P = 0.55
+ Identities = 21/57 (36%), Positives = 30/57 (52%)
+
+Query:    52 PQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDGQLAPLISSTTEGPSSGTTASLV 108
+             P+ T Q+ +P+  TT AP   A+T     S +  G      S+TT  PS+ TTA+ V
+Sbjct:    88 PKTTPQRVEPVMTTTVAPG--ATTVRSPGSVTTAGSATTAGSATTGSPSAATTAATV 142
+
+
+>C56E6.5	CE04277	WBGene00016973	locus:abch-1	ATP-binding
+         status:Partially_confirmed	UniProt:Q18900_CAEEL	protein_id:AAA81092.1
+        Length = 595
+
+ Score = 87 (35.7 bits), Expect = 0.85, Sum P(2) = 0.57
+ Identities = 54/223 (24%), Positives = 100/223 (44%)
+
+Query:   445 YQKKVLTLDKITGESRTELREIASQNFVTNVTTYYHYNRDNHTSLELKTKFGQVFNCQYS 504
+             Y   +LT+DK   ES  ++ E  +Q   T +  +     DN TS ++             
+Sbjct:   263 YYLSLLTIDK---ESMQKVME--TQEKATKLVAF---RTDNDTSSDISGSSATGTGVLLD 314
+
+Query:   505 AGDNRRYPFLFDGESVMFWRIKMDTWVATGLTAAILGLIA---TLAILVFIVVRISLGDV 561
+             +G  R+ P +    +++F R+   + + +  + ++ GLIA   T A+L F+        +
+Sbjct:   315 SG--RKNPSISTVAAILFRRVL--SLIGSTPSNSLAGLIAFPVTAAVLSFLRPTSLPSSL 370
+
+Query:   562 FEGNPTTSILLLLSLILVFCSFVPYSIEYVGEQRNSHVTFEDAQTLNTLCAVRVF-IMTL 620
+             F     T + LLL  I++F +   YS       + S ++F +        ++ +F I  L
+Sbjct:   371 FFWKLLTFLYLLLQTIVIFPN---YS-------KTSLLSFRECNLYCQTTSLTIFSIFFL 420
+
+Query:   621 VY-CFVFSLLLCRAVMLASIGSEGGFLSHVNGYIQAVICAFSV 662
+             VY C   SL +   ++L S  SE  F   +N ++ ++  +FS+
+Sbjct:   421 VYSCIQSSLFV--GIVLWSFKSEAMFQISLNLFLLSIF-SFSI 460
+
+ Score = 42 (19.8 bits), Expect = 0.85, Sum P(2) = 0.57
+ Identities = 11/32 (34%), Positives = 18/32 (56%)
+
+Query:   421 AHDTAEILSLLLMRKLGTAMNFQMYQKKVLTL 452
+             AHD  E LS    R++ T M  ++ +  +LT+
+Sbjct:   148 AHDKLEDLSFSARRRVMTVM--ELLKDPILTI 177
+
+
+>C33B4.3a	CE01508	WBGene00006444	locus:shn-1	ankyrin and proline rich domains
+          status:Partially_confirmed	UniProt:Q09493_CAEEL	protein_id:CAA88324.1
+        Length = 1110
+
+ Score = 83 (34.3 bits), Expect = 0.87, Sum P(2) = 0.58
+ Identities = 23/70 (32%), Positives = 33/70 (47%)
+
+Query:   819 PAMRHCSQDEVNHQSPSEIPTLPLRGGGPRRQQFFANLRQANANINPQRPPPRPQQ-SPS 877
+             P M+H  Q+  NHQ   + P+LP     P+       ++Q  ++I P  PPP P    P+
+Sbjct:   728 PPMQH--QNHQNHQYQQQHPSLPRSASTPQP------IQQQQSSIPPPPPPPPPPHCEPT 779
+
+Query:   878 RSSVSSLPPS 887
+                V   PPS
+Sbjct:   780 MVHVEFTPPS 789
+
+ Score = 52 (23.4 bits), Expect = 0.87, Sum P(2) = 0.58
+ Identities = 16/69 (23%), Positives = 33/69 (47%)
+
+Query:    42 KKSAPLRITKPQPTSQQAKPISITTRAPTTVASTTDDEVSSSVDG-QLAPLISSTTEGPS 100
+             K S P R T PQ ++++    +IT R   + +S    +V  +    +  P+ ++ +  PS
+Sbjct:   338 KSSVPYRGT-PQYSTRRRLSSTITRRRSMSQSSICSQDVYRTPQSVRKGPMSAAPSPSPS 396
+
+Query:   101 SGTTASLVP 109
+               +  ++ P
+Sbjct:   397 RSSRTTITP 405
+
+
+Parameters:
+  -i BOSS_DROME.fa
+  -d wormpep190
+  E=1
+  -o BOSS_DROME.CE_WUBLASTP
+
+  ctxfactor=1.00
+
+  Query                        -----  As Used  -----    -----  Computed  ----
+  Frame  MatID Matrix name     Lambda    K       H      Lambda    K       H
+   +0      0   BLOSUM62        0.322   0.136   0.404    same    same    same
+               Q=9,R=2         0.244   0.0300  0.180     n/a     n/a     n/a
+
+  Query
+  Frame  MatID  Length  Eff.Length     E    S W   T  X   E2     S2
+   +0      0      896       896      0.79  83 3  11 22  0.49    33
+                                                    37  0.45    37
+
+
+Statistics:
+
+  Database:  wormpep190
+   Title:  wormpep190
+   Posted:  8:59:16 PM PDT Oct 22, 2008
+   Created:  8:59:16 PM PDT Oct 22, 2008
+   Format:  XDF-1
+   # of letters in database:  10,449,259
+   # of sequences in database:  23,771
+   # of database sequences satisfying E:  13
+  No. of states in DFA:  630 (133 KB)
+  Total size of DFA:  788 KB (2283 KB)
+  Time to generate neighborhood:  0.00u 0.00s 0.00t   Elapsed:  00:00:00
+  No. of threads or processors used:  4
+  Search cpu time:  4.73u 0.02s 4.75t   Elapsed:  00:00:01
+  Total cpu time:  4.73u 0.02s 4.75t   Elapsed:  00:00:01
+  Start:  Wed Oct 22 20:59:33 2008   End:  Wed Oct 22 20:59:34 2008

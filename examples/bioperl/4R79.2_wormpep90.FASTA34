@@ -1,0 +1,2878 @@
+ FASTA searches a protein or DNA sequence data bank
+ version 3.4t20 Nov 10, 2002
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query library 4R79.2 vs /data/blast/wormpep90 library
+searching /data/blast/wormpep90 library
+
+  1>>>4R79.2 CE19650 Ras family status:Predicted TR:Q9XXA4 protein_id:CAA20282.1 - 395 aa
+ vs  /data/blast/wormpep90 library
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 37 library sequences
+  24     2     0:=
+  26     0     0:
+  28     2     5:*
+  30    12    29:*
+  32    49   111:==*
+  34   212   302:======  *
+  36   559   620:================*
+  38  1092  1025:===========================*==
+  40  1596  1429:======================================*=====
+  42  1953  1747:===============================================*=====
+  44  2073  1927:====================================================*====
+  46  2171  1963:=====================================================*=====
+  48  1949  1879:==================================================*==
+  50  1633  1715:============================================= *
+  52  1475  1508:========================================*
+  54  1207  1288:================================= *
+  56  1017  1076:============================ *
+  58   804   883:====================== *
+  60   649   715:================== *
+  62   486   574:============== *
+  64   401   456:=========== *
+  66   354   360:=========*
+  68   241   284:=======*
+  70   186   222:=====*
+  72   170   174:====*
+  74   133   135:===*
+  76   111   105:==*
+  78    73    82:==*
+  80    56    64:=*
+  82    35    49:=*
+  84    41    39:=*
+  86    29    30:*
+  88    23    23:*          inset = represents 2 library sequences
+  90    28    18:*
+  92    15    14:*         :======*=
+  94    13    11:*         :=====*=
+  96     7     8:*         :===*
+  98     5     6:*         :==*
+ 100     5     5:*         :==*
+ 102     4     4:*         :=*
+ 104     7     3:*         :=*==
+ 106     4     2:*         :*=
+ 108     4     2:*         :*=
+ 110     6     1:*         :*==
+ 112     0     1:*         :*
+ 114     2     1:*         :*
+ 116     1     1:*         :*
+ 118     0     0:          *
+>120    75     0:===       *======================================
+9271352 residues in 20970 sequences
+  Expectation_n fit: rho(ln(x))= 5.1047+/-0.000502; mu= 11.8878+/- 0.030
+ mean_var=95.3663+/-19.688, 0's: 0 Z-trim: 71  B-trim: 1894 in 1/60
+ Lambda= 0.131334
+ Kolmogorov-Smirnov  statistic: 0.0302 (N=29) at  48
+
+FASTA (3.45 Mar 2002) function [optimized, BL50 matrix (15:-5)] ktup: 2
+ join: 37, opt: 25, gap-pen: -12/-2, width:  16
+ Scan time: 10.250
+The best scores are:                                       opt bits E(20970)
+4R79.2 CE19650   Ras family status:Predicted TR:Q  ( 395) 2590 500.8 5.8e-142
+C33D12.6 CE27102   calcium-binding protein status  ( 656)  491 103.3 4.3e-22
+D1037.4 CE30373  locus:rab-8 RAS-related protein   ( 211)  466  98.0 5.3e-21
+T23H2.5 CE14114  locus:rab-10 RAS status:Confirme  ( 201)  464  97.6 6.7e-21
+C39F7.4 CE16905  locus:rab-1 RAS-related protein   ( 205)  445  94.1 8.3e-20
+C18A3.6b CE20518  locus:rab-3 synaptic vesicle-as  ( 219)  438  92.8 2.2e-19
+C18A3.6a CE23555  locus:rab-3 synaptic vesicle-as  ( 233)  438  92.8 2.3e-19
+W01H2.3 CE07562  locus:rab-37 GTP-binding protein  ( 196)  430  91.2 5.7e-19
+T25G12.4 CE07541  locus:rab-6.2 ras-related prote  ( 205)  430  91.2 5.9e-19
+Y62E10A.9 CE24543  locus:rab-19  status:Confirmed  ( 210)  423  89.9 1.5e-18
+Y87G2A.4 CE23130  locus:rab-27  status:Partially_  ( 215)  423  89.9 1.5e-18
+F59B2.7 CE00234  locus:rab-6.1 Rab6 (ras protein)  ( 205)  417  88.7 3.3e-18
+F53F10.4 CE10986  locus:rab-2 RAS-related protein  ( 214)  415  88.4 4.4e-18
+Y47D3A.25 CE24336  locus:rab-35  status:Partially  ( 209)  410  87.4 8.3e-18
+D2013.1 CE30340  locus:rab-39 GTP binding protein  ( 229)  407  86.9 1.3e-17
+Y45F3A.2 CE19165  locus:rab-30 Ras family status:  ( 216)  402  85.9 2.4e-17
+K09A9.2 CE11974  locus:rab-14 RAS-related protein  ( 210)  397  85.0 4.6e-17
+Y92C3B.3b CE27340  locus:rab-18  status:Confirmed  ( 203)  388  83.2 1.5e-16
+F11A5.3 CE15781   RAS related protein status:Pred  ( 201)  384  82.5 2.5e-16
+F53G12.1 CE11006  locus:rab-11.1 RAS-related prot  ( 211)  377  81.2 6.4e-16
+W03C9.3 CE03777  locus:rab-7 ras related protein   ( 209)  372  80.2 1.2e-15
+F11A5.4 CE15782   RAS related protein status:Pred  ( 203)  369  79.6 1.8e-15
+F43D9.2 CE00992  locus:rab-33  status:Partially_c  ( 307)  366  79.3 3.5e-15
+T01B7.3 CE03587  locus:rab-21 ras-related protein  ( 207)  359  77.8 6.7e-15
+F26H9.6 CE09711  locus:rab-5 RAS-related protein   ( 208)  359  77.8 6.7e-15
+Y92C3B.3a CE29610  locus:rab-18  status:Confirmed  ( 220)  354  76.8 1.3e-14
+W04G5.2 CE14584  locus:rab-11.2 RAS related prote  ( 212)  338  73.8 1.1e-13
+C56E6.2 CE30372   GTP-binding status:Partially_co  ( 266)  323  71.1 8.9e-13
+ZK792.6 CE03827  locus:let-60 LET-60 RAS protein   ( 184)  289  64.4 6.1e-11
+Y11D7A.4 CE19030  locus:rab-28 Ras family status:  ( 248)  287  64.2 9.6e-11
+Y71H2AM.12 CE27318    status:Partially_confirmed   ( 195)  278  62.4 2.7e-10
+K02E10.1 CE04693   GTP-binding protein status:Pre  ( 276)  268  60.7 1.3e-09
+K01G5.4 CE16194  locus:ran-1 GTP-binding protein   ( 215)  266  60.2 1.4e-09
+C35C5.4 CE18544  locus:mig-2 RAS-related protein   ( 195)  252  57.5 8.1e-09
+C44C11.1 CE24846  locus:ras-1 RAS-related protein  ( 212)  250  57.1 1.1e-08
+F17C8.4 CE00958  locus:ras-2 Ras-like protein sta  ( 211)  240  55.2 4.2e-08
+C25D7.7 CE08393   RAS-related protein status:Pred  ( 212)  230  53.3 1.5e-07
+Y53G8AR.3 CE25424    status:Partially_confirmed T  ( 213)  230  53.3 1.6e-07
+C27B7.8 CE03037  locus:rrp-1 ras protein status:P  ( 188)  228  52.9 1.9e-07
+Y51H4A.3 CE25369  locus:rho-1 p21 ras-related rho  ( 192)  223  52.0 3.6e-07
+C09G12.8b CE16833  locus:ced-10 RAS-related prote  ( 191)  214  50.3 1.2e-06
+K03D3.10b CE28046  locus:rac-2 Ras family (contai  ( 195)  213  50.1 1.4e-06
+K03D3.10a CE25698  locus:rac-2 Ras family (contai  ( 195)  213  50.1 1.4e-06
+R07G3.1 CE02020  locus:cdc-42 RAS protein status:  ( 191)  197  47.0 1.1e-05
+F22E12.2 CE05696   RAS related protein status:Par  ( 207)  196  46.9 1.3e-05
+Y32F6B.3 CE16612   RAS-like GTP-binding protein s  ( 187)  191  45.9 2.4e-05
+K03D3.10c CE25699  locus:rac-2 RAS-RELATED PROTEI  ( 193)  191  45.9 2.4e-05
+C54A12.4 CE01868   RAS-related protein status:Pre  ( 219)  191  46.0 2.7e-05
+Y57G11C.13 CE14950   ADP-ribosylation factor stat  ( 185)  190  45.7 2.7e-05
+F54C9.10 CE02250  locus:arl-1 GTP-binding ADP-rib  ( 180)  184  44.5 5.8e-05
+F54C8.5 CE00191   Ras family status:Confirmed SW:  ( 207)  170  42.0  0.0004
+C09G12.8a CE16832  locus:ced-10 RAS-related prote  ( 129)  159  39.6  0.0012
+F57H12.1 CE17122  locus:arf-3 GTP-binding protein  ( 180)  157  39.4   0.002
+K03D3.10d CE16215  locus:rac-2  status:Predicted   ( 203)  156  39.3  0.0025
+Y116A8C.10 CE23321    status:Predicted TR:Q9U2V7   ( 416)  159  40.2  0.0027
+B0336.2 CE00696  locus:arf-1 ARF status:Confirmed  ( 181)  154  38.9   0.003
+F22B5.1 CE27425  locus:evl-20 GTP-binding ADP-rib  ( 184)  150  38.1  0.0051
+Y54E10BR.2 CE22471    status:Partially_confirmed   ( 191)  149  37.9   0.006
+C38D4.8 CE00921  locus:arl-query ADP-ribosylation  ( 190)  143  36.8   0.013
+ZK180.4 CE07622   GTP-binding protein status:Conf  ( 193)  140  36.2    0.02
+ZK632.8 CE00425  locus:arl-5 ADP ribosylation fac  ( 178)  137  35.6   0.028
+T24F1.1 CE02361   GTP-binding protein status:Part  ( 312)  137  35.9    0.04
+Y39A1A.15c CE20232   Ank repeat (2 domains) statu  ( 903)  142  37.3   0.043
+F52A8.6a CE20840   ras-like protein like status:P  ( 364)  136  35.8   0.051
+F45E4.1 CE10492  locus:arl-6 ADP-ribosylation fac  ( 179)  130  34.3    0.07
+Y71F9AR.2 CE22854    status:Predicted TR:Q95XT2 p  ( 357)  130  34.6    0.11
+Y39A1A.15b CE19135  locus:cnt-2 Ank repeat (2 dom  ( 951)  134  35.9    0.13
+T09F5.7 CE13533   reverse transcriptase status:Pr  ( 211)  126  33.6    0.13
+Y39A1A.15a CE28116  locus:cnt-2 Ank repeat (2 dom  (1107)  134  35.9    0.14
+Y116A8C.12 CE24147  locus:arf-6  status:Partially  ( 175)  123  33.0    0.17
+C52B11.5 CE04261   RAS-related proteins (weak) st  ( 238)  124  33.3    0.19
+F19H8.3 CE15872  locus:arl-3 ADP-ribosylation fac  ( 184)  119  32.2     0.3
+F20D6.8 CE07112   RAS-like protein status:Partial  ( 370)  119  32.6    0.48
+C16C8.16 CE08227    status:Predicted TR:P91055 pr  ( 592)  120  33.0    0.58
+T05G5.9 CE21153   Coiled coil protein status:Part  ( 705)  114  31.9     1.4
+D2013.5 CE00930   GTP-binding protein status:Part  ( 967)  112  31.7     2.3
+Y37E3.5 CE27253    status:Partially_confirmed TR:  ( 280)  103  29.4     3.3
+T24H7.2 CE02884    status:Partially_confirmed TR:  ( 925)  109  31.1     3.3
+C11D2.2 CE16843   protease status:Predicted TR:O4  ( 394)  102  29.4     4.7
+F55A12.10 CE28451    status:Partially_confirmed T  ( 220)   99  28.5     4.7
+W03G9.7 CE14566    status:Partially_confirmed TR:  ( 732)  105  30.2     4.8
+C18B12.5 CE08309    status:Predicted TR:Q93247 pr  ( 277)  100  28.8     4.8
+T05F1.10 CE26900  locus:dhs-4 Alcohol\/other dehy  ( 305)  100  28.9     5.1
+Y102A5A.1 CE20378    status:Partially_confirmed T  (1274)  107  30.9     5.3
+Y6B3B.1 CE20177    status:Predicted TR:O18164 pro  (1829)  108  31.2       6
+ZK418.1 CE00731  locus:nhr-9  status:Partially_co  ( 332)   99  28.7     6.2
+ZK669.5 CE01116   Ras-like protein status:Partial  ( 221)   96  28.0       7
+Y116A8C.11 CE23322    status:Predicted SW:Q9U2T3   ( 281)   97  28.3     7.2
+C26B9.3 CE29187    status:Confirmed TR:Q18200 pro  ( 257)   96  28.0     7.7
+F58G11.1b CE20894    status:Partially_confirmed T  ( 770)  100  29.3     9.6
+F54C1.7 CE11052  locus:pat-10 calcium binding pro  ( 161)   92  27.1     9.6
+F58G11.1a CE11400   Yeast cosmid 9642 hypothetica  ( 784)  100  29.3     9.7
+Y105E8B.1b CE29058  locus:lev-11  status:Partiall  ( 301)   95  27.9     9.8
+F18C12.3 CE15869    status:Partially_confirmed TR  ( 545)   98  28.8     9.9
+
+>>4R79.2 CE19650   Ras family status:Predicted TR:Q9XXA4  (395 aa)
+ initn: 2590 init1: 2590 opt: 2590  Z-score: 2658.7  bits: 500.8 E(): 5.8e-142
+Smith-Waterman score: 2590;  100.000% identity (100.000% ungapped) in 395 aa overlap (1-395:1-395)
+
+               10        20        30        40        50        60
+4R79.2 MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHKIARFIG
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHKIARFIG
+               10        20        30        40        50        60
+
+               70        80        90       100       110       120
+4R79.2 DQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEMREIEQNKSY
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 DQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEMREIEQNKSY
+               70        80        90       100       110       120
+
+              130       140       150       160       170       180
+4R79.2 LDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELN
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 LDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELN
+              130       140       150       160       170       180
+
+              190       200       210       220       230       240
+4R79.2 AIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFT
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 AIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFT
+              190       200       210       220       230       240
+
+              250       260       270       280       290       300
+4R79.2 VKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNWIDS
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 VKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNWIDS
+              250       260       270       280       290       300
+
+              310       320       330       340       350       360
+4R79.2 VRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGIDTCM
+       ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+4R79.2 VRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGIDTCM
+              310       320       330       340       350       360
+
+              370       380       390     
+4R79.2 RQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       :::::::::::::::::::::::::::::::::::
+4R79.2 RQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+              370       380       390     
+
+>>C33D12.6 CE27102   calcium-binding protein status:Part  (656 aa)
+ initn: 496 init1: 288 opt: 491  Z-score: 506.7  bits: 103.3 E(): 4.3e-22
+Smith-Waterman score: 491;  31.642% identity (34.754% ungapped) in 335 aa overlap (77-393:327-649)
+
+         50        60        70        80        90            100 
+4R79.2 IPQDDLHKIARFIGDQKVNEQAFCRILKAIVNQSLQQNMAKNEVE-----IPCILDKSQY
+                                     ...: : . : .: :     .  ..: .. 
+C33D12 LAQVRCEFDQKQDELSARRGILFQLEPINSLSSSDQASHATEESESVRKQLQLLFDANRK
+        300       310       320       330       340       350      
+
+               110         120       130       140       150       
+4R79.2 LEES--SLEDEM--REIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKK
+       :.:.  ::.: .  :     .  :  :   .:... . ..:.        :.  :.. . 
+C33D12 LHETNESLRDALDSRASVLRQFNLRTPSPGLLSSNRNSVENF--------QTSTNVFRSV
+        360       370       380       390               400        
+
+       160       170       180         190              200        
+4R79.2 PLYRPIQPEQSIPKVSSLAEELNAI--GKKVLQKEEIE------EEVTQP-DRIFKVVFV
+       ::.  :. :..    ... :. . :    . ::  .        .... : .: :..:. 
+C33D12 PLH-AISTEEQGTIFGTIEEKTSLILDDAHSLQGLDTPGDLMGLNDANGPAERTFRIVMC
+      410        420       430       440       450       460       
+
+      210       220       230       240       250       260        
+4R79.2 GDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSI
+       ::.::::. :. :  . .:   . .:.:::: :::...  .: .:.:::::::::::::.
+C33D12 GDAAVGKSSFVMRVIRRQFTNQLPSTLGVDFHVKTVNVD-GRNVALQLWDTAGQERFRSL
+       470       480       490       500        510       520      
+
+      270       280       290       300       310       320        
+4R79.2 TKQYFRKADGVVLMFDVTSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARS
+        :.:::.:::..:..:: .::::: ::.::.... ... .  . :::::.:.  :  .  
+C33D12 CKSYFRRADGAILVYDVCAEQSFLRVRDWIETIKESTERSIPIILVGNKVDMRISTPGSV
+        530       540       550       560       570       580      
+
+      330       340       350       360       370       380        
+4R79.2 AVYRAAEKLAVEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYK
+       :   .: ..:. . . :.::::  : .::. :  ....:.  :: ... .  . .:    
+C33D12 AKTDGA-SMAAAMGVLFMETSALDGSNIDNAMLALTRELMAVEDVEIR-STGVVLNPAVA
+        590        600       610       620       630        640    
+
+      390          
+4R79.2 KRSWCCI     
+       :.. :       
+C33D12 KKGGCFSKCRGS
+          650      
+
+>>D1037.4 CE30373  locus:rab-8 RAS-related protein statu  (211 aa)
+ initn: 431 init1: 230 opt: 466  Z-score: 487.0  bits: 98.0 E(): 5.3e-21
+Smith-Waterman score: 467;  37.019% identity (40.526% ungapped) in 208 aa overlap (200-394:6-208)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : .::....:::.::::: : ::  . :. 
+D1037.                          MAKTYDYLFKLLLIGDSGVGKTCVLFRFSDDSFNN
+                                        10        20        30     
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+        : .:::.:: ..:...  .. : .:.::::::::::.::  :.: : :..:..:.:.:.
+D1037. SFISTIGIDFKIRTIELD-GKKIKLQIWDTAGQERFRTITTAYYRGAMGIILVYDITNER
+          40        50         60        70        80        90    
+
+     290       300        310       320       330       340        
+4R79.2 SFLNVRNWIDSVRA-GVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       :: :..::: ...  ...:.  : ..::: :.   .  : .    .:.::.:.   :.::
+D1037. SFENIKNWIRNIEEHAASDVERM-IIGNKCDI---EERREVSRDRGEQLAIEYGTKFLET
+          100       110        120          130       140       150
+
+      350       360       370        380              390          
+4R79.2 SAYTGFGIDTCMRQMAENLQRR-EDNHLEEALKLD----IN---SNYKKRS----WCCI 
+       :: ....::  .  .:.... . :.:... . ...    .:   :. .:.:    : :  
+D1037. SAKANLNIDEAFFTLARDIKSKMEQNEMRAGGSVSNTGRVNVGGSGTQKKSFFSNWSCNL
+              160       170       180       190       200       210
+
+D1037. L
+        
+
+>>T23H2.5 CE14114  locus:rab-10 RAS status:Confirmed TR:  (201 aa)
+ initn: 430 init1: 207 opt: 464  Z-score: 485.2  bits: 97.6 E(): 6.7e-21
+Smith-Waterman score: 464;  37.500% identity (39.474% ungapped) in 200 aa overlap (200-394:7-201)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : .::....:::.:::::.:.::  . :. 
+T23H2.                         MARRPYDMLFKLLLIGDSGVGKTCILYRFSDDAFNT
+                                       10        20        30      
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+        : .:::.:: .::...  .. : .:.:::::::::..:: .:.: : :..:..:.:. .
+T23H2. TFISTIGIDFKIKTIELK-GKKIKLQIWDTAGQERFHTITTSYYRGAMGIMLVYDITNAK
+         40        50         60        70        80        90     
+
+     290       300       310       320       330        340        
+4R79.2 SFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRA-AEKLAVEFKIPFFET
+       :: :. .:. ..   ... .:  ..::: :.  ::  : .: :  .::.: .  : : ::
+T23H2. SFDNIAKWLRNIDEHASEDVVKMILGNKCDM--SD--RRVVSRERGEKIAQDHGISFHET
+         100       110       120           130       140       150 
+
+      350       360       370       380       390         
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRS----WCCI
+       ::  .  .:: . ..:: .  .  .  .:  .  .:    .:.     :: 
+T23H2. SAKLNVHVDTAFYDLAEAILAKMPDSTDEQSRDTVNPVQPQRQSSSGGCC 
+             160       170       180       190       200  
+
+>>C39F7.4 CE16905  locus:rab-1 RAS-related protein statu  (205 aa)
+ initn: 434 init1: 237 opt: 445  Z-score: 465.7  bits: 94.1 E(): 8.3e-20
+Smith-Waterman score: 445;  38.372% identity (39.759% ungapped) in 172 aa overlap (200-370:9-175)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : .::....:::.:::.:.: ::  . .  
+C39F7.                       MAAMNPEYDYLFKLLLIGDSGVGKSCLLLRFADDTYTE
+                                     10        20        30        
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+        . .:::::: ..:...  ...: .:.::::::::::.::..:.: : :.....:.:...
+C39F7. SYISTIGVDFKIRTIELD-GKTIKLQIWDTAGQERFRTITSSYYRGAHGIIVVYDITDQE
+       40        50         60        70        80        90       
+
+     290       300        310       320       330       340        
+4R79.2 SFLNVRNWIDSV-RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       .: ::..:.. . : . .... . ::::: :: ..   :..  .::.  : .. :::.::
+C39F7. TFNNVKQWLQEIDRYACENVNKL-LVGNKCDLTAK---RAVETQAAQDYAGQLGIPFLET
+       100       110       120        130          140       150   
+
+      350       360       370       380       390          
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI     
+       :: .. ...  .  :: ... :                              
+C39F7. SAKSSTNVEQAFLTMASEIKSRMGPVQGAGGAPGVRITGSQPVQDKKSGGCC
+           160       170       180       190       200     
+
+>>C18A3.6b CE20518  locus:rab-3 synaptic vesicle-associa  (219 aa)
+ initn: 412 init1: 218 opt: 438  Z-score: 458.2  bits: 92.8 E(): 2.2e-19
+Smith-Waterman score: 438;  35.407% identity (38.542% ungapped) in 209 aa overlap (198-394:14-217)
+
+       170       180       190       200           210       220   
+4R79.2 SIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDR----IFKVVFVGDSAVGKTCFLHRFC
+                                     :::.    .::....:.:.:::: :: :.:
+C18A3.                  MAAGGQPQGATPGQPDQNFDYMFKLLIIGNSSVGKTSFLFRYC
+                                10        20        30        40   
+
+           230       240       250       260       270       280   
+4R79.2 HNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMF
+        . :   : .:.:.:: :::. .  .. . .:.::::::::.:.::  :.: : : .::.
+C18A3. DDSFTSAFVSTVGIDFKVKTV-FRGDKRVKLQIWDTAGQERYRTITTAYYRGAMGFILMY
+            50        60         70        80        90       100  
+
+           290       300       310       320       330       340   
+4R79.2 DVTSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKI
+       :.:.:.:: .:..:  ....   . . . ::::: :.   :  : . .  ...:: .. .
+C18A3. DITNEESFNSVQDWCTQIKTYSWENAQVVLVGNKCDM---DSERVVSMDRGRQLADQLGL
+            110       120       130          140       150         
+
+           350       360               370       380       390     
+4R79.2 PFFETSAYTGFGIDTCMRQ--------MAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+        ::::::  .... . ...        :::.:.. . ..  .. ::. : . :  .  : 
+C18A3. EFFETSAKENINVKAVFEKLVEIICDKMAESLDK-DPQQQPKGQKLEANPTQKPAQQQCN
+     160       170       180       190        200       210        
+
+C18A3. C
+        
+
+>>C18A3.6a CE23555  locus:rab-3 synaptic vesicle-associa  (233 aa)
+ initn: 412 init1: 218 opt: 438  Z-score: 457.8  bits: 92.8 E(): 2.3e-19
+Smith-Waterman score: 438;  35.407% identity (38.542% ungapped) in 209 aa overlap (198-394:28-231)
+
+       170       180       190       200           210       220   
+4R79.2 SIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDR----IFKVVFVGDSAVGKTCFLHRFC
+                                     :::.    .::....:.:.:::: :: :.:
+C18A3.    MNNQQAAIASARSRMAAGGQPQGATPGQPDQNFDYMFKLLIIGNSSVGKTSFLFRYC
+                  10        20        30        40        50       
+
+           230       240       250       260       270       280   
+4R79.2 HNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMF
+        . :   : .:.:.:: :::. .  .. . .:.::::::::.:.::  :.: : : .::.
+C18A3. DDSFTSAFVSTVGIDFKVKTV-FRGDKRVKLQIWDTAGQERYRTITTAYYRGAMGFILMY
+        60        70         80        90       100       110      
+
+           290       300       310       320       330       340   
+4R79.2 DVTSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKI
+       :.:.:.:: .:..:  ....   . . . ::::: :.   :  : . .  ...:: .. .
+C18A3. DITNEESFNSVQDWCTQIKTYSWENAQVVLVGNKCDM---DSERVVSMDRGRQLADQLGL
+        120       130       140       150          160       170   
+
+           350       360               370       380       390     
+4R79.2 PFFETSAYTGFGIDTCMRQ--------MAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+        ::::::  .... . ...        :::.:.. . ..  .. ::. : . :  .  : 
+C18A3. EFFETSAKENINVKAVFEKLVEIICDKMAESLDK-DPQQQPKGQKLEANPTQKPAQQQCN
+           180       190       200        210       220       230  
+
+C18A3. C
+        
+
+>>W01H2.3 CE07562  locus:rab-37 GTP-binding protein stat  (196 aa)
+ initn: 373 init1: 290 opt: 430  Z-score: 450.6  bits: 91.2 E(): 5.7e-19
+Smith-Waterman score: 430;  36.041% identity (38.172% ungapped) in 197 aa overlap (203-394:3-193)
+
+            180       190       200       210       220        230 
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRF-KPLF
+                                     .::...::: .::::.: :.  . : .  :
+W01H2.                             MFLKVMLLGDSCTGKTCLLIRYKDGAFLNNNF
+                                           10        20        30  
+
+             240       250       260       270       280       290 
+4R79.2 NATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF
+        .:.:.:.  : . .  .. . .:.:::::::::::.: .:.: ::...:..:.... ::
+W01H2. ISTVGIDYRNKLITMG-DKKVKLQIWDTAGQERFRSVTTSYYRDADALLLVYDIANRASF
+             40         50        60        70        80        90 
+
+             300       310       320       330       340       350 
+4R79.2 LNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAY
+        : :::.....    .:. . ::::: ::      :..    ...::  ..:::.:::: 
+W01H2. ENCRNWLSQIKEYGKEAVQVTLVGNKCDL-----PRAVPTDEGKRLAEAYQIPFMETSAK
+             100       110       120            130       140      
+
+             360       370          380       390        
+4R79.2 TGFGIDTCMRQMAENLQRREDNHL---EEALKLDINSNYKKR-SWCCI  
+       :::..:  .  .:: . . . . .   : :  ... .. : . . ::   
+W01H2. TGFNVDRAFLGLAERMLKLKYGFVPGGEMADTISVADTKKPEIARCCTFN
+        150       160       170       180       190      
+
+>>T25G12.4 CE07541  locus:rab-6.2 ras-related protein st  (205 aa)
+ initn: 370 init1: 232 opt: 430  Z-score: 450.3  bits: 91.2 E(): 5.9e-19
+Smith-Waterman score: 430;  41.420% identity (42.424% ungapped) in 169 aa overlap (199-367:7-171)
+
+      170       180       190       200       210       220        
+4R79.2 IPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK
+                                     : . ::.::.:...:::: .. :: .. : 
+T25G12                         MSDFGNPLKKFKLVFLGEQSVGKTSLITRFMYDSFD
+                                       10        20        30      
+
+      230       240       250       260       270       280        
+4R79.2 PLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSE
+         ..::::.::  ::: .  .:.. .:::::::::::::.  .:.: .  .:...:.:. 
+T25G12 NTYQATIGIDFLSKTMYLE-DRTVRLQLWDTAGQERFRSLIPSYIRDSTVAVVVYDITNS
+         40        50         60        70        80        90     
+
+      290       300       310       320       330       340        
+4R79.2 QSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       .:: .. .:::.::.   . ... ::::: ::  ::  :...   .:. : :... :.::
+T25G12 NSFHQTSKWIDDVRTERGSDVIIMLVGNKTDL--SD-KRQVTTDEGERKAKELNVMFIET
+         100       110       120          130       140       150  
+
+      350       360       370       380       390           
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI      
+       :: .:...   .:..:  :                                  
+T25G12 SAKAGYNVKQLFRRIAGALPGIIKDDPVEPPNVVTMDPIRQRQIVTDEGSCWC
+            160       170       180       190       200     
+
+>>Y62E10A.9 CE24543  locus:rab-19  status:Confirmed TR:Q  (210 aa)
+ initn: 244 init1: 244 opt: 423  Z-score: 443.0  bits: 89.9 E(): 1.5e-18
+Smith-Waterman score: 423;  40.223% identity (41.379% ungapped) in 179 aa overlap (200-377:8-182)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : .::.:.::: .::::: ..:: .. :  
+Y62E10                        MDNDDGFDYLFKIVLVGDMGVGKTCVVQRFRNGTFVD
+                                      10        20        30       
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+         ..:::::::.::. .  .: . .:.:::.::::::.::..:.:.:.:.:: .:.: .:
+Y62E10 RQGTTIGVDFTMKTLVVDGKR-VKLQIWDTGGQERFRTITQSYYRSANGIVLCYDITCKQ
+        40        50         60        70        80        90      
+
+     290       300       310       320       330        340        
+4R79.2 SFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLA-VEFKIPFFET
+       :: ... :::.:   .   .:  :.:.: ::   .  :.   . :: :  ..  . ..::
+Y62E10 SFGSLQRWIDDVSKFAAPNVVKLLIGTKCDL---EDQRAIEAEEAEMLQRANGMFAMLET
+        100       110       120          130       140       150   
+
+      350       360       370       380       390               
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI          
+       ::  . ..:. . ..:  :.:. :. . :                            
+Y62E10 SAKGNVNVDNAFLELATILKRQYDQGVVEQGSSGTFQLGSGGTTALGSPWQRCCQYT
+           160       170       180       190       200       210
+
+>>Y87G2A.4 CE23130  locus:rab-27  status:Partially_confi  (215 aa)
+ initn: 408 init1: 233 opt: 423  Z-score: 442.9  bits: 89.9 E(): 1.5e-18
+Smith-Waterman score: 423;  37.766% identity (41.279% ungapped) in 188 aa overlap (200-376:5-187)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : ..: . .:::.:::: ::::.  : :  
+Y87G2A                           MGDYDYLIKFLALGDSGVGKTSFLHRYTDNTFTG
+                                         10        20        30    
+
+     230       240       250               260       270       280 
+4R79.2 LFNATIGVDFTVKTMKIPPNRA--------IAMQLWDTAGQERFRSITKQYFRKADGVVL
+        : .:.:.::  : .    .:.        . .:::::::::::::.:  .:: : : .:
+Y87G2A QFISTVGIDFKEKKVVYKSSRGGFGGRGQRVLLQLWDTAGQERFRSLTTAFFRDAMGFIL
+           40        50        60        70        80        90    
+
+             290       300          310       320       330        
+4R79.2 MFDVTSEQSFLNVRNWIDSVRAGV---DDATVMCLVGNKMDLFGSDIARSAVYRAAEKLA
+       .::.:.::::::.:.:...... .   .   ..:  ::: ::   .  :..    :..::
+Y87G2A IFDITNEQSFLNIRDWLSQLKVHAYCEQPDIIIC--GNKADL---ENRRQVSTARAKQLA
+          100       110       120         130          140         
+
+      340       350       360       370       380       390        
+4R79.2 VEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI   
+        .. .:.::::: :. ...  .  . . ...: .. .:                      
+Y87G2A DQLGLPYFETSACTSTNVEKSVDCLLDLVMQRIQQSVETSSLPLSECRGVSLDGDPSAAS
+     150       160       170       180       190       200         
+
+Y87G2A SYCANC
+     210     
+
+>>F59B2.7 CE00234  locus:rab-6.1 Rab6 (ras protein) stat  (205 aa)
+ initn: 419 init1: 229 opt: 417  Z-score: 437.0  bits: 88.7 E(): 3.3e-18
+Smith-Waterman score: 417;  41.916% identity (44.025% ungapped) in 167 aa overlap (203-367:12-172)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     ::.::.:...:::: .. :: .. :   ..
+F59B2.                    MADFTNNALKKFKLVFLGEQSVGKTSIITRFMYDSFDNTYQ
+                                  10        20        30        40 
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+       ::::.::  ::: .  .:.: .:::::::::::::.  .:.: .. .:...:.:. .:: 
+F59B2. ATIGIDFLSKTMYLE-DRTIRLQLWDTAGQERFRSLIPSYIRDSSVAVVVYDITNANSFH
+              50         60        70        80        90       100
+
+            300         310       320       330       340       350
+4R79.2 NVRNWIDSVRA--GVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSA
+       .. .:.:.::   : :  ... ::::: ::  .:  :..  . .:: : .... :.::::
+F59B2. QTTKWVDDVRNERGCD--VIIVLVGNKTDL--AD-KRQVSTEDGEKKARDLNVMFIETSA
+              110         120         130        140       150     
+
+              360       370       380       390          
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI     
+        .:...   .:..:  :                                 
+F59B2. KAGYNVKQLFRKIATALPGIVQEETPEQPNIVIMNPPKDAEESQGRQCPC
+         160       170       180       190       200     
+
+>>F53F10.4 CE10986  locus:rab-2 RAS-related protein stat  (214 aa)
+ initn: 368 init1: 234 opt: 415  Z-score: 434.7  bits: 88.4 E(): 4.4e-18
+Smith-Waterman score: 415;  37.297% identity (39.655% ungapped) in 185 aa overlap (202-385:6-180)
+
+             180       190       200       210       220       230 
+4R79.2 VSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLF
+                                     .:: ...::..:::.:.: .:  .::.:. 
+F53F10                          MSYAYLFKYIIIGDTGVGKSCLLLQFTDKRFQPVH
+                                        10        20        30     
+
+             240       250       260       270       280       290 
+4R79.2 NATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF
+       . ::::.: .. . :  .. : .:.::::::: :::::..:.: : :..:..:.: ...:
+F53F10 DLTIGVEFGARMVTID-GKQIKLQIWDTAGQESFRSITRSYYRGAAGALLVYDITRRDTF
+          40        50         60        70        80        90    
+
+             300       310       320       330        340       350
+4R79.2 LNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRA-AEKLAVEFKIPFFETSA
+        .. .:....:   ..  :. :.::: ::     ::  : :  .: .: :  . :.::::
+F53F10 NHLTSWLEDARQHSNSNMVIMLIGNKSDLE----ARREVKREEGEAFAREHGLVFMETSA
+          100       110       120           130       140       150
+
+              360       370       380       390                    
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI               
+        :. ...  . . :... :.    ..:.. .:::..                        
+F53F10 KTAANVEEAFIDTAKEIYRK----IQEGV-FDINNEANGIKLGPQHSPSSPNSPGGNATG
+              160       170            180       190       200     
+
+F53F10 GLGGGSGCC
+         210    
+
+>>Y47D3A.25 CE24336  locus:rab-35  status:Partially_conf  (209 aa)
+ initn: 373 init1: 194 opt: 410  Z-score: 429.7  bits: 87.4 E(): 8.3e-18
+Smith-Waterman score: 410;  37.379% identity (40.741% ungapped) in 206 aa overlap (200-393:8-208)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     :..::....:::.:::. .: ::  : :. 
+Y47D3A                        MAGTRDYDHLFKLLIIGDSGVGKSSLLLRFADNTFSE
+                                      10        20        30       
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+        . .:::::: ..:: :  .: . .:.::::::::::.::. :.: . :::...:::. .
+Y47D3A NYITTIGVDFKIRTMDINGQR-VKLQIWDTAGQERFRTITSTYYRGTHGVVVVYDVTNGE
+        40        50         60        70        80        90      
+
+     290       300       310       320       330       340         
+4R79.2 SFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETS
+       :: ::. :.. .. . :..  . ::::: .    .  : ..   :.. :  ..: :::::
+Y47D3A SFGNVKRWLQEIENNCDSVQKV-LVGNKCE---ENERRVVLESDARNYAQSMNISFFETS
+        100       110        120          130       140       150  
+
+     350          360             370       380          390     
+4R79.2 AYTGFGID---TCMR------QMAENLQRREDNHLEEALKLDINS---NYKKRSWCCI
+       :    ...   ::.       ..:.  .  .:.    ...:  ::   : ::.  :  
+Y47D3A AKEDKNVEPMFTCITSLVLTAKLANPQSASKDQSRTGGVSLKDNSGSTNQKKKCKCG 
+            160       170       180       190       200          
+
+>>D2013.1 CE30340  locus:rab-39 GTP binding protein (YPT  (229 aa)
+ initn: 334 init1: 304 opt: 407  Z-score: 426.2  bits: 86.9 E(): 1.3e-17
+Smith-Waterman score: 407;  35.429% identity (36.905% ungapped) in 175 aa overlap (203-373:18-189)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     .... .:::.:::. .:. : ....  . .
+D2013.              METNFIGDDYGPLFHYQYRLIVIGDSTVGKSSLLRYFTEGKMAEISD
+                            10        20        30        40       
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+        :.:::: .. ... :.  . .:::::::::.::::::.:.:.. ::. ..:.:...:: 
+D2013. PTVGVDFYARMIELRPGYRVKLQLWDTAGQEKFRSITKSYYRNSVGVLAIYDTTNRESFE
+        50        60        70        80        90       100       
+
+            300           310       320       330       340        
+4R79.2 NVRNWIDSVRAGVDDAT----VMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       .:.::.  .  ..   .    :. :::.: :.   :  :.. :. .: .:   :. :.::
+D2013. HVENWVKEAALNLGGPSPSKCVFQLVGTKSDM---DSQRQVNYEEGEYFAKYHKMKFIET
+       110       120       130          140       150       160    
+
+      350       360       370       380       390                  
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI             
+       :. :: ...  ....:...: : :.                                   
+D2013. SSRTGDNVNEAFHMIAQEIQNRVDDGELRPVDGWEGLKTGIMRSQSVCLSERSFPQNSSA
+          170       180       190       200       210       220    
+
+>>Y45F3A.2 CE19165  locus:rab-30 Ras family status:Parti  (216 aa)
+ initn: 362 init1: 207 opt: 402  Z-score: 421.4  bits: 85.9 E(): 2.4e-17
+Smith-Waterman score: 402;  40.719% identity (41.975% ungapped) in 167 aa overlap (202-367:7-169)
+
+             180       190       200       210       220       230 
+4R79.2 VSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLF
+                                     .::::.::...:::::....: .. : :  
+Y45F3A                         MEDYKYLFKVVLVGNAGVGKTCLVRKFTQGIFPPGQ
+                                       10        20        30      
+
+             240       250       260       270       280       290 
+4R79.2 NATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF
+       .::::::: .::.:.  :  : .:.:::::::::::::..:.:.: ..::..::. . ::
+Y45F3A SATIGVDFMIKTVKVG-NDKIKLQIWDTAGQERFRSITQSYYRSAHAIVLVYDVSCQPSF
+         40        50         60        70        80        90     
+
+             300       310       320       330       340        350
+4R79.2 LNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF-ETSA
+         . .:.  ... ..  ..  :::::.:  :..  : .  : .. ..   .. .: ::::
+Y45F3A DCLPEWLGEIESYANRRVLKILVGNKVDK-GDE--REVPERIGRDFSDVNQFDYFLETSA
+         100       110       120          130       140       150  
+
+              360       370       380       390                    
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI               
+         . ..:  ..:.:  :                                           
+Y45F3A LDATNVDQLFEQVATRLTNDMKLTDERVHQFRADATNSSSSTGGPIKLIDRAQTQLNSCC
+            160       170       180       190       200       210  
+
+>>K09A9.2 CE11974  locus:rab-14 RAS-related protein stat  (210 aa)
+ initn: 346 init1: 224 opt: 397  Z-score: 416.4  bits: 85.0 E(): 4.6e-17
+Smith-Waterman score: 397;  34.091% identity (35.088% ungapped) in 176 aa overlap (202-376:11-182)
+
+             180       190       200       210       220       230 
+4R79.2 VSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLF
+                                     ::: ...:: .:::.:.::.: ...:    
+K09A9.                     MTAAPYNYSYIFKYIIIGDMGVGKSCLLHQFTEKKFMADC
+                                   10        20        30        40
+
+             240       250       260       270       280       290 
+4R79.2 NATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF
+         ::::.: .. ...  .. : .:.::::::::::..:..:.: : :.....:.: ....
+K09A9. PHTIGVEFGTRIIEVSGQK-IKLQIWDTAGQERFRAVTRSYYRGAAGALMVYDITRRSTY
+               50         60        70        80        90         
+
+             300       310       320       330       340       350 
+4R79.2 LNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAY
+        .. .:. .... ..  :.. :.::: ::   .  :.. :. :. .: :  . :.: :: 
+K09A9. NHLSSWLADAKSLTNPNTAIFLIGNKADL---EDQRDVPYEEAKAFAEENGLTFLECSAK
+     100       110       120          130       140       150      
+
+             360        370       380       390              
+4R79.2 TGFGIDTCMRQMAENL-QRREDNHLEEALKLDINSNYKKRSWCCI         
+       :: ...  . . :... :  .:. :.                            
+K09A9. TGSNVEDAFLETAKQIYQNIQDGSLDLNAADTGVQPKQNLPRAAENNGKKDCNC
+        160       170       180       190       200       210
+
+>>Y92C3B.3b CE27340  locus:rab-18  status:Confirmed TR:Q  (203 aa)
+ initn: 318 init1: 188 opt: 388  Z-score: 407.4  bits: 83.2 E(): 1.5e-16
+Smith-Waterman score: 388;  34.615% identity (35.795% ungapped) in 182 aa overlap (192-372:1-177)
+
+             170       180       190       200       210       220 
+4R79.2 PIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHR
+                                     . .. ..:   .:....:.:.:::. .. :
+Y92C3B                               MSDDSSSPLTTLKILIIGESGVGKSSLMLR
+                                             10        20        30
+
+             230       240       250       260       270       280 
+4R79.2 FCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVL
+       :  . : :   ::::::: : .: :  :: . . .::::::::::..: .:.: :.::. 
+Y92C3B FVDDVFDPEQAATIGVDFRVTSMAIDGNR-VKLAIWDTAGQERFRTLTPSYYRGAQGVIC
+               40        50         60        70        80         
+
+             290       300        310       320       330       340
+4R79.2 MFDVTSEQSFLNVRNWIDSVRAG-VDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVE
+       ..::::..:: .. .:.. : .  ..:  .  .:.::.:. .  ..:    . . :.: .
+Y92C3B VYDVTSRSSFEKLNHWMQEVDTYCTNDNIIKMMVANKIDMPNRVVTR----EEGLKFAKR
+      90       100       110       120       130           140     
+
+              350       360       370       380       390        
+4R79.2 FKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI   
+        .  :.:.:: :  :..  .... :.. .  :                          
+Y92C3B HRTLFIEASAKTKEGVQCTFEELIEKIIQTPDLWDNDRPSFRLGQPTGSSGGGGMCGC
+         150       160       170       180       190       200   
+
+>>F11A5.3 CE15781   RAS related protein status:Predicted  (201 aa)
+ initn: 349 init1: 213 opt: 384  Z-score: 403.3  bits: 82.5 E(): 2.5e-16
+Smith-Waterman score: 384;  31.527% identity (33.333% ungapped) in 203 aa overlap (199-394:3-201)
+
+      170       180       190       200       210       220        
+4R79.2 IPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK
+                                     ::..:: :..::..:::. .: ::  . : 
+F11A5.                             MYPDHMFKYVIIGDGGVGKSNLLLRFTDELFD
+                                           10        20        30  
+
+      230       240       250       260       270       280        
+4R79.2 PLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSE
+       :. ..:.::.:  : ..:   . . ...::: ::: :::: . :.:.: :..:..:.: .
+F11A5. PIHTTTLGVEFGYKDLQIDKYK-VRLRVWDTCGQENFRSIIRAYYRNALGALLVYDITCR
+             40        50         60        70        80        90 
+
+      290       300       310       320       330       340        
+4R79.2 QSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       .::.....:....:       :. :.::: ::     .:... . .: .: .  . :.::
+F11A5. KSFVHLEQWLSDLRQHGHPEMVIMLIGNKSDL---KAVRDVTTEEGEAFAKKNGLTFMET
+             100       110       120          130       140        
+
+      350       360       370              380       390     
+4R79.2 SAYTGFGIDTCMRQMAENLQRR------EDNHLEEA-LKLDINSNYKKRSWCCI
+       :: ..  ..  . . :... ..      ::. ...  . . . :   :.. :: 
+F11A5. SAKANKHVEKAFVNTAHEIYKKLKLGVIEDDDVKKKKIGIILRSRSGKEKKCC 
+      150       160       170       180       190       200  
+
+>>F53G12.1 CE11006  locus:rab-11.1 RAS-related protein s  (211 aa)
+ initn: 361 init1: 228 opt: 377  Z-score: 395.9  bits: 81.2 E(): 6.4e-16
+Smith-Waterman score: 377;  35.057% identity (35.882% ungapped) in 174 aa overlap (200-373:9-178)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     : .::::..:::.:::. .: :: .:.:. 
+F53G12                       MGSRDDEYDYLFKVVLIGDSGVGKSNLLSRFTRNEFNL
+                                     10        20        30        
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+         ..::::.:.......  ....  :.::::::::.:.::. :.: : :..:..:.... 
+F53G12 ESKSTIGVEFATRSISVE-GKTVKAQIWDTAGQERYRAITSAYYRGAVGALLVYDIAKHV
+       40        50         60        70        80        90       
+
+     290       300       310       320       330       340         
+4R79.2 SFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETS
+       .. ::. :.  .:  .:.  :. ::::: ::      :..    :.  : . .. :.:::
+F53G12 TYENVERWLKELRDHADQNIVIMLVGNKSDLRH---LRAVPTDEAKIYAERNQLSFIETS
+       100       110       120       130          140       150    
+
+     350       360       370       380       390                
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI           
+       :  . .... . ..  .. .  .:.                                
+F53G12 ALDSTNVEAAFTNILTEIYKSVSNKHVGTDRQGYGGGSGTIIPSPASDPPKKQCCIP
+          160       170       180       190       200       210 
+
+>>W03C9.3 CE03777  locus:rab-7 ras related protein statu  (209 aa)
+ initn: 367 init1: 182 opt: 372  Z-score: 390.8  bits: 80.2 E(): 1.2e-15
+Smith-Waterman score: 373;  33.971% identity (36.410% ungapped) in 209 aa overlap (197-394:4-209)
+
+        170       180       190       200       210       220      
+4R79.2 QSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNR
+                                     :.   ..::...:::.:::: ..... . :
+W03C9.                            MSGTRKKALLKVIILGDSGVGKTSLMNQYVNRR
+                                          10        20        30   
+
+        230       240       250       260       270       280      
+4R79.2 FKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVT
+       :.  ..::::.:: .. ..:  .:....:.:::::::::.:.   ..: ::  :: ::::
+W03C9. FSNQYKATIGADFLTRDVNID-DRTVTLQIWDTAGQERFQSLGVAFYRGADCCVLAFDVT
+            40        50         60        70        80        90  
+
+        290       300           310       320       330       340  
+4R79.2 SEQSFLNVRNWIDS--VRAGVDDAT--VMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFK
+       .  :: .. .: :   ..:.  :     . :.:::.:: ..  . :   ::     .. .
+W03C9. NAASFKSLDSWRDEFLIQASPRDPDHFPFVLLGNKVDLESQRAVSSK--RAQSWCQTKGN
+            100       110       120       130         140       150
+
+            350       360          370          380       390      
+4R79.2 IPFFETSAYTGFGIDTCMRQMAEN-LQR--REDNHLEE---ALKLDINSNYKKRSWC-CI
+       ::..:.::  ...... .  .:.. : :  .: : . :    ..:. :.. .. : : : 
+W03C9. IPYYEVSAKEALNVEAAFLAIARDALARESQETNDFPEFPDQIRLNPNQQNQQNSGCNC 
+              160       170       180       190       200          
+
+>>F11A5.4 CE15782   RAS related protein status:Predicted  (203 aa)
+ initn: 294 init1: 222 opt: 369  Z-score: 387.9  bits: 79.6 E(): 1.8e-15
+Smith-Waterman score: 369;  32.195% identity (34.737% ungapped) in 205 aa overlap (200-394:4-203)
+
+     170       180       190       200       210       220         
+4R79.2 PKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+                                     :..:: :..:: .:::. .: ::  . :  
+F11A5.                            MSSDHVFKYVIIGDRGVGKSNLLLRFIGKPFDS
+                                          10        20        30   
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+       .  .:.:..:  ....:   . . ...::: :::::::.. .:.:.: :..:..:.::..
+F11A5. IHPSTLGIEFGFRNLEID-RKKVKLHVWDTCGQERFRSLVGSYYRHAIGALLVYDITSRE
+            40        50         60        70        80        90  
+
+     290        300       310       320       330       340        
+4R79.2 SFLNVRNWI-DSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       :: ....:. :  : : :   :. :.::: ::   .  : .  . .: .: :: . :.: 
+F11A5. SFYHLEHWLTDLQRLG-DPDIVIVLIGNKSDL---EADREVRKEEGEAFAREFGLIFMEI
+            100        110       120          130       140        
+
+      350       360       370                380       390     
+4R79.2 SAYTGFGIDTCMRQMAENLQRRED---------NHLEEALKLDINSNYKKRSWCCI
+       :: :.  ..  . . :... :. .         .. .. ... : :   :.. :: 
+F11A5. SAKTNEYVEEAFVNSAHEIYRKLNFGIIKEICVKKKKKKMNIIIRSISGKEKACC 
+      150       160       170       180       190       200    
+
+>>F43D9.2 CE00992  locus:rab-33  status:Partially_confir  (307 aa)
+ initn: 256 init1: 229 opt: 366  Z-score: 382.7  bits: 79.3 E(): 3.5e-15
+Smith-Waterman score: 381;  32.806% identity (36.245% ungapped) in 253 aa overlap (162-394:59-307)
+
+             140       150       160        170       180       190
+4R79.2 ELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQ-PEQSIPKVSSLAEELNAIGKKVLQKE
+                                     :.. :  . :     : :  . : : .   
+F43D9. THPDELTTASHPQPTHPSAPQDPSPAVPSTPVRVPYPTAPPPIPPAPEAVTAGPKKMALA
+       30        40        50        60        70        80        
+
+              200       210       220       230       240       250
+4R79.2 EIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNR
+           .. .  : :::..::..::::::.  ::: .::    .:::::::  ..  :  :.
+F43D9. PSSTKTYKQKRTFKVIIVGNAAVGKTCLSFRFCCGRFPEHTEATIGVDFRERSCVIE-NE
+       90       100       110       120       130       140        
+
+              260        270       280       290        300        
+4R79.2 AIAMQLWDTAGQERFR-SITKQYFRKADGVVLMFDVTSEQSFLNVRNWI-DSVRAG-VDD
+        . .::::::::::.: ::. .:.:....::...::: ..:: ..  :: .  . : : :
+F43D9. LLRVQLWDTAGQERYRQSIVAHYYRNVNAVVFVYDVTCRESFNDLALWIKECEKHGLVGD
+       150       160       170       180       190       200       
+
+       310        320       330       340       350                
+4R79.2 ATV-MCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGID-------TC
+       . :   :.::: :.  .. . .     :. .: . .. .:::::  .   :       : 
+F43D9. SEVPRILIGNKCDVECTNRVSTD---EAQMFADRNNMALFETSAKLASEADHVESIFLTL
+       210       220       230          240       250       260    
+
+     360           370           380       390     
+4R79.2 MRQMAEN----LQRREDNHLEEA----LKLDINSNYKKRSWCCI
+       .... ..    .: ... : .:     :: . . : .....:: 
+F43D9. LHKLQQSKPMHVQSQDERHQKEQERLILKANETENVEEEGFCC 
+          270       280       290       300        
+
+>>T01B7.3 CE03587  locus:rab-21 ras-related protein stat  (207 aa)
+ initn: 330 init1: 216 opt: 359  Z-score: 377.6  bits: 77.8 E(): 6.7e-15
+Smith-Waterman score: 359;  30.622% identity (32.161% ungapped) in 209 aa overlap (192-394:2-206)
+
+             170       180       190       200       210       220 
+4R79.2 PIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHR
+                                     .: .: : .  ::.:..:.. :::. .. :
+T01B7.                              MLETNVDQKSFKFKIVLLGEGCVGKSSLVLR
+                                            10        20        30 
+
+             230       240       250       260       270       280 
+4R79.2 FCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVL
+       : .:.:.    .:: ..:  ::...   .:  ...:::::::.....   :.: ..::.:
+T01B7. FVENKFSCKHLSTIQASFQNKTVNVEDCQA-DLHIWDTAGQEKYHALGPIYYRGSNGVLL
+              40        50        60         70        80        90
+
+             290       300       310       320       330       340 
+4R79.2 MFDVTSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEF
+       .::.:...:: .:.::.  ... . ... . .::::.::   .  :... . ::  :   
+T01B7. VFDITDRKSFEKVKNWVLEIKTCLGNTAEILIVGNKIDL---EEERQVTRQDAEAYAESE
+              100       110       120          130       140       
+
+             350           360       370         380       390     
+4R79.2 KIPFFETSAYTGFGI----DTCMRQMAENLQRR--EDNHLEEALKLDINSNYKKRSWCCI
+          ..::::  . ::    ..   .: :. . :  :    .....:  :.. .. . :: 
+T01B7. GALYMETSAQDNVGISDAFESLTAKMIEHSRTRSTEPPSTNRSIRLIDNDEAERSKKCCR
+       150       160       170       180       190       200       
+
+>>F26H9.6 CE09711  locus:rab-5 RAS-related protein statu  (208 aa)
+ initn: 330 init1: 203 opt: 359  Z-score: 377.5  bits: 77.8 E(): 6.7e-15
+Smith-Waterman score: 359;  31.156% identity (32.461% ungapped) in 199 aa overlap (199-394:14-207)
+
+      170       180       190       200         210       220      
+4R79.2 IPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRI--FKVVFVGDSAVGKTCFLHRFCHNR
+                                     :.:   ::.:..:.:::::. .. :: ...
+F26H9.                  MAARNAGTARPGGPNRTCQFKLVLLGESAVGKSSLVLRFVKGQ
+                                10        20        30        40   
+
+        230       240       250       260       270       280      
+4R79.2 FKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVT
+       :.   ..:::. : ..:. .  . .: ...::::::::..:.. .:.: :.......:.:
+F26H9. FHEYQESTIGAAFLTQTVCLD-DATIKFEIWDTAGQERYHSLAPMYYRGAQAAIVVYDIT
+            50        60         70        80        90       100  
+
+        290       300       310       320       330       340      
+4R79.2 SEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF
+       ...:: ...::.  ..  ..   :: :.::: :. ..   :.. :. :.  : .  . :.
+F26H9. NQESFQKAKNWVKELQRQASPNIVMALAGNKADVANK---RTVEYEEANAYAEDNALLFM
+            110       120       130          140       150         
+
+        350       360       370       380        390     
+4R79.2 ETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINS-NYKKRSWCCI
+       :::: :.....  .  .:..:     .  : .  .:.:. . .... :: 
+F26H9. ETSAKTSMNVNDIFMAIAKKLPIGPAQG-EPTGTVDMNQPQQQQKGSCCK
+     160       170       180        190       200        
+
+>>Y92C3B.3a CE29610  locus:rab-18  status:Confirmed TR:Q  (220 aa)
+ initn: 311 init1: 181 opt: 354  Z-score: 372.1  bits: 76.8 E(): 1.3e-14
+Smith-Waterman score: 372;  33.846% identity (36.667% ungapped) in 195 aa overlap (192-372:1-194)
+
+             170       180       190       200       210       220 
+4R79.2 PIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHR
+                                     . .. ..:   .:....:.:.:::. .. :
+Y92C3B                               MSDDSSSPLTTLKILIIGESGVGKSSLMLR
+                                             10        20        30
+
+             230       240       250       260       270       280 
+4R79.2 FCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVL
+       :  . : :   ::::::: : .: :  :: . . .::::::::::..: .:.: :.::. 
+Y92C3B FVDDVFDPEQAATIGVDFRVTSMAIDGNR-VKLAIWDTAGQERFRTLTPSYYRGAQGVIC
+               40        50         60        70        80         
+
+             290       300        310       320                    
+4R79.2 MFDVTSEQSFLNVRNWIDSVRAG-VDDATVMCLVGNKMDL---------FG--SDIARSA
+       ..::::..:: .. .:.. : .  ..:  .  .:.::.:.         ::  ...  . 
+Y92C3B VYDVTSRSSFEKLNHWMQEVDTYCTNDNIIKMMVANKIDMVRKSRFCSIFGLKNNFQPNR
+      90       100       110       120       130       140         
+
+     330         340       350       360       370       380       
+4R79.2 VYRAAE--KLAVEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNY
+       :    :  :.: . .  :.:.:: :  :..  .... :.. .  :               
+Y92C3B VVTREEGLKFAKRHRTLFIEASAKTKEGVQCTFEELIEKIIQTPDLWDNDRPSFRLGQPT
+     150       160       170       180       190       200         
+
+       390        
+4R79.2 KKRSWCCI   
+                  
+Y92C3B GSSGGGGMCGC
+     210       220
+
+>>W04G5.2 CE14584  locus:rab-11.2 RAS related protein st  (212 aa)
+ initn: 343 init1: 214 opt: 338  Z-score: 355.9  bits: 73.8 E(): 1.1e-13
+Smith-Waterman score: 338;  29.592% identity (30.851% ungapped) in 196 aa overlap (201-394:21-210)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     .:..::..:. .:::. .: :: .:.:.  
+W04G5.           MGNEYYYLFKSNFIFQNFKRQIISVVLIGNPGVGKSNLLSRFTRNEFNLK
+                         10        20        30        40        50
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+        . ::::.:..: ...  ..:. .:.:::::.::::  ...:.: : :..:..:......
+W04G5. SKPTIGVEFATKIISVE-GKAVKVQIWDTAGMERFRCGASSYYRGALGALLVYDISKHKT
+               60         70        80        90       100         
+
+              300       310       320       330       340       350
+4R79.2 FLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSA
+       . .:..:.  .:  ...  :. :::::     ::.....    :.  : . .: :.::::
+W04G5. YESVEQWLKVLRDHANEDIVITLVGNK-----SDLSHAVPTDEAKIYAERNHISFIETSA
+     110       120       130            140       150       160    
+
+              360       370       380         390      
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKK--RSWCCI 
+         . .... . ... .. .  ... ..     : :. ..  .. ::. 
+W04G5. LDNTNVEAAFTNIVTEIYKLVSEKYKDHSGTIIPSTASNTPKNQCCFP
+          170       180       190       200       210  
+
+>>C56E6.2 CE30372   GTP-binding status:Partially_confirm  (266 aa)
+ initn: 268 init1: 161 opt: 323  Z-score: 339.4  bits: 71.1 E(): 8.9e-13
+Smith-Waterman score: 323;  32.258% identity (34.826% ungapped) in 217 aa overlap (165-373:17-225)
+
+          140       150       160       170       180       190    
+4R79.2 EIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEE
+                                     : .:    :  : :   . . . ..:.   
+C56E6.               MQVLRQLPHQHQLASSPSSSCDIKSIYASE--KVREAIRDHEQTIA
+                             10        20        30          40    
+
+          200       210       220        230          240       250
+4R79.2 EVTQPDRIFKVVFVGDSAVGKTCFLHRFCHN-RFKPLFNATIG---VDFTVKTMKIPPNR
+         : : .  ::: .:::.:::: ...:  .. ...:. :::::   :.: : .     . 
+C56E6. TSTAPKHKAKVVVLGDSGVGKTSIIYRHRYGAHYRPV-NATIGASFVSFDVGADYRDRED
+           50        60        70        80         90       100   
+
+              260       270       280       290       300          
+4R79.2 AIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNWIDSV--RAGVDDA
+       .. .:.:::::::::: .. .:.:.::......:::....: .:..:. ..   .:..::
+C56E6. VVRLQVWDTAGQERFRCMVPMYMRNADAALIVYDVTDRNTFEDVEKWLKDLDRSSGTEDA
+           110       120       130       140       150       160   
+
+      310       320       330        340       350       360       
+4R79.2 TVMCLVGNKMDLFGSDIARSAVYRAAEK-LAVEFKIPFFETSAYTGFGIDTCMRQMAEN-
+       .:. :.::: ::    . .  : .:  : .:....  ::: :      . . . ..... 
+C56E6. NVY-LIGNKTDL----VEKREVTEAEGKAMAAKINAKFFELSNDQPNLFAAILSELSDDV
+            170           180       190       200       210        
+
+        370       380       390                        
+4R79.2 LQRREDNHLEEALKLDINSNYKKRSWCCI                   
+       :: :...                                         
+C56E6. LQSRQESSEKKTDLQLIRKEKVSLGDDKFEDNPNIQLKIQKSKCCSML
+      220       230       240       250       260      
+
+>>ZK792.6 CE03827  locus:let-60 LET-60 RAS protein statu  (184 aa)
+ initn: 297 init1: 133 opt: 289  Z-score: 306.5  bits: 64.4 E(): 6.1e-11
+Smith-Waterman score: 290;  30.928% identity (33.520% ungapped) in 194 aa overlap (203-395:4-183)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     .:.: :::..:::. .  .. .:.:   ..
+ZK792.                            MTEYKLVVVGDGGVGKSALTIQLIQNHFVEEYD
+                                          10        20        30   
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+        ::  . . . . .  ...  ... ::::::.. ..  ::.: ..: .:.: :.  .:: 
+ZK792. PTI--EDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLLVFAVNEAKSFE
+              40        50        60        70        80        90 
+
+            300        310       320       330       340       350 
+4R79.2 NVRNWIDSVRAGVD-DATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAY
+       :: :. ...:   : : . : ::::: ::     .::. .:.. . :  . ::  .::: 
+ZK792. NVANYREQIRRVKDSDDVPMVLVGNKCDLS----SRSVDFRTVSETAKGYGIPNVDTSAK
+             100       110       120           130       140       
+
+             360       370       380       390      
+4R79.2 TGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI 
+       : .:.:  .  .......... :       : :.  ::.. : : 
+ZK792. TRMGVDEAFYTLVREIRKHRERH-------DNNKPQKKKK-CQIM
+       150       160       170              180     
+
+>>Y11D7A.4 CE19030  locus:rab-28 Ras family status:Parti  (248 aa)
+ initn: 275 init1: 248 opt: 287  Z-score: 302.9  bits: 64.2 E(): 9.6e-11
+Smith-Waterman score: 287;  31.313% identity (32.979% ungapped) in 198 aa overlap (177-367:7-201)
+
+        150       160       170       180       190         200    
+4R79.2 EQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEE-EVTQ-PD-RIF
+                                     .:  :. ::    :.:.: .: . :: ...
+Y11D7A                         MTTMGEDEAPALPKKSPLPEKIDEADVDDDPDDKVI
+                                       10        20        30      
+
+           210       220       230       240       250       260   
+4R79.2 KVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQE
+       :.: :::.: ::: . .:: .. :   .. :.:.::  . . .: .  . .:.:: .:: 
+Y11D7A KIVVVGDGASGKTSICQRFAKESFDKSYHQTLGLDFFSRRITLPHEMQVLVQVWDIGGQS
+         40        50        60        70        80        90      
+
+           270       280       290       300       310          320
+4R79.2 RFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNWIDSVRAGVDDATV---MCLVGNKMDL
+           .  .:.  :. : :..:::. .:: :. .:.. :. .. .. .   . :.::: ::
+Y11D7A IAGEMIDKYLTGANIVFLVYDVTNSKSFENAVDWLSVVKKNTKSSETPVKLVLMGNKTDL
+        100       110       120       130       140       150      
+
+              330       340       350       360        370         
+4R79.2 FGSDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGIDTCMRQ-MAENLQRREDNHLEEAL
+          .  : .  .: ...:.   .    .:: ::  .   .:: .:: :.           
+Y11D7A ---EERRVVSVEAHKNFATSNDMMPTYVSAKTGDTVFLTFRQAVAEVLNVGLSRAEVEAD
+           160       170       180       190       200       210   
+
+     380       390                        
+4R79.2 KLDINSNYKKRSWCCI                   
+                                          
+Y11D7A IEIVQGSVIEQPKQSDASYARRSDQSRSTSVCSIT
+           220       230       240        
+
+>>Y71H2AM.12 CE27318    status:Partially_confirmed TR:Q9  (195 aa)
+ initn: 278 init1: 278 opt: 278  Z-score: 294.9  bits: 62.4 E(): 2.7e-10
+Smith-Waterman score: 278;  40.164% identity (41.525% ungapped) in 122 aa overlap (201-320:5-124)
+
+              180       190       200       210       220          
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK--
+                                     .  ::: ::.:..::: .:  :  : :.  
+Y71H2A                           MDTIKTVKVVVVGESGAGKTALLTCFLDNTFETD
+                                         10        20        30    
+
+      230       240       250       260       270       280        
+4R79.2 PLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSE
+       ::  .:::.::  : ...  ...: .::::::::::::...  :.:.:  ..:..:...:
+Y71H2A PL--TTIGIDFKHKIVQLNDGQSIRLQLWDTAGQERFRQLAPAYIRSARVALLVIDLSDE
+             40        50        60        70        80        90  
+
+      290       300       310       320       330       340        
+4R79.2 QSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       .   ..  :   .  . .: :   .:::: ::                            
+Y71H2A NCVEHLIRWKGIIDKNKSDFTSTIIVGNKHDLVSEKRSPRLTAIIRETNDEYIETSAKMR
+            100       110       120       130       140       150  
+
+      350       360       370       380       390     
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+                                                      
+Y71H2A KNIKKLFSSVACRPFPEHETSQIILLNEPRPVESATKRCCQRW    
+            160       170       180       190         
+
+>>K02E10.1 CE04693   GTP-binding protein status:Predicte  (276 aa)
+ initn: 353 init1: 159 opt: 268  Z-score: 282.9  bits: 60.7 E(): 1.3e-09
+Smith-Waterman score: 348;  30.508% identity (37.895% ungapped) in 236 aa overlap (201-394:36-267)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     ..: .: :::   ::.:.: :: .: :.  
+K02E10 IGKCFWVRYTTQALTFHHWLTYMCMPNARTQVF-IVVVGDHNCGKSCILLRFAENSFRMD
+          10        20        30         40        50        60    
+
+              240       250                                  260   
+4R79.2 FNATIGVDFTVKTMKIPPNRA---------------------------IAMQLWDTAGQE
+         .:.:::: .::.:.  ...                           : ..::::::.:
+K02E10 HISTLGVDFKLKTIKLGRDKVSETLKTLSFVSYYIFTFPVYLGFSLLYIRLELWDTAGME
+           70        80        90       100       110       120    
+
+           270       280       290        300       310       320  
+4R79.2 RFRSITKQYFRKADGVVLMFDVTSEQSFLNV-RNWIDSVRAGVDDATVMCLVGNKMDLFG
+       :.:.: ..:...: ::. ..:.:.:.:: :. . :.  ..  .   .:. ::::: :.  
+K02E10 RYRTIYNSYYHSAHGVMCVYDMTNEKSFENLEKYWLKEIKQHAPPNAVLMLVGNKADM--
+          130       140       150       160       170       180    
+
+            330       340       350       360       370            
+4R79.2 SDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGIDTCMRQMAENLQRR-----------E
+        :  :.. .  ::::: .. . ..:.:: ::.. .  .. ..  ...:           .
+K02E10 -DQERKVDFDRAEKLASRLGVSLYEVSAKTGINCEEAFHTLTAAMRERITAGSMHSDESD
+             190       200       210       220       230       240 
+
+              380         390             
+4R79.2 DNH-LEEALKLD--INSNYKKRSWCCI        
+       ::. .  :...:  :.:.  : . ::         
+K02E10 DNEEFSSAFHVDGVIKSDKGKFTSCCASAPEPAFV
+             250       260       270      
+
+>>K01G5.4 CE16194  locus:ran-1 GTP-binding protein statu  (215 aa)
+ initn: 232 init1: 142 opt: 266  Z-score: 282.1  bits: 60.2 E(): 1.4e-09
+Smith-Waterman score: 266;  30.952% identity (33.548% ungapped) in 168 aa overlap (203-367:10-167)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     ::.:.:::...::: :..:   ..:.  . 
+K01G5.                      MSGGDGIPTFKLVLVGDGGTGKTTFVKRHLTGEFEKKYV
+                                    10        20        30         
+
+            240       250        260       270       280       290 
+4R79.2 ATIGVDFTVKTMKIPPNRA-IAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF
+       ::.::.  :. . .  ::. : ...:::::::.: ..   :. ... ...:::::.. ..
+K01G5. ATLGVE--VHPLVFHTNRGQIRFNVWDTAGQEKFGGLRDGYYIQGQCAIIMFDVTARVTY
+      40          50        60        70        80        90       
+
+              300       310       320        330       340         
+4R79.2 LNVRNWI-DSVRAGVDDATVMCLVGNKMDLFGSDI-ARSAVYRAAEKLAVEFKIPFFETS
+        :: ::  : .:.  .   :.:  :::.:.    . :.. ...  ..:       ... :
+K01G5. KNVPNWHRDLARVCENIPIVLC--GNKVDVKDRKVKAKTITFHRKKNLQ------YYDIS
+       100       110         120       130       140               
+
+     350       360       370       380       390                   
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI              
+       : ......  .  .:..:                                          
+K01G5. AKSNYNFEKPFLWLARKLLGDPNLEFVAMPALAPPEVQMDPAMIAEYEKDLDNAAKADLP
+     150       160       170       180       190       200         
+
+>>C35C5.4 CE18544  locus:mig-2 RAS-related protein statu  (195 aa)
+ initn: 157 init1: 108 opt: 252  Z-score: 268.3  bits: 57.5 E(): 8.1e-09
+Smith-Waterman score: 253;  31.429% identity (35.484% ungapped) in 175 aa overlap (196-356:1-169)
+
+         170       180       190       200       210       220     
+4R79.2 EQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHN
+                                     ...:.: .: : :::..:::::.:  .  .
+C35C5.                               MSSPSRQIKCVVVGDGTVGKTCMLISYTTD
+                                             10        20        30
+
+         230       240       250       260       270       280     
+4R79.2 RFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDV
+        :   .  :.  ..... :..  : .. . :::::::: .  .    . ..:  .: :.:
+C35C5. SFPVQYVPTVFDNYSAQ-MSLDGN-VVNLGLWDTAGQEDYDRLRPLSYPQTDVFILCFSV
+               40         50         60        70        80        
+
+         290        300       310       320                    330 
+4R79.2 TSEQSFLNVRN-WIDSVRAGVDDATVMCLVGNKMDLFG-------------SDIARSAVY
+       .:  :: :: . ::  .:    :: :. :::.:.::               : :...  .
+C35C5. VSPVSFDNVASKWIPEIRQHCPDAPVI-LVGTKLDLRDEAEPMRALQAEGKSPISKTQGM
+       90       100       110        120       130       140       
+
+             340       350       360       370       380       390 
+4R79.2 RAAEKLAVEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRS
+       . :.:. .   . ..: :: :  :.                                   
+C35C5. KMAQKIKA---VKYLECSALTQQGLTQVFEDAVRSILHPKPQKKKKSCNIM         
+       150          160       170       180       190              
+
+>>C44C11.1 CE24846  locus:ras-1 RAS-related protein stat  (212 aa)
+ initn: 247 init1: 117 opt: 250  Z-score: 265.8  bits: 57.1 E(): 1.1e-08
+Smith-Waterman score: 250;  27.941% identity (29.534% ungapped) in 204 aa overlap (198-395:13-211)
+
+       170       180       190       200       210       220       
+4R79.2 SIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRF
+                                     : . ....: :: ..:::. .  .: .  :
+C44C11                   MGGRSNSATTAAQQNAVLRIVVVGGGGVGKSALTIQFIQRYF
+                                 10        20        30        40  
+
+       230       240       250       260       270       280       
+4R79.2 KPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTS
+          .. ::  ..: :   .  .    ... ::::::.: .. .::.: ..: ...: ::.
+C44C11 VQDYDPTIEDSYT-KQCFVDEDLC-KLEILDTAGQEEFSTMREQYLRTGSGFLIVFAVTD
+             50         60         70        80        90       100
+
+       290       300        310       320       330       340      
+4R79.2 EQSFLNVRNWIDSV-RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF
+       ..:: .:..  . . :    :   . ::::: ::   .  : .. . ::.:: ...::..
+C44C11 RNSFEEVKKLHELICRIKDRDDFPIILVGNKADL---ENERHVARHEAEELAHRLSIPYL
+              110       120       130          140       150       
+
+        350       360       370            380       390      
+4R79.2 ETSAYTGFGIDTCMRQMAENLQRREDN-----HLEEALKLDINSNYKKRSWCCI 
+       : ::    ..:  . .... ... . .     : ..  ::.   . ::.. : : 
+C44C11 ECSAKIRKNVDEAFFDIVRLVRKYQHDERMPIHPHDDRKLESPIKLKKKKNCRIQ
+       160       170       180       190       200       210  
+
+>>F17C8.4 CE00958  locus:ras-2 Ras-like protein status:C  (211 aa)
+ initn: 242 init1: 123 opt: 240  Z-score: 255.6  bits: 55.2 E(): 4.2e-08
+Smith-Waterman score: 240;  27.358% identity (29.000% ungapped) in 212 aa overlap (189-395:6-210)
+
+      160       170       180       190       200       210        
+4R79.2 LYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCF
+                                     :.  :..   :   .:.: .::..:::. .
+F17C8.                          MSNGGKRPPEDDSKLP--YYKLVVIGDGGVGKSSL
+                                        10          20        30   
+
+      220       230       240       250       260       270        
+4R79.2 LHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADG
+         .: ...:   .. ::  :  ..  .:  : .: :.. ::::::.: .. .::.: . :
+F17C8. TIQFFQKQFVDYYDPTIE-DQYIQHCEIDGNWVI-MDVLDTAGQEEFSAMREQYIRGGRG
+            40        50         60         70        80        90 
+
+      280       290       300        310       320       330       
+4R79.2 VVLMFDVTSEQSFLNVRNWIDSV-RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKL
+        .:.:.:: ..:: ....  ..: :.   .   . ::.::.::...   : .  . ...:
+F17C8. FLLVFSVTERKSFEEAHKLYNQVLRVKDRSEYPVLLVANKVDLINQ---RVVSEQEGREL
+             100       110       120       130          140        
+
+       340       350        360          370       380       390   
+4R79.2 AVEFKIPFFETSAYTG-FGIDTCMRQMAE---NLQRREDNHLEEALKLDINSNYKKRSWC
+       :...:. ..::::     ..:. ......   ..   : .:     ..  ... : .. :
+F17C8. AAQLKLMYIETSAKEPPVNVDAAFHELVRIVRSFPSDEGDHEASMASVPRTKKRKDKGKC
+      150       160       170       180       190       200        
+
+          
+4R79.2 CI 
+        : 
+F17C8. LIS
+      210 
+
+>>C25D7.7 CE08393   RAS-related protein status:Predicted  (212 aa)
+ initn: 217 init1: 123 opt: 230  Z-score: 245.3  bits: 53.3 E(): 1.5e-07
+Smith-Waterman score: 230;  33.099% identity (35.606% ungapped) in 142 aa overlap (201-340:2-135)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : :::: .:...:::. .  .:  . :   
+C25D7.                              MREFKVVVLGSGGVGKSALTVQFVSSTFIEK
+                                            10        20        30 
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+       .. ::  ::  : ...  . .. ... :::: :.: :.   :.....: :.....::.:.
+C25D7. YDPTIE-DFYRKEIEVDGQPSV-LEILDTAGTEQFSSMRDLYIKNGQGFVVVYSITSQQT
+               40        50         60        70        80         
+
+              300         310       320       330       340        
+4R79.2 FLNVRNWIDS-VRA-GVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       : ..::  .. ::. : ... .. ::::: ::     ...   :. : ::.:        
+C25D7. FHDIRNMKEQIVRVKGSENVPIL-LVGNKCDL-----SHQRQVRSEEGLALENSKHKVFN
+      90       100       110        120            130       140   
+
+      350       360       370       380       390                  
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI             
+                                                                   
+C25D7. ILSNFVWEKIIFWKNRFFFKIETESWSCPFTECSAKNNQNVNVTFAEIVREMNYVQNKSR
+           150       160       170       180       190       200   
+
+>>Y53G8AR.3 CE25424    status:Partially_confirmed TR:Q9N  (213 aa)
+ initn: 205 init1: 102 opt: 230  Z-score: 245.3  bits: 53.3 E(): 1.6e-07
+Smith-Waterman score: 230;  24.365% identity (25.397% ungapped) in 197 aa overlap (198-391:13-204)
+
+       170       180       190       200       210       220       
+4R79.2 SIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRF
+                                     : . . ::..:: ..:::. .  .: ...:
+Y53G8A                   MASKKASGTLPPQQQVVHKVIMVGTGGVGKSALTLQFMYDEF
+                                 10        20        30        40  
+
+       230       240       250       260       270       280       
+4R79.2 KPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTS
+          .. : . ..  :.  .  ..  .... :::::: . .:  .:.:...: . .:.. .
+Y53G8A VEEYEPTKADSYRKKV--VLDGEECSIDILDTAGQEDYSAIRDNYYRSGEGFICVFSILD
+             50          60        70        80        90       100
+
+       290       300        310        320       330       340     
+4R79.2 EQSFLNVRNWIDSV-RAGVDDATV-MCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPF
+        .::  . .. ... :.  .:..: . ::::: :.  . .. . . :   . : ..   .
+Y53G8A MESFEATNEFREQILRVKNSDSSVPIVLVGNKGDMRDQRVVSAELCR---QRAEQWGCHY
+              110       120       130       140          150       
+
+         350       360       370        380       390          
+4R79.2 FETSAYTGFGIDTCMRQMAENLQRRED-NHLEEALKLDINSNYKKRSWCCI     
+        ::::    ..:  . .. ....::.  .. . ..  . .:. ::::         
+Y53G8A VETSAKRRENVDKVFYDLMREMKRRKGGSQAQTGIDASASSGRKKRSGIKKHCTIL
+       160       170       180       190       200       210   
+
+>>C27B7.8 CE03037  locus:rrp-1 ras protein status:Partia  (188 aa)
+ initn: 175 init1:  93 opt: 228  Z-score: 243.9  bits: 52.9 E(): 1.9e-07
+Smith-Waterman score: 228;  27.485% identity (28.485% ungapped) in 171 aa overlap (201-370:2-167)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : .:.: .:...:::. .  .: .. :   
+C27B7.                              MREYKIVVLGSGGVGKSALTVQFVQGIFVEK
+                                            10        20        30 
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+       .. ::  :   : ...  .. . ... :::: :.: ..   :.....: ::....:....
+C27B7. YDPTIE-DSYRKQVEVDGQQCM-LEILDTAGTEQFTAMRDLYMKNGQGFVLVYSITAQST
+               40        50         60        70        80         
+
+              300        310       320       330       340         
+4R79.2 FLNVRNWIDSV-RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETS
+       : .. .  :.. :.   : . : ::::: ::   .  : .    ...:: .:   :.:::
+C27B7. FNDLMDLRDQILRVKDTDEVPMILVGNKCDL---EDERVVGKDQGQNLARQFGSAFLETS
+      90       100       110       120          130       140      
+
+     350       360       370       380       390     
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       : . ....  . .......::                         
+C27B7. AKAKINVSEVFYDLVRQINRRYPESGRRQGQSNKQCCSCVIM    
+        150       160       170       180            
+
+>>Y51H4A.3 CE25369  locus:rho-1 p21 ras-related rho (Rho  (192 aa)
+ initn: 160 init1: 111 opt: 223  Z-score: 238.7  bits: 52.0 E(): 3.6e-07
+Smith-Waterman score: 223;  28.571% identity (30.939% ungapped) in 196 aa overlap (204-395:7-191)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     :.:.:::.: ::::.:  : ...:  ..  
+Y51H4A                         MAAIRKKLVIVGDGACGKTCLLIVFSKDQFPDVYVP
+                                       10        20        30      
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.  .. :  ...  .. . . :::::::: .  .    .  .: ... :.. : .:. :
+Y51H4A TVFENY-VADIEVD-GKQVELALWDTAGQEDYDRLRPLSYPDTDVILMCFSIDSPDSLEN
+         40          50        60        70        80        90    
+
+            300       310       320       330       340         350
+4R79.2 V-RNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPF--FETSA
+       . ..:   ::    .. .. ::::: ::  ::     . :   :.  :   :      . 
+Y51H4A IPEKWTPEVRHFCPNVPII-LVGNKRDLR-SD---PQTVRELAKMKQEPVKPEQGRAIAE
+          100       110        120           130       140         
+
+               360       370       380       390      
+4R79.2 YTG-FGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI 
+         : :.   :  .  ...  ::   .:.: .  .... ::.: : : 
+Y51H4A QIGAFAYLECSAKTKDGI--REV--FEKATQAALQQKKKKKSKCMIL
+     150       160         170         180       190  
+
+>>C09G12.8b CE16833  locus:ced-10 RAS-related protein st  (191 aa)
+ initn: 171 init1: 116 opt: 214  Z-score: 229.5  bits: 50.3 E(): 1.2e-06
+Smith-Waterman score: 219;  30.978% identity (35.625% ungapped) in 184 aa overlap (204-369:5-182)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+C09G12                           MQAIKCVVVGDGAVGKTCLLISYTTNAFPGEYIP
+                                         10        20        30    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.  ......:    .: : . :::::::: .  .    . ..:  .. : ...  :: :
+C09G12 TVFDNYSANVMV--DGRPINLGLWDTAGQEDYDRLRPLSYPQTDVFLVCFALNNPASFEN
+           40          50        60        70        80        90  
+
+            300       310       320       330                   340
+4R79.2 VR-NWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEK------------LAVE
+       :: .:   :     .. .. :::.: ::  .   :..: :  :.            .: :
+C09G12 VRAKWYPEVSHHCPNTPII-LVGTKADLRED---RDTVERLRERRLQPVSQTQGYVMAKE
+            100       110        120          130       140        
+
+               350           360       370       380       390     
+4R79.2 FK-IPFFETSAYTGFGI----DTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       .: . ..: :: :  :.    :  .: .    ::                          
+C09G12 IKAVKYLECSALTQRGLKQVFDEAIRAVLTPPQRAKKSKCTVL                 
+      150       160       170       180       190                  
+
+>>K03D3.10b CE28046  locus:rac-2 Ras family (contains AT  (195 aa)
+ initn: 183 init1: 118 opt: 213  Z-score: 228.4  bits: 50.1 E(): 1.4e-06
+Smith-Waterman score: 215;  31.138% identity (35.374% ungapped) in 167 aa overlap (204-356:5-165)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+K03D3.                           MQAIKCVVVGDGAVGKTCLLLSYTTNAFPGEYIL
+                                         10        20        30    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.   .....:    .: : ..:::::::. . .. .  : ..:  .. : ...  :: :
+K03D3. TVFDTYSTNVMV--DGRPINLSLWDTAGQDDYDQFRHLSFPQTDVFLVCFALNNPASFEN
+           40          50        60        70        80        90  
+
+            300       310       320       330                   340
+4R79.2 VR-NWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEK------------LAVE
+       :: .:   :     .. .. :::.: ::  .   :... :  :.            .: :
+K03D3. VRAKWYPEVSHHCPNTPII-LVGTKADLRED---RDTIERLRESRLQPVSHTQGYVMAKE
+            100       110        120          130       140        
+
+               350       360       370       380       390     
+4R79.2 FK-IPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       .: . ..: :: : .:.                                       
+K03D3. IKAVKYLECSALTQIGLKQVFDEAIRTGLTPPQTPQTRAKKSNCTVL         
+      150       160       170       180       190              
+
+>>K03D3.10a CE25698  locus:rac-2 Ras family (contains AT  (195 aa)
+ initn: 183 init1: 118 opt: 213  Z-score: 228.4  bits: 50.1 E(): 1.4e-06
+Smith-Waterman score: 218;  31.138% identity (35.374% ungapped) in 167 aa overlap (204-356:5-165)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+K03D3.                           MQAIKCVVVGDGAVGKTCLLLSYTTNAFPGEYIL
+                                         10        20        30    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.   .....:    .: : ..:::::::. . .. .  : ..:  .. : ...  :: :
+K03D3. TVFDTYSTNVMV--DGRPINLSLWDTAGQDDYDQFRHLSFPQTDVFLVCFALNNPASFEN
+           40          50        60        70        80        90  
+
+            300       310       320       330                   340
+4R79.2 VR-NWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEK------------LAVE
+       :: .:   :     .. .. :::.: ::  .   :... :  :.            .: :
+K03D3. VRAKWYPEVSHHCPNTPII-LVGTKADLRED---RDTIERLRERRLQPVSHTQGYVMAKE
+            100       110        120          130       140        
+
+               350       360       370       380       390     
+4R79.2 FK-IPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       .: . ..: :: : .:.                                       
+K03D3. IKAVKYLECSALTQIGLKQVFDEAIRTGLTPPQTPQTRAKKSNCTVL         
+      150       160       170       180       190              
+
+>>R07G3.1 CE02020  locus:cdc-42 RAS protein status:Confi  (191 aa)
+ initn: 149 init1:  94 opt: 197  Z-score: 212.1  bits: 47.0 E(): 1.1e-05
+Smith-Waterman score: 213;  29.878% identity (32.667% ungapped) in 164 aa overlap (204-356:5-165)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  :.:   .  
+R07G3.                           MQTIKCVVVGDGAVGKTCLLISYTTNKFPSEYVP
+                                         10        20        30    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.  ...: .:    ..  .. :.:::::: .  .    . ..:  .. :.:..  :: :
+R07G3. TVFDNYAVTVMI--GGEPYTLGLFDTAGQEDYDRLRPLSYPQTDVFLVCFSVVAPASFEN
+           40          50        60        70        80        90  
+
+            300       310       320                330       340   
+4R79.2 VRN-WIDSVRAGVDDATVMCLVGNKMDL---------FGSDIARSAVYRAAEKLAVEFK-
+       ::. :.  .    . .  . :::...::         ....  . .   ..:::: :.: 
+R07G3. VREKWVPEISHHCSKTPFL-LVGTQVDLRDDPGMLEKLAKNKQKPVSTDVGEKLAKELKA
+            100       110        120       130       140       150 
+
+            350       360       370       380       390     
+4R79.2 IPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       . . : :: :  :.                                       
+R07G3. VKYVECSALTQKGLKNVFDEAILAALDPPQQEKKKKCNIL             
+             160       170       180       190              
+
+>>F22E12.2 CE05696   RAS related protein status:Partiall  (207 aa)
+ initn: 158 init1: 118 opt: 196  Z-score: 210.7  bits: 46.9 E(): 1.3e-05
+Smith-Waterman score: 196;  28.846% identity (29.605% ungapped) in 156 aa overlap (198-352:5-157)
+
+       170       180       190       200       210       220       
+4R79.2 SIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRF
+                                     . .. .: .:::..::::: ..  .  : .
+F22E12                           MAKEEDEKCLKCIFVGNAAVGKTSMIVSYTTNVY
+                                         10        20        30    
+
+       230       240       250       260       270       280       
+4R79.2 KPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTS
+          .  :   .:.: ..    .. : .:: :::::  : ..    .  ::  :....:..
+F22E12 PHNYVPTAFDNFSVVVLV--DKKPIRLQLHDTAGQSSFDTLRPLCYTDADVFVIVYSVVD
+           40        50          60        70        80        90  
+
+       290        300       310       320       330       340      
+4R79.2 EQSFLNV-RNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF
+        ::: .: ..:   :    . .: . :::.. :   .  . ...   .. :: ..   ::
+F22E12 LQSFEDVSHHWYPEVTKR-NPGTKLILVGTQADQRWQVRGNTVTQLRGKALADRLGAEFF
+            100       110        120       130       140       150 
+
+        350       360       370       380       390            
+4R79.2 ETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI       
+       : :: :                                                  
+F22E12 ECSALTQHNLKQMFDAAILAGLEGKKNREKRSNFYTKSSKIKERVARFITRTRNLI
+             160       170       180       190       200       
+
+>>Y32F6B.3 CE16612   RAS-like GTP-binding protein status  (187 aa)
+ initn: 124 init1:  69 opt: 191  Z-score: 206.1  bits: 45.9 E(): 2.4e-05
+Smith-Waterman score: 191;  28.662% identity (29.605% ungapped) in 157 aa overlap (203-356:5-159)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     .:.: :::. .::: .:  . ...:   ..
+Y32F6B                           MENKLKLVVVGDTYTGKTSLLVAYTKKQFLDNYT
+                                         10        20        30    
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+       .:.  ...: ...:  :.  :..:.:::::  ...:    . .:.  .. :.. ..... 
+Y32F6B TTVFDNWAV-SVHID-NKNYAVNLFDTAGQGNYEQIRCLSYPHANVFLVCFSMIDRKTLE
+           40          50        60        70        80        90  
+
+             300       310       320       330        340          
+4R79.2 NVRN-WIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRA-AEKLAVEFKI-PFFETS
+       . :. ::  .:  . : . . :::.: ::  .  .:..: .  :...: :.    :.  :
+Y32F6B SCRSTWIPEIRKYAGDNVPIMLVGTKNDLVDDADSRNTVTEDYAKRVAHEIGCHKFYSCS
+            100       110       120       130       140       150  
+
+     350       360       370       380       390     
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       : :  :.                                       
+Y32F6B ALTHKGLKRVFDESFLAAVGVKLEEETPNPCCTIL           
+            160       170       180                  
+
+>>K03D3.10c CE25699  locus:rac-2 RAS-RELATED PROTEIN RAC  (193 aa)
+ initn: 162 init1:  79 opt: 191  Z-score: 205.9  bits: 45.9 E(): 2.4e-05
+Smith-Waterman score: 191;  31.765% identity (38.028% ungapped) in 170 aa overlap (204-356:5-163)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+K03D3.                           MQAIKCVVVGDGAVGKTCLLLSYTTNAFPGEYIL
+                                         10        20        30    
+
+           240       250       260          270       280       290
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQE---RFRSITKQYFRKADGVVLMFDVTSEQS
+       :.   .....:    .: : ..::::::::   .::.  .. : ..:  .. : ...   
+K03D3. TVFDTYSTNVMV--DGRPINLSLWDTAGQEDYDQFRQHFHKKFPQTDVFLVCFALNN---
+           40          50        60        70        80            
+
+               300       310       320       330                   
+4R79.2 FLNVR-NWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEK------------L
+         ::: .:   :     .. .. :::.: ::  .   :..: :  :.            .
+K03D3. --NVRAKWYPEVSHHCPNTPII-LVGTKADLRED---RDTVERLRESRLQPVSHTQGYVM
+        90       100        110       120          130       140   
+
+       340        350       360       370       380       390     
+4R79.2 AVEFK-IPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       : :.: . ..: :: : .:.                                       
+K03D3. AKEIKAVKYLECSALTQIGLKQVFDEAIRTGLTPPQTPQTRAKKSNCTVL         
+           150       160       170       180       190            
+
+>>C54A12.4 CE01868   RAS-related protein status:Predicte  (219 aa)
+ initn: 152 init1: 104 opt: 191  Z-score: 205.2  bits: 46.0 E(): 2.7e-05
+Smith-Waterman score: 191;  25.253% identity (27.322% ungapped) in 198 aa overlap (203-395:31-218)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     ..:.  : ..:::. . .:: .. :.  . 
+C54A12 MLTFFHNSKKCAKYQLSKLWKQSSEASTSDYRVAVFGAGGVGKSSITQRFVKGTFNENYV
+               10        20        30        40        50        60
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSF-
+        ::  :   ....   . . ..:. ::.:...: .. .  . :... .:...::..::: 
+C54A12 PTIE-DTYRQVISCNQKNVCTLQITDTTGSHQFPAMQRLSISKGNAFILIYSVTNKQSFA
+                70        80        90       100       110         
+
+               300       310       320       330       340         
+4R79.2 --LNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETS
+         . . . .  :....   : . ::::: :    .  : .   ...:.:....  :.:::
+C54A12 ELVPIIEMMKEVKGNAIAETPIMLVGNKKD---EESKREVSSNSGQKVATNMECGFIETS
+     120       130       140          150       160       170      
+
+     350       360       370       380         390      
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLD--INSNYKKRSWCCI 
+       : .. .:   ..:.    ..:.      :: .:   ..: ::.. : : 
+C54A12 AKNNENITELFQQLLALEKKRQ-----LALTMDDPDGKNGKKKG-CHIM
+        180       190            200       210          
+
+>>Y57G11C.13 CE14950   ADP-ribosylation factor status:Pa  (185 aa)
+ initn: 169 init1: 131 opt: 190  Z-score: 205.1  bits: 45.7 E(): 2.7e-05
+Smith-Waterman score: 190;  26.667% identity (28.025% ungapped) in 165 aa overlap (204-366:22-180)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     ....:: .  ::: :.. .  ..:   .  
+Y57G11          MLAMVNKVLDWIRSLFWKEEMELTLVGLQNSGKTTFVNVIASGQFTEDMIP
+                        10        20        30        40        50 
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.:  :...  ::  .  ....::: .:: ::::. ..: : ....:.: :...:...  
+Y57G11 TVG--FNMR--KITKGN-VTIKLWDIGGQPRFRSMWERYCRGVNAIVFMVDAADEEKLEA
+                  60         70        80        90       100      
+
+           300         310       320       330       340       350 
+4R79.2 VRNWIDSV--RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAY
+        :: . ..  .  .:   :. : ::: :: :.   :. . :   .   . .:  .  :  
+Y57G11 SRNELMQLLDKPQLDAIPVLVL-GNKKDLPGALDERQLIERMNLSSIQNREICCYSISCK
+        110       120        130       140       150       160     
+
+             360       370       380       390     
+4R79.2 TGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+          .::  .. . ..                             
+Y57G11 EKENIDITLQWLIDHSKAQR                        
+         170       180                             
+
+>>F54C9.10 CE02250  locus:arl-1 GTP-binding ADP-ribosyla  (180 aa)
+ initn:  42 init1:  42 opt: 184  Z-score: 199.1  bits: 44.5 E(): 5.8e-05
+Smith-Waterman score: 184;  24.855% identity (26.220% ungapped) in 173 aa overlap (201-371:15-180)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : ......: ...::: .:.:.  ..    
+F54C9.                 MGGVMSYFRGLFGAREMRILILGLDGAGKTTILYRLQVGEVVTT
+                               10        20        30        40    
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+       .  :::  :.:. ..    . . .:.:: .::  .:   . :. ..:... . : .... 
+F54C9. I-PTIG--FNVEQVEY---KNLKFQVWDLGGQTSIRPYWRCYYANTDAIIYVVDSADRDR
+              50           60        70        80        90        
+
+              300        310       320       330       340         
+4R79.2 FLNVRNWIDSV-RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFK-IPFFET
+           :. . .. .    ...:. ...::.:. :  .... ::.:    :.. . : .:.:
+F54C9. VGISRQELATMLQEDELQGAVLAVLANKQDIAGC-LTETEVYKALGLDALRNRTIQIFKT
+      100       110       120       130        140       150       
+
+      350       360       370       380       390     
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       ::  : :.:  :  .:..::...                        
+F54C9. SASKGEGLDPAMDWLANQLQQKK                        
+       160       170       180                        
+
+>>F54C8.5 CE00191   Ras family status:Confirmed SW:P3444  (207 aa)
+ initn: 158 init1:  68 opt: 170  Z-score: 184.0  bits: 42.0 E(): 0.0004
+Smith-Waterman score: 170;  26.351% identity (27.465% ungapped) in 148 aa overlap (204-350:15-157)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     ::. .:   :::. .. :: .: :   ...
+F54C8.                 MSSSLQSNRQSLNRKVAVMGYPHVGKSALVLRFTQNIFPERYES
+                               10        20        30        40    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       ::  . . .   .  .:   ... :::::...  . ..     .: .:.. . ...::  
+F54C8. TIEDQHSKHIAAF--HRDYHLRVTDTAGQQEYTVFPRSCSLDINGFILVYAIDDRKSFEM
+           50          60        70        80        90       100  
+
+           300        310       320       330       340       350  
+4R79.2 VRNWIDS-VRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYT
+         :  .. ::.  : .  . .:::: ::  . ..:.   . .:.:: ..   : : .:  
+F54C8. CSNIYEKIVRTYGDTSIPIVIVGNKTDLSTQRVVRA---EEGEELARQWDAKFVEITARE
+            110       120       130          140       150         
+
+            360       370       380       390          
+4R79.2 GFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI     
+                                                       
+F54C8. SNRVHEVFELLLREIEISRGNLSPTERPNGNSPKRNPFKDDGKPCSIS
+     160       170       180       190       200       
+
+>>C09G12.8a CE16832  locus:ced-10 RAS-related protein st  (129 aa)
+ initn: 117 init1:  69 opt: 159  Z-score: 175.2  bits: 39.6 E(): 0.0012
+Smith-Waterman score: 159;  36.471% identity (38.750% ungapped) in 85 aa overlap (204-285:5-87)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+C09G12                           MQAIKCVVVGDGAVGKTCLLISYTTNAFPGEYIP
+                                         10        20        30    
+
+           240       250       260          270       280       290
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQE---RFRSITKQYFRKADGVVLMFDVTSEQS
+       :.  ......:    .: : . ::::::::   :.:    :   ...: :.  ..     
+C09G12 TVFDNYSANVMV--DGRPINLGLWDTAGQEDYDRLRERRLQPVSQTQGYVMAKEIKAVKY
+           40          50        60        70        80        90  
+
+              300       310       320       330       340       350
+4R79.2 FLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSA
+                                                                   
+C09G12 LECSALTQRGLKQVFDEAIRAVLTPPQRAKKSKCTVL                       
+            100       110       120                                
+
+>>F57H12.1 CE17122  locus:arf-3 GTP-binding protein stat  (180 aa)
+ initn: 141 init1: 101 opt: 157  Z-score: 171.5  bits: 39.4 E(): 0.002
+Smith-Waterman score: 157;  23.770% identity (25.664% ungapped) in 122 aa overlap (201-320:16-130)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     :  ....:: .:.::: .:...   ..  .
+F57H12                MGLTISSLFNRLFGKRQVRILMVGLDAAGKTTILYKL---KLGEI
+                              10        20        30           40  
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+        ..   . :.:.:..    . :.. .::..::...: . ..::....:.... : .... 
+F57H12 VTTIPTIGFNVETVEY---KNISFTVWDVGGQDKIRPLWRHYFQNTQGLIFVVDSNDKER
+             50           60        70        80        90         
+
+              300         310       320       330       340        
+4R79.2 FLNVRNWIDSV--RAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFET
+       . . :. . ..  .  . :::.. .. ::.::                            
+F57H12 IEESREELHKMLNEDELRDATLLVFA-NKQDLPNAMTAAELTDKLGLHNLRSRQWYIQAT
+     100       110       120        130       140       150        
+
+      350       360       370       380       390     
+4R79.2 SAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+                                                      
+F57H12 CATQGHGLYEGLDWLSNQLSKT                         
+      160       170       180                         
+
+>>K03D3.10d CE16215  locus:rac-2  status:Predicted TR:O4  (203 aa)
+ initn: 129 init1:  79 opt: 156  Z-score: 169.8  bits: 39.3 E(): 0.0025
+Smith-Waterman score: 157;  37.363% identity (41.975% ungapped) in 91 aa overlap (204-294:5-85)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     : : :::.::::::.:  .  : :   .  
+K03D3.                           MQAIKCVVVGDGAVGKTCLLLSYTTNAFPGEYIL
+                                         10        20        30    
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+       :.   .....:    .: : ..:::::::: .     :: ::    .  :.  .: .:.:
+K03D3. TVFDTYSTNVMV--DGRPINLSLWDTAGQEDY----DQYERKN---LKNFS-KNEPDFIN
+           40          50        60            70            80    
+
+           300       310       320       330       340       350   
+4R79.2 VRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYTG
+       .                                                           
+K03D3. IFSNYLITFFQNSANISTKNFHKQTYFSTTRRVSSLYWNASSQDLQDSPSTARSNQSHKC
+           90       100       110       120       130       140    
+
+>>Y116A8C.10 CE23321    status:Predicted TR:Q9U2V7 prote  (416 aa)
+ initn:  52 init1:  52 opt: 159  Z-score: 169.1  bits: 40.2 E(): 0.0027
+Smith-Waterman score: 159;  29.126% identity (31.579% ungapped) in 103 aa overlap (204-298:171-273)
+
+           180       190       200       210       220             
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP----
+                                     :.. .::: :::: . : .  .   :    
+Y116A8 PLSRNPSLLHHHHHPRHPLKKMSSLDESSTKILVLGDSCVGKTSLCHCIAGGGEPPGGGR
+              150       160       170       180       190       200
+
+     230       240           250       260       270       280     
+4R79.2 LFNATIGVDFTVKTMKI----PPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDV
+        :..:::.  ..   .     : .:.  ..::: .:.   :. .. .:. : :..:. :.
+Y116A8 SFDSTIGATVVMAWHEYRAGTPEQRTELLELWDIGGMVAHRQAAQVFFEGAVGAILVHDL
+              210       220       230       240       250       260
+
+         290       300       310       320       330       340     
+4R79.2 TSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPF
+       :...:  :. .:.                                               
+Y116A8 TNKRSEENLATWLTMLDGKPRGAAPKSSKDPAAVALKVDIESCNIPVLIVGTKADLVPHK
+              270       280       290       300       310       320
+
+>>B0336.2 CE00696  locus:arf-1 ARF status:Confirmed SW:Q  (181 aa)
+ initn: 140 init1: 100 opt: 154  Z-score: 168.4  bits: 38.9 E(): 0.003
+Smith-Waterman score: 154;  23.577% identity (25.893% ungapped) in 123 aa overlap (201-320:16-130)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : .....:: .:.::: .:...   ..  .
+B0336.                MGNVFGSLFKGLFGKREMRILMVGLDAAGKTTILYKL---KLGEI
+                              10        20        30           40  
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+        ..   . :.:.:..    . :.. .::..::...: . ..::....:.... : .... 
+B0336. VTTIPTIGFNVETVEY---KNISFTVWDVGGQDKIRPLWRHYFQNTQGLIFVVDSNDRER
+             50           60        70        80        90         
+
+              300          310       320       330       340       
+4R79.2 FLNVRNWIDSVRAGVDDA---TVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFE
+         ..:. .  .:  ..:    .:. . .::.::                           
+B0336. VGEAREEL--MRMLAEDELRDAVLLVFANKQDLPQAMNAAEVTDKLGLHSLRNRSWYIQA
+     100         110       120       130       140       150       
+
+       350       360       370       380       390     
+4R79.2 TSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+                                                       
+B0336. TCATSGDGLYEGLDWLSNQLKNRS                        
+       160       170       180                         
+
+>>F22B5.1 CE27425  locus:evl-20 GTP-binding ADP-ribosyla  (184 aa)
+ initn: 103 init1: 103 opt: 150  Z-score: 164.2  bits: 38.1 E(): 0.0051
+Smith-Waterman score: 155;  24.823% identity (27.778% ungapped) in 141 aa overlap (185-323:5-132)
+
+          160       170       180       190       200       210    
+4R79.2 IKKPLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVG
+                                     :.:.:.. .:      : ......: . .:
+F22B5.                           MGFLKILRKQRARE------REMRILILGLDNAG
+                                         10              20        
+
+          220       230       240       250       260       270    
+4R79.2 KTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFR
+       :: ....:  ..    .. :.: :  .::...   . . ..:::..::. .::  :.::.
+F22B5. KTTLMKKFL-DEPTDTIEPTLGFD--IKTVHF---KDFQLNLWDVGGQKSLRSYWKNYFE
+       30         40        50             60        70        80  
+
+          280       290       300         310       320       330  
+4R79.2 KADGVVLMFDVTSEQSFLNVRNWIDSV--RAGVDDATVMCLVGNKMDLFGSDIARSAVYR
+       ..:... . : .... .:.  . . ..  .  .  :... :. :: :: :.         
+F22B5. STDALIWVVDSSDRERLLQCSEELKKLLGEERLAGASLLVLA-NKSDLPGAIDVNSIAQV
+             90       100       110       120        130       140 
+
+            340       350       360       370       380       390  
+4R79.2 AAEKLAVEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSW
+                                                                   
+F22B5. LDLHSIKSHHWKIFSCCALSGDRLVQAMTWLCDDVGSRLFILD                 
+             150       160       170       180                     
+
+>>Y54E10BR.2 CE22471    status:Partially_confirmed TR:Q9  (191 aa)
+ initn: 127 init1:  91 opt: 149  Z-score: 162.9  bits: 37.9 E(): 0.006
+Smith-Waterman score: 149;  25.294% identity (26.543% ungapped) in 170 aa overlap (203-367:18-184)
+
+            180       190       200       210       220         230
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP--L
+                                     . ::.:: . .::: ::..   .  :   .
+Y54E10              MYTLSAGIWEKFFKKKDYYVVIVGLDNAGKTTFLEQTKSHFVKDYGV
+                            10        20        30        40       
+
+               240       250       260       270       280         
+4R79.2 FNAT-IGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+       .: . : .   ..: ..  : .  ...:: .::: .: .   :.  :...... :.:  .
+Y54E10 LNPSKITATVGLNTGNVELNNT-CLHFWDLGGQESLRELWATYYDDANAMIFVVDATRSD
+        50        60         70        80        90       100      
+
+     290       300         310       320       330       340       
+4R79.2 SFLNVRNWIDSVRAG--VDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFE
+        :  : . .  : :.  :..  :.  : :: .. :.  : . :    :    .  .  . 
+Y54E10 LFPIVASQFKEVMANEIVQNIPVLVAV-NKSEMEGAAAA-AEVRMLLEDDNHRSDLAVLP
+        110       120       130        140        150       160    
+
+       350       360       370       380       390     
+4R79.2 TSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+       .::  : .:. :.. ....:                            
+Y54E10 VSALEGTNIERCVHWIVRSLASQPLYL                     
+          170       180       190                      
+
+>>C38D4.8 CE00921  locus:arl-query ADP-ribosylation fact  (190 aa)
+ initn: 104 init1:  79 opt: 143  Z-score: 156.8  bits: 36.8 E(): 0.013
+Smith-Waterman score: 143;  23.699% identity (26.282% ungapped) in 173 aa overlap (205-369:20-183)
+
+          180       190       200       210       220        230   
+4R79.2 LAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK-PLFNA
+                                     .: :: .  ::: .:     :..: :   .
+C38D4.            MGFFSSLSSLFGLGKKDVNIVVVGLDNSGKTTIL-----NQLKTPETRS
+                          10        20        30             40    
+
+           240       250       260       270       280             
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTS------
+          :  . ...    .. .... .: ::: ..::  ..::....::....: ..      
+C38D4. QQIVPTVGHVVTNFSTQNLSFHAFDMAGQMKYRSTWESYFHSSQGVIFVLDSSDRLRMEL
+           50        60        70        80        90       100    
+
+        290       300       310       320       330       340      
+4R79.2 -EQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF
+        .. .. : .  : :  :.     . ...::::. :.  : . .   . .:       . 
+C38D4. LKDELMMVMEHKDVVSRGIP----IVILANKMDIPGAMTASDITVALGLNLYRSGTWSIH
+          110       120           130       140       150       160
+
+        350       360       370       380       390     
+4R79.2 ETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+        : : :: :.:  :.:.. .. .                          
+C38D4. STCALTGDGLDKAMQQLSAEITKYMESRRT                   
+              170       180       190                   
+
+>>ZK180.4 CE07622   GTP-binding protein status:Confirmed  (193 aa)
+ initn:  92 init1:  58 opt: 140  Z-score: 153.7  bits: 36.2 E(): 0.02
+Smith-Waterman score: 140;  28.099% identity (29.825% ungapped) in 121 aa overlap (204-323:23-137)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     :.::.: . .::: .:: .  .:.     .
+ZK180.         MSFLWDWFNGVLNMLGLANKKGKLVFLGLDNAGKTTLLHMLKDDRIAQHVPT
+                       10        20        30        40        50  
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+          .  : . :..    .:..  .: .:. . : . :.::  .:.::...::.. . . .
+ZK180. ---LHPTSEQMSLG---GISFTTYDLGGHAQARRVWKDYFPAVDAVVFLIDVADAERMQE
+                60           70        80        90       100      
+
+           300       310        320       330       340       350  
+4R79.2 VRNWIDSVRAGVDDATVMCLV-GNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYT
+        :  ..:.    . :.:  :. :::.:  :.                             
+ZK180. SRVELESLLQDEQIASVPVLILGNKIDKPGALSEDQLKWQLNIQHMCTGKGDVSRNEMAS
+        110       120       130       140       150       160      
+
+            360       370       380       390     
+4R79.2 GFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+                                                  
+ZK180. RPMEVFMCSVLQRQGYGEGIRWLGQYL                
+        170       180       190                   
+
+>>ZK632.8 CE00425  locus:arl-5 ADP ribosylation factor s  (178 aa)
+ initn:  81 init1:  81 opt: 137  Z-score: 151.0  bits: 35.6 E(): 0.028
+Smith-Waterman score: 137;  23.952% identity (25.157% ungapped) in 167 aa overlap (203-367:18-178)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     .:.. :: . .::: .:. .  .. .   .
+ZK632.              MGLIMAKLFQSWWIGKKYKIIVVGLDNAGKTTILYNYV-TKDQVETK
+                            10        20        30         40      
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+        ::: .  :. ..    : . . .:: .::: .:.  . :. ..: :....: ..   . 
+ZK632. PTIGSN--VEEVSY---RNLDFVIWDIGGQESLRKSWSTYYVQTDVVIVVIDSSDTTRIP
+         50             60        70        80        90       100 
+
+            300       310        320        330       340       350
+4R79.2 NVRNWIDSVRAGVDDATVMCLV-GNKMDLFGS-DIARSAVYRAAEKLAVEFKIPFFETSA
+        ... . ..    : : .  :: .::.:: :. . :. ..  . . :    :  .    :
+ZK632. IMKEQLHNMLQHEDLARAHILVLANKQDLPGAMNPAEVSTQLGLQTLRGARKWQINGCCA
+             110       120       130       140       150       160 
+
+              360       370       380       390     
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+         : :.   .. .:.::                            
+ZK632. VKGEGLPEALEWIANNL                            
+             170                                    
+
+>>T24F1.1 CE02361   GTP-binding protein status:Partially  (312 aa)
+ initn:  84 init1:  55 opt: 137  Z-score: 148.1  bits: 35.9 E(): 0.04
+Smith-Waterman score: 137;  25.000% identity (27.132% ungapped) in 140 aa overlap (204-335:6-142)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     ::...: :. :::  .. .    .     .
+T24F1.                          MSSKRKVLLMGKSGSGKTS-MRSIIFANYIARDCS
+                                        10         20        30    
+
+           240       250       260            270       280        
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFR-----SITKQYFRKADGVVLMFDVTSE
+        .:  . :.  ..     ....::: .::: :      :   : :.... .. .::: :.
+T24F1. RLGPTIEVEHAHVKFLGNMVLHLWDCGGQESFMENFLVSQKDQIFKNVQVLIYVFDVESR
+           40        50        60        70        80        90    
+
+      290          300       310       320       330       340     
+4R79.2 QSFLNVRNW---IDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPF
+       .   ..: .   ....  .  .: :.::. .::::.  :  :  ...  :          
+T24F1. EFEKDLRYYQSCLEALLQNSPNAQVFCLI-HKMDLIEED-KREETFKRREADVLRYSELA
+          100       110       120        130        140       150  
+
+         350       360       370       380       390               
+4R79.2 FETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI          
+                                                                   
+T24F1. ATPLQNERTNAVCQCFKSSIWDETLYKAWSAIVYHLVPNVGTMEDKLKKFGAILDADEVI
+            160       170       180       190       200       210  
+
+>>Y39A1A.15c CE20232   Ank repeat (2 domains) status:Par  (903 aa)
+ initn:  81 init1:  55 opt: 142  Z-score: 147.7  bits: 37.3 E(): 0.043
+Smith-Waterman score: 142;  25.153% identity (27.152% ungapped) in 163 aa overlap (203-362:31-184)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     :.. .:: :  ::: ..::.  . . :  .
+Y39A1A MTVASYLLVDFLQWYKSLGASTLSTKYYHKFRIGIVGTSQSGKTALVHRYLTGTYTPDES
+               10        20        30        40        50        60
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+          :     :   .  ...  . . :  ::..   .  :. . .:.::..:.: : ::. 
+Y39A1A PEGG---RFKKEVVIEGQSHLLLIRDE-GQQH---LDVQFCQWVDAVVFVFNVCSIQSYD
+                  70        80            90       100       110   
+
+              300       310       320       330       340          
+4R79.2 NVRNWID--SVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFK-IPFFETS
+       ...      :   ...:  .. :::.: : ..   ::  .   ...::...:   .::::
+Y39A1A SIQALAHEMSKYRNISDLPLI-LVGTK-DHISEKRARVITEDEGRQLAAQMKRCSYFETS
+           120       130         140       150       160       170 
+
+     350       360       370       380       390                   
+4R79.2 AYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI              
+       .  : ...  ...                                               
+Y39A1A STYGTNVERVFKEACCKIIQLRVRSQVGAAAAASSQARTPTPTHSESGGRKDYQDPSRYI
+             180       190       200       210       220       230 
+
+>>F52A8.6a CE20840   ras-like protein like status:Partia  (364 aa)
+ initn:  86 init1:  51 opt: 136  Z-score: 146.3  bits: 35.8 E(): 0.051
+Smith-Waterman score: 137;  27.803% identity (32.461% ungapped) in 223 aa overlap (137-350:119-318)
+
+        110       120       130       140       150       160      
+4R79.2 LEDEMREIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPE
+                                     :.: . : : . : :       : ::.  :
+F52A8. PQKATNRRFSLAATFFDAAKADRKTSLCVEKDYLNHQGRYRTVAD-----PDLERPLFVE
+       90       100       110       120       130            140   
+
+        170       180       190        200       210       220     
+4R79.2 QSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQP-DRIFKVVFVGDSAVGKTCFLHRF-CH
+       .:  :           : ...... :.   ..   : ..:: :: . :::: .:..  : 
+F52A8. RSEEK-----------GVRTFRSDSIKPARSRRMGRAMRVVVVGGKKVGKTAILRQVACV
+                      150       160       170       180       190  
+
+            230       240       250       260         270       280
+4R79.2 NRF--KPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSIT--KQYFRKADGVV
+       .    :: .. ::   . :   .    : : . : ::::   .  :   : : . ::. :
+F52A8. EDVTNKP-YEPTIEDTYQVLLEEPDKAREILI-LHDTAGVSNYGPIELKKAYVQAADAFV
+             200       210       220        230       240       250
+
+              290          300       310       320       330       
+4R79.2 LMFDVTSEQSFLNV---RNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKL
+       :... .. .::  :   ..:::  . : :   :  .:  .:     :   ..    :.. 
+F52A8. LVYSSADYESFNRVDLLKKWIDR-QFGKDKKEVPIVVLANM----RDRPATVDSAFAHSW
+              260       270        280       290           300     
+
+       340       350       360       370       380       390      
+4R79.2 AVEFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI 
+       :.. :. .::..:                                              
+F52A8. AAREKVKLFEVTAKDRQSLVDFIHYVGHRHFHPTKESKFSLSKKLKSEKSSNPAILMDF
+         310       320       330       340       350       360    
+
+>>F45E4.1 CE10492  locus:arl-6 ADP-ribosylation factor s  (179 aa)
+ initn: 112 init1:  87 opt: 130  Z-score: 143.8  bits: 34.3 E(): 0.07
+Smith-Waterman score: 130;  23.577% identity (25.000% ungapped) in 123 aa overlap (199-320:14-130)
+
+      170       180       190       200       210       220        
+4R79.2 IPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK
+                                     :.   .....: ...::: .:...   ...
+F45E4.                  MGLFFSKISSFMFPNIECRTLMLGLDGAGKTTILYKL---KLN
+                                10        20        30           40
+
+      230       240       250       260       270       280        
+4R79.2 PLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSE
+          :.   . :.:.:. .   . :.. .::..::...:.. : :: ..  .:.. : .. 
+F45E4. ETVNTIPTIGFNVETVTF---QKITLTVWDVGGQKKIRALWKYYFPNTTTLVFVVDSSDI
+               50           60        70        80        90       
+
+      290       300       310        320       330       340       
+4R79.2 QSFLNVRNWIDSVRAGVDDATVMCLV-GNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFE
+       . . .... . :. :  . :    :: .::.:.                           
+F45E4. ERIPEAKEELFSLLAEPELADSHLLVFANKQDMPNARSPAELTQLLDLGSLKNREWFICG
+       100       110       120       130       140       150       
+
+       350       360       370       380       390     
+4R79.2 TSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+                                                       
+F45E4. TNAHSGQGLYEGLMWVKKQMKT                          
+       160       170                                   
+
+>>Y71F9AR.2 CE22854    status:Predicted TR:Q95XT2 protei  (357 aa)
+ initn: 125 init1:  55 opt: 130  Z-score: 140.2  bits: 34.6 E(): 0.11
+Smith-Waterman score: 136;  25.698% identity (29.487% ungapped) in 179 aa overlap (197-368:4-166)
+
+        170       180       190       200       210       220      
+4R79.2 QSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNR
+                                     : : : ..:..:: .. ::. .  ..  .:
+Y71F9A                            MRNTAPLRELHVALVGMAGSGKSAIAVKYITKR
+                                          10        20        30   
+
+        230       240       250       260       270       280      
+4R79.2 FKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVT
+       :   ...:.  ..  .  .   .... . . ::.  :   .   ...  ::  :...:::
+Y71F9A FIGEYDSTLEDNYCRQ--ETVGGQSLMVWMMDTV--ENATKDEMRWIAWADVYVVVYDVT
+            40          50        60          70        80         
+
+        290       300       310              320       330         
+4R79.2 SEQSFLNVRNWIDSVRAGVDDATVMC-------LVGNKMDLFGSDIARSAVYRAAEKLAV
+       :. ::  ... .. .        :.:       ::::: ::   .  :..    .:.:: 
+Y71F9A SQLSFQYAEGILERISR---HEHVLCPREHRTLLVGNKTDL---ERYRQVSETEGERLAS
+      90       100          110       120          130       140   
+
+     340       350       360       370       380       390         
+4R79.2 EFKIPFFETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI    
+       . :  : : ::    .::  .::....:.                               
+Y71F9A QHKAQFAECSA----AID--LRQFTQGLHSIFQNIISGARSPSPRQCSSDSEIITPRKGA
+           150             160       170       180       190       
+
+>>Y39A1A.15b CE19135  locus:cnt-2 Ank repeat (2 domains)  (951 aa)
+ initn:  81 init1:  55 opt: 134  Z-score: 139.2  bits: 35.9 E(): 0.13
+Smith-Waterman score: 134;  25.309% identity (27.333% ungapped) in 162 aa overlap (204-362:80-232)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     :. .:: :  ::: ..::.  . . :  . 
+Y39A1A SEQIREQIVSVEDAFVNSHEWTLSRSISEMKLGIVGTSQSGKTALVHRYLTGTYTPDESP
+      50        60        70        80        90       100         
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+         :     :   .  ...  . . :  ::..   .  :. . .:.::..:.: : ::. .
+Y39A1A EGG---RFKKEVVIEGQSHLLLIRDE-GQQH---LDVQFCQWVDAVVFVFNVCSIQSYDS
+     110          120       130           140       150       160  
+
+             300       310       320       330       340        350
+4R79.2 VRNWID--SVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFK-IPFFETSA
+       ..      :   ...:  .. :::.: : ..   ::  .   ...::...:   .::::.
+Y39A1A IQALAHEMSKYRNISDLPLI-LVGTK-DHISEKRARVITEDEGRQLAAQMKRCSYFETSS
+            170       180         190       200       210       220
+
+              360       370       380       390                    
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI               
+         : ...  ...                                                
+Y39A1A TYGTNVERVFKEACCKIIQLRVRSQVGAAAAASSQARTPTPTHSESGGRKDYQDPSRYIS
+              230       240       250       260       270       280
+
+>>T09F5.7 CE13533   reverse transcriptase status:Predict  (211 aa)
+ initn:  98 init1:  75 opt: 126  Z-score: 138.9  bits: 33.6 E(): 0.13
+Smith-Waterman score: 126;  21.965% identity (23.750% ungapped) in 173 aa overlap (111-273:25-194)
+
+               90       100       110       120       130       140
+4R79.2 LQQNMAKNEVEIPCILDKSQYLEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYE
+                                     .: : .  . ...:: :   : .: ..:  
+T09F5.       MIHQIFSNYCSKNTRLHTLLYKTFVRPILEYGTEVSSPLKKQDIKAIESVQNSF
+                     10        20        30        40        50    
+
+              150       160       170       180       190       200
+4R79.2 DFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPD
+         .. ..:    :    : :.    .. . ..:.:  . .:: :  :.:  ...   . :
+T09F5. TRKLYSRQKGKYIRTDDPDYKSAIQRNELFNLSTLEARRKAIDKVFLSKMLVNKVDIDSD
+           60        70        80        90       100       110    
+
+                        210       220       230       240       250
+4R79.2 RIFKV----------VFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNR
+       ..::.           :.  .   :: . ..:  ::   .::. ... : .  ...: .:
+T09F5. QFFKIDKNSKTRTKTKFIWGKC--KTKLRRHFFTNRVLCMFNTFMSTTFMLPIIHLPDTR
+          120       130         140       150       160       170  
+
+              260       270       280       290       300       310
+4R79.2 AIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNWIDSVRAGVDDATV
+       .. .:: . . .. : :.   .:                                     
+T09F5. TFMYQLLNFSDDNSF-SVCLLFFCMFIIVCLLCLLSRFQS                    
+            180        190       200       210                     
+
+>>Y39A1A.15a CE28116  locus:cnt-2 Ank repeat (2 domains)  (1107 aa)
+ initn:  81 init1:  55 opt: 134  Z-score: 138.4  bits: 35.9 E(): 0.14
+Smith-Waterman score: 134;  25.309% identity (27.333% ungapped) in 162 aa overlap (204-362:236-388)
+
+           180       190       200       210       220       230   
+4R79.2 SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+                                     :. .:: :  ::: ..::.  . . :  . 
+Y39A1A KNRIFRSPTYHHDAFVNSHEWTLSRSISEMKLGIVGTSQSGKTALVHRYLTGTYTPDESP
+         210       220       230       240       250       260     
+
+           240       250       260       270       280       290   
+4R79.2 TIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLN
+         :     :   .  ...  . . :  ::..   .  :. . .:.::..:.: : ::. .
+Y39A1A EGG---RFKKEVVIEGQSHLLLIRDE-GQQH---LDVQFCQWVDAVVFVFNVCSIQSYDS
+            270       280        290          300       310        
+
+             300       310       320       330       340        350
+4R79.2 VRNWID--SVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFK-IPFFETSA
+       ..      :   ...:  .. :::.: : ..   ::  .   ...::...:   .::::.
+Y39A1A IQALAHEMSKYRNISDLPLI-LVGTK-DHISEKRARVITEDEGRQLAAQMKRCSYFETSS
+      320       330        340        350       360       370      
+
+              360       370       380       390                    
+4R79.2 YTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI               
+         : ...  ...                                                
+Y39A1A TYGTNVERVFKEACCKIIQLRVRSQVGAAAAASSQARTPTPTHSESGGRKDYQDPSRYIS
+        380       390       400       410       420       430      
+
+>>Y116A8C.12 CE24147  locus:arf-6  status:Partially_conf  (175 aa)
+ initn:  84 init1:  84 opt: 123  Z-score: 136.8  bits: 33.0 E(): 0.17
+Smith-Waterman score: 123;  21.008% identity (22.321% ungapped) in 119 aa overlap (203-320:14-126)
+
+            180       190       200       210       220       230  
+4R79.2 SSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFN
+                                     ......: .:.::: .:...   ..    .
+Y116A8                  MGKFLSKIFGKKELRILMLGLDAAGKTTILYKL---KLGQSVT
+                                10        20        30           40
+
+            240       250       260       270       280       290  
+4R79.2 ATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFL
+       .   : :.:.:.     . : ...::..::...: . ..:.  ........:.....   
+Y116A8 TIPTVGFNVETVTY---KNIKFNVWDVGGQDKIRPLWRHYYTGTQALIFVMDAADRDRVD
+               50           60        70        80        90       
+
+            300       310        320       330       340       350 
+4R79.2 NVRNWIDSVRAGVDDATVMCLV-GNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAY
+       ..:  .  .    .   .. :: .::.::                               
+Y116A8 EARMELHRIINDREMKEAIILVFANKQDLADAMKPHEIQDKLGLTRIRDRNWYVQPSCAS
+       100       110       120       130       140       150       
+
+>>C52B11.5 CE04261   RAS-related proteins (weak) status:  (238 aa)
+ initn: 107 init1:  52 opt: 124  Z-score: 136.2  bits: 33.3 E(): 0.19
+Smith-Waterman score: 124;  20.430% identity (21.229% ungapped) in 186 aa overlap (196-379:18-198)
+
+         170       180       190       200       210       220     
+4R79.2 EQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHN
+                                     . . .:  :.. :: . .::. :..:   .
+C52B11              MSQNTESQMLVALPADYIPEASRRCKIIVVGAKNAGKSTFIERVEFG
+                            10        20        30        40       
+
+         230       240       250       260        270       280    
+4R79.2 RFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAG-QERFRSITKQYFRKADGVVLMFD
+       .:.   . :  .  ..    .  . .. .   : .:  ..  .. :  .: .:.:.:.. 
+C52B11 KFHEE-KQTEKLYRVIAKKVFEQTLTVELIEKDLGGLTNEDNGFKKTEMRDVDAVLLFYA
+        50         60        70        80        90       100      
+
+          290       300       310       320       330       340    
+4R79.2 VTSEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIP
+       . . .:: .... .  :.  .   . . .::.: :.   ..  . :   ::. .    . 
+C52B11 ADDLESFKQLKENLVHVQRKIPPNANITVVGTKADVKEMQVQWQEVDSFAENQG----FS
+        110       120       130       140       150       160      
+
+          350       360        370       380       390             
+4R79.2 FFETSAYTGFGIDTCMRQMAENL-QRREDNHLEEALKLDINSNYKKRSWCCI        
+        ::::. :: ...  .... :.. .::  .  .:.:.                       
+C52B11 CFETSSKTGVNVEIILHDILETIFERRFASDDDEVLSNQPVYASTVLTSRQEEPPRVNGY
+            170       180       190       200       210       220  
+
+C52B11 CWMPNIPIFSFFRSNE
+            230        
+
+>>F19H8.3 CE15872  locus:arl-3 ADP-ribosylation factors   (184 aa)
+ initn:  43 init1:  43 opt: 119  Z-score: 132.4  bits: 32.2 E():  0.3
+Smith-Waterman score: 119;  21.512% identity (23.125% ungapped) in 172 aa overlap (201-368:16-179)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : ......: . .::: .:...  .  . .
+F19H8.                MGLIDVLKSFKSPSGREIRILLLGLDNAGKTTILKQLSSEDVQHV
+                              10        20        30        40     
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+        . : :  :.:::.    .  : ...:: .::. .:   ..:... : .....: .... 
+F19H8. -TPTKG--FNVKTVAAMGD--IRLNVWDIGGQRSIRPYWSNYYENIDTLIFVIDSNDKKR
+           50          60          70        80        90       100
+
+                  300       310       320       330       340      
+4R79.2 F--LNVR--NWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFF
+       :  .:..  . .:  .  .  . :. . .::.::  .  ..  . .    :  .    . 
+F19H8. FDEMNIELGELLDEEK--LRKVPVL-IFANKQDLVTAASSEEITRKLNLDLLRDRTWHIQ
+              110         120        130       140       150       
+
+        350       360       370       380       390     
+4R79.2 ETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI
+         ::  . ::.  .  .: ::.                           
+F19H8. ACSALKNEGINDGITWVASNLKPASKK                      
+       160       170       180                          
+
+>>F20D6.8 CE07112   RAS-like protein status:Partially_co  (370 aa)
+ initn:  82 init1:  54 opt: 119  Z-score: 128.8  bits: 32.6 E(): 0.48
+Smith-Waterman score: 119;  21.505% identity (25.157% ungapped) in 186 aa overlap (209-379:178-351)
+
+      180       190       200       210       220              230 
+4R79.2 LNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCH-------NRFKPLF
+                                     :    ::  . .:. :       .:  :  
+F20D6. RGDNRRATCPDIFLFDSQNCLMKHVVLRIYGARNCGKKSLANRIHHFATSMAPERVDPDE
+       150       160       170       180       190       200       
+
+             240       250       260       270        280       290
+4R79.2 NATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGV-VLMFDVTSEQS
+       :   : :.:  :  .  .: .....   .      .. .. ::..  . ..:... ..::
+F20D6. N---GNDYTKMTTFLLNGREVTLEILLES------TLENSPFRQSKTLYIVMYNMDNRQS
+          210       220       230             240       250        
+
+              300        310         320       330       340       
+4R79.2 FLNVRNWIDSVR-AGVDDATVM--CLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFE
+       :. . . .. .  :.... . .   :.::: ::  ...  .     ....:  ::  :.:
+F20D6. FIYATQILERITLANLNNPVPLQLFLIGNKCDLKRNQVISTN---EGKSVARTFKCDFLE
+      260       270       280       290       300          310     
+
+       350           360       370       380       390        
+4R79.2 TSAYTGFGID----TCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI   
+       .::  :.. .    : .... :  .::. . .:. :.                  
+F20D6. VSALLGMNTEETWTTILKELQEPSERRRPSWVERMLNRGKGMAKSAEQVFHRMLA
+         320       330       340       350       360       370
+
+>>C16C8.16 CE08227    status:Predicted TR:P91055 protein  (592 aa)
+ initn:  78 init1:  48 opt: 120  Z-score: 127.3  bits: 33.0 E(): 0.58
+Smith-Waterman score: 120;  25.424% identity (28.302% ungapped) in 118 aa overlap (96-207:38-149)
+
+          70        80        90       100         110       120   
+4R79.2 EQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLE--DEMREIEQNKSYLDD
+                                     :: :. : :...:  :::..:.::   ...
+C16C8. VSKFQKLRVEASKIQNEFKEKPSYTLFKETLDISEKLLEKQFEFNDEMKQIQQN--VMSE
+        10        20        30        40        50        60       
+
+           130       140       150       160       170       180   
+4R79.2 PLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIG
+          : .::::..  . .:. ..  .....:. :.  .. .: .:.  .. .:  ::... 
+C16C8. --LKSVKKELKQATSIKDL-LEILEIIQKIFKKQDEFQQVQENQN-KSIENLNSELKTVK
+            70        80         90       100        110       120 
+
+               190       200       210       220       230         
+4R79.2 KKV----LQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDF
+        ..     :.:  :. . . :. .:...                                
+C16C8. AELNETKKQQESQEKLIDNSDKNLKLILESILKFQKSQDQIMMKIMEGSAVQDVPLGTVE
+             130       140       150       160       170       180 
+
+>>T05G5.9 CE21153   Coiled coil protein status:Partially  (705 aa)
+ initn:  58 init1:  58 opt: 114  Z-score: 120.3  bits: 31.9 E():  1.4
+Smith-Waterman score: 114;  26.144% identity (29.197% ungapped) in 153 aa overlap (62-210:419-559)
+
+              40        50        60        70        80        90 
+4R79.2 IGLIGQSDLETLVDLIPQDDLHKIARFIGDQKVNEQAFCRILKAIVNQSLQQNMAKNEVE
+                                     :...:.   :....  . . :.    ...:
+T05G5. LKVLKSELTESEKAHTTAIDELQSSSSKLIQRLDEEL--RLMRSSRDTAEQKI---KDIE
+      390       400       410       420         430          440   
+
+             100       110       120         130        140        
+4R79.2 IPCILDKSQYLEESSLEDEMREIEQNKSYLDDPLTKI--LKKELEEIKN-YEDFQVRNEQ
+       :    .: ..: ..  .    :  . :: :..   .:  :.:::.:..: .:  .....:
+T05G5. IAK--EKVDHLLQNERQRSENENGSLKSKLSSATKQIHSLEKELQELRNDFETRRIQSNQ
+             450       460       470       480       490       500 
+
+      150       160        170       180       190       200       
+4R79.2 VLDNIIIKKPLYRPIQ-PEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVF
+         ..  :   . .::: ::. ::    :  .  :.. .  ..    .: ::::: .. :.
+T05G5. HQQQKAIAAVVPQPIQLPEHPIPP---LHYQRPAVAPS--DSVSCYDEPTQPDRSLEDVL
+             510       520          530         540       550      
+
+       210       220       230       240       250       260       
+4R79.2 VGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRS
+        ::                                                         
+T05G5. YGDLGDEYRVESDELSEEKFKVILDQLENLKKTNHHVAELLSDAETANGRLTTQNSLLKD
+        560       570       580       590       600       610      
+
+>>D2013.5 CE00930   GTP-binding protein status:Partially  (967 aa)
+ initn:  98 init1:  70 opt: 112  Z-score: 116.6  bits: 31.7 E():  2.3
+Smith-Waterman score: 112;  26.761% identity (28.571% ungapped) in 142 aa overlap (90-229:180-314)
+
+      60        70        80        90       100       110         
+4R79.2 GDQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEMREIEQNKS
+                                     :. : ::  : .   :: .:: .: ..: :
+D2013. WMAKFEQFKQQKEDQNGNSGGGGGGEGNVPVKEPVIL-ASLMSAFSSKKDEPEEKKDNVS
+     150       160       170       180        190       200        
+
+     120       130       140       150        160       170        
+4R79.2 YLDDPLTKILKKELEEIKNYEDFQVRNEQVL-DNIIIKKPLYRPIQPEQSIPKVSSLAEE
+         .    .: : . : .:.  ..: . :..  .: ..:. :   .. ...  ... : . 
+D2013. AEE----RIQKLQEEMLKTQSQYQRELERLEKENKVLKQRLL--LSDDKAAIRLKRLKRS
+      210           220       230       240         250       260  
+
+      180        190       200       210       220       230       
+4R79.2 LNAIGKKVLQK-EEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGV
+       :  . ..::.  .: .   .  : . .:: :::...:::  :.   . :. :        
+D2013. LIDMYSEVLDLLNEYDSSYNTSDNLPRVVVVGDQSAGKTSVLEMVAQARIFPRGSGEMMT
+            270       280       290       300       310       320  
+
+       240       250       260       270       280       290       
+4R79.2 DFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRNW
+                                                                   
+D2013. RAPVKVTLSEGPYHVAQFRDSSREFDLTKETDLQQLRNETEVRMRNSVRDGKTVSNEVIS
+            330       340       350       360       370       380  
+
+>>Y37E3.5 CE27253    status:Partially_confirmed TR:Q9BKU  (280 aa)
+ initn:  36 init1:  36 opt: 103  Z-score: 113.8  bits: 29.4 E():  3.3
+Smith-Waterman score: 103;  24.176% identity (25.581% ungapped) in 91 aa overlap (201-291:23-108)
+
+              180       190       200       210       220       230
+4R79.2 KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPL
+                                     : .:.   : ...::: ::. .  .  . :
+Y37E3.         MTEKSWFETIFCCCCHRTPIIRREIKLGCFGIGSAGKTTFLKVLKGEDPRDL
+                       10        20        30        40        50  
+
+              240       250       260       270       280       290
+4R79.2 FNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQS
+       .  : :  :.  :.:.  .... . ..:..:.. .:.: ..:. .. :.. ..: .....
+Y37E3. LR-TNG--FS--TVKMEYDETFHLTIYDVGGDKGIRGIWSNYYAEVHGIIYVIDYSTDET
+                  60        70        80        90       100       
+
+              300       310       320       330       340       350
+4R79.2 FLNVRNWIDSVRAGVDDATVMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSA
+       :                                                           
+Y37E3. FTESIEISEHYVELSEGVKTAELALRIRQEEAKEQRRLMQMKVEHDALKADVAGLELRNQ
+       110       120       130       140       150       160       
+
+>>T24H7.2 CE02884    status:Partially_confirmed TR:Q2275  (925 aa)
+ initn:  93 init1:  61 opt: 109  Z-score: 113.7  bits: 31.1 E():  3.3
+Smith-Waterman score: 109;  24.876% identity (27.174% ungapped) in 201 aa overlap (2-195:613-803)
+
+                                            10        20        30 
+4R79.2                              MEVESATNSSSEESIFHEQTRKLFRLCDTKH
+                                     : :. .::.::::   ..:.:     .. .
+T24H7. PTTDDSTPQSTEEKTEEKESVKVEDSTPEPEPETPVNSTSEESPKTNETEKNASSGNATE
+            590       600       610       620       630       640  
+
+              40        50        60        70        80         90
+4R79.2 IGLIGQSDLETLVDLIPQDDLHKIARFIGDQKVNEQAFCRILKAIVNQS-LQQNMAKNEV
+       .    ...: ..: :   .   .   :. . : . :   : ..:....  : .. :  : 
+T24H7. VKE-KKKELPSIVRLRITNKYPSA--FVPN-KYDVQEEKRRMEAFAEKERLASERAAVEN
+             650       660          670       680       690        
+
+               100       110       120       130       140         
+4R79.2 EIPCI-LDKSQYLEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQV
+       :.  . .. ::::::. . : : . :..:  :.: . .: .  ::.    .:  ...   
+T24H7. ELESFNFECSQYLEETEFTDYMADEEKTK--LEDSVKRI-RAWLED-DVTKDTPTKD--F
+      700       710       720         730        740        750    
+
+     150       160           170        180       190       200    
+4R79.2 LDNIIIKKPLYRPIQPEQ----SIP-KVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFK
+        ::..  : . : .. .:    ..: :..::   :..  . .   ....::         
+T24H7. TDNLLELKNVVRSVKKRQEHDKAVPEKLKSLETLLETTFSLTTLGNNVDEEKALFKKEDR
+            760       770       780       790       800       810  
+
+          210       220       230       240       250       260    
+4R79.2 VVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQER
+                                                                   
+T24H7. DGLKSKLDKLKIWVTDVRKHLDLKKKTDDFNFTGKDIDTKTKNLNREVDRFMKKMKKITT
+            820       830       840       850       860       870  
+
+>>C11D2.2 CE16843   protease status:Predicted TR:O45072   (394 aa)
+ initn:  45 init1:  45 opt: 102  Z-score: 111.0  bits: 29.4 E():  4.7
+Smith-Waterman score: 102;  34.568% identity (42.424% ungapped) in 81 aa overlap (286-359:79-151)
+
+         260       270       280       290             300         
+4R79.2 LWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQSFLNVRN------WIDSVRAGVDDAT
+                                     :.::.:: : .      :. .   :.::  
+C11D2. TIHKGQHQHVADFRDFAYFGNITLGTPIESTAEQTFLVVLDTGSSNVWVPDNSCGIDDKK
+       50        60        70        80        90       100        
+
+     310       320       330       340       350        360        
+4R79.2 VMCLVGNKMDLFGSDIARSAVYRAAEKLAVEFKIPFFETSAYTGFGIDT-CMRQMAENLQ
+         :   .:.  ::.:   :. :   :: .. :.: .   ::   :: :: :.        
+C11D2. SACTYKKKY--FGTD---SSSY---EKDGTPFSISYGTGSASGYFGKDTLCFSDTTLCIK
+      110         120             130       140       150       160
+
+      370       380       390                                      
+4R79.2 RREDNHLEEALKLDINSNYKKRSWCCI                                 
+                                                                   
+C11D2. SQIFGQANNIAPFFANQEIDGILGLGFTDLAVHSVPPPFVNAVEQGLVDEPIFTVYLEHH
+              170       180       190       200       210       220
+
+>>F55A12.10 CE28451    status:Partially_confirmed TR:Q95  (220 aa)
+ initn:  60 init1:  37 opt:  99  Z-score: 111.0  bits: 28.5 E():  4.7
+Smith-Waterman score: 99;  29.870% identity (32.394% ungapped) in 77 aa overlap (51-121:73-149)
+
+               30        40        50         60        70         
+4R79.2 RKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHK-IARFIGDQKVNEQAFCRI--LKAIV
+                                     :.:: .:: :: ::....   ..   :...
+F55A12 CKIPTKTLKMDASLPKNVKKMFGDVGVMSTDIHKRLARVIGFQKIQKSIQLKMENKKSVM
+             50        60        70        80        90       100  
+
+        80        90       100          110       120       130    
+4R79.2 NQSLQQNMAKNEVEIPCILDKSQYLEESS---LEDEMREIEQNKSYLDDPLTKILKKELE
+        .   ... :.  :. : :.:   .::..   :::  :: :. .. ..            
+F55A12 RKEQTKKVEKKTEEMHCQLSKLTSFEENNRKKLEDIERENEKLRNLISALELKVASSRDI
+            110       120       130       140       150       160  
+
+          140       150       160       170       180       190    
+4R79.2 EIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEE
+                                                                   
+F55A12 DDDEFFMQGTPTSSNPSVAGSDVDNDELLDYDLLGLRNRSDSSSSNCSSQSNRGGSLF  
+            170       180       190       200       210       220  
+
+>>W03G9.7 CE14566    status:Partially_confirmed TR:O4475  (732 aa)
+ initn:  78 init1:  48 opt: 105  Z-score: 110.9  bits: 30.2 E():  4.8
+Smith-Waterman score: 108;  23.558% identity (27.374% ungapped) in 208 aa overlap (45-227:247-450)
+
+           20        30        40        50        60         70   
+4R79.2 IFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHKIARFIGDQKVN-EQAFCR--
+                                     : .:.    :... . .. .: :.:. :  
+W03G9. KSRDDEAKGETPKQKGTGKRNAKVTPSNESDAVPKGGKLKLTEGVVQDYINIEKAINRLE
+        220       230       240       250       260       270      
+
+                 80        90        100       110         120     
+4R79.2 ---ILKAIVNQSLQQNMAKNEVE-IPCILDKSQYLEESSLEDEMREIEQN--KSYLDDPL
+          .:: . .:..  .  :: :: .  .: . .   :    : ...:::   ..:: .  
+W03G9. RKNVLKKFESQTIYADNLKNTVEQLEAVLKELKKQTEREKTD-LKNIEQPSVRDYLKQQ-
+        280       290       300       310        320       330     
+
+         130       140       150       160            170       180
+4R79.2 TKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYR---PIQP--EQSIPKVSSLAEELN
+        .   . :.:  .::: .::.: :  .. : .  :     ::   .:.  ....: :: .
+W03G9. GQWDDRYLKEKAEYEDAMVRQETVQKELNIARVNYDNAVKIQEIYKQQTDNLNALYEEQD
+          340       350       360       370       380       390    
+
+                    190            200       210       220         
+4R79.2 AIGKKVL------QKE-----EIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKP
+        . . ..      .::     :... :   .:.  ..:    : :.. ..: . .  :  
+W03G9. KMLEAIFGTDYASEKENVLEGEVDDMVDWQQRVSLAMF--KWANGRVLLVHALTQLTFGI
+          400       410       420       430         440       450  
+
+     230       240       250       260       270       280         
+4R79.2 LFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSEQ
+                                                                   
+W03G9. NRWQDVQKIEKENERGRYFAAAEARNNFVAAAQNVQSCRMYLNKVDFPYGTEKEIALLED
+            460       470       480       490       500       510  
+
+>>C18B12.5 CE08309    status:Predicted TR:Q93247 protein  (277 aa)
+ initn:  39 init1:  39 opt: 100  Z-score: 110.8  bits: 28.8 E():  4.8
+Smith-Waterman score: 100;  29.592% identity (33.721% ungapped) in 98 aa overlap (132-224:154-244)
+
+             110       120       130       140           150       
+4R79.2 LEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYEDF----QVRNEQVLDNIIIKK
+                                     : ::. ::. :    : .: ..: :.  : 
+C18B12 VKLRSWNCNAVALFLKFCNADSIWQLDISLEGEEVANYDHFVNMNQWKNASIL-NLDCK-
+           130       140       150       160       170        180  
+
+       160       170       180       190       200       210       
+4R79.2 PLYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTC
+         : : . .: . : . :  .:. :... ..:  :.. ...:. :..  : ...:.  ::
+C18B12 --YLPADFHQHLSKFKHLEIKLEYISNEDIDK--IKKMISEPNSIMNGKFKSSTALD-TC
+               190       200       210         220       230       
+
+       220        230       240       250       260       270      
+4R79.2 FLHR-FCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKA
+       .. : : :                                                    
+C18B12 YIARIFDHIGEVQDHNTGEYLGYKYGFSEFKLSFKKYPDDS                   
+        240       250       260       270                          
+
+>>T05F1.10 CE26900  locus:dhs-4 Alcohol\/other dehydroge  (305 aa)
+ initn:  45 init1:  45 opt: 100  Z-score: 110.3  bits: 28.9 E():  5.1
+Smith-Waterman score: 100;  20.419% identity (22.414% ungapped) in 191 aa overlap (26-209:98-278)
+
+                    10        20        30        40          50   
+4R79.2      MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETL--VDLIPQDDLH
+                                     :::  .:. .::. .. .  ::.. ..   
+T05F1. ILWDINLQSVDELKNEIRGNQGEAHSYEVNLCDPGKIAQVGQQVINDIGKVDILVNNAGI
+        70        80        90       100       110       120       
+
+            60          70           80        90       100        
+4R79.2 KIARFIGDQKVNE--QAFCRILKA---IVNQSLQQNMAKNEVEIPCILDKSQYLEESSLE
+         :..: :.. ::  ..:   .::    :.: :   .  :. .:  : . .  .  :.: 
+T05F1. ATAKMILDSSENEINRSFDVNVKAHFYTVQQFLPAMLKDNNGHIVTIASAAGKMGSSGLA
+       130       140       150       160       170       180       
+
+      110       120       130       140       150       160        
+4R79.2 DEMREIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQS
+       :     .   .. :. ...:...: . .:.          ..    ..  ..        
+T05F1. DYSSTKHAAVGFHDSLVAEIMESEKNGVKT---------TLVCPYYVHTSMFDATGAATR
+       190       200       210                220       230        
+
+      170       180       190       200       210       220        
+4R79.2 IPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFK
+       .: .  . .  . . .:...  : :.:     : : .::.:                   
+T05F1. FPWIFPILDT-DYVVQKIFEAIETEQEFLVTPRAFYLVFAGIQILPYKAQAMVAQFFGLV
+      240        250       260       270       280       290       
+
+      230       240       250       260       270       280        
+4R79.2 PLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVTSE
+                                                                   
+T05F1. QNLERFHK                                                    
+       300                                                         
+
+>>Y102A5A.1 CE20378    status:Partially_confirmed TR:Q9X  (1274 aa)
+ initn: 106 init1:  75 opt: 107  Z-score: 110.0  bits: 30.9 E():  5.3
+Smith-Waterman score: 107;  29.524% identity (29.808% ungapped) in 105 aa overlap (35-138:1151-1255)
+
+           10        20        30        40        50        60    
+4R79.2 SATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHKIARFIGDQKV
+                                     .: :: .  : :.    :...: .   : .
+Y102A5 LRKCAFECMFTLLESCVDKIDITQFSSVMEVGLSDQNHDVKLLNYLTLQRVANLAPGQVL
+             1130      1140      1150      1160      1170      1180
+
+            70        80        90       100       110       120   
+4R79.2 NE-QAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEMREIEQNKSYLDD
+       .. .  :. ::. .:   . : .:.:::    : :.      .:. .. :.:.: ..:: 
+Y102A5 QRIDRVCEPLKTQLNVRPRGNAVKQEVEKLEELKKAVIRVVYGLKLKLPEVERNPQFLDL
+             1190      1200      1210      1220      1230      1240
+
+           130       140       150       160       170       180   
+4R79.2 PLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSSLAEELNAIG
+         :    :::: . :                                             
+Y102A5 YNTIKHTKELEALANDVLKESQRAVVYDTPMETA                          
+             1250      1260      1270                              
+
+>>Y6B3B.1 CE20177    status:Predicted TR:O18164 protein_  (1829 aa)
+ initn: 114 init1:  60 opt: 108  Z-score: 109.2  bits: 31.2 E():    6
+Smith-Waterman score: 108;  20.225% identity (21.053% ungapped) in 178 aa overlap (25-201:426-597)
+
+                     10        20        30        40        50    
+4R79.2       MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHK
+                                     :. .  .. :. . ::   . :  ..:. .
+Y6B3B. QENLEELEFPGRPAEVEEDPKVQVEGISKNRVEEDDEVELLDHEDLTIATPLSHMQDVTE
+         400       410       420       430       440       450     
+
+           60        70        80        90       100       110    
+4R79.2 IARFIGDQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEMREI
+         . . : .. :     .  :. .:  ..    .::.:   .  ..   ::    : :: 
+Y6B3B. NIQNL-DANAAEPIENPLAAAVEDQIAKDPKILEEVQIQDDMHPQNPALESEDLMEAREA
+         460        470       480       490       500       510    
+
+          120       130       140       150       160       170    
+4R79.2 EQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPKVSS
+       .  .....::.:.....  :  .. .: .. .:  :.:   . :  . ..:. :.  .. 
+Y6B3B. QTVQDFIEDPVTEVVEEVTELPEDRKDPEALHE--LENH--NDPTAEDVEPD-SVDFMDL
+          520       530       540         550         560          
+
+          180       190        200       210       220       230   
+4R79.2 LAEELNAIGKKVLQKEEI-EEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNA
+       :..  .:. :  :. ... :.:..  :.                                
+Y6B3B. LVDSDEALEKVELKDQKVSEQETSAKDQKKSEADKDLSGEGSEDQAPELGKGKDESVESK
+     570       580       590       600       610       620         
+
+>>ZK418.1 CE00731  locus:nhr-9  status:Partially_confirm  (332 aa)
+ initn: 115 init1:  86 opt:  99  Z-score: 108.9  bits: 28.7 E():  6.2
+Smith-Waterman score: 99;  21.127% identity (22.388% ungapped) in 142 aa overlap (70-207:34-171)
+
+      40        50        60        70          80        90       
+4R79.2 LETLVDLIPQDDLHKIARFIGDQKVNEQAFCRIL--KAIVNQSLQQNMAKNEVEIPC-IL
+                                     :...  .: ...: .  . ... .    ::
+ZK418. QIGSTSSERRCAICSKLGNSYNYGVLSCNACKMFFRRATLGKSEKFCINNDNCDTSNLIL
+            10        20        30        40        50        60   
+
+        100       110       120       130       140       150      
+4R79.2 DKSQYLEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIK
+          :   .. :.  :: . .. . ::: .  . : .:.. ..  .::  .. .::..: :
+ZK418. TCRQCRYNKCLKMGMRIVTNQYDSLDDIIKVLAKWNLDRSNKLMNFQCFEDPTLDQVIQK
+            70        80        90       100       110       120   
+
+        160       170        180       190       200       210     
+4R79.2 KPLYRPIQPEQSIPKVS-SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGK
+       .:..     . :. :   .. :.:...  . ..: :. ... . :  :..:.        
+ZK418. HPVFTKKPSNLSFSKSEWGFMEQLTTV--EFMSKFEFTRHLFSED--FRIVLKSSCFKIA
+           130       140       150         160         170         
+
+         220       230       240       250       260       270     
+4R79.2 TCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRK
+                                                                   
+ZK418. SFIKAVRSYSMKKEDIRYPDGELIVPMELVPFCTSEFLARVQCRLIGRIIELKLKEEEFL
+     180       190       200       210       220       230         
+
+>>ZK669.5 CE01116   Ras-like protein status:Partially_co  (221 aa)
+ initn:  85 init1:  85 opt:  96  Z-score: 107.9  bits: 28.0 E():    7
+Smith-Waterman score: 123;  22.959% identity (27.273% ungapped) in 196 aa overlap (197-391:15-180)
+
+        170       180       190       200       210       220      
+4R79.2 QSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNR
+                                     :. ::.:: .. : ..:::  .:. :: . 
+ZK669.                 MDELMFFRGMAPDPTSYDRVFKFLIFGGKSVGKKTLLRSFCTEG
+                               10        20        30        40    
+
+        230       240       250       260       270       280      
+4R79.2 FKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVT
+            : .: ...::   :.  . ... : :.       ....:..    :...:.:..:
+ZK669. D----NESIWTSLTVDDEKVLIEATVS-QKWE-------EGMSKEH----DAIALVFSTT
+               50        60         70                   80        
+
+        290       300       310       320        330       340     
+4R79.2 SEQSFLNVRNWIDSVRAGVDDATVMCLVGNKMDLF-GSDIARSAVYRAAEKLAVEFKIPF
+       .  ::  . .  . .. ...   .. .. ::.:.   :.. .. :    .:   . :  .
+ZK669. DVYSFEYTLELYNEIQKSTERIPLV-FIENKIDIVEDSQMDKGLVEGEMRK---KHK-RL
+       90       100       110        120       130          140    
+
+         350       360       370       380       390               
+4R79.2 FETSAYTGFGIDTCMRQMAENLQRREDNHLEEALKLDINSNYKKRSWCCI          
+       ...::   :..   .  . :.: :.         : :.:.: .:.:              
+ZK669. YRVSALKEFNVMHPFAYLIEKLTRQ---------KKDLNANERKQSSSVNSTSTSPPSTT
+           150       160                170       180       190    
+
+ZK669. VEAWVEPVPTATTTSAPALKKDKCTLM
+          200       210       220 
+
+>>Y116A8C.11 CE23322    status:Predicted SW:Q9U2T3 prote  (281 aa)
+ initn:  66 init1:  66 opt:  97  Z-score: 107.7  bits: 28.3 E():  7.2
+Smith-Waterman score: 97;  21.212% identity (23.973% ungapped) in 165 aa overlap (45-196:65-223)
+
+           20        30        40        50        60        70    
+4R79.2 IFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQDDLHKIARFIGDQKVNEQAFCRILK
+                                     :.  . .  :.:. .... .:: .. . : 
+Y116A8 KKILANFEKENENLADENEILKTRIASLEKDVKQEKNATKMAKSLNEETINELTLSEDLI
+           40        50        60        70        80        90    
+
+           80                90       100        110       120     
+4R79.2 AIVNQSLQQN--------MAKNEVEIPCILDKSQYLE-ESSLEDEMREIEQNKSYLDDPL
+         .....: .        ..::.::     ::  .:: :. :   :. .:..:    .  
+Y116A8 ESLKKQFQASKIELKEEILSKNKVEKDYSNDKRYFLEREQYLLITMESMESGK-LEHEQQ
+          100       110       120       130       140        150   
+
+         130       140       150           160       170       180 
+4R79.2 TKILKKELEEIKNYEDFQVRNEQVLD----NIIIKKPLYRPIQPEQSIPKVSSLAEELNA
+       :.:..:..::.:    ..:.. .. :    :: ... . .     :.. .  .  .::  
+Y116A8 TEIMNKDVEELK----IRVKELEATDLSEKNIELERQVGKLTAQLQDFESSRGYEQEL-I
+           160           170       180       190       200         
+
+             190       200       210       220       230       240 
+4R79.2 IGKKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTV
+       ...  .::.......                                             
+Y116A8 LSQLEVQKRKLDKQLIDLQSKLERNPELVEFDKLHEELQTERMNMPVQVCYVHVSFIHKD
+      210       220       230       240       250       260        
+
+>>C26B9.3 CE29187    status:Confirmed TR:Q18200 protein_  (257 aa)
+ initn:  71 init1:  48 opt:  96  Z-score: 107.1  bits: 28.0 E():  7.7
+Smith-Waterman score: 96;  26.429% identity (29.600% ungapped) in 140 aa overlap (61-196:112-240)
+
+               40        50        60        70          80        
+4R79.2 HIGLIGQSDLETLVDLIPQDDLHKIARFIGDQKVNEQAFCRILKA--IVNQSLQQNMAKN
+                                     :.::: :  :  :..  .  .  .:  :..
+C26B9. PTKNLIAEVEMRIGGTPDPNNPSLPCSKKIDEKVN-QCPCAKLEGSCVFCDFCKQLKAQT
+              90       100       110        120       130       140
+
+       90       100       110       120       130       140        
+4R79.2 EVEIPCILDKSQYLEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQ
+           :  :..     : .: ::  .  . .  : :  :..   :....:.:   ...:  
+C26B9. SKITPSKLSRP----EHKLIDEDCKCGDMQPGLYDIETEMCTPEMDDFKDYIPPEIQN--
+              150           160       170       180       190      
+
+      150         160       170       180       190       200      
+4R79.2 VLDNIIIKKP--LYRPIQPEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVV
+          ::. :::  ..  .   .  :. ::    :.:.:: .::..  .  :.         
+C26B9. ---NILEKKPISMFITVYLMDMEPR-SSKESYLSAFGKAILQRRMAQSTVACFLLGIDVK
+             200       210        220       230       240       250
+
+        210       220       230       240       250       260      
+4R79.2 FVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFR
+                                                                   
+C26B9. LALPSFD                                                     
+                                                                   
+
+>>F58G11.1b CE20894    status:Partially_confirmed TR:Q9X  (770 aa)
+ initn:  44 init1:  44 opt: 100  Z-score: 105.5  bits: 29.3 E():  9.6
+Smith-Waterman score: 105;  25.000% identity (28.736% ungapped) in 200 aa overlap (19-198:265-458)
+
+                           10        20        30          40      
+4R79.2             MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGL--IGQSDLETLVDL
+                                     : :.: :: . . .:   : . .:.  .  
+F58G11 NEGGYVSNEELLKFSKLFEDEITLDNLSMGQLRSLCRLMSINSLGSPEILRFQLNMKIRE
+          240       250       260       270       280       290    
+
+         50        60          70                80          90    
+4R79.2 IPQDDLHKIARFIGD--QKVNEQAFCRI--LKAI------VNQSLQQ--NMAKNEVEIPC
+       .  :: .  :.   :  .... :. ::   ..::      ....: :  ... :.   : 
+F58G11 LKADDKQIAAEGGVDALSSIDLQSACRARGMRAIGVSEERLKEQLVQWLELSLNDKVPPA
+          300       310       320       330       340       350    
+
+            100        110       120       130       140        150
+4R79.2 I--LDKSQYL-EESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYE-DFQVRNEQVL
+       .  :... :: :: :. :... : ::   : : :..  :..: :... . : ..: : . 
+F58G11 LLLLSRTLYLPEEVSFPDRLKAIVQN---LPDGLAETTKQKLTEMEGGQIDHKARIELIR
+          360       370       380          390       400       410 
+
+              160       170         180       190       200        
+4R79.2 DNIIIKKPLYRPIQPEQSIPKVS--SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFV
+       .   :.. .    . :..  :..  .:  . .:   :: .::.. . ..:          
+F58G11 S---IESAIANEKKDEEKKKKAAEEALKSKEEAEKAKVQEKEKLVDVAAQAIVHELKKDI
+                420       430       440       450       460        
+
+      210       220       230       240       250       260        
+4R79.2 GDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSI
+                                                                   
+F58G11 YDAVASTSSTTEAKEPAAKPSEAKEEKKEDITVDKKDLSHIEEIIVGGPIKEAKHDILGL
+      470       480       490       500       510       520        
+
+>>F54C1.7 CE11052  locus:pat-10 calcium binding protein   (161 aa)
+ initn:  53 init1:  53 opt:  92  Z-score: 105.5  bits: 27.1 E():  9.6
+Smith-Waterman score: 92;  22.656% identity (25.664% ungapped) in 128 aa overlap (18-136:18-139)
+
+               10        20        30        40        50          
+4R79.2 MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGLIGQSDLETLVDLIPQD----DLHKIA
+                        :. .:.:   :  . : :  ...  ..  . ::     :.:. 
+F54C1. MAEDIEEILAEIDGSQIEEYQKFFDAFDRGKQGYIMATQIGQIMHGMEQDFDEKTLRKLI
+               10        20        30        40        50        60
+
+            60        70        80        90         100       110 
+4R79.2 RFI---GDQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDK--SQYLEESSLEDEM
+       : .   :. :.. . :: .. ...:   .... :.  :   ..::  . :. . .:.  .
+F54C1. RKFDADGSGKLEFDEFCALVYTVANTVDKETLEKELREAFRLFDKEGNGYISRPTLKALL
+               70        80        90       100       110       120
+
+             120       130       140       150       160       170 
+4R79.2 REIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPK
+       .::       ::   . :.. ..::                                   
+F54C1. KEIA------DDLTDQQLEEAVDEIDEDGSGKIEFEEFWELMAGESD             
+                    130       140       150       160              
+
+>>F58G11.1a CE11400   Yeast cosmid 9642 hypothetical pro  (784 aa)
+ initn:  44 init1:  44 opt: 100  Z-score: 105.4  bits: 29.3 E():  9.7
+Smith-Waterman score: 105;  25.000% identity (28.736% ungapped) in 200 aa overlap (19-198:265-458)
+
+                           10        20        30          40      
+4R79.2             MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGL--IGQSDLETLVDL
+                                     : :.: :: . . .:   : . .:.  .  
+F58G11 NEGGYVSNEELLKFSKLFEDEITLDNLSMGQLRSLCRLMSINSLGSPEILRFQLNMKIRE
+          240       250       260       270       280       290    
+
+         50        60          70                80          90    
+4R79.2 IPQDDLHKIARFIGD--QKVNEQAFCRI--LKAI------VNQSLQQ--NMAKNEVEIPC
+       .  :: .  :.   :  .... :. ::   ..::      ....: :  ... :.   : 
+F58G11 LKADDKQIAAEGGVDALSSIDLQSACRARGMRAIGVSEERLKEQLVQWLELSLNDKVPPA
+          300       310       320       330       340       350    
+
+            100        110       120       130       140        150
+4R79.2 I--LDKSQYL-EESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNYE-DFQVRNEQVL
+       .  :... :: :: :. :... : ::   : : :..  :..: :... . : ..: : . 
+F58G11 LLLLSRTLYLPEEVSFPDRLKAIVQN---LPDGLAETTKQKLTEMEGGQIDHKARIELIR
+          360       370       380          390       400       410 
+
+              160       170         180       190       200        
+4R79.2 DNIIIKKPLYRPIQPEQSIPKVS--SLAEELNAIGKKVLQKEEIEEEVTQPDRIFKVVFV
+       .   :.. .    . :..  :..  .:  . .:   :: .::.. . ..:          
+F58G11 S---IESAIANEKKDEEKKKKAAEEALKSKEEAEKAKVQEKEKLVDVAAQAIVHELKKDI
+                420       430       440       450       460        
+
+      210       220       230       240       250       260        
+4R79.2 GDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSI
+                                                                   
+F58G11 YDAVASTSSTTEAKEPAAKPSEAKEEKKEDITVDKKDLSHIEEIIVGGPIKEAKHDILGL
+      470       480       490       500       510       520        
+
+>>Y105E8B.1b CE29058  locus:lev-11  status:Partially_con  (301 aa)
+ initn:  84 init1:  54 opt:  95  Z-score: 105.3  bits: 27.9 E():  9.8
+Smith-Waterman score: 101;  22.596% identity (24.103% ungapped) in 208 aa overlap (2-198:28-233)
+
+                                         10        20        30    
+4R79.2                           MEVESATNSSSEESIFHEQTRKLFRLCDTKHIGL
+                                  :.:.: . ..: .   :. ::  :     ... 
+Y105E8 MSKVNKEGAQQTSLLDVLKKKMRQAREEAEAAKDEADEVKRQLEEERKK-REDAEAEVAA
+               10        20        30        40         50         
+
+           40        50        60          70        80            
+4R79.2 IGQSDLETLVDLIPQDDLHKIARFIGDQ--KVNEQAFCRILKAIVNQSLQQ----NMAKN
+       ...  . .  ::   .:  : :    .:  :. ..:  :  :.. ..: :.    :. ..
+Y105E8 LNRRIVLVEEDLERTEDRLKTATSKLEQATKAADEA-DRARKSMETRSQQDEERANFLET
+      60        70        80        90        100       110        
+
+       90         100       110       120       130        140     
+4R79.2 EVEIPCIL--DKSQYLEESSLEDEMREIEQNKSYLDDPLTKILKKELEEIKNY-EDFQVR
+       .:.   ..  : ..  ::  .:  .:.. .:.:  :.  .. .. .:.: .   :. . .
+Y105E8 QVDEAKVIAEDADRKYEEVPIECAVRKVMENRSLQDEERANTVEAQLKEAQLLAEEADRK
+      120       130       140       150       160       170        
+
+         150        160        170       180       190       200   
+4R79.2 NEQVLDNI-IIKKPLYRPIQ-PEQSIPKVSSLAEELNAIGKKVLQKEEIEEEVTQPDRIF
+        ..:  .. ...  : :  .  : .  :.  : ::: ..:... . :  ::.. :     
+Y105E8 YDEVARKLAMVEADLERAEERAEAGENKIVELEEELRVVGNNLKSLEVSEEKALQREDSY
+      180       190       200       210       220       230        
+
+           210       220       230       240       250       260   
+4R79.2 KVVFVGDSAVGKTCFLHRFCHNRFKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQE
+                                                                   
+Y105E8 EEQIRTVSSRLKEAETRAEFAERSVQKLQKEVDRLEDELLLEKERVRNLTEEIEQTVQEI
+      240       250       260       270       280       290        
+
+>>F18C12.3 CE15869    status:Partially_confirmed TR:O175  (545 aa)
+ initn:  53 init1:  53 opt:  98  Z-score: 105.2  bits: 28.8 E():  9.9
+Smith-Waterman score: 98;  24.800% identity (26.271% ungapped) in 125 aa overlap (82-201:252-374)
+
+              60        70        80        90       100       110 
+4R79.2 LHKIARFIGDQKVNEQAFCRILKAIVNQSLQQNMAKNEVEIPCILDKSQYLEESSLEDEM
+                                     ...  :.:..:  . : ..  :.:  : : 
+F18C12 REKYTEWNKTAAFFMQRLGQQYANKPEKKSKKSTEKKELNIENLEDLNNEDEDSENEKE-
+             230       240       250       260       270       280 
+
+             120       130       140       150       160       170 
+4R79.2 REIEQNKSYLDDPLTKILKKELEEIKNYEDFQVRNEQVLDNIIIKKPLYRPIQPEQSIPK
+       .:::.:.   :.   ..: .. ::  . :  . : . .:  : ...   ::    ..   
+F18C12 EEIEENEEDYDQSDIEMLDSDEEEAGE-EAAKNRRNLLLGLIGVQEDKNRPSLAPKKRKL
+              290       300        310       320       330         
+
+             180            190       200       210       220      
+4R79.2 VSSLAEELNAIG-----KKVLQKEEIEEEVTQPDRIFKVVFVGDSAVGKTCFLHRFCHNR
+       :    ::....      :....::   .:: .: .                         
+F18C12 VEEEDEEVETVKNQKKMKQIFEKELKSKEVKNPKKSNKSTKKPTKSAPIVKKVEEKKVEE
+     340       350       360       370       380       390         
+
+        230       240       250       260       270       280      
+4R79.2 FKPLFNATIGVDFTVKTMKIPPNRAIAMQLWDTAGQERFRSITKQYFRKADGVVLMFDVT
+                                                                   
+F18C12 NEVSDDESDQKTLVMKVDLSKGGKIAKAQKFSTTAPKSAKIVAPVSEDENDDDESSSFFL
+     400       410       420       430       440       450         
+
+
+
+395 residues in 1 query   sequences
+9271352 residues in 20970 library sequences
+ Scomplib [34t20]
+ start: Thu Nov 21 20:11:54 2002 done: Thu Nov 21 20:12:08 2002
+ Total Scan time: 10.250 Total Display time:  1.750
+
+Function used was FASTA [version 3.4t20 Nov 10, 2002]

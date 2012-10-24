@@ -1,0 +1,252 @@
+LOCUS       P22815                   896 aa            linear   INV 10-JUL-2007
+DEFINITION  Protein bride of sevenless precursor.
+ACCESSION   P22815
+VERSION     P22815  GI:2827758
+DBSOURCE    swissprot: locus BOSS_DROME, accession P22815;
+            class: standard.
+            extra accessions:Q9VBJ5
+            created: Aug 1, 1991.
+            sequence updated: Nov 1, 1997.
+            annotation updated: Jul 10, 2007.
+            xrefs: X55887.1, CAA39373.1, AE014297.2, AAF56539.1
+            xrefs (non-sequence databases): UniGene:Dm.2358, Ensembl:CG8285,
+            KEGG:dme:Dmel_CG8285, FlyBase:FBgn0000206,
+            BioCyc:DMEL-XXX-02:DMEL-XXX-02-013489-MONOMER, GermOnline:CG8285,
+            GO:0016021, GO:0005902, GO:0005118, GO:0007465, GO:0045467,
+            GO:0045470, InterPro:IPR002956, InterPro:IPR000337, Pfam:PF00003,
+            PRINTS:PR01223, PROSITE:PS00979, PROSITE:PS00980, PROSITE:PS00981,
+            PROSITE:PS50259
+KEYWORDS    Complete proteome; G-protein coupled receptor; Glycoprotein;
+            Membrane; Receptor; Sensory transduction; Signal; Transducer;
+            Transmembrane; Vision.
+SOURCE      Drosophila melanogaster (fruit fly)
+  ORGANISM  Drosophila melanogaster
+            Eukaryota; Metazoa; Arthropoda; Hexapoda; Insecta; Pterygota;
+            Neoptera; Endopterygota; Diptera; Brachycera; Muscomorpha;
+            Ephydroidea; Drosophilidae; Drosophila.
+REFERENCE   1  (residues 1 to 896)
+  AUTHORS   Hart,A.C., Kramer,H., Van Vactor,D.L. Jr., Paidhungat,M. and
+            Zipursky,S.L.
+  TITLE     Induction of cell fate in the Drosophila retina: the bride of
+            sevenless protein is predicted to contain a large extracellular
+            domain and seven transmembrane segments
+  JOURNAL   Genes Dev. 4 (11), 1835-1847 (1990)
+   PUBMED   2276620
+  REMARK    NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+REFERENCE   2  (residues 1 to 896)
+  AUTHORS   Kraemer,H.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (??-FEB-1997)
+  REMARK    SEQUENCE REVISION.
+REFERENCE   3  (residues 1 to 896)
+  AUTHORS   Adams,M.D., Celniker,S.E., Holt,R.A., Evans,C.A., Gocayne,J.D.,
+            Amanatides,P.G., Scherer,S.E., Li,P.W., Hoskins,R.A., Galle,R.F.,
+            George,R.A., Lewis,S.E., Richards,S., Ashburner,M., Henderson,S.N.,
+            Sutton,G.G., Wortman,J.R., Yandell,M.D., Zhang,Q., Chen,L.X.,
+            Brandon,R.C., Rogers,Y.H., Blazej,R.G., Champe,M., Pfeiffer,B.D.,
+            Wan,K.H., Doyle,C., Baxter,E.G., Helt,G., Nelson,C.R., Gabor,G.L.,
+            Abril,J.F., Agbayani,A., An,H.J., Andrews-Pfannkoch,C., Baldwin,D.,
+            Ballew,R.M., Basu,A., Baxendale,J., Bayraktaroglu,L., Beasley,E.M.,
+            Beeson,K.Y., Benos,P.V., Berman,B.P., Bhandari,D., Bolshakov,S.,
+            Borkova,D., Botchan,M.R., Bouck,J., Brokstein,P., Brottier,P.,
+            Burtis,K.C., Busam,D.A., Butler,H., Cadieu,E., Center,A.,
+            Chandra,I., Cherry,J.M., Cawley,S., Dahlke,C., Davenport,L.B.,
+            Davies,P., de Pablos,B., Delcher,A., Deng,Z., Mays,A.D., Dew,I.,
+            Dietz,S.M., Dodson,K., Doup,L.E., Downes,M., Dugan-Rocha,S.,
+            Dunkov,B.C., Dunn,P., Durbin,K.J., Evangelista,C.C., Ferraz,C.,
+            Ferriera,S., Fleischmann,W., Fosler,C., Gabrielian,A.E., Garg,N.S.,
+            Gelbart,W.M., Glasser,K., Glodek,A., Gong,F., Gorrell,J.H., Gu,Z.,
+            Guan,P., Harris,M., Harris,N.L., Harvey,D., Heiman,T.J.,
+            Hernandez,J.R., Houck,J., Hostin,D., Houston,K.A., Howland,T.J.,
+            Wei,M.H., Ibegwam,C., Jalali,M., Kalush,F., Karpen,G.H., Ke,Z.,
+            Kennison,J.A., Ketchum,K.A., Kimmel,B.E., Kodira,C.D., Kraft,C.,
+            Kravitz,S., Kulp,D., Lai,Z., Lasko,P., Lei,Y., Levitsky,A.A.,
+            Li,J., Li,Z., Liang,Y., Lin,X., Liu,X., Mattei,B., McIntosh,T.C.,
+            McLeod,M.P., McPherson,D., Merkulov,G., Milshina,N.V., Mobarry,C.,
+            Morris,J., Moshrefi,A., Mount,S.M., Moy,M., Murphy,B., Murphy,L.,
+            Muzny,D.M., Nelson,D.L., Nelson,D.R., Nelson,K.A., Nixon,K.,
+            Nusskern,D.R., Pacleb,J.M., Palazzolo,M., Pittman,G.S., Pan,S.,
+            Pollard,J., Puri,V., Reese,M.G., Reinert,K., Remington,K.,
+            Saunders,R.D., Scheeler,F., Shen,H., Shue,B.C., Siden-Kiamos,I.,
+            Simpson,M., Skupski,M.P., Smith,T., Spier,E., Spradling,A.C.,
+            Stapleton,M., Strong,R., Sun,E., Svirskas,R., Tector,C., Turner,R.,
+            Venter,E., Wang,A.H., Wang,X., Wang,Z.Y., Wassarman,D.A.,
+            Weinstock,G.M., Weissenbach,J., Williams,S.M., WoodageT,
+            Worley,K.C., Wu,D., Yang,S., Yao,Q.A., Ye,J., Yeh,R.F.,
+            Zaveri,J.S., Zhan,M., Zhang,G., Zhao,Q., Zheng,L., Zheng,X.H.,
+            Zhong,F.N., Zhong,W., Zhou,X., Zhu,S., Zhu,X., Smith,H.O.,
+            Gibbs,R.A., Myers,E.W., Rubin,G.M. and Venter,J.C.
+  TITLE     The genome sequence of Drosophila melanogaster
+  JOURNAL   Science 287 (5461), 2185-2195 (2000)
+   PUBMED   10731132
+  REMARK    NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+            STRAIN=Berkeley
+REFERENCE   4  (residues 1 to 896)
+  AUTHORS   Misra,S., Crosby,M.A., Mungall,C.J., Matthews,B.B., Campbell,K.S.,
+            Hradecky,P., Huang,Y., Kaminker,J.S., Millburn,G.H., Prochnik,S.E.,
+            Smith,C.D., Tupy,J.L., Whitfied,E.J., Bayraktaroglu,L.,
+            Berman,B.P., Bettencourt,B.R., Celniker,S.E., de Grey,A.D.,
+            Drysdale,R.A., Harris,N.L., Richter,J., Russo,S., Schroeder,A.J.,
+            Shu,S.Q., Stapleton,M., Yamada,C., Ashburner,M., Gelbart,W.M.,
+            Rubin,G.M. and Lewis,S.E.
+  TITLE     Annotation of the Drosophila melanogaster euchromatic genome: a
+            systematic review
+  JOURNAL   Genome Biol. 3 (12), RESEARCH0083 (2002)
+   PUBMED   12537572
+  REMARK    GENOME REANNOTATION.
+REFERENCE   5  (residues 1 to 896)
+  AUTHORS   Kramer,H., Cagan,R.L. and Zipursky,S.L.
+  TITLE     Interaction of bride of sevenless membrane-bound ligand and the
+            sevenless tyrosine-kinase receptor
+  JOURNAL   Nature 352 (6332), 207-212 (1991)
+   PUBMED   1857416
+  REMARK    FUNCTION.
+COMMENT     On Feb 1, 1998 this sequence version replaced gi:1345617.
+            [FUNCTION] Acts as a ligand for sevenless tyrosine-kinase receptor
+            during eye development.
+            [SUBCELLULAR LOCATION] Cell membrane; Multi-pass membrane protein
+            (Potential).
+            [TISSUE SPECIFICITY] Expressed exclusively by R8 photoreceptor
+            cells and is internalized in a sev-dependent manner by R7 cells.
+            [SIMILARITY] Belongs to the G-protein coupled receptor 3 family.
+FEATURES             Location/Qualifiers
+     source          1..896
+                     /organism="Drosophila melanogaster"
+                     /db_xref="taxon:7227"
+     gene            1..896
+                     /gene="boss"
+                     /locus_tag="CG8285"
+     Protein         1..896
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /product="Protein bride of sevenless precursor"
+     Region          1..31
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Signal"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          32..896
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Mature chain"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Protein bride of sevenless. /FTId=PRO_0000012971."
+     Region          32..530
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Topological domain"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Extracellular (Potential)."
+     Site            183
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /site_type="glycosylation"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="N-linked (GlcNAc...) (Potential)."
+     Site            307
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /site_type="glycosylation"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="N-linked (GlcNAc...) (Potential)."
+     Site            474
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /site_type="glycosylation"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="N-linked (GlcNAc...) (Potential)."
+     Site            485
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /site_type="glycosylation"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="N-linked (GlcNAc...) (Potential)."
+     Region          531..554
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          570..588
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          <604..781
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="7tm_3"
+                     /note="7 transmembrane receptor (metabotropic glutamate
+                     family); pfam00003"
+                     /db_xref="CDD:63892"
+     Region          615..637
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          655..676
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          693..712
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          728..748
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          759..781
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Transmembrane region"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Potential."
+     Region          782..896
+                     /gene="boss"
+                     /locus_tag="CG8285"
+                     /region_name="Topological domain"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="Cytoplasmic (Potential)."
+ORIGIN      
+        1 mkvmdalqsg rrkplpvall cilvtvfcvl echgadltsp tkksaplrit kpqptsqqak
+       61 pisittrapt tvasttddev sssvdgqlap lissttegps sgttaslvpe iclnglqltv
+      121 nsadegtvir kqeefvkile gdvvlsvltk dpdsalfvin rvnqanlima dfeigirais
+      181 idnaslaenl liqevqflqq cttysmgifv dwelykqles vikdleyniw pipgtrahlf
+      241 pkvahllhqm pwgekiasve iatetlemyn efmeaarqeh mclmhfksdd nvyimfgnkl
+      301 ashfkengtl fsvptdrtdd efladlpnra fvlmeneidl staveldatp taldeiligk
+      361 svlpsrvlsf agsiidlmnw lrgslskhck rgeehdlyvl escfnflnfi edwrtseyrq
+      421 ahdtaeilsl llmrklgtam nfqmyqkkvl tldkitgesr telreiasqn fvtnvttyyh
+      481 ynrdnhtsle lktkfgqvfn cqysagdnrr ypflfdgesv mfwrikmdtw vatgltaail
+      541 gliatlailv fivvrislgd vfegnpttsi llllslilvf csfvpysiey vgeqrnshvt
+      601 fedaqtlntl cavrvfimtl vycfvfslll cravmlasig seggflshvn gyiqavicaf
+      661 svvaqvgmsv qllvvmhvas etvsceniyy grwlwgllay dfallccvga lipsiyrsqr
+      721 nyregilivi gsvlimviwv awialslfgd ewrdaaiplg lqasgwavlv giliprtfli
+      781 vrgiersdia qalpsltsla faqnnqysse qsvyecvnpa mrhcsqdevn hqspseiptl
+      841 plrgggprrq qffanlrqan aninpqrppp rpqqspsrss vsslppspdh nkitrf
+//
+

@@ -1,0 +1,83 @@
+BLASTP 2.0MP-WashU [04-May-2006] [macosx-10.4-i386-ILP32F64 2006-05-08T00:02:58]
+
+Copyright (C) 1996-2006 Washington University, Saint Louis, Missouri USA.
+All Rights Reserved.
+
+Reference:  Gish, W. (1996-2006) http://blast.wustl.edu
+
+Query=  4R79.1a        CE35820 WBGene00003525  locus:nas-6     Zinc-binding
+    metalloprotease domain
+        (344 letters)
+
+Database:  basidio_fungi_20050923.aa
+           76,650 sequences; 35,621,971 total letters.
+Searching....10....20....30....40....50....60....70....80....90....100% done
+
+                                                                     Smallest
+                                                                       Sum
+                                                              High  Probability
+Sequences producing High-scoring Segment Pairs:              Score  P(N)      N
+
+rory_SNAP:rory_1.39-snap.4 rory_1.39:join(4841..4883,4930...    79  0.85      1
+
+
+>rory_SNAP:rory_1.39-snap.4
+            rory_1.39:join(4841..4883,4930..5108,5170..5510,5567..5944,6003..62
+            98,6362..6663) cdslen=1539
+        Length = 513
+
+ Score = 79 (32.9 bits), Expect = 1.9, P = 0.85
+ Identities = 38/137 (27%), Positives = 62/137 (45%)
+ Links = (1)
+
+Query:   188 DNILPGMKSQFDKISAVLQD---------LQGENYDYKSIMHYDST--AFSRNGRNTIET 236
+             D    G K  F+KI   +QD         L G N D  ++ ++  T  +F+ +  ++I +
+Sbjct:    71 DTAFSGSKINFEKIFCYIQDKALGIENNLLLGAN-DLVTMTNHQPTTSSFTSSTTSSITS 129
+
+Query:   237 VENGFTQVIGTAMDLSPLDIVKINKLYSCKTKKKE-KVKPATTEEPHQLIPQVVDKN--- 292
+             +    + +      L  +D VKI KLYS   ++K  K+K  T  E  Q+    +  N   
+Sbjct:   130 LTTASSSIDSKQTKLDDVDKVKIRKLYSSMNEEKMWKLKTETFVE-RQMERFALTCNFEH 188
+
+Query:   293 ---SV--DSGEKCVDHF 304
+                S+  DSG+KC D +
+Sbjct:   189 PCHSLIFDSGDKCWDEY 205
+
+
+Parameters:
+  -i nas-6.fa
+  -d basidio_fungi_20050923.aa
+  postsw
+  links
+  -o nas-6_vs_wormpep.BLASTP
+
+  ctxfactor=1.00
+  E=10
+
+  Query                        -----  As Used  -----    -----  Computed  ----
+  Frame  MatID Matrix name     Lambda    K       H      Lambda    K       H
+   +0      0   BLOSUM62        0.321   0.137   0.429    same    same    same
+               Q=9,R=2         0.244   0.0300  0.180     n/a     n/a     n/a
+
+  Query
+  Frame  MatID  Length  Eff.Length     E    S W   T  X   E2     S2
+   +0      0      344       344       9.6  73 3  11 22  0.38    34
+                                                    33  0.45    37
+
+
+Statistics:
+
+  Database:  basidio_fungi_20050923.aa
+   Title:  basidio_fungi_20050923.aa
+   Posted:  1:07:58 AM EDT Oct 23, 2008
+   Created:  1:07:58 AM EDT Oct 23, 2008
+   Format:  XDF-1
+   # of letters in database:  35,621,971
+   # of sequences in database:  76,650
+   # of database sequences satisfying E:  1
+  No. of states in DFA:  612 (65 KB)
+  Total size of DFA:  270 KB (2143 KB)
+  Time to generate neighborhood:  0.00u 0.00s 0.00t   Elapsed:  00:00:00
+  No. of threads or processors used:  2
+  Search cpu time:  5.33u 0.09s 5.42t   Elapsed:  00:00:03
+  Total cpu time:  5.33u 0.09s 5.42t   Elapsed:  00:00:04
+  Start:  Thu Oct 23 01:08:20 2008   End:  Thu Oct 23 01:08:24 2008
