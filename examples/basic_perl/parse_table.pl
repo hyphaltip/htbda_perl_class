@@ -21,7 +21,7 @@ while(<$fh>) {
 	$genes{$genename} = { left => $left, right => $right };
 	last if $i++ > 10;
 }
-foreach my $gene ( keys %genes ) {
+foreach my $gene ( sort keys %genes ) {
 	my $length = $genes{$genename}->{'right'} - $genes{$gene}->{'left'};
 	print "$gene is $length bases long\n";	
 }
