@@ -10,7 +10,7 @@ You will find the [HOWTOs](http://www.bioperl.org/wiki/HOWTOs) and [Module docum
     * Total number and length of CDS features in each sequence
     * A table summarizing all the sequences in the file to present the name of the species and number of times they each appear 
 
-3. Use Bio::DB::Fasta to retrieve sequences from a FASTA sequence database
+3. Use Bio::DB::Fasta to retrieve sequences from a [FASTA sequence database](../data/sacharomyces_cerevisiae_S288C.fa).
 
    * Sequence from chrI position 54584..54913
    * Translate this sequence into a protein
