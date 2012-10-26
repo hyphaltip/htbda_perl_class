@@ -1284,7 +1284,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              1/5
+              1/6
             </aside>
           </footer>
         </div>
@@ -1319,7 +1319,7 @@ div.slide div.presenter_notes {
             </aside>
             
             <aside class="page_number">
-              2/5
+              2/6
             </aside>
           </footer>
         </div>
@@ -1351,7 +1351,7 @@ my $rev = reverse($str);</p></section>
             </aside>
             
             <aside class="page_number">
-              3/5
+              3/6
             </aside>
           </footer>
         </div>
@@ -1376,6 +1376,9 @@ my $rev = reverse($str);</p></section>
 <p>\d+ - a number 1 to many times</p>
 </li>
 <li>\d* - a number 0 to many times</li>
+<li>^ - starts with this </li>
+<li>$ - end of match<br />
+</li>
 </ul></section>
             
           </div>
@@ -1392,7 +1395,7 @@ my $rev = reverse($str);</p></section>
             </aside>
             
             <aside class="page_number">
-              4/5
+              4/6
             </aside>
           </footer>
         </div>
@@ -1428,7 +1431,43 @@ my $rev = reverse($str);</p></section>
             </aside>
             
             <aside class="page_number">
-              5/5
+              5/6
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 05_regexp.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>try this</h1></header>
+            
+            
+            <section><p>my @strs = qw(GENE124 GENE112 GENE180 GENEX321 AGENE12);</p>
+<p>for my $str ( @strs ) {</p>
+<pre><code>if( $str =~ /^GENE\d+/ ) {
+    print $str, "\n";
+}
+</code></pre>
+<p>}</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="05_regexp.md">05_regexp.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/6
             </aside>
           </footer>
         </div>
@@ -1469,6 +1508,12 @@ my $rev = reverse($str);</p></section>
       <tr id="toc-row-5">
         <th><a href="#slide5">try this</a></th>
         <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">try this</a></th>
+        <td><a href="#slide6">6</a></td>
       </tr>
       
       

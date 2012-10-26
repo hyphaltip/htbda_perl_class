@@ -29,6 +29,8 @@ my $rev = reverse($str);
 
 * \d+ - a number 1 to many times
 * \d* - a number 0 to many times
+* ^ - starts with this 
+* $ - end of match  
 
 ---
 #try this
@@ -41,6 +43,20 @@ for my $str ( @strs ) {
     	print $str, "\n";
     }
 }
+
+
+---
+#try this
+
+my @strs = qw(GENE124 GENE112 GENE180 GENEX321 AGENE12);
+
+for my $str ( @strs ) {
+
+    if( $str =~ /^GENE\d+/ ) {
+    	print $str, "\n";
+    }
+}
+
 
 
 
