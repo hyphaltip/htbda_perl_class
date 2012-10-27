@@ -1265,9 +1265,9 @@ div.slide div.presenter_notes {
             <header><h1>regular expressions</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">print</span> <span class="err">“</span><span class="n">Ancient</span> <span class="n">element</span><span class="o">\</span><span class="n">n</span><span class="err">”</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$substance</span> <span class="o">=~</span> <span class="sr">m/earth|air|fire|water/i</span><span class="p">);</span>
-<span class="lineno"> 2</span> <span class="k">print</span> <span class="err">“</span><span class="n">Stop</span> <span class="n">codon</span><span class="o">\</span><span class="n">n</span><span class="err">”</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$seq</span> <span class="o">=~</span> <span class="sr">m/TAA|TAG|TGA/i</span><span class="p">);</span>
-<span class="lineno"> 3</span> <span class="k">print</span> <span class="err">“</span><span class="n">Author</span><span class="err">’</span><span class="n">s</span> <span class="n">name</span><span class="o">\</span><span class="n">n</span><span class="err">”</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$text</span> <span class="o">=~</span> <span class="sr">m/Ian|Keith/i</span><span class="p">);</span>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="k">print</span> <span class="s">&quot;Ancient element\n&quot;</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$substance</span> <span class="o">=~</span> <span class="sr">m/earth|air|fire|water/i</span><span class="p">);</span>
+<span class="lineno"> 2</span> <span class="k">print</span> <span class="s">&quot;Stop codon\n&quot;</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$seq</span> <span class="o">=~</span> <span class="sr">m/TAA|TAG|TGA/i</span><span class="p">);</span>
+<span class="lineno"> 3</span> <span class="k">print</span> <span class="s">&quot;Author’s name\n&quot;</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$text</span> <span class="o">=~</span> <span class="sr">m/Ian|Keith/i</span><span class="p">);</span>
 <span class="lineno"> 4</span> 
 <span class="lineno"> 5</span> <span class="o">!</span><span class="n">perl</span>
 <span class="lineno"> 6</span> <span class="k">if</span><span class="p">(</span> <span class="nv">$string</span> <span class="o">=~</span><span class="sr"> /[A-Z]/</span><span class="p">)</span> <span class="p">{</span>
@@ -1309,10 +1309,10 @@ div.slide div.presenter_notes {
             
             
             <section><ul>
-<li>$str =~ /match/</li>
-<li>$str =~ m!match!  # use m to specify the separator</li>
-<li>$str =~ s/from/to/ # replace</li>
-<li>$str =~ tr/[A-Z]/[a-z]/ #translate</li>
+<li><code>$str =~ /match/</code></li>
+<li><code>$str =~ m!match!</code>  # use m to specify the separator</li>
+<li><code>$str =~ s/from/to/</code> # replace</li>
+<li><code>$str =~ tr/[A-Z]/[a-z]/</code> #translate</li>
 </ul></section>
             
           </div>
@@ -1347,6 +1347,12 @@ div.slide div.presenter_notes {
 <pre><code>my $str = 'AGCATA';
 $str =~ tr/ACGT/TGCA/;
 my $rev = reverse($str);
+print "$str\n";
+print "$rev\n";
+</code></pre>
+<p>produces: </p>
+<pre><code> AGCATA
+ TATGCT
 </code></pre></section>
             
           </div>

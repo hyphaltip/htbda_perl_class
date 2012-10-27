@@ -3,9 +3,9 @@
 
 
     !perl
-    print “Ancient element\n” if ($substance =~ m/earth|air|fire|water/i);
-    print “Stop codon\n” if ($seq =~ m/TAA|TAG|TGA/i);
-    print “Author’s name\n” if ($text =~ m/Ian|Keith/i);
+    print "Ancient element\n" if ($substance =~ m/earth|air|fire|water/i);
+    print "Stop codon\n" if ($seq =~ m/TAA|TAG|TGA/i);
+    print "Author’s name\n" if ($text =~ m/Ian|Keith/i);
 
     !perl
     if( $string =~ /[A-Z]/) {
@@ -19,10 +19,10 @@
 ---
 #Patterns
 
-* $str =~ /match/
-* $str =~ m!match!  # use m to specify the separator
-* $str =~ s/from/to/ # replace
-* $str =~ tr/[A-Z]/[a-z]/ #translate
+* `$str =~ /match/`
+* `$str =~ m!match!`  # use m to specify the separator
+* `$str =~ s/from/to/` # replace
+* `$str =~ tr/[A-Z]/[a-z]/` #translate
 
 ---
 #Reverse complement DNA
@@ -32,6 +32,13 @@ Use `tr` and `reverse` to convert DNA into reverse complement.
     my $str = 'AGCATA';
     $str =~ tr/ACGT/TGCA/;
     my $rev = reverse($str);
+    print "$str\n";
+    print "$rev\n";
+
+produces: 
+
+     AGCATA
+     TATGCT
 
 ---
 #Pattern types
