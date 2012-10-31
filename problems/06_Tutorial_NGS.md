@@ -21,6 +21,7 @@ The rename_seq.pl and other tools are in examples/NGS
 site](http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz). Uncompress this and get the .fsa file which is the genome. 
 
 You could do this like, but it may be broken/down.
+
     $ curl -O http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz
     $ tar zxf S288C_reference_genome_R64-1-1_20110203.tgz
 
