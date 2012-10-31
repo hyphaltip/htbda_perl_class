@@ -61,11 +61,9 @@ $ head -n <span class="dv">16425</span> S288C_reference_genome_R64<span class="d
 </ol>
 <h1 id="notes">Notes</h1>
 <p>Use this system to get the programs ready to use on the command line on biocluster</p>
-<pre class="sourceCode perl"><code class="sourceCode perl">module load samtool
-module load java
-module load bwa
-module load sickle
-module load fastx_toolkit</code></pre>
+<p>Get your own machine on biocluster</p>
+<pre class="sourceCode perl"><code class="sourceCode perl">qsub -I</code></pre>
+<p>Then when you have a new machine you want to do this on the command line module load samtool module load java module load bwa module load sickle module load fastx_toolkit</p>
 <p>To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar</p>
 <p>To run with Picard you will want to use this path to the .jar files /usr/local/java/common/lib/picard-tools/</p>
 <h1 id="tutorial">Tutorial</h1>
