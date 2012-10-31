@@ -60,7 +60,7 @@ Get your own machine on biocluster
 
 Then when you have a new machine you want to do this on the command line
 
-    module load samtool
+    module load samtools
     module load java
     module load bwa
     module load sickle
