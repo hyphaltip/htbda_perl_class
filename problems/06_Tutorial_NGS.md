@@ -53,6 +53,8 @@ Use this system to get the programs ready to use on the command line on bioclust
     module load samtool
     module load java
     module load bwa
+    module load sickle
+    module load fastx_toolkit
 
 
 To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar
