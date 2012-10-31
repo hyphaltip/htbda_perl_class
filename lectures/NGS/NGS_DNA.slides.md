@@ -6,9 +6,6 @@
 
  jason.stajich[at]ucr.edu
 
- twitter:[hyphaltip](http://twitter.com/hyphaltip) [stajichlab](http://twitter.com/stajichlab)
-
- Lecture available at [http://github.com/hyphaltip/CSHL_2012_NGS](http://github.com/hyphaltip/CSHL_2012_NGS)
 
 ---
 #NGS sequence data
