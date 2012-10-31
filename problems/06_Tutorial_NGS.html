@@ -28,14 +28,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
   </style>
 </head>
 <body>
-<p>Data and scripts for this Tutorial and Lectures are available at <a href="https://github.com/hyphaltip/CSHL_2012_NGS">https://github.com/hyphaltip/CSHL_2012_NGS</a>.</p>
+<p>guitData and scripts for this Tutorial and Lectures are available at <a href="https://github.com/hyphaltip/CSHL_2012_NGS">https://github.com/hyphaltip/CSHL_2012_NGS</a>.</p>
 <h1 id="preparation-steps">Preparation Steps</h1>
 <ol type="1">
 <li>Checkout my github repo for this course.</li>
 </ol>
 <p>Using Git on the command line (or install Git for Mac)</p>
-<pre class="sourceCode perl"><code class="sourceCode perl"><span class="dt">$git</span> clone git:/<span class="kw">/</span><span class="ot">github.com</span><span class="kw">/</span>hyphaltip/CSHL_2012_NGS.git</code></pre>
-<p>The rename_seq.pl and other tools are</p>
+<pre class="sourceCode perl"><code class="sourceCode perl"><span class="dt">$git</span> clone git:/<span class="kw">/</span><span class="ot">github.com</span><span class="kw">/</span>hyphaltip/htbda_perl_class.git</code></pre>
+<p>The rename_seq.pl and other tools are in examples/NGS</p>
 <ol type="1">
 <li><p>Download Broad IGV viewer at <a href="http://www.broadinstitute.org/igv/">http://www.broadinstitute.org/igv/</a></p></li>
 <li><p>Download the Saccharomyces genome from <a href="http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz">SGD site</a>. Uncompress this and get the .fsa file which is the genome.</p></li>
@@ -44,7 +44,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre class="sourceCode perl"><code class="sourceCode perl">$ curl <span class="kw">-O</span> http:/<span class="kw">/</span><span class="ot">downloads.yeastgenome.org</span><span class="kw">/s</span>equence/S288C_reference/genome_releases/S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203.tgz
 $ tar zxf S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203.tgz</code></pre>
 <p>Run this script to fix the chromosome names in the download file so the will match the GFF file.</p>
-<pre class="sourceCode perl"><code class="sourceCode perl">perl CSHL_2012_NSG/data/rename_seq.pl S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203/S288C_reference_sequence_R64<span class="dv">-1</span>-1_20110203.fsa &gt; Saccharomyces.fa</code></pre>
+<pre class="sourceCode perl"><code class="sourceCode perl">perl htbda_perl_class/examples/NGS/rename_seq.pl S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203/S288C_reference_sequence_R64<span class="dv">-1</span>-1_20110203.fsa &gt; Saccharomyces.fa</code></pre>
 <ul>
 <li>You need to fix this GFF file so it doesn't have any sequence, to do this a grep to find where the '&gt;' lines are where the sequence as fasta is in there and find the first one.</li>
 </ul>
@@ -57,11 +57,7 @@ $ head -n <span class="dv">16425</span> S288C_reference_genome_R64<span class="d
 <li>Use this saccharomyces_cerevisiae_R64-1-1_20110208.noseq.gff for GFF file later needs.</li>
 </ul>
 <ol start="3" type="1">
-<li><p>[NOT NEEDED FOR THIS TUTORIAL, DATA ARE ALREADY in ~/nextgen/fastq] Downlod the read data from SRA and convert it. You can run the download script (rerequires <a href="http://curl.haxx.se/">curl</a>, <a href="http://ftp-private.ncbi.nlm.nih.gov/sra/sdk/">sratoolkit</a>, and for download speedup <a href="http://downloads.asperasoft.com/download_connect/">Aspera client</a></p>
-<ul>
-<li><p>For Aspera, get the web client and find the ascp binary and put in your path (like <code>~/bin</code>). For example on OSX it installs in <code>&quot;/Applications/Aspera\ Connect.app/Contents/Resources/ascp&quot;</code>. so you would copy this file to <code>~/bin</code></p></li>
-<li><p>The download script to obtain all the data is here <a href="https://github.com/hyphaltip/CSHL_2012_NGS/blob/master/data/download.sh">https://github.com/hyphaltip/CSHL_2012_NGS/blob/master/data/download.sh</a> or in the github repo you checked out - <code>CSHL_2012_NGS/data/download.sh</code></p></li>
-</ul></li>
+<li>Obtain the data, you can link the fastq files you want to process from <code>/srv/projects/db/GEN220/fastq</code> by doing <code>ln -s /srv/projects/db/GEN220/fastq</code> in your directory where you will work.</li>
 </ol>
 <h1 id="tutorial">Tutorial</h1>
 <ol type="1">
@@ -70,17 +66,17 @@ $ head -n <span class="dv">16425</span> S288C_reference_genome_R64<span class="d
 </ol>
 <p><code>fastqc -h</code> to get help</p>
 <ol start="3" type="1">
-<li><p>Align reads to the genome using BWA. This requires you to also build and index for the genome. See the <a href="http://hyphaltip.github.com/CSHL_2012_NGS/lecture/NGS_DNA.slides.html#slide34">lecture notes</a>.</p></li>
-<li><p>Fix the Read groups see <a href="http://hyphaltip.github.com/CSHL_2012_NGS/lecture/NGS_DNA.slides.html#slide51">this slide</a></p></li>
-<li><p>Realign reads with Picard and GATK <a href="http://hyphaltip.github.com/CSHL_2012_NGS/lecture/NGS_DNA.slides.html#slide40">based on lecture</a>.</p></li>
+<li><p>Align reads to the genome using BWA. This requires you to also build and index for the genome. See the <a href="http://courses.stajich.org/public/gen220/lectures/NGS/NGS_DNA.slides.html#slide34">lecture notes</a>.</p></li>
+<li><p>Fix the Read groups see <a href="http://courses.stajich.org/public/gen220/lectures/NGS/NGS_DNA.slides.html#slide51">this slide</a></p></li>
+<li><p>Realign reads with Picard and GATK <a href="http://courses.stajich.org/public/gen220/lectures/NGS/NGS_DNA.slides.html#slide40">based on lecture</a>.</p></li>
 <li><p>Call SNPs with SAMTools - refer to the SAMtools manpage on mpileup for more details. <a href="http://samtools.sourceforge.net/">http://samtools.sourceforge.net/</a></p></li>
-<li><p>Call SNPs with GATK, using <a href="http://hyphaltip.github.com/CSHL_2012_NGS/lecture/NGS_DNA.slides.html#slide42">example from the lecture</a></p></li>
-<li><p>Run Filtering steps on GATK output SNPs to remove potential biased or low-quality ones using options <a href="http://hyphaltip.github.com/CSHL_2012_NGS/lecture/NGS_DNA.slides.html#slide45">provided in lecture</a>.</p></li>
+<li><p>Call SNPs with GATK, using <a href="http://courses.stajich.org/public/gen220/lectures/NGS/NGS_DNA.slides.html#slide42">example from the lecture</a></p></li>
+<li><p>Run Filtering steps on GATK output SNPs to remove potential biased or low-quality ones using options <a href="http://courses.stajich.org/public/gen220/lectures/NGS/NGS_DNA.slides.html#slide45">provided in lecture</a>.</p></li>
 <li><p>Calculate the total number of remaining SNPs. Count the lines or use <a href="http://vcftools.sourceforge.net/">vcftools</a>.</p></li>
 <li><p>For advanced users, intersect this list of SNPs (in the VCF file) with the GFF for the genome to determine which SNPs are in coding regions. Read up on <a href="http://code.google.com/p/bedtools/">BEDTools</a>. The genome annotation in GFF is available in the folder where the genome was downloaded from <a href="http://yeastgenome.org">SGD</a>.</p></li>
 <li><p>Open the genome file for Saccharomces in IGV. Then add the GFF file as annotation track. Then BAM file, and VCF file in IGV to view the SNPs in context of the gene annotation and the read-depth</p></li>
 </ol>
-<p>Feel free to try this also with your own favorite organism. Many datasets exist in the <a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> from genome resequencing. To extend the problem, ddownload more than 4 strains so you can apply comparisons between individuals instead of just between one individual and the reference.</p>
+<p>Feel free to try this also with your own favorite organism. Many datasets exist in the <a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> from genome resequencing. To extend the problem, download more than 4 strains so you can apply comparisons between individuals instead of just between one individual and the reference.</p>
 <p>For example, here is the <a href="http://www.ncbi.nlm.nih.gov/bioproject/36679">Drosophila reference panel</a> which included sequencing 192 individuals. Or find something smaller (10 C.elegans for example).</p>
 </body>
 </html>
