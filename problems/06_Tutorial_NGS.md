@@ -20,10 +20,13 @@ The rename_seq.pl and other tools are in examples/NGS
 2. Download the Saccharomyces genome from [SGD
 site](http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz). Uncompress this and get the .fsa file which is the genome. 
 
-You could do this like
-
+You could do this like, but it may be broken/down.
     $ curl -O http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz
     $ tar zxf S288C_reference_genome_R64-1-1_20110203.tgz
+
+Do this instead
+
+    $tar zxf /srv/projects/db/GEN220/S288C_reference_genome_R64-1-1_20110203.tgz
 
 Run this script to fix the chromosome names in the download file so the will match the GFF file.
 

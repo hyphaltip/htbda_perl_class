@@ -40,9 +40,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><p>Download Broad IGV viewer at <a href="http://www.broadinstitute.org/igv/">http://www.broadinstitute.org/igv/</a></p></li>
 <li><p>Download the Saccharomyces genome from <a href="http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz">SGD site</a>. Uncompress this and get the .fsa file which is the genome.</p></li>
 </ol>
-<p>You could do this like</p>
-<pre class="sourceCode perl"><code class="sourceCode perl">$ curl <span class="kw">-O</span> http:/<span class="kw">/</span><span class="ot">downloads.yeastgenome.org</span><span class="kw">/s</span>equence/S288C_reference/genome_releases/S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203.tgz
-$ tar zxf S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203.tgz</code></pre>
+<p>You could do this like, but it may be broken/down. $ curl -O http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-1-1_20110203.tgz $ tar zxf S288C_reference_genome_R64-1-1_20110203.tgz</p>
+<p>Do this instead</p>
+<pre class="sourceCode perl"><code class="sourceCode perl"><span class="dt">$tar</span> zxf /srv/projects/db/GEN220/S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203.tgz</code></pre>
 <p>Run this script to fix the chromosome names in the download file so the will match the GFF file.</p>
 <pre class="sourceCode perl"><code class="sourceCode perl">perl htbda_perl_class/examples/NGS/rename_seq.pl S288C_reference_genome_R64<span class="dv">-1</span>-1_20110203/S288C_reference_sequence_R64<span class="dv">-1</span>-1_20110203.fsa &gt; Saccharomyces.fa</code></pre>
 <ul>
