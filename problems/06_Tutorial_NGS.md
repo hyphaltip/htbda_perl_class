@@ -45,6 +45,21 @@ Commands to run
 3. Obtain the data, you can link the fastq files you want to process from ```/srv/projects/db/GEN220/fastq``` by doing 
    ```ln -s /srv/projects/db/GEN220/fastq``` in your directory where you will work.
 
+Notes
+=====
+
+Use this system to get the programs ready to use on the command line on biocluster
+
+    module load samtool
+    module load java
+    module load bwa
+
+
+To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar
+
+To run with Picard you will want to use this path to the .jar files /usr/local/java/common/lib/picard-tools/
+    
+
 Tutorial
 ========
 
