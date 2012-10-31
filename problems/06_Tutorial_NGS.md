@@ -59,6 +59,7 @@ Get your own machine on biocluster
     qsub -I
 
 Then when you have a new machine you want to do this on the command line
+
     module load samtool
     module load java
     module load bwa
