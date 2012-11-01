@@ -66,10 +66,10 @@ $ head -n <span class="dv">16425</span> S288C_reference_genome_R64<span class="d
 <p>Get your own machine on biocluster</p>
 <pre class="sourceCode perl"><code class="sourceCode perl">qsub -I</code></pre>
 <p>Then when you have a new machine you want to do this on the command line</p>
-<pre class="sourceCode perl"><code class="sourceCode perl">module load samtools
+<pre class="sourceCode perl"><code class="sourceCode perl">module load stajichlab
+module load samtools
 module load java
 module load bwa
-module load stajichlab
 module load sickle
 module load fastx_toolkit</code></pre>
 <p>To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar</p>

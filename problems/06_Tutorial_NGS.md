@@ -60,10 +60,10 @@ Get your own machine on biocluster
 
 Then when you have a new machine you want to do this on the command line
 
+    module load stajichlab
     module load samtools
     module load java
     module load bwa
-    module load stajichlab
     module load sickle
     module load fastx_toolkit
 
