@@ -60,10 +60,10 @@ Get your own machine on biocluster
 
 Then when you have a new machine you want to do this on the command line
 
+    module load stajichlab
     module load samtools
     module load java
     module load bwa
-    module load stajichlab
     module load sickle
     module load fastx_toolkit
 
@@ -75,6 +75,7 @@ To run with Picard you will want to use this path to the .jar files /usr/local/j
 
 Tutorial
 ========
+You can use any of the fastq file pairs that are in the fastq folder you linked in above (located in /srv/projects/db/GEN220/fastq). They are from the same strain but are just different runs. For consistency with the lecture slides you could use the SRR567756 sample (SRR567756_1.fastq and SRR567756_2.fastq).
 
 1. Trim FASTQ data for quality using [sickle](https://github.com/najoshi/sickle) - run ```sickle pe``` to see how to run PE options
 
