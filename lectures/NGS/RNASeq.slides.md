@@ -11,7 +11,7 @@
 ---
 #Alignment with Bowtie and TopHat
 
-(BowTie)[http://bowtie-bio.sourceforge.net/]
+[BowTie](http://bowtie-bio.sourceforge.net/)
 
 A fast aligner for short reads. This is comparable to bwa but previous
 versions were shown to be less sensitive.

@@ -1067,13 +1067,11 @@ div.slide div.presenter_notes {
                 break;
             case 37: // left arrow
             case 33: // page up
-                event.preventDefault();
                 prevSlide();
                 break;
             case 39: // right arrow
             case 32: // space
             case 34: // page down
-                event.preventDefault();
                 nextSlide();
                 break;
             case 50: // 2
@@ -1309,7 +1307,7 @@ div.slide div.presenter_notes {
             <header><h1>Alignment with Bowtie and TopHat</h1></header>
             
             
-            <section><p>(BowTie)[http://bowtie-bio.sourceforge.net/]</p>
+            <section><p><a href="http://bowtie-bio.sourceforge.net/">BowTie</a></p>
 <p>A fast aligner for short reads. This is comparable to bwa but previous
 versions were shown to be less sensitive.</p>
 <p>Requires genome file to be indexed just like bwa does.</p>
