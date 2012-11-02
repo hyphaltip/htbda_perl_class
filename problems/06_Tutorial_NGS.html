@@ -71,7 +71,9 @@ module load samtools
 module load java
 module load bwa
 module load sickle
-module load fastx_toolkit</code></pre>
+module load fastx_toolkit
+export PICARD=<span class="kw">/</span><span class="ot">usr</span><span class="kw">/local/</span><span class="ot">java</span><span class="kw">/commo</span>n/lib/picard<span class="kw">-t</span>ools/
+export GATK=<span class="kw">/</span><span class="ot">opt</span><span class="kw">/</span>GATK/latest/</code></pre>
 <p>To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar</p>
 <p>To run with Picard you will want to use this path to the .jar files /usr/local/java/common/lib/picard-tools/</p>
 <h1 id="tutorial">Tutorial</h1>

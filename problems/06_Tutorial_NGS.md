@@ -66,6 +66,8 @@ Then when you have a new machine you want to do this on the command line
     module load bwa
     module load sickle
     module load fastx_toolkit
+    export PICARD=/usr/local/java/common/lib/picard-tools/
+    export GATK=/opt/GATK/latest/
 
 
 To run against GATK you will need to use this path to the .jar file /opt/GATK/latest/GenomeAnalysisTK.jar
