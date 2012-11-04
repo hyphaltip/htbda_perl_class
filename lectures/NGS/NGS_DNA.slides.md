@@ -446,17 +446,17 @@ I am using W303 since it is the strain name for this sequencing record.
 ---
 #samtools flagstat
 
-    4505078 + 0 in total (QC-passed reads + QC-failed reads)
-    0 + 0 duplicates
-    4103621 + 0 mapped (91.09%:-nan%)
-    4505078 + 0 paired in sequencing
-    2252539 + 0 read1
-    2252539 + 0 read2
-    3774290 + 0 properly paired (83.78%:-nan%)
-    4055725 + 0 with itself and mate mapped
-    47896 + 0 singletons (1.06%:-nan%)
-    17769 + 0 with mate mapped to a different chr
-    6069 + 0 with mate mapped to a different chr (mapQ>=5)
+     3343010 + 0 in total (QC-passed reads + QC-failed reads)
+     0 + 0 duplicates
+     3304818 + 0 mapped (98.86%:-nan%)
+     3343010 + 0 paired in sequencing
+     1671505 + 0 read1
+     1671505 + 0 read2
+     3259272 + 0 properly paired (97.50%:-nan%)
+     3300190 + 0 with itself and mate mapped
+     4628 + 0 singletons (0.14%:-nan%)
+     5585 + 0 with mate mapped to a different chr
+     3049 + 0 with mate mapped to a different chr (mapQ>=5)
 
 ---
 #Realigning around Indels and SNPs
@@ -484,6 +484,21 @@ Then realign based on these intervals
     java -Xmx2g -jar $GATK -T IndelRealigner \
      -R genome/Saccharomyces.fa \
      --targetIntervals W303.intervals -I W303.dedup.bam -o W303.realign.bam
+
+---
+#flagstats after Deduplicate reads 
+
+    3343010 + 0 in total (QC-passed reads + QC-failed reads)
+    28822 + 0 duplicates
+    3304818 + 0 mapped (98.86%:-nan%)
+    3343010 + 0 paired in sequencing
+    1671505 + 0 read1
+    1671505 + 0 read2
+    3259272 + 0 properly paired (97.50%:-nan%)
+    3300190 + 0 with itself and mate mapped
+    4628 + 0 singletons (0.14%:-nan%)
+    5585 + 0 with mate mapped to a different chr
+    3049 + 0 with mate mapped to a different chr (mapQ>=5)
 
 ---
 #SAMtools and VCFtools to call SNPs
