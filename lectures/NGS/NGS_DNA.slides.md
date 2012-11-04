@@ -385,8 +385,8 @@ Lots of other resources for SAM/BAM manipulation in Picard documentation on the 
     $ samtools view -h SRR527547.realign.W303.bam
     samtools view -h SRR527547.realign.W303.bam | more
     @HD	VN:1.0	GO:none	SO:coordinate
-    @SQ	SN:chrI	LN:230218	UR:file:/bigdata/jstajich/Teaching/CSHL_2012_NGS/examples/genome/Saccharomyces_cerevisiae.fa	M5:6681ac2f62509cfc220d78751b8dc524
-    @SQ	SN:chrII	LN:813184	UR:file:/bigdata/jstajich/Teaching/CSHL_2012_NGS/examples/genome/Saccharomyces_cerevisiae.fa	M5:97a317c689cbdd7e92a5c159acd290d2
+    @SQ	SN:chrI	LN:230218	UR:file:genome/Saccharomyces_cerevisiae.fa	M5:6681ac2f62509cfc220d78751b8dc524
+    @SQ	SN:chrII	LN:813184	UR:file:genome/Saccharomyces.fa	M5:97a317c689cbdd7e92a5c159acd290d2
 
 
     $ samtools view -bS SRR527547.sam > SRR527547.unsrt.bam
@@ -433,6 +433,16 @@ to call SNPs across multiple samples.
 The AddOrReplaceReadGroups.jar command set in Picard is really useful
 for manipulating these.
 
+Fixing Read-Groups
+==================
+I am using W303 since it is the strain name for this sequencing record.
+
+     module load picard
+     java -Xmx3g -jar $PICARD/AddOrReplaceReadGroups.jar I=SRR527545.bam \
+      O=SRR527545.readgroup.bam SORT_ORDER=coordinate CREATE_INDEX=True \
+      RGID=W303 RGLB=SRR527545 RGPL=Illumina RGPU=Genomic RGSM=W303 \
+      VALIDATION_STRINGENCY=SILENT
+
 ---
 #samtools flagstat
 
@@ -453,12 +463,12 @@ for manipulating these.
 
 To insure high quality Indelcalls, the reads need to realigned after placed by BWA or other aligner. This can be done with PicardTools and GATK.
 
-Need to Deduplicate reads (change STRAIN into the name of the strain you are working on)
+Need to Deduplicate reads (change W303 into the name of the strain you are working on)
 
     qsub -l mem=2gb -I # this will span a new process on a new machine, 
     module load picard
-    java -Xmx2g -jar $PICARD/MarkDuplicates.jar I=STRAIN.sorted.bam \
-      O=STRAIN.dedup.bam METRICS_FILE=STRAIN.dedup.metrics \
+    java -Xmx2g -jar $PICARD/MarkDuplicates.jar I=W303.sorted.bam \
+      O=W303.dedup.bam METRICS_FILE=W303.dedup.metrics \
       CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
 
 Then identify Intervals around variants
@@ -466,24 +476,24 @@ Then identify Intervals around variants
     module load GATK # this will set the $GATK variable
     # which points to the jar file for java
     java -Xmx2g -jar $GATK -T RealignerTargetCreator \
-     -R genome/Saccharomyces_cerevisiae.fa \
-     -o STRAIN.intervals -I STRAIN.dedup.bam
+     -R genome/Saccharomyces.fa \
+     -o W303.intervals -I W303.dedup.bam
 
 Then realign based on these intervals
 
     java -Xmx2g -jar $GATK -T IndelRealigner \
-     -R genome/Saccharomyces_cerevisiae.fa \
-     -targetIntervalsSTRAIN.intervals -I STRAIN.dedup.bam -o STRAIN.realign.bam
+     -R genome/Saccharomyces.fa \
+     --targetIntervals W303.intervals -I W303.dedup.bam -o W303.realign.bam
 
 ---
 #SAMtools and VCFtools to call SNPs
  
     module load samtools
     # this generates a BCF file which is the raw set of SNPs called
-    samtools mpileup -D -S -gu -f genome/Saccharomyces_cerevisiae.fa ABC.bam | \
-     bcftools view -bvcg - > ABC.raw.bcf
+    samtools mpileup -D -S -gu -f genome/Saccharomyces.fa W303.realign.bam | \
+     bcftools view -bvcg - > W303.raw.bcf
     # convert this BCF file into VCF but first filter by max-depth to remove repeats
-    bcftools view ABC.raw.bcf | vcfutils.pl varFilter -D100 > ABC.filter.vcf
+    bcftools view W303.raw.bcf | vcfutils.pl varFilter -D100 > W303.filter.vcf
 
 ---
 #GATK to call SNPs
@@ -499,8 +509,14 @@ Then realign based on these intervals
     #PBS -l mem=3gb -N GATK
     module load GATK
     java -Xmx3g -jar $GATK -T UnifiedGenotyper \
-      -glm SNP -I SRR527545.bam -R genome/Saccharomyces_cerevisiae.fa \
-      -o SRR527545.GATK.vcf -nt 4
+      -glm SNP -I W303.realign.bam -R genome/Saccharomyces.fa \
+      -o W303.GATK.vcf -nt 4
+
+    # could compare these SNPs look compared to the non-realigned data
+    java -Xmx3g -jar $GATK -T UnifiedGenotyper \
+      -glm SNP -I W303.bam -R genome/Saccharomyces.fa \
+      -o W303.no_realign_GATK.vcf -nt 4
+
 
 ---
 #GATK to call INDELs
@@ -510,8 +526,8 @@ Then realign based on these intervals
     # same messages as the previous slide in terms of a qsub -I or qsub a script
     module load GATK
     java -jar $GATK -T UnifiedGenotyper\
-      -glm INDEL -I SRR527545.bam \
-      -R genome/Saccharomyces_cerevisiae.fa -o SRR527545.GATK_INDEL.vcf -nt 4
+      -glm INDEL -I W303.realign.bam \
+      -R genome/Saccharomyces.fa -o W303.GATK_INDEL.vcf -nt 4
    
 ---
 #VCF Files
@@ -544,8 +560,8 @@ These refer to many combinations of information. Mapping quality (MQ),
 Homopolymer run length (HRun), Quality Score of variant, strand bias
 (too many reads from only one strand), etc.
 
-    -T VariantFiltration -o STRAINS.filtered.vcf
-    --variant STRAINS.raw.vcf \
+    -T VariantFiltration -o SRR527545.GATK_filtered.vcf
+    --variant SRR527545.GATK.vcf \
     --clusterWindowSize 10  -filter "QD<8.0" -filterName QualByDepth \
     -filter "MQ>=30.0" -filterName MapQual \
     -filter "HRun>=4" -filterName HomopolymerRun \
@@ -621,13 +637,4 @@ PCA plot of strains from the SNPs converted to 0,1,2 for homozygous Ref, Homozyg
 * Summarizing and manipulating VCF files with VCFtools
 
 
----
-#Fixing Read-Groups
-
-I am using W303 since it is the strain name for this sequencing record.
-
-    $ java -Xmx3gb -jar $PICARD/AddOrReplaceReadGroups.jar INPUT=SRR527545.bam \
-      OUTPUT=SRR527545.readgroup.bam SORT_ORDER=coordinate CREATE_INDEX=True \
-      RGID=W303 RGLB=SRR527545 RGPL=Illumina RGPU=Genomic RGSM=W303 \
-      VALIDATION_STRINGENCY=SILENT
 
