@@ -343,7 +343,8 @@ with long chromosomes.
 
 ---
 #Using BWA,SAMtools
-
+    $ module load bwa
+    $ module load samtools
     # index genome before we can align (only need to do this once)
     $ bwa index Saccharomyces
     # -t # of threads
@@ -360,16 +361,20 @@ with long chromosomes.
     $ samtools view -b -S SRR567756.sam > SRR567756.unsrt.bam
     # will create SRR567756.bam which is sorted (by chrom position)
     $ samtools sort SRR567756.unsrt.bam SRR567756
-    # build index
+    # build BAM index (bai file)
     $ samtools index SRR567756.bam
 
 ---
 #BAM using Picard tools
 
-Can convert and sort all in one go with Picard
+Can convert and sort all in one go with Picard, here is a simple set of commands
 
-    $ java -Xmx3gb -jar SortSam.jar IN=SRR567756.sam OUT=SRR567756.bam \
-     SORT_ORDER=coordinate VALIDATION_STRINGENCY=SILENT
+    qsub -l mem=2gb -I # this will span a new process on a new machine, 
+    module load picard # this will se the PICARD environment variable, 
+    # see it by typing 'env PICARD'
+    # in java -Xmx2g asks for 2gb of memory
+    java -Xmx2g -jar $PICARD/SortSam.jar I=SRR567756.sam O=SRR567756.bam \
+     SORT_ORDER=coordinate VALIDATION_STRINGENCY=SILENT CREATE_INDEX=TRUE
 
 Lots of other resources for SAM/BAM manipulation in Picard documentation on the web [http://picard.sourceforge.net/command-line-overview.shtml](http://picard.sourceforge.net/command-line-overview.shtml).
 
@@ -448,37 +453,52 @@ for manipulating these.
 
 To insure high quality Indelcalls, the reads need to realigned after placed by BWA or other aligner. This can be done with PicardTools and GATK.
 
-Need to Deduplicate reads
+Need to Deduplicate reads (change STRAIN into the name of the strain you are working on)
 
-    $ java -Xmx3gb -jar picard-tools/MarkDuplicates.jar INPUT=STRAIN.sorted.bam \
-      OUTPUT=STRAIN.dedup.bam METRICS_FILE=STRAIN.dedup.metrics \
+    qsub -l mem=2gb -I # this will span a new process on a new machine, 
+    module load picard
+    java -Xmx2g -jar $PICARD/MarkDuplicates.jar I=STRAIN.sorted.bam \
+      O=STRAIN.dedup.bam METRICS_FILE=STRAIN.dedup.metrics \
       CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
 
 Then identify Intervals around variants
 
-    $ java -Xmx3gb -jar GATK/GenomeAnalysisTK.jar -T RealignerTargetCreator \
+    module load GATK # this will set the $GATK variable
+    # which points to the jar file for java
+    java -Xmx2g -jar $GATK -T RealignerTargetCreator \
      -R genome/Saccharomyces_cerevisiae.fa \
      -o STRAIN.intervals -I STRAIN.dedup.bam
 
 Then realign based on these intervals
 
-    $ java -Xmx3gb -jar GATK/GenomeAnalysisTK.jar -T IndelRealigner \
+    java -Xmx2g -jar $GATK -T IndelRealigner \
      -R genome/Saccharomyces_cerevisiae.fa \
      -targetIntervalsSTRAIN.intervals -I STRAIN.dedup.bam -o STRAIN.realign.bam
 
 ---
 #SAMtools and VCFtools to call SNPs
-
-    $ samtools mpileup -D -S -gu -f genome/Saccharomyces_cerevisiae.fa ABC.bam | \
+ 
+    module load samtools
+    # this generates a BCF file which is the raw set of SNPs called
+    samtools mpileup -D -S -gu -f genome/Saccharomyces_cerevisiae.fa ABC.bam | \
      bcftools view -bvcg - > ABC.raw.bcf
-    $ bcftools view ABC.raw.bcf | vcfutils.pl varFilter -D100 > ABC.filter.vcf
+    # convert this BCF file into VCF but first filter by max-depth to remove repeats
+    bcftools view ABC.raw.bcf | vcfutils.pl varFilter -D100 > ABC.filter.vcf
 
 ---
 #GATK to call SNPs
 
     # run GATK with 4 threads (-nt)
     # call SNPs only (-glm, would specific INDEL for Indels or can ask for BOTH)
-    $ java -Xmx3gb -jar GenomeAnalysisTKLite.jar -T UnifiedGenotyper \
+    # here is a script you could submit with qsub, by saving the following lines
+    # into a file called (gatk_genotype.sh)
+    # then doing qsub -d `pwd` gatk_genotype.sh
+    # or just run the commands below by first getting a login to a cluster node
+    # with qsub -l mem=3gb -I
+
+    #PBS -l mem=3gb -N GATK
+    module load GATK
+    java -Xmx3g -jar $GATK -T UnifiedGenotyper \
       -glm SNP -I SRR527545.bam -R genome/Saccharomyces_cerevisiae.fa \
       -o SRR527545.GATK.vcf -nt 4
 
@@ -487,7 +507,9 @@ Then realign based on these intervals
 
     # run GATK with 4 threads (-nt)
     # call SNPs only (-glm, would specific INDEL for Indels or can ask for BOTH)
-    $ java -jar GenomeAnalysisTKLite.jar -T UnifiedGenotyper\
+    # same messages as the previous slide in terms of a qsub -I or qsub a script
+    module load GATK
+    java -jar $GATK -T UnifiedGenotyper\
       -glm INDEL -I SRR527545.bam \
       -R genome/Saccharomyces_cerevisiae.fa -o SRR527545.GATK_INDEL.vcf -nt 4
    
