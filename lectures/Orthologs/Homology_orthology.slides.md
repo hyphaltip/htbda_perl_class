@@ -48,6 +48,11 @@ Let's walk through the [code](https://github.com/hyphaltip/htbda_perl_class/blob
 ![SingleLnkage](images/Single_Linkage1.gif)
 
 ---
+#Code up single-linkage
+
+Let's look at some [code](https://github.com/hyphaltip/htbda_perl_class/blob/master/examples/Orthologs/single_linkage.pl).
+
+---
 #Ortholog finding
 
 * Other automated tools include
@@ -58,8 +63,10 @@ Let's walk through the [code](https://github.com/hyphaltip/htbda_perl_class/blob
 ---
 #Running OrthoMCL
 
-Requires use of database (mysql), BLAST, some Perl modules, and the MCL program
-
+* Requires use of database (mysql), BLAST, some Perl modules, and the MCL program
+* BLAST of all proteomes against each other (one big BLAST run)
+* parse output
+* Run clustering
 
 ---
 #Lets run OrthoMCL
