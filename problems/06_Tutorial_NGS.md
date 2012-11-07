@@ -104,7 +104,7 @@ with the GFF for the genome to determine which SNPs are in coding
 regions.  Read up on
 [BEDTools](http://code.google.com/p/bedtools/). The genome annotation in GFF is available
 in the folder where the genome was downloaded from [SGD](http://yeastgenome.org).
-
+ 
 9. Open the genome file for Saccharomces in IGV.  Then add the GFF
 file as annotation track. Then BAM file, and VCF file in IGV to view
 the SNPs in context of the gene annotation and the read-depth
