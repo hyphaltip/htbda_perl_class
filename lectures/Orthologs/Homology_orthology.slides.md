@@ -68,6 +68,17 @@ Let's look at some [code](https://github.com/hyphaltip/htbda_perl_class/blob/mas
 * parse output
 * Run clustering
 
+
+---
+#OrthoMCL
+
+![F1](images/orthomcl_F1.jpg)
+
+---
+#OrthoMCL
+
+![F1](images/orthomcl_F2.jpg)
+
 ---
 #Lets run OrthoMCL
 
