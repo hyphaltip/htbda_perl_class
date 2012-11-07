@@ -489,7 +489,7 @@ Then realign based on these intervals
 #flagstats after Deduplicate reads 
 
     3343010 + 0 in total (QC-passed reads + QC-failed reads)
-    28822 + 0 duplicates
+    28822 + 0 duplicates  <-----
     3304818 + 0 mapped (98.86%:-nan%)
     3343010 + 0 paired in sequencing
     1671505 + 0 read1
@@ -575,8 +575,8 @@ These refer to many combinations of information. Mapping quality (MQ),
 Homopolymer run length (HRun), Quality Score of variant, strand bias
 (too many reads from only one strand), etc.
 
-    -T VariantFiltration -o SRR527545.GATK_filtered.vcf
-    --variant SRR527545.GATK.vcf \
+    -T VariantFiltration -o SRR527545.GATK_filtered.vcf \
+    --variant SRR527545.GATK.vcf -R genome/Saccharomyces.fa \
     --clusterWindowSize 10  -filter "QD<8.0" -filterName QualByDepth \
     -filter "MQ>=30.0" -filterName MapQual \
     -filter "HRun>=4" -filterName HomopolymerRun \
