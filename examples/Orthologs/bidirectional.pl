@@ -22,7 +22,6 @@ while (<$fh>) {
 
 my %BBD;
 for my $query ( keys %combos ) {
-
   my ($qsp,$qgene) = split(/\|/,$query);
   for my $species ( keys %{$combos{$query}} ) {
     # get the top hit -- insure it is the best by sorting them
