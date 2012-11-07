@@ -16,20 +16,28 @@
 ---
 #Orthologs and Paralogs
 
-![Orthologs](orthologs.gif)
+![Orthologs](images/orthologs.gif)
 
 ---
 #Trees can help resolve relationships
 
+Best hits can sometimes be wrong (B) though it can be resolved with phylogenetics.
+
+![RIO](images/RIO_F1.jpeg)
 
 ---
 #Reciprocal Searches
 
 * Bi-directional or Reciprocal BLAST
 
+![BRH](images/BRH.png)
 
 ---
 #Implement Bidirectional
+
+Method to find best top hit in one direction and the reverse.
+
+Let's walk through the [code](https://github.com/hyphaltip/htbda_perl_class/blob/master/examples/Orthologs/bidirectional.pl)
 
 ---
 #Clustering
@@ -37,10 +45,7 @@
 * Lumping genes together based on similarity linkage
 * Single-linkage means if there is a link between A-B then they are in a cluster
 
-
----
-#Implement single-linkage clustering
-
+![SingleLnkage](images/Single_Linkage1.gif)
 
 ---
 #Ortholog finding
@@ -49,3 +54,16 @@
 * OrthoMCL
     * Does Clustering with a tool called MCL (Markov Clustering)
     * Corrects for paralogs
+
+---
+#Running OrthoMCL
+
+Requires use of database (mysql), BLAST, some Perl modules, and the MCL program
+
+
+---
+#Lets run OrthoMCL
+
+See script for running OrthoMCL [here](https://github.com/hyphaltip/htbda_perl_class/blob/master/examples/Orthologs/run_orthomcl.sh).
+
+You will need to modify it slightly to specify a database name that is unique for you
