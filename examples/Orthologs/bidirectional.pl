@@ -31,10 +31,10 @@ for my $query ( keys %combos ) {
     next if exists $BBD{$query}->{$hit}; # skip if we have already seen this pair
     my ($hsp,$hgname) = split(/\|/,$hit);
     next if $qsp eq $hsp; # skip in cases of comparing self to self
-    # get the top hit in the other direction
-    my ($reciprocal) = sort { $a->[1] <=> $b->[1] } @{$combos{$hit}->{$hsp}};
+    # get the top hit in the other direction (in the query species)
+    my ($reciprocal) = sort { $a->[1] <=> $b->[1] } @{$combos{$hit}->{$qsp}};
 
-    if ( $firsthit->[0] eq $reciprocal->[0]) {
+    if ( $query eq $reciprocal->[0]) {
       print join("\t", $query, $hit, $evalue), "\n";
 
       # let's record this pair as finished so we don't print it out again
