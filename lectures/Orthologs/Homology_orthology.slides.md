@@ -84,4 +84,6 @@ Let's look at some [code](https://github.com/hyphaltip/htbda_perl_class/blob/mas
 
 See script for running OrthoMCL [here](https://github.com/hyphaltip/htbda_perl_class/blob/master/examples/Orthologs/run_orthomcl.sh).
 
+Here is a link to the [OrthoMCL manual](http://orthomcl.org/common/downloads/software/v2.0/tmp/orthomclSoftware-v2.0.3/doc/OrthoMCLEngine/Main/UserGuide.txt).
+
 You will need to modify it slightly to specify a database name that is unique for you
