@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-
+# run with perl single_linkage.pl small.block.dat
 # assume this is BLAST table format
 my $in = shift || "need an input table\n";
 my $cutoff_evalue = 1e-5;
