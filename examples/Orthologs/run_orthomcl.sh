@@ -6,6 +6,9 @@ module load ncbi-blast
 # copy the config file from the shared location
 if [ ! -f orthomcl.config ]; then
  cp /srv/projects/db/GEN220/orthomcl/orthomcl.config .
+  echo "NOW YOU NEED TO EDIT THE CONFIG FILE TO SET THE DBNAME to orthomcl_SOMETHING where SOMETHING is your unique name for the db";
+  echo "You will also need to edit this file to replace that DB name below"
+exit;
 done
 # Grab the password from the file
 PASS=`grep dbPassword orthomcl.config | awk -F= '{print $2}'`
