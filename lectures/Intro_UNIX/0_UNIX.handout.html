@@ -14,12 +14,106 @@
 <body>
 <h1 id="an-introduction-to-unix">An Introduction to UNIX</h1>
 <p><a href="http://lab.stajich.org">Jason Stajich</a><br />UC Riverside<br /><span class="citation" data-cites="hyphaltip">[@hyphaltip]</span>(http://twitter.com/hyphaltip) <span class="citation" data-cites="stajichlab">[@stajichlab]</span>(http://twitter.com/stajichlab)</p>
-<h1 id="listing-the-files">Listing the files</h1>
-<h1 id="home">Home</h1>
+<h1 id="using-the-terminal">Using the terminal</h1>
+<ul>
+<li>In the Applications / Utilities Folder</li>
+<li>Are other programs useful with add-ons (<a href="http://iterm.sourceforge.net/">iTerm</a>)</li>
+<li>Can copy and paste within the terminal or from other programs <img src="images/Terminal.png" alt="terminal" /> --- #Command prompt</li>
+<li>This is where all the work happens</li>
+<li>The prompt will have a '$' or a '%' usually</li>
+<li><p>Sometimes the prompt will include the current directory you are in</p>
+<pre><code>me@biocluster:/data/squid/ $
+john@tombstone:/home/john %</code></pre></li>
+<li>It can be customized so that colors, extra notifications can show up</li>
+<li><p>Running a program on the command line by typing and hitting enter</p>
+<pre><code>$ ls</code></pre></li>
+</ul>
+<h1 id="listing-contents">Listing contents</h1>
+<ul>
+<li>Listing files in a directory with <code>ls</code></li>
+<li>Other options <code>ls -l</code> for long listing</li>
+<li>The long listint can give you information on how big the files are too</li>
+<li><code>ls -lt</code> shows listing ordered by date</li>
+<li><p><code>man ls</code> will give you more information on</p>
+<pre><code>$ cd /srv/projects/db/ncbi/current
+$ ls -l
+total 96376844
+-rw-r--r-- 1 jenkins-agent staff 43320522376 Feb  1  2013 est_others
+-rw-r--r-- 1 jenkins-agent staff    17975066 Feb  1  2013 est_others-download.log
+-rw-r--r-- 1 jenkins-agent staff  1364382091 Feb  1  2013 est_others.00.nhr
+-rw-r--r-- 1 jenkins-agent staff    92999188 Feb  1  2013 est_others.00.nin
+-rw-r--r-- 1 jenkins-agent staff    61999408 Feb  1  2013 est_others.00.nnd
+-rw-r--r-- 1 jenkins-agent staff      242236 Feb  1  2013 est_others.00.nni
+-rw-r--r-- 1 jenkins-agent staff   276087180 Feb  1  2013 est_others.00.nsd
+-rw-r--r-- 1 jenkins-agent staff     6009232 Feb  1  2013 est_others.00.nsi
+-rw-r--r-- 1 jenkins-agent staff  1052297716 Feb  1  2013 est_others.00.nsq
+-rw-r--r-- 1 jenkins-agent staff  1179327368 Feb  1  2013 est_others.01.nhr</code></pre></li>
+</ul>
+<h1 id="moving-and-renaming-files">Moving and renaming files</h1>
+<ul>
+<li>Moving files or directories to new locations</li>
+<li>Renaming files is just moving them to a new name</li>
+<li><p>Multiple things can be moved into a directory as long as the directory is the last argument</p>
+<pre><code>$ touch testfil1 # make an empty file called &#39;testfil1&#39;
+$ mv testfil1 testfile1 # rename the filename
+$ mkdir newdir # make a new directory
+$ mv testfile1 newdir # put the file in a directory
+$ touch testfile2 testfile3 # make 2 more files
+$ mv testfile2 testfile3 newdir # move them both into the directory
+# mv newdir oldir # rename the newdir to &#39;oldir&#39;
+# mkdir another_dir # make a new folder
+# mv oldir another_dir # move the &#39;oldir&#39; folder into this new dir</code></pre></li>
+</ul>
+<h1 id="shell-expansions-and-using-the">Shell expansions and using the *</h1>
+<ul>
+<li>The shell can expand file or directory names for you</li>
+<li><p>If you wanted to get all the files that started with 'test' and move them into a folder</p>
+<pre><code>$ touch test1 test2 test_ing test.out notes
+$ mkdir my_tests
+$ ls
+my_tests notes  test.out  test1  test2  test_ing  testfile1
+$ mv test* my_tests
+$ ls
+my_tests  notes
+$ ls my_tests
+test.out  test1  test2  test_ing  testfile1</code></pre></li>
+<li>The * means match anything, 0-multiple times</li>
+<li><p>Other options '?' mean match one chacter, 0 or 1 times</p></li>
+</ul>
+<h1 id="some-reminders-gotchas">Some reminders / gotchas</h1>
+<ul>
+<li>UNIX is case sensitive</li>
+<li><p>spaces in filenames and folders are annoying - to use them you need to Escape them with a  or enclose in quotes</p>
+<pre><code>$ mkdir &quot;The End&quot;
+$ rmdir The End # this will fail
+$ rmdir The\ End #or
+$ rmdir &quot;The End&quot;</code></pre></li>
+</ul>
 <h1 id="reading-files-more-or-less">Reading files: more or less</h1>
-<h1 id="pico">pico</h1>
-<h1 id="emacs">emacs</h1>
+<ul>
+<li>seeing contents of files with <code>more</code> or <code>less</code></li>
+<li>page at a time view</li>
+<li>search within, use the '/' to search</li>
+</ul>
+<h1 id="command-line-programs">Command line programs</h1>
+<ul>
+<li>anatomy of running a program</li>
+<li><p>the program name comes first. It can be just the name <code>ls</code> or the full path to the program <code>/bin/ls</code></p>
+<pre><code>$ ls
+$ /bin/ls</code></pre></li>
+<li>arguments to the program come next. Some can be named with an argument like <code>program -i input -o output</code></li>
+<li>or the program can just have a set of arguments like <code>cat file1 file2 file3</code></li>
+<li><p>Instead of having output be printed to the screen it can be captured to a file</p>
+<pre><code>$ ls &gt; listing
+$ more listing
+$ cat file1 file2 file3 &gt; all_files</code></pre></li>
+</ul>
 <hr />
-<h1 id="on-mac---try-textedit-or-textwrangler">On Mac - try TextEdit or TextWrangler</h1>
+<h1 id="first-homework">First homework</h1>
+<ul>
+<li>Not a graded homework, but is to practice UNIX making files, reading them, creating directories, navigating</li>
+<li>read the UNIX To the Rescue chapter on UNIX</li>
+<li>If you didn't buy the book yet Read 'Part 1' on the UNIX and Perl primer <a href="http://korflab.ucdavis.edu/Unix_and_Perl/unix_and_perl_v3.1.1.html">http://korflab.ucdavis.edu/Unix_and_Perl/unix_and_perl_v3.1.1.html</a>.</li>
+</ul>
 </body>
 </html>
