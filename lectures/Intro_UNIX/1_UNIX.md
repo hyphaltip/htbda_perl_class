@@ -120,7 +120,12 @@ numerically, by the 60 minute time point.
 * use `uniq` to generate a uniq list from a (possibly) redundant one
 * `uniq -c` will print the unique list but show you how many times a
   string comes up
-* echo "pickle" >
+* the list must be sorted that you pass to uniq - it is only comparing
+  adjacent lines to redundancy
+* Here's a collection of 100 random numbers
+  `/shared/gen220/data_files/misc/rand.txt` - let's look at the uniq
+  list of how many times each occurs
+* `sort -n /shared/gen220/data_files/misc/rand.txt | uniq -c`
 
 ---
 #awk
@@ -132,7 +137,18 @@ numerically, by the 60 minute time point.
 * `awk '{print $1}' filename` will print column one, it assumes
   whitespace delimited
 * `awk -F, '{print $1}' filename` will now separate columns by commas
-* `awk '{print $1}' /shared/gen220/data_files/reports/K12-vs-O157.FASTA.tab | uniq -c | more`
+* `awk '{print $3}' /shared/gen220/data_files/misc/heroes_and_villans.txt`
+
+---
+#Putting it together
+
+
+* How many Heroes and how many Villans are there in the
+  `/shared/gen220/data_files/misc/heroes_and_villans.txt` file?
+* The following is output of a BLAST/FASTA sequence search report. We
+  will talk more about this format but can you determine how many
+  unique genes were searched in the query file (represented by Column 1).
+  `/shared/gen220/data_files/reports/K12-vs-O157.FASTA.tab`
 
 ---
 #Permissions
@@ -223,3 +239,14 @@ smaller files but can take longer to run
 
 * Later when we do Perl the same thing will apply except the top of
   the script will be `#!/usr/bin/perl`
+
+---
+#More on Biocluster
+
+* Several hosts we can log into. You will start on biocluster
+* When we run analyses will need to run these on `owl`
+* `ssh YOURNAME@owl.ucr.edu`
+* for even long running jobs we will need to submit these to a job queue
+* This requires writing your steps as a bash script like discussed before
+* Then using the command `qsub`. Lots more info on this on the biocluster FAQ on the Facilities page.
+ 
