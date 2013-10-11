@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -13,88 +11,80 @@
 </head>
 <body>
 <h1 id="an-introduction-to-unix">An Introduction to UNIX</h1>
-<p><a href="http://lab.stajich.org">Jason Stajich</a><br />UC Riverside<br /><span class="citation" data-cites="hyphaltip">[@hyphaltip]</span>(http://twitter.com/hyphaltip) <span class="citation" data-cites="stajichlab">[@stajichlab]</span>(http://twitter.com/stajichlab)</p>
-<h1 id="using-the-terminal">Using the terminal</h1>
+<p><a href="http://lab.stajich.org">Jason Stajich</a><br>UC Riverside<br><a href="http://twitter.com/hyphaltip">@hyphaltip</a> <a href="http://twitter.com/stajichlab">@stajichlab</a></p>
+<table>
+<col style="width: 3%" /><thead>
+<tr class="header">
+<th style="text-align: left;">#Concepts to cover today * Using the terminal on your mac laptop * The command-line interface to UNIX * Directories &amp; Files * Logging into biocluster * Running programs --- #Using the terminal * In the Applications / Utilities Folder * Are other programs useful with add-ons (<a href="http://iterm.sourceforge.net/">iTerm</a>) * Can copy and paste within the terminal or from other programs <img src="images/Terminal.png" alt="terminal"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">#Command prompt * This is where all the work happens * The prompt will have a '$' or a '%' usually * Sometimes the prompt will include the current directory you are in</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">me@biocluster:/data/squid/ $ john@tombstone:/home/john %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">* It can be customized so that colors, extra notifications can show up * Running a program on the command line by typing and hitting enter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">$ ls</td>
+</tr>
+</tbody>
+</table>
+<h1 id="directories-folders">Directories (folders)</h1>
 <ul>
-<li>In the Applications / Utilities Folder</li>
-<li>Are other programs useful with add-ons (<a href="http://iterm.sourceforge.net/">iTerm</a>)</li>
-<li>Can copy and paste within the terminal or from other programs <img src="images/Terminal.png" alt="terminal" /> --- #Command prompt</li>
-<li>This is where all the work happens</li>
-<li>The prompt will have a '$' or a '%' usually</li>
-<li><p>Sometimes the prompt will include the current directory you are in</p>
-<pre><code>me@biocluster:/data/squid/ $
-john@tombstone:/home/john %</code></pre></li>
-<li>It can be customized so that colors, extra notifications can show up</li>
-<li><p>Running a program on the command line by typing and hitting enter</p>
-<pre><code>$ ls</code></pre></li>
+<li><p>Listing files in a directory</p>
+<pre><code>$ ls
+$ ls -l</code></pre></li>
+<li><p>making a directory</p>
+<pre><code>$ mkdir mynewdir</code></pre></li>
+<li><p>changing directories</p>
+<pre><code>$ cd mynewdir # go in
+$ cd ..       # go back
+$ cd ~        # go HOME
+$ cd          # go HOME
+$ cd ../mynewdir/text # go to another directory</code></pre></li>
+<li><p>removing directories</p>
+<pre><code>$ rmdir mynewdir</code></pre></li>
 </ul>
-<h1 id="listing-contents">Listing contents</h1>
+<table>
+<col style="width: 3%" /><thead>
+<tr class="header">
+<th style="text-align: left;">#Listing contents * Listing files in a directory with <code>ls</code> * Other options <code>ls -l</code> for long listing * The long listint can give you information on how big the files are too * <code>ls -lt</code> shows listing ordered by date * <code>man ls</code> will give you more information on $ cd /srv/projects/db/ncbi/current $ ls -l total 96376844 -rw-r--r-- 1 jenkins-agent staff 43320522376 Feb 1 2013 est_others -rw-r--r-- 1 jenkins-agent staff 17975066 Feb 1 2013 est_others-download.log -rw-r--r-- 1 jenkins-agent staff 1364382091 Feb 1 2013 est_others.00.nhr -rw-r--r-- 1 jenkins-agent staff 92999188 Feb 1 2013 est_others.00.nin -rw-r--r-- 1 jenkins-agent staff 61999408 Feb 1 2013 est_others.00.nnd -rw-r--r-- 1 jenkins-agent staff 242236 Feb 1 2013 est_others.00.nni -rw-r--r-- 1 jenkins-agent staff 276087180 Feb 1 2013 est_others.00.nsd -rw-r--r-- 1 jenkins-agent staff 6009232 Feb 1 2013 est_others.00.nsi -rw-r--r-- 1 jenkins-agent staff 1052297716 Feb 1 2013 est_others.00.nsq -rw-r--r-- 1 jenkins-agent staff 1179327368 Feb 1 2013 est_others.01.nhr --- #Files * Files are the oh of what will work with in UNIX * Can create them in editors and many other programs * The command <code>touch</code> will create an empty file * Files are the results of other programs running</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">#Moving and renaming files * Moving files or directories to new locations * Renaming files is just moving them to a new name * Multiple things can be moved into a directory as long as the directory is the last argument</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">$ touch testfil1 # make an empty file called 'testfil1' $ mv testfil1 testfile1 # rename the filename $ mkdir newdir # make a new directory $ mv testfile1 newdir # put the file in a directory $ touch testfile2 testfile3 # make 2 more files $ mv testfile2 testfile3 newdir # move them both into the directory # mv newdir oldir # rename the newdir to 'oldir' # mkdir another_dir # make a new folder # mv oldir another_dir # move the 'oldir' folder into this new dir</td>
+</tr>
+</tbody>
+</table>
+<h1 id="copying-files">Copying files</h1>
 <ul>
-<li>Listing files in a directory with <code>ls</code></li>
-<li>Other options <code>ls -l</code> for long listing</li>
-<li>The long listint can give you information on how big the files are too</li>
-<li><code>ls -lt</code> shows listing ordered by date</li>
-<li><p><code>man ls</code> will give you more information on</p>
-<pre><code>$ cd /srv/projects/db/ncbi/current
-$ ls -l
-total 96376844
--rw-r--r-- 1 jenkins-agent staff 43320522376 Feb  1  2013 est_others
--rw-r--r-- 1 jenkins-agent staff    17975066 Feb  1  2013 est_others-download.log
--rw-r--r-- 1 jenkins-agent staff  1364382091 Feb  1  2013 est_others.00.nhr
--rw-r--r-- 1 jenkins-agent staff    92999188 Feb  1  2013 est_others.00.nin
--rw-r--r-- 1 jenkins-agent staff    61999408 Feb  1  2013 est_others.00.nnd
--rw-r--r-- 1 jenkins-agent staff      242236 Feb  1  2013 est_others.00.nni
--rw-r--r-- 1 jenkins-agent staff   276087180 Feb  1  2013 est_others.00.nsd
--rw-r--r-- 1 jenkins-agent staff     6009232 Feb  1  2013 est_others.00.nsi
--rw-r--r-- 1 jenkins-agent staff  1052297716 Feb  1  2013 est_others.00.nsq
--rw-r--r-- 1 jenkins-agent staff  1179327368 Feb  1  2013 est_others.01.nhr</code></pre></li>
+<li>the command <code>cp</code> for copying</li>
+<li>If you want to copy a whole directory use <code>cp -r</code> for recursive copy</li>
+<li>Tools like <code>rsync</code> can copy but are smart enough to only copy what's changed</li>
 </ul>
-<h1 id="moving-and-renaming-files">Moving and renaming files</h1>
-<ul>
-<li>Moving files or directories to new locations</li>
-<li>Renaming files is just moving them to a new name</li>
-<li><p>Multiple things can be moved into a directory as long as the directory is the last argument</p>
-<pre><code>$ touch testfil1 # make an empty file called &#39;testfil1&#39;
-$ mv testfil1 testfile1 # rename the filename
-$ mkdir newdir # make a new directory
-$ mv testfile1 newdir # put the file in a directory
-$ touch testfile2 testfile3 # make 2 more files
-$ mv testfile2 testfile3 newdir # move them both into the directory
-# mv newdir oldir # rename the newdir to &#39;oldir&#39;
-# mkdir another_dir # make a new folder
-# mv oldir another_dir # move the &#39;oldir&#39; folder into this new dir</code></pre></li>
-</ul>
-<h1 id="shell-expansions-and-using-the">Shell expansions and using the *</h1>
-<ul>
-<li>The shell can expand file or directory names for you</li>
-<li><p>If you wanted to get all the files that started with 'test' and move them into a folder</p>
-<pre><code>$ touch test1 test2 test_ing test.out notes
-$ mkdir my_tests
-$ ls
-my_tests notes  test.out  test1  test2  test_ing  testfile1
-$ mv test* my_tests
-$ ls
-my_tests  notes
-$ ls my_tests
-test.out  test1  test2  test_ing  testfile1</code></pre></li>
-<li>The * means match anything, 0-multiple times</li>
-<li><p>Other options '?' mean match one chacter, 0 or 1 times</p></li>
-</ul>
-<h1 id="some-reminders-gotchas">Some reminders / gotchas</h1>
-<ul>
-<li>UNIX is case sensitive</li>
-<li><p>spaces in filenames and folders are annoying - to use them you need to Escape them with a  or enclose in quotes</p>
-<pre><code>$ mkdir &quot;The End&quot;
-$ rmdir The End # this will fail
-$ rmdir The\ End #or
-$ rmdir &quot;The End&quot;</code></pre></li>
-</ul>
-<h1 id="reading-files-more-or-less">Reading files: more or less</h1>
-<ul>
-<li>seeing contents of files with <code>more</code> or <code>less</code></li>
-<li>page at a time view</li>
-<li>search within, use the '/' to search</li>
-</ul>
+<table>
+<col style="width: 3%" /><thead>
+<tr class="header">
+<th style="text-align: left;">#Shell expansions and using the * * The shell can expand file or directory names for you * If you wanted to get all the files that started with 'test' and move them into a folder $ touch test1 test2 test_ing test.out notes $ mkdir my_tests $ ls my_tests notes test.out test1 test2 test_ing testfile1 $ mv test* my_tests $ ls my_tests notes $ ls my_tests test.out test1 test2 test_ing testfile1 * The * means match anything, 0-multiple times * Other options '?' mean match one chacter, 0 or 1 times --- #Read the manual * <code>man</code> is a built in utility that prints out help and usage for programs * very useful to find out what a tool does or how to use it * <code>man man</code> tells you how to use 'man' NAME man - an interface to the on-line reference manuals SYNOPSIS man [-C file] [-d] [-D] [--warnings[=warnings]] [-R encoding] [-L locale] [-m system[,...]] [-M path] [-S list] [-e extension] [-i|-I] [--regex|--wildcard] [--names-only] [-a] [-u] [--no-subpages] [-P pager] [-r prompt] [-7] [-E encoding] [--no-hyphenation] [--no-justification]<br> DESCRIPTION man is the system's manual pager. Each page argument given to man is normally the name of a program, utility or function. The manual page associated with each of these arguments is then found and displayed. A section, if provided, will direct man to look only in that section of the manual. The default action is to search in all of the available sections, following a pre-defined order and to show only the first page found, even if page exists in several sections. --- #Some reminders / gotchas * UNIX is case sensitive * spaces in filenames and folders are annoying - to use them you need to Escape them with a  or enclose in quotes $ mkdir &quot;The End&quot; $ rmdir The End # this will fail $ rmdir The End #or $ rmdir &quot;The End&quot; --- #Home * This is your homebase directory, when you login you will end up here * <code>cd</code> with no other arguments will take you here * You'll have some configuration files and other things stored here * For this class most of your work will take place in this folder --- #Reading files: more or less * seeing contents of files with <code>more</code> or <code>less</code> * page at a time view * search within, use the '/' to search</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">#Creating files and Editors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* Creating text files with editors in UNIX - this is what you have to do to program. * Typically used tools are <code>vi</code> <code>emacs</code> <code>nano</code> * On Mac - try TextEdit or TextWrangler * Practice using the text editor</td>
+</tr>
+</tbody>
+</table>
 <h1 id="command-line-programs">Command line programs</h1>
 <ul>
 <li>anatomy of running a program</li>
@@ -108,7 +98,7 @@ $ /bin/ls</code></pre></li>
 $ more listing
 $ cat file1 file2 file3 &gt; all_files</code></pre></li>
 </ul>
-<hr />
+<hr>
 <h1 id="first-homework">First homework</h1>
 <ul>
 <li>Not a graded homework. Your assignment is to practice in UNIX making files, reading them, creating directories, navigating</li>

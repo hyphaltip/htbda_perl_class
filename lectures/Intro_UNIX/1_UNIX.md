@@ -6,6 +6,8 @@
 * [TreeBear](http://jura.wi.mit.edu/bio/education/bioinfo/pages/scripts/unix_cheat_sheet.html)
 * [Linux Cheat Sheet](http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf)
 * [FOSS Linux Cheat Sheet](http://files.fosswire.com/2007/08/fwunixref.pdf)
+* [tips for working fast in UNIX](http://javarevisited.blogspot.sg/2011/03/unix-command-tutorial-working-fast-in.html)
+* [MSU unix class](https://github.com/JorySchossau/shell/blob/master/shell_cheatsheet.md)
   
 ---
 #Logging into biocluster
@@ -174,7 +176,7 @@ numerically, by the 60 minute time point.
 * `find /shared/gen220 -name '*.gbk'` - find all the files that end in
   .gbk in the shared folder
 * `find . -name '
-
+* Some more tips on how to use find are [here](http://javarevisited.blogspot.com/2011/03/10-find-command-in-unix-examples-basic.html)
 ---
 #Compression
 
