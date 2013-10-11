@@ -1,18 +1,39 @@
-
+PANDOC=pandoc --columns=80  -s --mathjax --slide-level=2  
+SLIDY=$(PANDOC) -t slidy
 LANDSLIDE=landslide
-FLAGS=-t ../themes/luckywhite -r -i
+#SLIDES=$(PANDOC) --highlight-style tango --css=slides.css -w dzslides 
+FLAGS=-t ../themes/luckywhite -r -i --math-output 
+SLIDES=$(LANDSLIDE) $(FLAGS)
+HANDOUT=$(PANDOC) --highlight-style tango --css=text.css -w html5 
 
-all: $(patsubst %.md,%.html,$(wildcard *.md)) Makefile
+####################################################################
 
-#pdf: $(patsubst %.md,%.pdf,$(wildcard *.md)) Makefile
+# clear out all suffixes
+.SUFFIXES:
+# list only those we use
+.SUFFIXES: .html .md
 
-%.html: %.md
-	$(LANDSLIDE) $(FLAGS) $< -d $@
+all: slides pdf
 
-#%.pdf: %.md
-#	$(LANDSLIDE) -t ../themes/luckywhite $< -d $@
+slides: $(patsubst %.md,%.slides.html,$(wildcard *.md))
+
+handout: $(patsubst %.md,%.handout.html,$(wildcard *.md))
+
+pdf: $(patsubst %.md,%.pdf,$(wildcard *.md))
+
+
+%.slides.html: %.md
+	$(SLIDES) $< -d $@
+
+
+%.handout.html: %.md
+	$(HANDOUT) $< -o $@
+
+
+%.pdf: %.md
+	$(LANDSLIDE) $< -d $@
+#	$(PANDOC) $< -o $@
+
 
 clean:
-	rm -f *.html
-
-
+	rm -f *.pdf *.html *.class

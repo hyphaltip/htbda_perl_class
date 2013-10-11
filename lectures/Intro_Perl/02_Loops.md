@@ -23,12 +23,14 @@ if( *CONDITIONAL* ) {
 ---
 #The Truth is out there
 
-* Operators equals `==`, less than <, greater than >, less than or equal to <=, greater than or equal to >=   
+* Operators equals `==`, less than <, greater than >, less than or equal to <=, greater than or equal to >= 
 * ! means take opposite of
 * For strings equals is with the `eq`, less than is `lt`, and greater than `gt` 
 * Numbers, except for 0 are always true, undefined is always false
 * ? :, is a special operator for combing, you can use it to combine a test and performing an operation depending on if the test is true or false. Here we test if a value is bigger than 10, if so set it to 'yes' otherwise set it to 'no'
-** `my $is_large = ($val > 10 ? 'yes' : 'no');`
+
+		!perl
+		my $is_large = ($val > 10 ? 'yes' : 'no');
 
 ---
 #One liners
@@ -42,35 +44,46 @@ If statements can be combined onto a single line and can include or not include 
     $i++;
     print "$i is even\n" if($i % 2 == 0);
 
+
 ---
 #Logically speaking
+
+To combine two statements when testing truth you need these logic operators
+* && : and
+* || : or
+* ! : not
 
 * True && True = True
 * True && False = False
 * True || True = True
 * True || False = True
-* ! ( True ) = False
-* ! ( False) = True
-* ! ( $x && $y ) = !$x || ! $y
-* ! ( $x || $y ) = !$x && ! $y
+* `! ( True ) = False`
+* `! ( False) = True`
+
+How ! can be applied - this is how logic when you apply a `!`
+
+* `! ( $x && $y ) = !$x || ! $y`
+* `! ( $x || $y ) = !$x && ! $y`
 
 ---
 #if and unless
 
-`if` will test if something is true and execute the code block. `unless` will test if something is false and then execute the code block.
+* `if` will test if something is true and execute the code block.
+* `unless` will test if something is false and then execute the code block.
 
-    !perl
-    if( $color eq 'red' || $color eq 'yellow' || $color eq 'orange' ) {
-     print "The color is warm\n";
-    } elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
-     print "The color is cool\n";
-    }
+		!perl
+		if( $color eq 'red' || $color eq 'yellow' || $color eq 'orange' ) {
+			print "The color is warm\n";
+		} elsif( $color eq 'blue' || $color eq 'green' || $color eq 'purple' ) {
+			print "The color is cool\n";
+		}
 
 Can also be written (partially) as
 
-    unless( $color eq 'red' && $color eq 'yellow' || $color eq 'orange' ) {
-     print "The color is cool\n";
-    }
+    !perl
+	unless( $color eq 'red' && $color eq 'yellow' || $color eq 'orange' ) {
+		print "The color is cool\n";
+	}
 
 ---
 #Some logic
@@ -93,23 +106,24 @@ Test if two strings are equal
 ---
 #Loop-de-Loop
 
-`while` loops will execute a block of code as long as the conditional is true
+* `while` loops will execute a block of code as long as the conditional is true
+* `until` is also a way to loop, but will continue as long as the 
 
-`until` is also a way to loop, but will continue as long as the 
 
-    !perl
-    my $n = 0;
-    while($n < 10) {
-     print "n is $n\n";
-     $n++;
-    }
-    $n = 0;
-    until($n > 10) {
-     print "n is $n\n";
-     $n++;
-    }
+        !perl
+		my $n = 0;
+		while($n < 10) {
+			print "n is $n\n";
+			$n++;
+		}
+		$n = 0;
+		until($n > 10) {
+			print "n is $n\n";
+			$n++;
+		}
+
 ---
-#For looping
+#For loops
 
 For loops, much like while loops. There are 3 components. The initialization, the test, and the iteration.
 
@@ -133,7 +147,7 @@ This could also be written as a while loop.
 ---
 #Loop control
 
-Can Short-circuit a loop with `last`  
+Can Short-circuit a loop with `last` if you want to exit a loop completely.
 
     !perl
     my $lightning = 0;
@@ -151,25 +165,28 @@ Can Short-circuit a loop with `last`
 ---
 #Continuation
 
-Can also continue a loop with `next`, by stopping and going back to the top of the loop.
+* When you want to continue a loop, starting back at the top, use `next`.
+* Will stop where you are in the innermost loop and going back to the
+  top of the loop.
 
-    !perl
-    while( <DATA> ) {
-       my $row = $_;
-       chomp;
-       if( substr($row,0,1) eq '#' ) {
-       	   # this data has a comment, let's skip the lines starting with #
-           next;
-       }
-    }
+        !perl
+		while( <DATA> ) {
+			my $row = $_;
+			chomp;
+			if( substr($row,0,1) eq '#' ) {
+			# this data has a comment, let's skip the lines starting
+			# with #
+			 next;
+			}
+		}
 
 ---
 #Iterate through items in a list
 
-Iterate through items in a list with either `foreach` or `for`
+You can iterate through items in a list with either `foreach` or `for`
 
     !perl
-    my @array = qw(A B X Y Z);
+	my @array = qw(A B X Y Z);
     foreach my $item ( @array ) {
      print "$item\n";
     }
@@ -178,7 +195,8 @@ Iterate through items in a list with either `foreach` or `for`
      print "$array[$i]\n";
     }
 
-Could also be done with a while loop, just increment counter as seen in the Loop-de-loop slide
+Could also be done with a while loop, just increment counter as seen
+in the Loop-de-loop slide
 
 ---
 #Scope 
@@ -200,7 +218,8 @@ scope.
     print "Toy is $toy outside the if\n";
 
 
-If you do not declare the variable inside the loop, you can end up updating the value. Notice the missing 'my' inside the if block.
+If you do not declare the variable inside the loop, you can end up
+updating the value. Notice we did not use `my` inside the if block.
 
     !perl
     my $toy = "Truck";
@@ -222,9 +241,12 @@ In some cases you may have seen
     print "hello\n";
     print("hello\n");
 
-Both are valid, Perl will let you get away without parenthesees in many cases. However if it is ambiguous it can cause problems. For example
+Both are valid, Perl will let you get away without parenthesees in
+many cases. However if it is ambiguous it can cause problems. For
+example
 
-    use strict;
+	!perl
+	use strict;
     use warnings;
     my $str = 'AB-CD';
     print join ",", split "-", $str, "\n";
@@ -236,8 +258,8 @@ Both are valid, Perl will let you get away without parenthesees in many cases. H
 ---
 #Combining concepts
 
-Suppose you wanted to process a stream of digits and find where the '01' were.
-You could just use index to find it all the occurances.
+Suppose you wanted to process a stream of digits and find where the
+'01' were.  You could just use index to find it all the occurances.
 
 
     !perl
@@ -252,4 +274,3 @@ You could just use index to find it all the occurances.
 Note - this is not exactly how you would find specific codons in a DNA
 string because `index` is not going to respect the reading frame.
 You may need to do this with substr instead, inspecting a codon at a time.
-

@@ -117,7 +117,7 @@ How can I get help about these functions? Perldoc is your guide. You can find pe
     perldoc -f reverse
     perldoc -f index
 
-Here are the links to online [Perldoc](](http://perldoc.perl.org).
+Here are the links to online [Perldoc](http://perldoc.perl.org).
 
 * [substr](http://perldoc.perl.org/functions/substr.html)
 * [length](http://perldoc.perl.org/functions/length.html)
@@ -128,8 +128,9 @@ Here are the links to online [Perldoc](](http://perldoc.perl.org).
 ---
 #Interpolation
 
-[Interpolation](http://en.wikipedia.org/wiki/Variable_interpolation) is when a variable's value is evaluated and
-substituted, for example when you want to insert a value into a string.
+[Interpolation](http://en.wikipedia.org/wiki/Variable_interpolation)
+is when a variable's value is evaluated and substituted, for example
+when you want to insert a value into a string.
 
     !perl
     $fruit = 'apple';
@@ -149,7 +150,9 @@ This will produce
 ---
 #Naming variables
 
-Variable names must contain alphanumeric characters. You can name variables how you like, note that variables cannot start with a number, but can contain numbers. 
+Variable names must contain alphanumeric characters. You can name
+variables how you like, note that variables cannot start with a
+number, but can contain numbers.
 
     !perl
     $xyz = "ATGCAGTGA"; # not very descriptive
@@ -159,15 +162,16 @@ Variable names must contain alphanumeric characters. You can name variables how 
     $dna = "ATGCAGTAGA"; # even better
 
 * Often we name variables by their use or to describe their use.  
-* Other convention $i,$j,$k are often counters.  
-* $a and $b are special variable names in some contexts in Perl so try to avoid using these.  
+* Other convention `$i,$j,$k` are often counters. 
+* `$a` and `$b` are special variable names in some contexts in Perl so try to avoid using these.
 * Some conventions are to use underscores_to_separate_spaces or [CamelCase](http://en.wikipedia.org/wiki/CamelCase)
 
 ---
 # Numerics
 
-Numbers can be integers, floating point, scientific notation. They can be initialized and computed. 
-Strings can also be converted to numbers.
+Numbers can be integers, floating point, scientific notation. They can
+be initialized and computed.  Strings can also be converted to
+numbers.
 
     !perl
     $x = 10;
@@ -221,13 +225,13 @@ Will produce
 
 So far have shown very basic code. Without any warnings turned
 out. Only syntax or system errors will cause the program to stop
-*without* extra options turned on.  By default Perl will not warn you
-about empty or undeclared variables.  To be a **better** programmer
+without extra options turned on.  By default Perl will not warn you
+about empty or undeclared variables.  To be a better programmer
 you want to use the following best practices to write better Perl code.
 
 1. use strict
 2. use warnings
-3. use 'my' to declare variables. This declares them in a particular scope.
+3. use `my` to declare variables. This declares them in a particular scope.
 
 ---
 #Some examples of errors
@@ -352,25 +356,32 @@ Produces these results
 ---
 #Danger Will Robinson!
 
-Warnings can be useful to print when something is unexpected. One can use the `print STDERR` to print to the error stream.
+* Warnings can be useful to print when something is unexpected.
+* One can use the `print STDERR` to print to the error stream.
 
-    !perl
-    print STDERR "There was a problem in this program"
+        !perl
+		print STDERR "There was a problem in this program"
 
 I also find that using the `warn` command is much more useful.
 
     !perl
-    if( $error_condition == 1 ) {
+	if( $error_condition == 1 ) {
     	warn("There was a problem sir!\n");
     }
 
 ---
 #Kill them all
 
-Sometimes you want to exit your program. There may be an unresolvable error, or you want to just finish right there. Two commands are useful for this. 
+Sometimes you want to exit your program. There may be an unresolvable
+error, or you want to just finish right there. Two commands are useful
+for this.
 
-*  `exit` which will exit the program. It takes an optional numeric to return to the operating system, but usually you just use it alone.
-*  `die` which will print a warning message and exit, or if you fail to include a warning message it will report the line of the error, which can be helpful in debugging if you have lots of code.
+* `exit` which will exit the program. It takes an optional numeric to
+   return to the operating system, but usually you just use it alone.
+
+* `die` which will print a warning message and exit, or if you fail to
+   include a warning message it will report the line of the error,
+   which can be helpful in debugging if you have lots of code.
 
 
 ---
@@ -394,8 +405,9 @@ Some special string characters
 * `chr` will convert an [ASCII number](http://en.wikipedia.org/wiki/ASCII), e.g. `print chr(97),"\n"` will print `a`.
 
 Perl has several special variables
-* $_ - the implicit variable, default variable for matching
-* $
+* `$_` - the implicit variable, default variable for matching
+* `$,` - is the default character to separate values when print an
+  array as a string
 
 ---
 #Arrays and Lists
@@ -440,7 +452,8 @@ the one at position `1`. So `substr($string,1,1)` will return the
 ---
 #Array operations
 
-* Length of an array is obtained by treating it like a scalar variable, either `$len = @gems;` or more typically `$len = scalar @gems;`
+* Length of an array is obtained by treating it like a scalar
+  variable, either `$len = @gems;` or more typically `$len = scalar @gems;`
 * `sort @array` will order a list alphanumerically.  It can be ordered numerically with some additional code, we'll discuss later
 * `join($joincharacter,@array)` transform an array into a string, joining together with the intervening character
 * `@array = split("\t",$string)` transform a string into an array, splitting on a particular character
@@ -501,7 +514,7 @@ perlop`](http://perldoc.perl.org/perlop.html).
     print sort @nums; # print alphanumerically
     print sort { $a <=> $b } @nums; #print smallest to largest
     print sort { $b <=> $a } @nums; #print largets to smallest
-    print sort { length($a) <=> length($b) }; #print by num of digits
+    print sort { length($a) <=> length($b) } @nums; #print by num of digits
 
 ---
 #Convience method for array init
@@ -526,13 +539,6 @@ They are like dictionaries which means that when you want to lookup something, y
 Arrays are ordered lists -- you can get the 5-th item of the list. However, for a hash, there is no order, so you want to lookup an item by the key.
 
 ---
-#Hash operations
-
-* `keys %hash` will return a list of all the keys in the hash
-* `values %hash` will return a list of all the values in the hash
-* `each %hash` is used to return all the key/value pairs, however this really only useful when we get to loops (next lecture)
-
----
 #Hash operations: Code
 
     !perl
@@ -551,4 +557,11 @@ Arrays are ordered lists -- you can get the 5-th item of the list. However, for 
     print join(",",sort keys %bball_teams), "\n";
     print join(",", values %bball_teams), "\n";
 
+
+---
+#Hash operations
+
+* `keys %hash` will return a list of all the keys in the hash
+* `values %hash` will return a list of all the values in the hash
+* `each %hash` is used to return all the key/value pairs, however this really only useful when we get to loops (next lecture)
 
