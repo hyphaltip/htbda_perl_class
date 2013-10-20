@@ -3,7 +3,6 @@
 * Scalar variables: Strings and numbers
 * Arrays
 * Hashes
-
 * remember you can read more and see examples with
   `perldoc -f METHODNAME` (e.g. put `length` in for METHODNAME)
   You can also read the perl documentation and intro at
@@ -47,7 +46,7 @@ convert string to array and array to a string
 * The function `map` can be used to map all values in an array from one value to another
 
 ---
-#Array initiatization
+#Array access
 
 * Initialize an array in several ways:
 
@@ -62,6 +61,13 @@ convert string to array and array to a string
 		my @array = qw(First Second Third);
 		my ($one,$two,$three) = @array;
 		print "$array[1] == $two\n";
+
+* Set items in an array by assigning to variables
+
+		!perl
+		my @array = qw(First Second Third);
+		$array[3] = 'Fourth';
+		print "$array[3]\n";
 
 ---
 #Hashes
@@ -80,6 +86,35 @@ convert string to array and array to a string
 		$favs{'color'} $favs{'car'}\n"; 
 
 * You can access the names of the keys with `keys` function.
+
+---
+#Looping
+* for and foreach loops useful for iterating through set of numbers or an array
+
+        !perl
+		my @shapes = qw(square triange circle);
+		foreach my $shape ( @shapes ) {
+		   print "shape is $shapes\n";
+		}
+		for( my $i = 0; $i < scalar @shapes; $i++ ) {
+		     print "shape is $shapes[$i]\n";
+		}
+
+* Can also loop through a hash of keys and values
+
+		!perl
+		my %shapes = ('triangle' => 3,
+		   	      'square'   => 4,
+			      'pentagon' => 5,
+			      'hexagon'  => 6);
+		# go through the keys, in random (undefined) order
+		foreach my $shape ( keys %shapes ) {
+		   print "a $shape has $shapes{$shape} sides\n";
+		}
+		# sort by number of sides
+		foreach my $shape ( sort { $shapes{$a} <=> $shapes{$b} } keys %shapes ) {
+		   print "a $shape has $shapes{$shape} sides\n";
+		}
 
 ---
 #Other useful functions
@@ -111,14 +146,42 @@ context this can be helpful
 		!perl
 		print "There are ",scalar @ARGV, " arguments\n";
 		print "The arguments are: @ARGV\n";
-
+		print "The first argument is: $ARGV[0]\n";
+		
 * Try running the program with this on the command line
 
-		$ perl args.pl arg1 arg2 these_are more args
 		
+    $ perl args.pl arg1 arg2 these_are more args
+
+* The name of the program run is in the `$0` variable
+
+		!perl
+		print "The program run is $0 the arguments are @ARGV\n";
 
 * We will explain some helper modules later that make it easy to get
-  all the command line options easy to parse (see Getopt::Long)
+  all the command line options easy to parse (see
+  [Getopt::Long](http://search.cpan.org/search?query=Getopt::Long&mode=module) )
+
+---
+#Implicit variable and Defaults
+
+* `$_` is the implicit variable.
+* Perl lets you be lazy. If you forget to pass in variable to a
+  function it is assumes you want to use the implicit
+  variable. Sometimes there are also defaults which it will use. For
+  example:
+
+        !perl
+		$_ = "This is some data";
+		my @ret = split; # assumes you want to split on white-space,
+		                 # on the implicit variable
+		@ret = split(/\s+/,$_); # same as the line above
+
+*  `$_` is also used when something is returned but
+  you do not assign it to something.
+* It is also referred to when you you do not pass in a argument to
+  something
+  
 
 ---
 #Input/Ouput
@@ -187,6 +250,26 @@ Filehandles can also be stored in variables
     pink   2    Mini
 
 ---
+#Practice
+
+Write a script that will open and print out the first 5 lines of a
+file. The name of the file to open should be passed in on the command line as
+the first argument.
+
+	!perl
+	use strict;
+	use warnings;
+
+	# get the name of the file from the cmdline
+
+	# open the file
+
+	# read a line at a time of the file
+	while( ... ) {
+	# print the line out
+	# and stop after 5 lines
+	}
+---
 #Pipes for processes
 
 You can combine operations that are on the command line with the `|`
@@ -234,8 +317,8 @@ Can use it to open a compressed file on the fly.
 
 
     !perl
-    my $url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=163644330&retmode=text&rettype=fasta';
-    # -S option will not print any statistics
+    my $url = 'http://s.fungidb.org/1es5REC';
+	# -S option will not print any statistics
     open(my $fh => "curl -S '$url' |") || die $!;
     while(<$fh>) {
       print $_;
@@ -246,6 +329,10 @@ Can use it to open a compressed file on the fly.
       print $_;
     }
 
+* the shortened link was to NCBI:
+  http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=163644330&retmode=text&rettype=fasta
+  to retrieve a sequence in FASTA
+    
 ---
 #Let's try this together
 
@@ -254,9 +341,11 @@ Login to biocluster, Download data files. Data are in this [http://courses.staji
 > [http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab)
 > [http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab](http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab)
 
-    (on biocluster)
     wget http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab
-
+	(or on biocluster)
+	/shared/gen220/data_files/expression/Nc3H.expr.tab
+	/shared/gen220/data_files/expression/Nc20H.expr.tab
+		
 Write a script to read in the Nc20H and Nc3H data into a hash (one
 hash for each datafile). Store in the hash the gene name (the 1st
 column) and the FPKM data. Each gene will appear once in each file.
@@ -297,10 +386,4 @@ column) and the FPKM data. Each gene will appear once in each file.
     }
 
 
----
-#Practice
-
-Write a script that will open and print out the first 5 lines of a
-file. The name of the file to open should be passed in on the command line as
-the first argument.
 
