@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="text.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<h1 id="loops-and-conditionals">Loops and Conditionals</h1>
+<p>Logic and control are the next steps in learning a programming language Loops let us repeat steps.</p>
+<h1 id="the-truth-is-out-there">The Truth is out there</h1>
+<ul>
+<li>Operators equals <code>==</code>, less than &lt;, greater than &gt;, less than or equal to &lt;=, greater than or equal to &gt;=<br /></li>
+<li>! means take opposite of</li>
+<li>For strings equals is with the <code>eq</code>, less than is <code>lt</code>, and greater than <code>gt</code></li>
+<li>Numbers, except for 0 are always true, undefined is always false</li>
+<li>? :, is a special operator for combing, you can use it to combine a test and performing an operation depending on if the test is true or false. Here we test if a value is bigger than 10, if so set it to 'yes' otherwise set it to 'no' ** <code>my $is_large = ($val &gt; 10 ? 'yes' : 'no');</code></li>
+</ul>
+<h1 id="logically-speaking">Logically speaking</h1>
+<ul>
+<li>True &amp;&amp; True = True</li>
+<li>True &amp;&amp; False = False</li>
+<li>True || True = True</li>
+<li>True || False = True</li>
+<li>! ( True ) = False</li>
+<li>! ( False) = True</li>
+<li>! ( <span class="math">\(x &amp;&amp; \)</span>y ) = !<span class="math">\(x || ! \)</span>y</li>
+<li>! ( <span class="math">\(x || \)</span>y ) = !<span class="math">\(x &amp;&amp; ! \)</span>y</li>
+</ul>
+<h1 id="some-logic">Some logic</h1>
+<p>Test if one number is larger than another</p>
+<pre><code>!perl
+if( $num1 &gt; $num3 ) {
+  print &quot;$num1 is larger\n&quot;;
+}</code></pre>
+<p>Test if two strings are equal</p>
+<pre><code>!perl
+if( $str eq &#39;yellow&#39;) {
+  print &quot;found a yellow one!\n&quot;;
+}</code></pre>
+<h1 id="for-looping">For looping</h1>
+<p>For loops, much like while loops. There are 3 components. The initialization, the test, and the iteration.</p>
+<pre><code>!perl
+for( my $i = 0; $i &lt; 10; $i++) {
+  print &quot;i is $i\n&quot;;
+}</code></pre>
+<p>The initialization is <code>my $i = 0</code><br />The test is <code>$i &lt; 10</code><br />The iterator is <code>$i++</code></p>
+<p>This could also be written as a while loop.</p>
+<pre><code>!perl
+my $i = 0;
+while($i &lt; 10) {
+  $i++:
+}</code></pre>
+<h1 id="continuation">Continuation</h1>
+<p>Can also continue a loop with <code>next</code>, by stopping and going back to the top of the loop.</p>
+<pre><code>!perl
+while( &lt;DATA&gt; ) {
+   my $row = $_;
+   chomp;
+   if( substr($row,0,1) eq &#39;#&#39; ) {
+       # this data has a comment, let&#39;s skip the lines starting with #
+       next;
+   }
+}</code></pre>
+<h1 id="scope">Scope</h1>
+<p>Scope defines the area in a program that variable is valid for. Inside the brackets ({}) any variable declared with them is valid for that scope.</p>
+<pre><code>!perl
+my $toy = &quot;Truck&quot;;
+my $n = 0;
+print &quot;Toy is $toy before the if\n&quot;;
+if( $n &lt; 1 ) {
+    my $toy = &quot;Transformer&quot;;
+    print &quot;Toy is $toy inside the if\n&quot;;
+my $toy2 = &#39;Train&quot;;
+}
+# $toy2 would not be available here
+print &quot;Toy is $toy outside the if\n&quot;;</code></pre>
+<p>If you do not declare the variable inside the loop, you can end up updating the value. Notice the missing 'my' inside the if block.</p>
+<pre><code>!perl
+my $toy = &quot;Truck&quot;;
+my $n = 0;
+print &quot;Toy is $toy before the if\n&quot;;
+if( $n &lt; 1 ) {
+    $toy = &quot;Transformer&quot;;
+    print &quot;Toy is $toy inside the if\n&quot;;
+}
+print &quot;Toy is $toy outside the if\n&quot;;</code></pre>
+<h1 id="combining-concepts">Combining concepts</h1>
+<p>Suppose you wanted to process a stream of digits and find where the '01' were. You could just use index to find it all the occurances.</p>
+<pre><code>!perl
+my $str = &quot;110101210201010011110&quot;;
+my $ind = index($str,&quot;01&quot;);
+while( $ind &gt;= 0 ) {
+  # when ind is -1 it means it got to the end of the string
+  print substr($str,$ind,2); # print 2 digits
+  $ind = index($str,&quot;01&quot;,$ind+2);
+}</code></pre>
+<p>Note - this is not exactly how you would find specific codons in a DNA string because <code>index</code> is not going to respect the reading frame. You may need to do this with substr instead, inspecting a codon at a time.</p>
+</body>
+</html>

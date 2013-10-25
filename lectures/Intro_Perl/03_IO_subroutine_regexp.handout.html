@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="text.css">
+</head>
+<body>
+<h1 id="reading-and-writing">Reading and Writing</h1>
+<ul>
+<li>Input data from files</li>
+<li>Read data from a program</li>
+<li>Print data into a file or print data out to a program</li>
+</ul>
+<h1 id="filehandles">Filehandles</h1>
+<p>Filehandles can also be stored in variables</p>
+<pre><code>!perl
+my $fh;
+open($fh =&gt; &quot;gene.dat&quot;) || die $!;
+while(&lt;$fh&gt;) {
+ print $_;
+}
+#I like to use this in one line
+open(my $fh2 =&gt; &quot;gene2.dat&quot;) || die $!;
+while(&lt;$fh2&gt;) {
+ print $_;
+}</code></pre>
+<h1 id="data-embedded-in-a-script">Data embedded in a script</h1>
+<pre><code>!perl
+while(&lt;DATA&gt;) {
+ my ($col1,$col2) = split(/\s+/,$_);
+}
+
+__DATA__
+Color  Size Model
+red    10   Jumbo
+yellow 8    Large
+pink   2    Mini</code></pre>
+<h1 id="pipe-trick">Pipe trick</h1>
+<p>Can use it to open a compressed file on the fly.</p>
+<pre><code>!perl
+open(my $fh =&gt; &quot;zcat file.gz |&quot;) || die $!;
+while(&lt;$fh&gt;) {
+ # process data in a file that was compressed, without making a new copy of the file as uncompressed
+}</code></pre>
+<h1 id="lets-try-this-together">Let's try this together</h1>
+<p>Login to biocluster, Download data files. Data are in this <a href="directory">http://courses.stajich.org/public/gen220/data/</a> which represent some time points in growth for a fungus.</p>
+<blockquote>
+<p><a href="http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc20H.expr.tab</a> <a href="http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab">http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</a></p>
+</blockquote>
+<pre><code>(on biocluster)
+wget http://courses.stajich.org/public/gen220/data/Nc3H.expr.tab</code></pre>
+<p>Write a script to read in the Nc20H and Nc3H data into a hash (one hash for each datafile). Store in the hash the gene name (the 1st column) and the FPKM data. Each gene will appear once in each file.</p>
+<ul>
+<li>Print out a new file which has the gene name, the expression in 3H and the expression in 20H.</li>
+<li>Extra - print it out so that it is sorted by the 3HR timepoint</li>
+</ul>
+<h1 id="references">References</h1>
+<p>Reference are ways to refer to a complicated data structures as a single, scalar value. This lets one pass around multiple arrays and they stay separate. We also primarily use reference to store multiple things in a slot in an array.</p>
+<ul>
+<li>Reference to an array is done with <code>\</code> or <code>[]</code></li>
+<li>Reference to a hash is done with <code>\</code> or <code>{}</code></li>
+</ul>
+<p>For example this lets one pass around multiple arrays and they aren't flattened into one. Consider this code.</p>
+<pre><code>!perl
+my @array1 = qw(A B C D);
+my @array2 = qw(W X Y Z);
+my @array3 = (@array1, @array2);
+
+print join(&quot;,&quot;, @array3), &quot;\n&quot;;</code></pre>
+<h1 id="subroutines">Subroutines</h1>
+<pre><code>!perl
+sub a_routine {
+ my @args = @_; # the arguments passed in are avaialable as @_;
+ print &quot;the arguments are &quot;, join(&quot;,&quot;, @args), &quot;\n&quot;;
+}
+&amp;a_routine(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;);</code></pre>
+<h1 id="practice">Practice</h1>
+<p>Write a script that will open and print out the first 5 lines of a file. The name of the file to open should be passed in on the command line as the first argument.</p>
+</body>
+</html>

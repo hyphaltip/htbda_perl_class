@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="text.css">
+</head>
+<body>
+<h1 id="regular-expressions">regular expressions</h1>
+<pre><code>!perl
+print &quot;Ancient element\n&quot; if ($substance =~ m/earth|air|fire|water/i);
+print &quot;Stop codon\n&quot; if ($seq =~ m/TAA|TAG|TGA/i);
+print &quot;Author’s name\n&quot; if ($text =~ m/Ian|Keith/i);
+
+!perl
+if( $string =~ /[A-Z]/) {
+    #matches a capital letter
+}
+
+if( $string =~ /([A-Z]+)/) {
+    print &quot;capital letters matched are $1\n&quot;;
+}</code></pre>
+<h1 id="reverse-complement-dna">Reverse complement DNA</h1>
+<p>Use <code>tr</code> and <code>reverse</code> to convert DNA into reverse complement.</p>
+<pre><code>my $str = &#39;AGCATA&#39;;
+$str =~ tr/ACGT/TGCA/;
+my $rev = reverse($str);
+print &quot;$str\n&quot;;
+print &quot;$rev\n&quot;;</code></pre>
+<p>produces:</p>
+<pre><code> AGCATA
+ TATGCT</code></pre>
+<h1 id="try-this">try this</h1>
+<p>Matching 'GENE' followed by a number, will skip GENEX321</p>
+<pre><code>my @strs = qw(GENE124 GENE112 GENE180 GENEX321 AGENE12);
+for my $str ( @strs ) {
+ if( $str =~ /GENE\d+/ ) {
+     print $str, &quot;\n&quot;;
+ }
+}</code></pre>
+<h1 id="parens">Parens</h1>
+<p>Can provide some flexibility in the match with parens and the groups</p>
+<pre><code>if ($word =~ m/fire (alarm|engine)/) {…} # ‘fire alarm’ or ‘fire engine’
+if ($sport =~ m/(basket|foot)ball/) {…} # basketball or football
+if ($name =~ m/Ste(v|ph)en/) {…} # Steven or Stephen
+
+ # method 1
+ print “Chili pepper\n” if ($text =~ m/chili|chilli|chillie|chile/i);
+ # method 2
+ print “Chili pepper\n” if ($text =~ m/chil(i|li|lie|e)/i);</code></pre>
+<hr />
+<h1 id="parens-to-define-units">Parens to define units</h1>
+<pre><code>my $str = &quot;AAGATCTCTCGATCTGAA&quot;;
+if( $str =~ /((TC)+)/ ) {
+    print &quot;match is $1 of unit $2\n&quot;;
+}</code></pre>
+<p>produces: <code>match is TCTCTC of unit TC</code></p>
+<p>If you wanted to match a unit multiple times, first set of parens defines the capture the second (TC) would be matched multiple times.</p>
+<p>This is different from</p>
+<pre><code>my $str = &quot;AAGATCTCTCCTGATCTGAA&quot;;
+if( $str =~ /([TC]+)/ ) {
+    print &quot;match is $1\n&quot;;
+}</code></pre>
+<p>produces: <code>match is TCTCTCCT</code></p>
+</body>
+</html>

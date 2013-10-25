@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="text.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<h1 id="an-introduction-to-perl">An Introduction to Perl</h1>
+<p><a href="http://lab.stajich.org">Jason Stajich</a><br />UC Riverside<br /><span class="citation" data-cites="hyphaltip">[@hyphaltip]</span>(http://twitter.com/hyphaltip) <span class="citation" data-cites="stajichlab">[@stajichlab]</span>(http://twitter.com/stajichlab)</p>
+<h1 id="primitives">Primitives</h1>
+<p>Comments start with #</p>
+<pre><code>!perl
+print &quot;some code here, followed by comment&quot;; # here is a comment</code></pre>
+<p>Lines end with a ‘;’<br />Variables are used to store and access data. Scalar variables start with a ‘$’ and can contain one thing. This can be a string, a number, or a reference. (We’ll talk about References later)</p>
+<pre><code>!perl
+$var1 = &quot;apple&quot;;
+$var2 = &quot;orange&quot;;
+$var3 = 10;
+$var4 = 17.4312;</code></pre>
+<p>Print can also operate on a list of things.</p>
+<pre><code>!perl
+print &quot;Hello there &quot;, $var2, &quot;\n&quot;; </code></pre>
+<h1 id="string-operators">String operators</h1>
+<p>Strings can be manipulated and compared in several ways.</p>
+<ul>
+<li>The <code>.</code> operator concatenates two strings</li>
+<li><code>substr</code> to get a substring , the arguments are the starting string, the offset, the length of the subsequence (if omitted will go to the end), and (optional) the sequence to replace this substring with.</li>
+<li><code>reverse</code> to reverse the order of a string</li>
+<li><code>length</code> returns the length of a string</li>
+<li><code>index</code> searching from left to right, find the first position of a substring in a longer string. <code>rindex</code> does the same searching right to left. An optional 3rd argument tells where to start searching from (instead of default of 0) letting you skip ahead.</li>
+</ul>
+<h1 id="other-string-operations">Other string operations</h1>
+<ul>
+<li><code>lc</code> and <code>uc</code> to upper case and lower case a string</li>
+<li><code>chop</code> will remove the last character from a string</li>
+<li><code>chomp</code> will remove the last character from a string IF it is a whitespace</li>
+</ul>
+<h1 id="interpolation">Interpolation</h1>
+<p><a href="http://en.wikipedia.org/wiki/Variable_interpolation">Interpolation</a> is when a variable's value is evaluated and substituted, for example when you want to insert a value into a string.</p>
+<pre><code>!perl
+$fruit = &#39;apple&#39;;
+print &quot;my favorite fruit is $fruit.\n&quot;;
+$fruit = &#39;grape&#39;;
+print &quot;my favorite fruit is $fruit.\n&quot;;
+
+$fruit = &quot;$fruit-$fruit&quot;;
+print &quot;my favorite fruit is $fruit.\n&quot;;</code></pre>
+<p>This will produce</p>
+<pre><code>my favorite fruit is apple.
+my favorite fruit is grape.
+my favorite fruit is grape-grape.</code></pre>
+<h1 id="numerics">Numerics</h1>
+<p>Numbers can be integers, floating point, scientific notation. They can be initialized and computed. Strings can also be converted to numbers.</p>
+<pre><code>!perl
+$x = 10;
+$y = 2.2;
+$z = 1/3;
+print &quot;$x is x, z is $z\n&quot;;
+$sum = $x + $y;
+print &quot;sum = $sum\n&quot;;
+
+$string = &quot;12&quot;;
+$sum = $string + $x;
+print &quot;sum = $sum\n&quot;;
+
+$sum += 5; # can add to an existing in one line
+$sum /= 5; # or divide by
+print &quot;sum = $sum\n&quot;;</code></pre>
+<p>This will produce</p>
+<pre><code>!bash
+10 is x, z is 0.333333333333333
+sum = 12.2
+sum = 22
+sum is 5.4</code></pre>
+<h1 id="playing-it-safe">Playing it Safe</h1>
+<p>So far have shown very basic code. Without any warnings turned out. Only syntax or system errors will cause the program to stop <em>without</em> extra options turned on. By default Perl will not warn you about empty or undeclared variables. To be a <strong>better</strong> programmer you want to use the following best practices to write better Perl code.</p>
+<ol type="1">
+<li>use strict</li>
+<li>use warnings</li>
+<li>use 'my' to declare variables. This declares them in a particular scope.</li>
+</ol>
+<h1 id="at-the-top">At the top</h1>
+<p>Typical boilerplate for your Perl scripts then should usually look like this:</p>
+<pre><code>!perl
+#!/usr/bin/perl
+use strict;
+use warnings;</code></pre>
+<h1 id="other-numeric-operators">Other numeric operators</h1>
+<ul>
+<li><code>+,-,*,/</code> for add, subtract, multiply, and divide</li>
+<li><code>=</code> is the assignment variable to assign a value, not be confused with <code>==</code> which is for testing if two values are equivalent</li>
+<li>Assignment and an arithmetic operation for updating a variable, so <code>$val += 10</code> adds 10 to the current value</li>
+<li>The modulus operator <code>%</code> does a division and returns the remainder. So <code>9 % 2</code> is 1 because 2 will divide into 9, 4 times, leaving a remainder of 1.</li>
+<li>Exponent with **, so 2^5 is <code>2**5</code></li>
+</ul>
+<h1 id="printf-examples">printf examples</h1>
+<pre><code>!perl
+$str = &quot;MAYWRCILR&quot;;
+printf &quot;This &#39;%s&#39; string is %d letter long\n&quot;, $str, length($str);
+printf &quot;This is number %d\n&quot;, 17;
+printf &quot;This is a floating point number %f\n&quot;, 4.25;
+printf &quot;This is a floating point number as an integer %d\n&quot;, 4.25;
+printf &quot;This is a floating point number with three signif digits %.3f\n&quot;, 12/11;
+printf &quot;This is scientific notation %g\n&quot;, 21213333;
+printf &quot;This is scientific notation with 2 signif figs %.2g\n&quot;, 21213333; 
+printf &quot;Formatted length &#39;%4d&#39; and &#39;%7.2f&#39;\n&quot;, 21, 2/7;</code></pre>
+<p>Produces these results</p>
+<pre><code>!bash
+This &#39;MAYWRCILR&#39; string is 9 letter long
+This is number 17
+This is a floating point number 4.250000
+This is a floating point number as an integer 4
+This is a floating point number with three signif digits 1.091
+This is scientific notation 2.12133e+07
+This is scientific notation with 2 signif fig 2.1e+07
+Formatted length &#39;  21&#39; and &#39;   0.29&#39;</code></pre>
+<h1 id="kill-them-all">Kill them all</h1>
+<p>Sometimes you want to exit your program. There may be an unresolvable error, or you want to just finish right there. Two commands are useful for this.</p>
+<ul>
+<li><code>exit</code> which will exit the program. It takes an optional numeric to return to the operating system, but usually you just use it alone.</li>
+<li><code>die</code> which will print a warning message and exit, or if you fail to include a warning message it will report the line of the error, which can be helpful in debugging if you have lots of code.</li>
+</ul>
+<h1 id="other-special-characters">Other special characters</h1>
+<p>Some special string characters</p>
+<ul>
+<li><code>\t</code> for tab</li>
+<li><code>\n</code> for newlines, on windows this is <code>\r</code> and on mac this is <code>\r\n</code>. But please just use <code>\n</code></li>
+<li><code>chr</code> will convert an <a href="http://en.wikipedia.org/wiki/ASCII">ASCII number</a>, e.g. <code>print chr(97),&quot;\n&quot;</code> will print <code>a</code>.</li>
+</ul>
+<p>Perl has several special variables * <span class="math">\(_ - the implicit variable, default variable for matching * \)</span></p>
+<h1 id="my-hero-zero">My hero, Zero</h1>
+<p>In computer science, when starting to count, the first value is always 0 not 1. So lists and strings are indexed starting with 0. So if you want the 1st item in a list, you need to ask for the <code>[0]</code> one. Similarly, to get the second character in a string you ask for the one at position <code>1</code>. So <code>substr($string,1,1)</code> will return the 2nd character in a string.</p>
+<pre><code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]
+  0   1   2   3</code></pre>
+<figure>
+<img src="images/MyHeroZero.jpg" alt="MyHero" /><figcaption>MyHero</figcaption>
+</figure>
+<h1 id="array-operations-code">Array operations: Code</h1>
+<pre><code>!perl
+my @array = ();
+push @array, &#39;yellow&#39;;
+unshift @array, &#39;red&#39;;
+print join(&quot; &quot;, @array),&quot;\n&quot;;
+push @array, &#39;green&#39;, &#39;purple&#39;,&#39;blue&#39;;
+print join(&quot; &quot;, @array),&quot;\n&quot;;
+print $array[2], &quot;\n&quot;; # what do you think will be printed here?
+
+my $str = &quot;AACA-AG-TTTG-TACA&quot;;
+my @bases = split(&#39;-&#39;,$str); 
+print &quot;bases are @bases\n&quot;;
+$str = &quot;AACA--AG-TTTG-TACA&quot;;
+my @bases = split(&#39;-&#39;,$str); # this doesn&#39;t quite work if there are adjacent gaps
+print &quot;bases are @bases\n&quot;;
+
+$str = &quot;AACA--AG-TTTG-TACA&quot;;
+my @bases = split(/\-+/,$str); # this way will work using patterns
+print &quot;bases are @bases\n&quot;;
+
+@array = (1..10);
+print &quot;3 elements starting with 6th one are &quot;, join(&quot; &quot;,splice(@array, 5,3)),&quot;\n&quot;;
+splice(@array,2,2,&#39;100&#39;);
+print join(&quot; &quot;, @array), &quot;\n&quot;;</code></pre>
+<h1 id="convience-method-for-array-init">Convience method for array init</h1>
+<p>The <code>qw</code> (quote words) operator is useful for initializing a list, it separates items by white space from a list and converts into an array simplifying the code.</p>
+<pre><code>!perl
+@wintermonths = qw(Dec Jan Feb);
+# instead of
+@summermonths = (&#39;Jun&#39;,&#39;Jul&#39;,&#39;Aug&#39;);</code></pre>
+<h1 id="hash-operations">Hash operations</h1>
+<ul>
+<li><code>keys %hash</code> will return a list of all the keys in the hash</li>
+<li><code>values %hash</code> will return a list of all the values in the hash</li>
+<li><code>each %hash</code> is used to return all the key/value pairs, however this really only useful when we get to loops (next lecture)</li>
+</ul>
+<hr />
+<h1 id="hash-operations-code">Hash operations: Code</h1>
+<pre><code>!perl
+my %months2season;
+$months2season{&#39;Jan&#39;} = &#39;Winter&#39;;
+$months2season{&#39;Aug&#39;} = &#39;Summer&#39;;
+$months2season{&#39;Sep&#39;} = &#39;Fall&#39;;
+
+my $month = &#39;Aug&#39;;
+print &quot;$month is in $months2season{$month}\n&quot;;
+
+my %bball_teams = (&#39;Los Angeles&#39; =&gt; &#39;Lakers&#39;, 
+                   &#39;Phoenix&#39; =&gt; &#39;Suns&#39;, 
+                   &#39;Charlotte&#39; =&gt; &#39;Bobcats&#39;);
+
+print join(&quot;,&quot;,sort keys %bball_teams), &quot;\n&quot;;
+print join(&quot;,&quot;, values %bball_teams), &quot;\n&quot;;</code></pre>
+</body>
+</html>
