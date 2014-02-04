@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="text.css">
+</head>
+<body>
+<h1 id="advanced-unix">Advanced UNIX</h1>
+<table>
+<col style="width: 3%" /><thead>
+<tr class="header">
+<th style="text-align: left;">#UNIX Cheat sheets * <a href="http://jura.wi.mit.edu/bio/education/bioinfo/pages/scripts/unix_cheat_sheet.html">TreeBear</a> * <a href="http://sites.tufts.edu/cbi/files/2013/01/linux_cheat_sheet.pdf">Linux Cheat Sheet</a> * <a href="http://files.fosswire.com/2007/08/fwunixref.pdf">FOSS Linux Cheat Sheet</a> * <a href="http://javarevisited.blogspot.sg/2011/03/unix-command-tutorial-working-fast-in.html">tips for working fast in UNIX</a> * <a href="https://github.com/JorySchossau/shell/blob/master/shell_cheatsheet.md">MSU unix class</a> --- #Logging into biocluster * <code>ssh -X YOURNAME@biocluster.ucr.edu</code> will log you in * You'll be required to enter the password that was emailed to you from the system administrator * To change your password, once you login type <code>passwd</code> to run the change program * The Biocluster handbook provide info on the system. <a href="http://facility.bioinformatics.ucr.edu/">http://facility.bioinformatics.ucr.edu/</a> * <code>ssh</code> is a secure login program so that your password and all information sent from the laptop to the biocluster computers is encrypted. --- #Graphical displays * This is not required for most things we will work on in the class. However, if you want to run graphical emacs or graphical displays you need to get this to work. * the <code>-X</code> setups your display so graphical output on the server can be displayed. This requries the X or X11 tool to be running on your own computer. On Mac this is easy (Click on the Magnifying glass and enter X11). * Or install the <a href="http://xquartz.macosforge.org/trac">XQuartz</a> program on your mac. * Windows is more complicated, Try install <a href="http://sourceforge.net/projects/xming/">Xming</a> --- #Running a few more programs * removing files: rm * head, tail * echo * wc, grep * sort, uniq * awk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">#Removing files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* Didn't cover how to delete a file last week * <code>rm FILENAME</code> will remove a file. Do this carefully. Default behavior may be to prompt you if you want to remove it so you may have to enter 'y'. * If you need to remove a whole directory you would type <code>rm -rf DIRECTORY</code>. This will NOT prompt you to ask you if you are sure you want to do this! * BE CAREFUL. UNIX will not warn you and the files, once deleted, are not really retrievable. These are not trashbins like you see on Mac or Windows.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heads-and-tails">Heads and Tails</h1>
+<ul>
+<li>See the first lines (10) of a file: <code>head filename</code></li>
+<li>See the first 20 lines of a file: <code>head -n 20 filename</code></li>
+<li>See last lines (10) of a file: <code>tail filename</code></li>
+<li>See last lines (20) of a file: <code>tail -n 20 filename</code></li>
+</ul>
+<table>
+<col style="width: 3%" /><thead>
+<tr class="header">
+<th style="text-align: left;">#Echo * <code>echo</code> just prints what you give it in a string * <code>echo &quot;hello world&quot;</code> will print this out * we use echo sometimes as examples in the class, but it can be useful if you want to write out a message in a log file<br>--- #Redirecting output * To redirect output to a file instead of the screen use <code>&gt;</code> * <code>ls &gt; myfiles</code> * you can append to a file with <code>ls &gt;&gt; myfiles</code> * You can pass output from one program to another with <code>|</code> pipe * <code>ls -1 /shared/gen220/data_files/sequences/ | more</code> will show you the list of what is in a folder * There are two output streams 'STDOUT' and 'STDERR' * The <code>&gt;</code> will write STDOUT, but any error messages will still get printed * <code>ls &gt;&amp; out</code> - using the <code>&amp;</code> at the end will --- #Word counting * <code>wc</code> will calculate the number of lines, words, and characters * <code>wc -l</code> will report just the number of lines * Useful for example if you want to tally a result up and find out how many results there are. --- #Sorting * use <code>sort</code> to sort a list * <code>sort -n</code> will sort numerically <code>-r</code> will reverse the order * <code>sort -k1</code> will sort by column 1 of delimited dataset * <code>sort -k2 -t, -n</code> will sort by column2 where the separator is , and then sort by numberic --- #Try sorting it * Here is a file that represents cell cycle data. So a microarray was used to sample gene expression among 20+ timepoints. The rows are genes, and the columns are the timepoints sampled. * Sort the <code>/shared/gen220/data_files/expression/Spellman.csv</code> numerically, by the 60 minute time point. * What are the top highest expressed genes? What are the least? --- #Unique lists * use <code>uniq</code> to generate a uniq list from a (possibly) redundant one * <code>uniq -c</code> will print the unique list but show you how many times a string comes up * the list must be sorted that you pass to uniq - it is only comparing adjacent lines to redundancy * Here's a collection of 100 random numbers <code>/shared/gen220/data_files/misc/rand.txt</code> - let's look at the uniq list of how many times each occurs * <code>sort -n /shared/gen220/data_files/misc/rand.txt | uniq -c</code> --- #awk * <a href="http://en.wikipedia.org/wiki/AWK">awk</a> - a very simple scripting language * Just focusing on one feature, it is useful for extracting a column of data. * <code>awk '{print $1}' filename</code> will print column one, it assumes whitespace delimited * <code>awk -F, '{print $1}' filename</code> will now separate columns by commas * <code>awk '{print $3}' /shared/gen220/data_files/misc/heroes_and_villans.txt</code> --- #Putting it together * How many Heroes and how many Villans are there in the <code>/shared/gen220/data_files/misc/heroes_and_villans.txt</code> file? * The following is output of a BLAST/FASTA sequence search report. We will talk more about this format but can you determine how many unique genes were searched in the query file (represented by Column 1). <code>/shared/gen220/data_files/reports/K12-vs-O157.FASTA.tab</code> --- #Permissions * chmod, chgrp * To set permission so that everyone can read a file: <code>chmod a+r   filename</code> * To recursively set it for a folder: <code>chmod -R a+r</code> * chgrp lets you set the group ownership. By default this will be 'Users' but you are also in the 'gen220' group so if you want to share files, and only with people in this class, you would change the group for the file with <code>chgrp gen220 FILENAME</code>. * Then you would want to set the permissions so that only people in the group can view it. <code>chmod a-r FILENAME</code> followed by <code>chmod g+r   FILENAME</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">#Find</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* useful tool to find files by name, size, date and other attributes * <code>find . -type d</code> - find all the directories starting in the current directory * <code>find /shared/gen220 -name '*.gbk'</code> - find all the files that end in .gbk in the shared folder * `find . -name ' * Some more tips on how to use find are <a href="http://javarevisited.blogspot.com/2011/03/10-find-command-in-unix-examples-basic.html">here</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="compression">Compression</h1>
+<ul>
+<li>Files you get may be compressed. This can save time in transferring and save disk space if you compress things you aren't going to use for a while.</li>
+<li>Compressing files with gzip, uncompress with gunzip</li>
+<li>Another compression program is bzip2 (bunzip2 to uncompress). Makes smaller files but can take longer to run</li>
+<li>We can even read from a compressed file in our programs so that we can leave it compressed.</li>
+<li>Try <code>zmore /shared/gen220/data_files/reports/K12-vs-O157.FASTA.gz</code></li>
+<li>Will work an example like this when get to programming.</li>
+</ul>
+<table>
+<col style="width: 3%" /><tbody>
+<tr class="odd">
+<td style="text-align: left;">#Running in the background</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* UNIX is intended to be a shared system * You can run more than one program at a time * Starting up a program with a <code>&amp;</code> at the end will put it in the background * <code>sort file &gt; file2 &amp;</code> will run in the background * If you are running a program and didn't already put it in the background you can suspend it with 'Control-Z' * Now it is suspended, you can put it in the background by typing <code>bg</code> * a program in the background can also be brought to the foreground by typing <code>fg</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="your-path">Your PATH</h1>
+<ul>
+<li>the path controls the programs you have available to run on the command line. This is done through a variable called $PATH.</li>
+<li>you can see your path and all environment variables by typing <code>env</code></li>
+<li>You also just pring out the PATH variable with <code>echo $PATH</code></li>
+<li>You can see if a program is available by using the <code>which</code> command</li>
+<li><code>which grep</code> shows the path to grep. <code>which blastall</code> shows the path to the BLAST application</li>
+<li>On biocluster not all applications are immediately available in your path. We use the modules system to load or unload them</li>
+<li>Try to see where the blastp is <code>which blastp</code> -- this shows something that is in fact and old version of the program we want.</li>
+<li><code>module load ncbi-blast</code> then <code>which blastp</code> to see it is the other version</li>
+<li><code>module list</code> shows the modules you have installed</li>
+<li><code>module unload ncbi-blast</code> will unload an installed path</li>
+</ul>
+<table>
+<col style="width: 3%" /><tbody>
+<tr class="odd">
+<td style="text-align: left;">#scripts with the shell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* All of this has been programming in a way * The shell is a programming language * So the steps you write down on the command line could also be stored in a script with each command on a line * To execute a script you either run the interpreter (bash) when you specify the script: <code>bash myscript.sh</code> * Or you set the permission bit for execute on with <code>chmod +x FILENAME</code> and the header of the script look like this:</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">#!/bin/bash</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">* Later when we do Perl the same thing will apply except the top of the script will be <code>#!/usr/bin/perl</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="more-on-biocluster">More on Biocluster</h1>
+<ul>
+<li>Several hosts we can log into. You will start on biocluster</li>
+<li>When we run analyses will need to run these on <code>owl</code></li>
+<li><code>ssh YOURNAME@owl.ucr.edu</code></li>
+<li>for even long running jobs we will need to submit these to a job queue</li>
+<li>This requires writing your steps as a bash script like discussed before</li>
+<li>Then using the command <code>qsub</code>. Lots more info on this on the biocluster FAQ on the Facilities page.</li>
+</ul>
+</body>
+</html>
